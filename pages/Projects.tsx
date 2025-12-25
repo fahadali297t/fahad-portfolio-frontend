@@ -1,174 +1,242 @@
-import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { PROJECTS, EnhancedProject } from '../constants';
-import { Github, ExternalLink, ArrowRight } from 'lucide-react';
+import React, { useState, useEffect, useRef, useMemo } from "react";
+import { Link } from "react-router-dom";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { PROJECTS, EnhancedProject } from "../constants";
+import { ArrowUpRight, Filter, Layers, Zap } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({ project, index }) => {
-  return (
-    <div 
-      className="project-card absolute inset-0 w-full h-full flex items-center justify-center px-4 py-8 md:p-6"
-      style={{ zIndex: index + 1 }}
-    >
-      <div className="project-card-inner relative w-full max-w-6xl bg-[#121212] rounded-[2rem] md:rounded-[3rem] border border-white/10 shadow-[0_0_100px_rgba(0,0,0,0.6)] p-6 md:p-10 lg:p-12 overflow-hidden flex flex-col lg:flex-row gap-6 lg:gap-12 items-center">
-        
-        {/* Decorative background glow */}
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#ff6b00]/5 blur-[120px] rounded-full pointer-events-none"></div>
+const CATEGORIES = ["All", "SaaS", "Fintech", "E-commerce", "DevOps"] as const;
+type Category = (typeof CATEGORIES)[number];
 
-        {/* Left Side: Image */}
-        <div className="w-full lg:w-[45%] aspect-[4/3] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden bg-slate-900 border border-white/5 shadow-2xl shrink-0 group/img relative">
-          <img 
-            src={project.image} 
-            alt={project.title} 
-            className="w-full h-full object-cover grayscale-[0.2] group-hover/img:grayscale-0 group-hover/img:scale-105 transition-all duration-1000"
+const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({
+  project,
+  index,
+}) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  const handleMouseEnter = () => {
+    gsap.to(imgRef.current, {
+      scale: 1.05,
+      filter: "grayscale(0%)",
+      duration: 1,
+      ease: "power2.out",
+    });
+    gsap.to(cardRef.current, {
+      y: -10,
+      borderColor: "rgba(255, 107, 0, 0.4)",
+      duration: 0.5,
+      ease: "power2.out",
+    });
+  };
+
+  const handleMouseLeave = () => {
+    gsap.to(imgRef.current, {
+      scale: 1,
+      filter: "grayscale(50%)",
+      duration: 1,
+      ease: "power2.out",
+    });
+    gsap.to(cardRef.current, {
+      y: 0,
+      borderColor: "rgba(255, 255, 255, 0.05)",
+      duration: 0.5,
+      ease: "power2.out",
+    });
+  };
+
+  return (
+    <Link
+      to={`/projects/${project.id}`}
+      className="project-grid-item block group focus:outline-none"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div
+        ref={cardRef}
+        className="relative flex flex-col h-full bg-[#0a0a0a] border border-white/5 rounded-[1rem] md:rounded-[2.5rem] overflow-hidden transition-all duration-500 shadow-2xl"
+      >
+        <div className="relative aspect-[16/10] overflow-hidden">
+          <img
+            ref={imgRef}
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover grayscale-[0.5] transition-all duration-1000 opacity-80"
           />
-          <Link 
-            to={`/projects/${project.id}`}
-            className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300"
-          >
-            <div className="p-6 bg-[#ff6b00] rounded-full text-black transform translate-y-4 group-hover/img:translate-y-0 transition-transform duration-500">
-               <ArrowRight size={32} strokeWidth={2.5} />
-            </div>
-          </Link>
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+
+          <div className="absolute top-6 left-6 flex items-center gap-2 px-4 py-2 bg-black/60 backdrop-blur-md border border-white/10 rounded-full">
+            <div className="w-1.5 h-1.5 bg-[#ff6b00] rounded-full animate-pulse"></div>
+            <span className="text-[9px] font-black uppercase tracking-widest text-slate-300">
+              {project.category}
+            </span>
+          </div>
+
+          <div className="absolute bottom-6 right-6 p-4 bg-[#ff6b00] rounded-2xl text-black translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 shadow-xl shadow-[#ff6b00]/20">
+            <ArrowUpRight size={24} strokeWidth={2.5} />
+          </div>
         </div>
 
-        {/* Right Side: Content */}
-        <div className="w-full lg:w-[55%] flex flex-col justify-center space-y-4 md:space-y-8 relative z-10">
-          <div className="space-y-3">
-            <div className="flex items-center gap-3">
-               <span className="text-[#ff6b00] font-mono text-[10px] uppercase tracking-[0.4em] font-bold">Project {String(index + 1).padStart(2, '0')}</span>
-               <div className="h-px w-8 bg-white/10"></div>
+        <div className="p-8 flex flex-col flex-grow space-y-6">
+          <div className="space-y-2">
+            <div className="flex justify-between items-center">
+              <span className="text-[10px] font-mono text-slate-600 uppercase tracking-widest">
+                Architectural Artifact
+              </span>
+              <span className="text-[10px] font-mono text-[#ff6b00] uppercase tracking-widest font-black">
+                {project.year}
+              </span>
             </div>
-            <Link to={`/projects/${project.id}`} className="block group/title">
-              <h3 className="text-3xl md:text-5xl font-black tracking-tighter flex flex-wrap items-baseline gap-2 md:gap-3 uppercase leading-tight">
-                <span className="text-white group-hover/title:text-[#ff6b00] transition-colors">{project.title}</span>
-                <span className="font-serif italic font-light text-[#ff6b00] opacity-80 text-2xl md:text-4xl">{project.type}</span>
-              </h3>
-            </Link>
-            <p className="text-slate-400 text-sm md:text-lg leading-relaxed max-w-xl font-light">
-              {project.description}
-            </p>
+            <h3 className="text-3xl md:text-4xl font-black tracking-tighter uppercase leading-none group-hover:text-[#ff6b00] transition-colors">
+              {project.title}
+              <span className="ml-2 text-xl font-serif italic font-light lowercase text-slate-500">
+                {project.type.split(" ")[0]}
+              </span>
+            </h3>
           </div>
 
-          {/* Challenge & Solution */}
-          <div className="hidden sm:grid grid-cols-2 gap-8 py-6 border-y border-white/5">
-            <div className="space-y-2">
-              <h4 className="text-[10px] font-bold tracking-[0.3em] text-white uppercase opacity-70">The Challenge</h4>
-              <p className="text-xs text-slate-500 leading-relaxed font-light line-clamp-2">{project.challenge}</p>
-            </div>
-            <div className="space-y-2">
-              <h4 className="text-[10px] font-bold tracking-[0.3em] text-white uppercase opacity-70">The Solution</h4>
-              <p className="text-xs text-slate-500 leading-relaxed font-light line-clamp-2">{project.solution}</p>
-            </div>
-          </div>
+          <p className="text-slate-500 text-sm md:text-base font-light leading-relaxed line-clamp-2">
+            {project.description}
+          </p>
 
-          {/* Metrics & Links */}
-          <div className="flex flex-wrap items-center justify-between gap-6">
-            <div className="flex flex-wrap gap-8 items-center">
-              {project.metrics.map((metric, mIdx) => (
-                <div key={mIdx} className="flex flex-col">
-                  <span className="text-3xl md:text-4xl font-black text-white tracking-tighter mb-0">{metric.value}</span>
-                  <span className="text-[9px] uppercase tracking-[0.2em] text-[#ff6b00] font-bold">
-                    {metric.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-            
-            <div className="flex gap-3">
-              <Link 
-                to={`/projects/${project.id}`}
-                className="group px-6 py-3 bg-white/5 hover:bg-[#ff6b00] text-white hover:text-black rounded-full transition-all duration-500 border border-white/10 flex items-center gap-2 font-bold uppercase text-xs tracking-widest"
+          <div className="pt-4 flex flex-wrap gap-3 mt-auto">
+            {project.techStackDetailed.slice(0, 3).map((tech, i) => (
+              <span
+                key={i}
+                className="px-3 py-1 bg-white/5 border border-white/5 rounded-lg text-[9px] font-mono uppercase tracking-widest text-slate-400 group-hover:text-white group-hover:border-[#ff6b00]/20 transition-all"
               >
-                View Details
-              </Link>
-              <a 
-                href={project.github} 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group p-3 md:p-4 bg-white/5 hover:bg-[#ff6b00] rounded-full transition-all duration-500 border border-white/10"
-              >
-                <Github size={20} className="text-white group-hover:text-black transition-colors" />
-              </a>
-            </div>
+                {tech}
+              </span>
+            ))}
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
-const Projects: React.FC<{ isLandingPage?: boolean }> = ({ isLandingPage }) => {
-  const mainRef = useRef<HTMLDivElement>(null);
+const Projects: React.FC = () => {
+  const [filter, setFilter] = useState<Category>("All");
+  const [visibleCount, setVisibleCount] = useState(4);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const filteredProjects = useMemo(() => {
+    if (filter === "All") return PROJECTS;
+    return PROJECTS.filter((p) => p.category === filter);
+  }, [filter]);
+
+  const visibleProjects = useMemo(() => {
+    return filteredProjects.slice(0, visibleCount);
+  }, [filteredProjects, visibleCount]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-        // Landing page animations with pin and scrub
-        const cards = gsap.utils.toArray('.project-card') as HTMLElement[];
-        
-        const scrollHeight = cards.length * 100; 
-        
-        const tl = gsap.timeline({
+      gsap.fromTo(
+        ".project-grid-item",
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.1,
+          duration: 0.8,
+          ease: "power3.out",
           scrollTrigger: {
-            trigger: mainRef.current,
-            start: "top top",
-            end: `+=${scrollHeight}%`,
-            pin: true,
-            pinSpacing: true,
-            scrub: 1.2, 
-            anticipatePin: 1,
-            invalidateOnRefresh: true,
-          }
-        });
-
-        cards.forEach((card, i) => {
-          const inner = card.querySelector('.project-card-inner');
-          
-          if (i > 0) {
-            tl.fromTo(card, 
-              { y: "110%", opacity: 0 },
-              { y: "0%", opacity: 1, ease: "none" },
-              i
-            );
-          }
-
-          if (i < cards.length - 1) {
-            tl.to(inner, {
-              scale: 0.9,
-              opacity: 0.25,
-              y: -60,
-              filter: "blur(2px)",
-              ease: "none"
-            }, i + 0.5);
-          }
-        });
-
-    }, mainRef);
-
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-      ScrollTrigger.refresh();
-      ScrollTrigger.clearScrollMemory();
-      ctx.revert();
-    };
-  }, [isLandingPage]);
+            trigger: ".projects-grid",
+            start: "top 85%",
+          },
+        }
+      );
+    }, containerRef);
+    return () => ctx.revert();
+  }, [filter, visibleProjects.length]);
 
   return (
-    <section ref={mainRef} className="relative bg-black min-h-screen overflow-hidden z-40">
-      {/* Background Decorative Text */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 opacity-[0.02] pointer-events-none select-none">
-        <h2 className="text-[25vw] font-black tracking-tighter uppercase leading-none">WORK</h2>
-      </div>
+    <div
+      ref={containerRef}
+      className="bg-black text-white min-h-screen overflow-x-hidden pt-0"
+    >
+      <div className="bg-circle fixed top-[-10%] right-[-10%] w-[50vw] aspect-square bg-[#ff6b00]/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
 
-      <div className="relative w-full h-screen">
-        {PROJECTS.map((project, index) => (
-          <ProjectCard key={project.id} project={project} index={index} />
-        ))}
-      </div>
-    </section>
+      <header className="relative z-10 pt-32 pb-16 px-6 max-w-7xl mx-auto space-y-12">
+        <div className="space-y-6">
+          <span className="px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-[9px] font-mono uppercase tracking-[0.4em] text-[#ff6b00] font-bold">
+            The Registry
+          </span>
+          <h1 className="text-6xl md:text-[10vw] font-black tracking-tighter uppercase leading-[0.8]">
+            LATEST{" "}
+          </h1>
+          <h1 className="text-6xl  text-right sm:text-center ', md:text-[10vw] font-black tracking-tighter uppercase leading-[0.8]">
+            WORK
+          </h1>
+        </div>
+      </header>
+
+      {/* Sticky Filter Bar - Exactly below the 16 unit navbar */}
+      <section className=" hidden md:flex top-16 z-40 bg-black/90 backdrop-blur-xl border-y border-[#ff6b00]/10 px-6">
+        <div className="max-w-7xl mx-auto py-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="flex items-center gap-4">
+            <Filter size={18} className="text-[#ff6b00]" />
+            <span className="text-xs font-black uppercase tracking-widest text-white">
+              Domain Filter
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {CATEGORIES.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => {
+                  setFilter(cat);
+                  setVisibleCount(4);
+                }}
+                className={`px-8 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all duration-300
+                  ${
+                    filter === cat
+                      ? "bg-[#ff6b00] text-black shadow-lg shadow-orange-500/20"
+                      : "bg-white/5 text-slate-500 hover:text-white border border-white/5"
+                  }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="projects-grid py-24 px-6 max-w-7xl mx-auto relative z-10">
+        {visibleProjects.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
+            {visibleProjects.map((project, idx) => (
+              <ProjectCard key={project.id} project={project} index={idx} />
+            ))}
+          </div>
+        ) : (
+          <div className="py-40 text-center opacity-50">
+            <Layers size={64} className="mx-auto mb-6" />
+            <h3 className="text-2xl font-black uppercase">
+              No projects found in this domain.
+            </h3>
+          </div>
+        )}
+
+        {visibleCount < filteredProjects.length && (
+          <div className="mt-32 flex justify-center">
+            <button
+              onClick={() => setVisibleCount((prev) => prev + 2)}
+              className="group flex flex-col items-center gap-4"
+            >
+              <div className="p-10 bg-white/5 border border-white/10 rounded-full group-hover:bg-[#ff6b00] group-hover:text-black transition-all duration-700">
+                <Zap size={32} />
+              </div>
+              <span className="text-sm font-light text-slate-500 uppercase tracking-[0.4em]">
+                Load More Data
+              </span>
+            </button>
+          </div>
+        )}
+      </section>
+    </div>
   );
 };
 

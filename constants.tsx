@@ -7,6 +7,7 @@ export interface EnhancedProject extends Project {
   solution: string;
   metrics: { value: string; label: string }[];
   type: string;
+  category: "SaaS" | "Fintech" | "E-commerce" | "DevOps";
   year: string;
   role: string;
   fullDescription: string;
@@ -40,12 +41,13 @@ export const PROJECTS: EnhancedProject[] = [
     id: 1,
     title: "AURORA",
     type: "FINANCIAL SAAS ENGINE",
+    category: "Fintech",
     year: "2023",
     role: "Lead Backend Architect",
     description: "A high-performance redesign created to elevate brand trust and improve user engagement for modern fintech.",
-    fullDescription: "Aurora is a next-generation financial management engine designed to handle millions of transactions with sub-80ms latency. The project involved migrating a monolithic legacy system to a robust microservices architecture using Laravel 11 and Redis. We implemented custom event sourcing to ensure 100% auditability and built a real-time analytics engine that processes data streams at scale.",
-    challenge: "The primary challenge was modernizing a legacy PHP 7.4 codebase without downtime. We had to refactor complex financial dashboards and data-heavy onboarding flows while maintaining strict data integrity for enterprise clients.",
-    solution: "We architected a 'strangler fig' pattern to incrementally replace old services. By implementing Redis-backed caching and optimizing Eloquent queries with composite indexing, we reduced server load by 40% and improved dashboard loading times by 3x.",
+    fullDescription: "Aurora is a next-generation financial management engine designed to handle millions of transactions with sub-80ms latency. The project involved migrating a monolithic legacy system to a robust microservices architecture using Laravel 11 and Redis.",
+    challenge: "The primary challenge was modernizing a legacy PHP 7.4 codebase without downtime.",
+    solution: "We architected a 'strangler fig' pattern to incrementally replace old services.",
     techStackDetailed: ["Laravel 11", "Redis", "PostgreSQL", "Docker", "AWS SQS", "Pusher"],
     metrics: [
       { value: "85ms", label: "Avg Response Time" },
@@ -55,23 +57,9 @@ export const PROJECTS: EnhancedProject[] = [
     image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1200",
     gallery: [
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1543286386-2e659306cd6c?auto=format&fit=crop&q=80&w=1200"
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200"
     ],
-    codeSnippet: `// Event Sourced Ledger Update
-public function updateLedger(Transaction $transaction)
-{
-    return DB::transaction(function () use ($transaction) {
-        $ledger = Ledger::lockForUpdate()->find($transaction->ledger_id);
-        
-        $entry = LedgerEntry::createFromTransaction($transaction);
-        
-        $ledger->balance += $transaction->amount;
-        $ledger->save();
-        
-        event(new TransactionProcessed($entry));
-    });
-}`,
+    codeSnippet: `// Ledger Entry Logic\nDB::transaction(fn() => $ledger->increment('bal', $amt));`,
     tags: ["Laravel", "Redis", "Microservices"],
     github: "https://github.com",
     demo: "https://demo.com"
@@ -80,12 +68,13 @@ public function updateLedger(Transaction $transaction)
     id: 2,
     title: "NATURELY",
     type: "E-COMMERCE BACKBONE",
+    category: "E-commerce",
     year: "2022",
     role: "Senior Developer",
     description: "A streamlined, conversion-focused redesign built to simplify user flows and strengthen customer confidence.",
-    fullDescription: "Naturely required a complete overhaul of its e-commerce backend to support a multi-tenant marketplace structure. We leveraged Laravel Multi-tenancy to provide isolated environments for thousands of vendors, ensuring data security and high availability during peak traffic events like Black Friday.",
-    challenge: "Handling concurrent stock updates across thousands of stores while maintaining a zero-latency search experience using Elasticsearch.",
-    solution: "Implemented an asynchronous queue system using RabbitMQ and optimized the search layer with multi-index synchronization, resulting in search results under 50ms.",
+    fullDescription: "Naturely required a complete overhaul of its e-commerce backend to support a multi-tenant marketplace structure.",
+    challenge: "Handling concurrent stock updates across thousands of stores while maintaining zero-latency search.",
+    solution: "Implemented an asynchronous queue system using RabbitMQ and optimized the search layer.",
     techStackDetailed: ["Laravel", "Elasticsearch", "RabbitMQ", "MySQL", "Vite", "Inertia.js"],
     metrics: [
       { value: "55%", label: "Sales Conversion" },
@@ -94,19 +83,9 @@ public function updateLedger(Transaction $transaction)
     ],
     image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1200",
     gallery: [
-      "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1523474253046-2cd2c78b6ad1?auto=format&fit=crop&q=80&w=1200"
+      "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=1200"
     ],
-    codeSnippet: `// Multi-tenant Store Scoping
-class StoreScope implements Scope
-{
-    public function apply(Builder $builder, Model $model)
-    {
-        if (app()->bound('currentStore')) {
-            $builder->where('store_id', app('currentStore')->id);
-        }
-    }
-}`,
+    codeSnippet: `// Multi-tenant Store Scoping\n$builder->where('store_id', app('currentStore')->id);`,
     tags: ["Laravel", "PostgreSQL", "Multi-tenancy"],
     github: "https://github.com",
     demo: "https://demo.com"
@@ -115,12 +94,13 @@ class StoreScope implements Scope
     id: 3,
     title: "FINPAY",
     type: "MOBILE WALLET API",
+    category: "Fintech",
     year: "2024",
     role: "API Architect",
     description: "A bold, performance-driven landing page and API optimized for mobile lead capture and acquisition.",
-    fullDescription: "FinPay is a robust mobile wallet API designed for secure cross-border payments. We utilized Laravel Octane to reach unprecedented performance levels and integrated OAuth2 with biometric verification for high-security transaction authorization.",
-    challenge: "Integrating with 15+ different regional payment gateways with varying data formats and protocols.",
-    solution: "Built a unified Adapter Pattern interface that normalized gateway responses and handled complex retry logic automatically using Laravel's robust Job system.",
+    fullDescription: "FinPay is a robust mobile wallet API designed for secure cross-border payments utilizing Laravel Octane.",
+    challenge: "Integrating with 15+ different regional payment gateways with varying data formats.",
+    solution: "Built a unified Adapter Pattern interface that normalized gateway responses.",
     techStackDetailed: ["Laravel Octane", "Swoole", "Redis", "OAuth2", "Postman", "Forge"],
     metrics: [
       { value: "1.2k", label: "Requests / Sec" },
@@ -129,19 +109,82 @@ class StoreScope implements Scope
     ],
     image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=1200",
     gallery: [
-      "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?auto=format&fit=crop&q=80&w=1200"
+      "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&q=80&w=1200"
     ],
-    codeSnippet: `// Octane Optimized Auth
-public function handle(Request $request)
-{
-    return Cache::store('octane')->remember(
-        "auth:user:{$request->user_id}",
-        now()->addMinutes(5),
-        fn() => User::with('wallet')->find($request->user_id)
-    );
-}`,
+    codeSnippet: `// Octane Remember\nCache::store('octane')->remember("auth:{$uid}", now()->addMin(5), $fn);`,
     tags: ["Laravel", "Pusher", "MySQL"],
+    github: "https://github.com",
+    demo: "https://demo.com"
+  },
+  {
+    id: 4,
+    title: "NEXUS",
+    type: "INFRASTRUCTURE MONITOR",
+    category: "DevOps",
+    year: "2024",
+    role: "DevOps Engineer",
+    description: "A real-time server health monitoring dashboard for complex distributed infrastructures.",
+    fullDescription: "Nexus provides real-time visibility into server health, log aggregation, and automated incident response.",
+    challenge: "Processing gigabytes of log data every minute without affecting server performance.",
+    solution: "Utilized Go-based sidecars for log ingestion and a specialized InfluxDB storage layer.",
+    techStackDetailed: ["Docker", "Kubernetes", "Go", "Prometheus", "Grafana", "Laravel"],
+    metrics: [
+      { value: "2s", label: "Alert Latency" },
+      { value: "5TB", label: "Data/Day" },
+      { value: "100%", label: "Uptime Visibility" }
+    ],
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=1200",
+    gallery: ["https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1200"],
+    codeSnippet: `// Prometheus Metric Push\nCounter::build()->name('hits')->inc();`,
+    tags: ["Kubernetes", "Docker", "Prometheus"],
+    github: "https://github.com",
+    demo: "https://demo.com"
+  },
+  {
+    id: 5,
+    title: "SENTINEL",
+    type: "AUTH SECURITY SUITE",
+    category: "SaaS",
+    year: "2023",
+    role: "Security Architect",
+    description: "An advanced authentication and authorization suite for enterprise-level applications.",
+    fullDescription: "Sentinel provides multi-factor authentication, biometric verification, and granular RBAC out of the box.",
+    challenge: "Maintaining a frictionless user experience while enforcing strict Zero-Trust security policies.",
+    solution: "Implemented device-fingerprinting and behavioral analysis for risk-based authentication.",
+    techStackDetailed: ["PHP 8.3", "Laravel", "Auth0", "Redis", "PostgreSQL", "WebAuthn"],
+    metrics: [
+      { value: "Zero", label: "Breaches" },
+      { value: "200ms", label: "Auth Delay" },
+      { value: "95%", label: "MFA Adoption" }
+    ],
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200",
+    gallery: ["https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200"],
+    codeSnippet: `// WebAuthn Challenge\n$challenge = $webauthn->generateChallenge();`,
+    tags: ["Security", "OAuth2", "Laravel"],
+    github: "https://github.com",
+    demo: "https://demo.com"
+  },
+  {
+    id: 6,
+    title: "QUANTUM",
+    type: "AI SCHEDULING PLATFORM",
+    category: "SaaS",
+    year: "2024",
+    role: "Backend Lead",
+    description: "An AI-driven scheduling tool that optimizes employee shifts based on traffic predictions.",
+    fullDescription: "Quantum uses machine learning models to predict peak business hours and suggests optimal staffing levels.",
+    challenge: "Calculating complex shift patterns for 500+ employees in real-time.",
+    solution: "Developed a custom genetic algorithm optimized with Laravel's job batching for parallel processing.",
+    techStackDetailed: ["Laravel", "Python", "Redis", "MySQL", "AWS Lambda", "Tails"],
+    metrics: [
+      { value: "15%", label: "Labor Savings" },
+      { value: "98%", label: "Staff Sat." },
+      { value: "10m", label: "Gen. Time" }
+    ],
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200",
+    gallery: ["https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200"],
+    codeSnippet: `// Batch Optimization\nBus::batch($jobs)->dispatch();`,
+    tags: ["AI", "Scheduling", "Laravel"],
     github: "https://github.com",
     demo: "https://demo.com"
   }
