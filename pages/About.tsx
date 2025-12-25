@@ -109,7 +109,10 @@ const About: React.FC = () => {
         }
       });
     }, containerRef);
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
   }, []);
 
   // Group skills for a more organized display
@@ -189,40 +192,7 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Section 2: Technical Mastery */}
-      <section className="py-32 px-6 bg-white/[0.02] border-y border-white/5 overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row justify-between items-end mb-24 gap-8">
-            <div className="space-y-4">
-              <span className="text-[#ff6b00] font-mono text-xs uppercase tracking-[0.5em] block">Skillset Level</span>
-              <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-none">TECHNICAL <span className="text-[#ff6b00] font-serif italic font-light lowercase">proficiency</span></h2>
-            </div>
-            <div className="flex flex-col items-end gap-2 text-right">
-               <div className="h-px w-32 bg-[#ff6b00] mb-2"></div>
-               <p className="text-slate-500 max-w-xs font-light">My expertise spans the entire development lifecycle, with a heavy emphasis on architectural integrity.</p>
-            </div>
-          </div>
-
-          <div className="skills-grid grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {skillCategories.map((cat, i) => (
-              <div key={i} className="skill-category space-y-10 p-10 bg-black rounded-[3rem] border border-white/5 hover:border-[#ff6b00]/20 transition-all group">
-                <div className="flex items-center gap-6">
-                  <div className="p-5 bg-white/5 rounded-2xl text-[#ff6b00] group-hover:bg-[#ff6b00] group-hover:text-black transition-all">
-                    <cat.icon size={32} strokeWidth={1.5} />
-                  </div>
-                  <h3 className="text-xl font-bold uppercase tracking-tighter">{cat.title}</h3>
-                </div>
-                
-                <div className="space-y-8">
-                  {cat.skills.map((skill, sIdx) => (
-                    <SkillBar key={sIdx} name={skill.name} level={skill.level} />
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Section 3: Professional Timeline (Modern Vertical) */}
       <section className="py-32 px-6 timeline-section relative">

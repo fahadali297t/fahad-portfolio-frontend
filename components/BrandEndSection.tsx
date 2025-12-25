@@ -83,6 +83,9 @@ const BrandEndSection: React.FC = () => {
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      if (cardRef.current) gsap.killTweensOf(cardRef.current);
+      if (textLeftRef.current) gsap.killTweensOf(textLeftRef.current);
+      if (textRightRef.current) gsap.killTweensOf(textRightRef.current);
     };
   }, []);
 

@@ -101,54 +101,60 @@ const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({ pr
   );
 };
 
-const Projects: React.FC<{ isLandingPage?: boolean }> = () => {
+const Projects: React.FC<{ isLandingPage?: boolean }> = ({ isLandingPage }) => {
   const mainRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const cards = gsap.utils.toArray('.project-card') as HTMLElement[];
-      
-      const scrollHeight = cards.length * 100; 
-      
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: mainRef.current,
-          start: "top top",
-          end: `+=${scrollHeight}%`,
-          pin: true,
-          pinSpacing: true,
-          scrub: 1.2, 
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        }
-      });
-
-      cards.forEach((card, i) => {
-        const inner = card.querySelector('.project-card-inner');
+        // Landing page animations with pin and scrub
+        const cards = gsap.utils.toArray('.project-card') as HTMLElement[];
         
-        if (i > 0) {
-          tl.fromTo(card, 
-            { y: "110%", opacity: 0 },
-            { y: "0%", opacity: 1, ease: "none" },
-            i
-          );
-        }
+        const scrollHeight = cards.length * 100; 
+        
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: mainRef.current,
+            start: "top top",
+            end: `+=${scrollHeight}%`,
+            pin: true,
+            pinSpacing: true,
+            scrub: 1.2, 
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          }
+        });
 
-        if (i < cards.length - 1) {
-          tl.to(inner, {
-            scale: 0.9,
-            opacity: 0.25,
-            y: -60,
-            filter: "blur(2px)",
-            ease: "none"
-          }, i + 0.5);
-        }
-      });
+        cards.forEach((card, i) => {
+          const inner = card.querySelector('.project-card-inner');
+          
+          if (i > 0) {
+            tl.fromTo(card, 
+              { y: "110%", opacity: 0 },
+              { y: "0%", opacity: 1, ease: "none" },
+              i
+            );
+          }
+
+          if (i < cards.length - 1) {
+            tl.to(inner, {
+              scale: 0.9,
+              opacity: 0.25,
+              y: -60,
+              filter: "blur(2px)",
+              ease: "none"
+            }, i + 0.5);
+          }
+        });
 
     }, mainRef);
 
-    return () => ctx.revert();
-  }, []);
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.refresh();
+      ScrollTrigger.clearScrollMemory();
+      ctx.revert();
+    };
+  }, [isLandingPage]);
 
   return (
     <section ref={mainRef} className="relative bg-black min-h-screen overflow-hidden z-40">

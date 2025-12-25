@@ -27,7 +27,14 @@ const Services: React.FC = () => {
         }
       });
     }, containerRef);
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      // Kill any ongoing GSAP animations on the image refs
+      imageRefs.current.forEach(img => {
+        if (img) gsap.killTweensOf(img);
+      });
+    };
   }, []);
 
   const handleMouseMove = (e: React.MouseEvent, index: number) => {

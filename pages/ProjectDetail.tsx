@@ -75,6 +75,7 @@ const ProjectDetail: React.FC = () => {
     return () => {
       ctx.revert();
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      if (heroImgRef.current) gsap.killTweensOf(heroImgRef.current);
     };
   }, [project]);
 

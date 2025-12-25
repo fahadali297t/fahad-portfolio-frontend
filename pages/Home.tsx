@@ -65,6 +65,9 @@ const Home: React.FC = () => {
     return () => {
       ctx.revert();
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      if (imageScrollRef.current) {
+        gsap.killTweensOf(imageScrollRef.current);
+      }
     };
   }, []);
 
