@@ -10,8 +10,10 @@ import {
   Layers,
   Shield,
   Zap,
+  Terminal,
+  Server,
+  Activity,
   MousePointer2,
-  Play,
 } from "lucide-react";
 import { SERVICES } from "../constants";
 
@@ -22,27 +24,86 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({
   index,
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
+  const glowRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = cardRef.current;
     if (!el) return;
 
+    // Entrance Animation on Scroll
     gsap.fromTo(
       el,
-      { opacity: 0, y: 50 },
+      {
+        opacity: 0,
+        y: 100,
+        rotateX: -15,
+        scale: 0.9,
+      },
       {
         opacity: 1,
         y: 0,
-        duration: 1,
+        rotateX: 0,
+        scale: 1,
+        duration: 1.2,
         delay: index * 0.1,
-        ease: "power3.out",
+        ease: "expo.out",
         scrollTrigger: {
           trigger: el,
           start: "top 90%",
+          toggleActions: "play none none reverse",
         },
       }
     );
   }, [index]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = cardRef.current;
+    const glow = glowRef.current;
+    if (!el || !glow) return;
+
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    // 3D Tilt Effect
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = (y - centerY) / 20;
+    const rotateY = (centerX - x) / 20;
+
+    gsap.to(el, {
+      rotateX: rotateX,
+      rotateY: rotateY,
+      duration: 0.5,
+      ease: "power2.out",
+    });
+
+    // Cursor Follow Glow
+    gsap.to(glow, {
+      left: x,
+      top: y,
+      opacity: 0.15,
+      duration: 0.5,
+    });
+  };
+
+  const handleMouseLeave = () => {
+    const el = cardRef.current;
+    const glow = glowRef.current;
+    if (!el || !glow) return;
+
+    gsap.to(el, {
+      rotateX: 0,
+      rotateY: 0,
+      duration: 0.8,
+      ease: "elastic.out(1, 0.3)",
+    });
+
+    gsap.to(glow, {
+      opacity: 0,
+      duration: 0.5,
+    });
+  };
 
   const IconMap: { [key: string]: any } = {
     Code2: Code2,
@@ -51,69 +112,102 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({
     Layers: Layers,
     Shield: Shield,
     Zap: Zap,
+    Server: Server,
+    Activity: Activity,
   };
 
   const IconComponent = IconMap[service.icon] || Code2;
-  const titleParts = service.title.split(" ");
 
   return (
     <Link
       to={`/services/${service.id}`}
-      className="group block h-full outline-none"
+      className="group block perspective-1000"
     >
       <div
         ref={cardRef}
-        className="relative h-full flex flex-col p-10 bg-[#0a0a0a] border border-white/5 rounded-[1rem] lg:rounded-[3rem] transition-all duration-700 group-hover:border-[#ff6b00]/40 group-hover:bg-white/[0.02] shadow-2xl overflow-hidden"
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        className="relative h-full flex flex-col p-8 md:p-12 bg-[#080808] border border-white/5 rounded-[2.5rem] transition-colors duration-500 hover:border-[#ff6b00]/30 overflow-hidden shadow-2xl"
+        style={{ transformStyle: "preserve-3d" }}
       >
-        {/* Background Image Overlay on Hover */}
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-1000 pointer-events-none">
-          <img
-            src={service.bgImage}
-            alt=""
-            className="w-full h-full object-cover grayscale scale-110 group-hover:scale-100 transition-transform duration-1000"
-          />
+        {/* Interactive Mouse Glow */}
+        <div
+          ref={glowRef}
+          className="absolute -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#ff6b00] blur-[100px] rounded-full pointer-events-none opacity-0 transition-opacity duration-500 z-0"
+        />
+
+        {/* Background Decorative Pattern */}
+        <div className="absolute inset-0 opacity-[0.02] pointer-events-none group-hover:opacity-[0.05] transition-opacity">
+          <div className="grid grid-cols-6 h-full border-x border-white/10">
+            {[...Array(5)].map((_, i) => (
+              <div key={i} className="border-r border-white/10 h-full"></div>
+            ))}
+          </div>
         </div>
 
-        <div className="relative z-10 space-y-8 flex flex-col h-full">
-          {/* Icon Header */}
+        <div
+          className="relative z-10 space-y-10 flex flex-col h-full"
+          style={{ transform: "translateZ(50px)" }}
+        >
+          {/* Header */}
           <div className="flex justify-between items-start">
-            <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-[#ff6b00] group-hover:bg-[#ff6b00] group-hover:text-black transition-all duration-500 group-hover:scale-110 shadow-lg group-hover:shadow-[#ff6b00]/20">
-              <IconComponent size={32} strokeWidth={1.5} />
+            <div className="w-20 h-20 bg-white/5 rounded-3xl flex items-center justify-center text-[#ff6b00] group-hover:bg-[#ff6b00] group-hover:text-black transition-all duration-500 shadow-xl group-hover:shadow-[#ff6b00]/20">
+              <IconComponent size={40} strokeWidth={1.5} />
             </div>
-            <span className="text-[10px] font-mono text-slate-700 font-bold uppercase tracking-widest group-hover:text-white/40 transition-colors">
-              0{index + 1}
-            </span>
+            <div className="text-right">
+              <span className="block text-[10px] font-mono text-slate-700 font-bold uppercase tracking-[0.3em] group-hover:text-white/40 transition-colors">
+                Module // 0{index + 1}
+              </span>
+              <span className="block text-[8px] font-mono text-slate-800 uppercase tracking-widest mt-1">
+                Status: Operational
+              </span>
+            </div>
           </div>
 
-          {/* Service Title */}
-          <div className="space-y-4">
-            <h3 className="text-3xl md:text-4xl font-black tracking-tighter uppercase leading-none group-hover:text-[#ff6b00] transition-colors duration-500">
-              {titleParts[0]} <br />
-              <span className="text-xl md:text-2xl font-serif italic font-light text-slate-500 group-hover:text-white transition-colors duration-500 lowercase">
-                {titleParts.slice(1).join(" ")}
+          {/* Title & Desc */}
+          <div className="space-y-6">
+            <h3 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-[0.85] group-hover:text-[#ff6b00] transition-colors duration-500">
+              {service.title.split(" ")[0]} <br />
+              <span className="text-2xl md:text-3xl font-serif italic font-light text-slate-600 group-hover:text-white transition-colors duration-500 lowercase">
+                {service.title.split(" ").slice(1).join(" ")}
               </span>
             </h3>
-            <p className="text-slate-500 text-base leading-relaxed font-light line-clamp-3 group-hover:text-slate-300 transition-colors duration-500">
+            <p className="text-slate-500 text-base leading-relaxed font-light group-hover:text-slate-300 transition-colors duration-500 max-w-sm">
               {service.description}
             </p>
           </div>
 
+          {/* Detailed Features (Brief) */}
+          <div className="grid grid-cols-2 gap-4 pt-6 opacity-40 group-hover:opacity-100 transition-opacity duration-500">
+            {service.capabilities.slice(0, 2).map((cap: any, i: number) => (
+              <div key={i} className="space-y-1">
+                <span className="block text-[8px] font-mono font-bold text-[#ff6b00] uppercase tracking-widest">
+                  {cap.title}
+                </span>
+                <div className="h-0.5 w-8 bg-white/10 rounded-full group-hover:bg-[#ff6b00]/30 transition-colors"></div>
+              </div>
+            ))}
+          </div>
+
           {/* Footer Action */}
-          <div className="mt-auto pt-10 flex justify-between items-center">
-            <div className="flex gap-2">
+          <div className="mt-auto pt-10 flex justify-between items-end">
+            <div className="flex flex-wrap gap-2">
               {service.relatedTech
-                .slice(0, 2)
+                .slice(0, 3)
                 .map((tech: string, i: number) => (
                   <span
                     key={i}
-                    className="text-[9px] font-mono text-slate-700 uppercase tracking-widest border border-white/5 px-2 py-1 rounded-md group-hover:text-[#ff6b00] group-hover:border-[#ff6b00]/20 transition-all"
+                    className="text-[9px] font-mono text-slate-700 uppercase tracking-widest bg-white/5 px-2 py-1 rounded border border-white/5 group-hover:text-[#ff6b00] group-hover:border-[#ff6b00]/10 transition-all"
                   >
                     {tech}
                   </span>
                 ))}
             </div>
-            <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 group-hover:bg-[#ff6b00] group-hover:text-black group-hover:rotate-45 transition-all duration-500">
-              <ArrowUpRight size={20} />
+            <div className="relative group/btn">
+              <div className="absolute inset-0 bg-[#ff6b00] blur-xl opacity-0 group-hover:opacity-30 transition-opacity"></div>
+              <div className="relative w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 group-hover:bg-[#ff6b00] group-hover:text-black group-hover:rotate-45 transition-all duration-500">
+                <ArrowUpRight size={24} strokeWidth={2.5} />
+              </div>
             </div>
           </div>
         </div>
@@ -124,17 +218,46 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({
 
 const Services: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    const ctx = gsap.context(() => {
+      // Background Parallex
+      gsap.to(".bg-decoration", {
+        y: -100,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: true,
+        },
+      });
+
+      // Header Stagger
+      gsap.from(".header-reveal", {
+        y: 50,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 1,
+        ease: "power4.out",
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
   }, []);
 
   return (
     <div
       ref={containerRef}
-      className="bg-black text-white min-h-screen pt-24 pb-40 px-6"
+      className="bg-black text-white min-h-screen pt-24 pb-40 px-6 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto space-y-24">
+      {/* Immersive Background Decorations */}
+      <div className="bg-decoration fixed top-[-10%] left-[-10%] w-[50vw] aspect-square bg-[#ff6b00]/5 blur-[180px] rounded-full pointer-events-none z-0"></div>
+      <div className="bg-decoration fixed bottom-[-10%] right-[-10%] w-[30vw] aspect-square bg-orange-900/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
+
+      <div className="max-w-7xl mx-auto space-y-32">
         {/* Page Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-24 gap-8">
           <div className="space-y-2">
@@ -157,41 +280,90 @@ const Services: React.FC = () => {
             </button> */}
           </div>
         </div>
-
-        {/* Services Card Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 md:gap-12 relative z-10">
+        {/* Services Grid with Custom Scroll Animations */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 relative z-10">
           {SERVICES.map((service, index) => (
             <ServiceCard key={service.id} service={service} index={index} />
           ))}
         </div>
+        {/* Philosophy Callout with Floating Element */}
+        <section className="relative py-40 text-center space-y-16">
+          <div className="bg-decoration absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#ff6b00]/5 blur-[120px] rounded-full pointer-events-none"></div>
 
-        {/* Philosophy Callout */}
-        <section className="pt-40 text-center space-y-12">
-          <div className="w-20 h-20 mx-auto bg-white/5 rounded-3xl border border-white/10 flex items-center justify-center text-[#ff6b00] rotate-12 hover:rotate-0 transition-transform duration-700">
-            <Zap size={40} />
+          <div className="relative group inline-block">
+            <div className="absolute -inset-8 bg-[#ff6b00]/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div className="relative w-24 h-24 mx-auto bg-white/5 rounded-[2.5rem] border border-white/10 flex items-center justify-center text-[#ff6b00] rotate-12 group-hover:rotate-0 transition-all duration-700 shadow-2xl">
+              <Terminal size={48} strokeWidth={1} />
+            </div>
           </div>
-          <div className="space-y-6">
-            <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-[0.9]">
+
+          <div className="space-y-8 relative">
+            <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.9]">
               ENGINEERED FOR <br />{" "}
               <span className="text-[#ff6b00] font-serif italic font-light lowercase">
-                impact
+                maximum impact
               </span>
             </h2>
-            <p className="text-xl text-slate-500 font-light max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-slate-500 font-light max-w-3xl mx-auto leading-relaxed">
               I don't just ship features; I deliver technical artifacts that
-              serve as the foundation for multi-million dollar platforms.
+              serve as the high-stakes foundation for multi-million dollar
+              digital platforms.
             </p>
           </div>
-          <div className="pt-8">
+
+          <div className="pt-12 flex flex-col md:flex-row items-center justify-center gap-8">
             <Link
               to="/contact"
-              className="px-10 py-6 bg-[#ff6b00] text-black rounded-full font-black text-xl hover:scale-105 transition-all shadow-[0_0_50px_rgba(255,107,0,0.2)]"
+              className="group relative px-16 py-8 bg-[#ff6b00] text-black rounded-full font-black text-2xl hover:scale-105 transition-all shadow-[0_0_60px_rgba(255,107,0,0.2)] active:scale-95"
             >
-              Start Architecting
+              <span className="relative z-10">Initialize Architecture</span>
+              <div className="absolute inset-0 rounded-full border-4 border-[#ff6b00] scale-100 group-hover:scale-110 opacity-0 group-hover:opacity-20 transition-all duration-500"></div>
+            </Link>
+            <Link
+              to="/projects"
+              className="px-12 py-8 border border-white/20 rounded-full font-bold text-lg hover:bg-white/5 transition-all uppercase tracking-widest"
+            >
+              View Artifacts
             </Link>
           </div>
         </section>
+        {/* Engineering Principles Ribbon */}
+        <section className="py-20 border-y border-white/5 overflow-hidden">
+          <div className="flex gap-20 animate-marquee whitespace-nowrap">
+            {[...Array(10)].map((_, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-8 text-[10px] font-mono text-slate-700 uppercase tracking-[0.5em] font-bold"
+              >
+                <span>Scalable Infrastructure</span>
+                <div className="w-2 h-2 rounded-full bg-[#ff6b00]"></div>
+                <span>Secure Protocol</span>
+                <div className="w-2 h-2 rounded-full bg-slate-800"></div>
+                <span>High Availability</span>
+                <div className="w-2 h-2 rounded-full bg-[#ff6b00]"></div>
+                <span>Elastic Compute</span>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
+
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          animation: marquee 30s linear infinite;
+        }
+        .perspective-1000 {
+          perspective: 1000px;
+        }
+      `,
+        }}
+      />
     </div>
   );
 };
