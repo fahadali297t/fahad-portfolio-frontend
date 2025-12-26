@@ -66,14 +66,14 @@ const BrandEndSection: React.FC = () => {
 
       <div className="relative flex items-center max-w-[90vw] justify-center w-full max-w-7xl mx-auto px-4">
         {/* Large Centered Title */}
-        <h2 className="text-[10vw] sm:text-[12vw] md:text-[7vw] font-black tracking-tighter leading-none flex items-center select-none pointer-events-none relative z-0">
+        <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tighter leading-none flex items-center select-none pointer-events-none relative z-0">
           <span
             ref={textLeftRef}
             className="text-white inline-block transition-transform duration-1000 ease-out"
           >
             MICHE
           </span>
-          <span className="w-[12vw] sm:w-[10vw] md:w-[8vw]"></span>
+          <span className="w-8 sm:w-12 md:w-16 lg:w-20 xl:w-24"></span>
           <span
             ref={textRightRef}
             className="text-orange-500 inline-block transition-transform duration-1000 ease-out"
@@ -87,7 +87,7 @@ const BrandEndSection: React.FC = () => {
           ref={cardRef}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          className="absolute z-20 w-[100px] sm:w-[120px] md:w-[150px] lg:w-[200px] aspect-[3/4] rounded-[2rem] bg-neutral-900 border-[8px] border-neutral-800 shadow-[0_0_80px_rgba(255,107,0,0.15)] overflow-hidden cursor-pointer origin-center transition-transform duration-1000 ease-out"
+          className="absolute z-20 w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 aspect-[3/4] rounded-[2rem] bg-neutral-900 border-[8px] border-neutral-800 shadow-[0_0_80px_rgba(255,107,0,0.15)] overflow-hidden cursor-pointer origin-center transition-transform duration-1000 ease-out"
           style={{ transform: "rotate(-4deg)" }}
         >
           {/* Inner Glow */}
