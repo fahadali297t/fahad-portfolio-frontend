@@ -38,7 +38,7 @@ const TechStack: React.FC = () => {
       
       items.forEach((item, i) => {
         // Create a distinct "float" range for each item
-        const movement = (i % 2 === 0 ? 80 : 120) + (Math.random() * 50);
+        const movement = (i % 2 === 0 ? 80 : 130) + (Math.random() * 50);
         
         gsap.fromTo(item, 
           { y: -movement / 2, opacity: 0.2 },

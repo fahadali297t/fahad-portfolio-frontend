@@ -145,11 +145,11 @@ const Services: React.FC = () => {
               <div className="h-px flex-grow bg-white/10"></div>
             </div>
             <h1 className="text-6xl  md:text-[8vw] font-black tracking-tighter uppercase leading-[0.8]">
-              SELECTED <br />
+              SERVICES  <br />
             </h1>
-            <h1 className="text-6xl text-right md:text-[8vw] font-black tracking-tighter uppercase leading-[0.8]">
-              <span className="ml-4"> SERVICES</span>
-            </h1>
+            {/* <h1 className="text-6xl text-right md:text-[8vw] font-black tracking-tighter uppercase leading-[0.8]">
+              <span className="ml-4"> PROVIDE</span>
+            </h1> */}
             <p className="text-xl md:text-3xl text-slate-500 font-light leading-relaxed max-w-2xl">
               High-performance backend ecosystems designed for massive scale and
               uncompromising technical integrity.

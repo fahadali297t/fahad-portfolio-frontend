@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight } from 'lucide-react';
 import About from './About';
-import Projects from './Projects';
+import Projects from './ProjectsPage';
 import Contact from './Contact';
 import TechStack from '../components/TechStack';
 import Testimonials from '../components/Testimonials';
