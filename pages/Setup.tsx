@@ -327,7 +327,7 @@ const Setup: React.FC = () => {
         </section>
 
         {/* MacBook Viewer Section */}
-        <MacBookViewer />
+        {/* <MacBookViewer /> */}
       </div>
     </div>
   )
