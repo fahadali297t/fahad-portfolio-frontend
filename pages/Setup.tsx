@@ -37,7 +37,7 @@ const SpotLight = "spotLight" as any
 const PointLight = "pointLight" as any
 
 // High-quality community-hosted MacBook Pro GLB model
-const MACBOOK_MODEL_URL = "./models/macbook_pro_14_space_gray.glb";
+const MACBOOK_MODEL_URL = "/models/macbook_pro_14_space_gray.glb";
 
 const MacbookModel: React.FC<{ mouseX: number; mouseY: number }> = ({ mouseX, mouseY }) => {
   const group = useRef<THREE.Group>(null)
