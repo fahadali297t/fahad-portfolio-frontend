@@ -40,24 +40,31 @@ const Blogs: React.FC = () => {
   return (
     <section ref={sectionRef} className="bg-black py-32 px-4 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        
         {/* Header from provided image */}
-        <div className="mb-20">
-          <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-none text-white">
-            RESOURCES & <br/>
-            <span className="text-[#ff6b00] font-serif italic font-light lowercase">guides</span>
-          </h2>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-24 gap-8">
+          <div className="space-y-2">
+            <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9]">
+              RESOURCES
+            </h2>
+            <h2 className="text-4xl md:text-7xl font-serif italic text-[#ff6b00] leading-[0.9] tracking-tight">
+              & GUIDES
+            </h2>
+          </div>
         </div>
 
         {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
           {BLOG_POSTS.map((blog) => (
-            <Link to={`/blog/${blog.id}`} key={blog.id} className="blog-card group cursor-pointer block">
+            <Link
+              to={`/blog/${blog.id}`}
+              key={blog.id}
+              className="blog-card group cursor-pointer block"
+            >
               {/* Image with rounded corners as in visual */}
-              <div className="relative aspect-[16/10] rounded-[2.5rem] overflow-hidden mb-8 border border-white/5">
-                <img 
-                  src={blog.image} 
-                  alt={blog.title} 
+              <div className="relative aspect-[16/10] rounded-[1rem] lg:rounded-[3rem] overflow-hidden mb-8 border border-white/5">
+                <img
+                  src={blog.image}
+                  alt={blog.title}
                   className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -68,7 +75,9 @@ const Blogs: React.FC = () => {
                 <span className="px-4 py-1.5 bg-white/10 rounded-full text-[10px] font-bold tracking-widest text-slate-400 group-hover:bg-[#ff6b00] group-hover:text-black transition-all">
                   {blog.category}
                 </span>
-                <span className="text-slate-500 text-xs">• {blog.readTime}</span>
+                <span className="text-slate-500 text-xs">
+                  • {blog.readTime}
+                </span>
               </div>
 
               {/* Title */}
@@ -82,11 +91,15 @@ const Blogs: React.FC = () => {
         {/* See All Button */}
         <div className="mt-24 flex justify-center">
           <button className="group flex items-center gap-4 px-10 py-4 border border-white/20 rounded-full font-bold text-white hover:bg-white/5 transition-all">
-            <span className="text-sm uppercase tracking-widest">See All Blogs</span>
-            <ArrowUpRight size={20} className="group-hover:rotate-45 transition-transform" />
+            <span className="text-sm uppercase tracking-widest">
+              See All Blogs
+            </span>
+            <ArrowUpRight
+              size={20}
+              className="group-hover:rotate-45 transition-transform"
+            />
           </button>
         </div>
-
       </div>
     </section>
   );

@@ -218,83 +218,204 @@ export const SERVICES: EnhancedService[] = [
   {
     id: 1,
     title: "API Architecture",
-    description: "High-performance REST & GraphQL endpoints designed for scale.",
+    description:
+      "High-performance REST & GraphQL endpoints designed for scale.",
     icon: "Code2",
-    bgImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=1200",
-    fullDescription: "In the modern digital landscape, your API is the foundation of your product. I design and build high-performance, secure, and developer-friendly APIs using Laravel and GraphQL. My focus is on creating extensible architectures that handle massive traffic while maintaining consistent 50ms-100ms response times.",
+    bgImage:
+      "https://images.unsplash.com/photo-1690585703267-de31ea667ef0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXBpfGVufDB8fDB8fHww",
+    fullDescription:
+      "In the modern digital landscape, your API is the foundation of your product. I design and build high-performance, secure, and developer-friendly APIs using Laravel and GraphQL. My focus is on creating extensible architectures that handle massive traffic while maintaining consistent 50ms-100ms response times.",
     capabilities: [
-      { title: "GraphQL Design", desc: "Complex data fetching with Apollo and Lighthouse.", icon: Zap },
-      { title: "OAuth2 & JWT", desc: "Enterprise-grade authentication and authorization.", icon: ShieldCheck },
-      { title: "Rate Limiting", desc: "Advanced protection against DDoS and abuse.", icon: ShieldCheck },
-      { title: "Documentation", desc: "Auto-generated, interactive Swagger/OpenAPI docs.", icon: Terminal }
+      {
+        title: "GraphQL Design",
+        desc: "Complex data fetching with Apollo and Lighthouse.",
+        icon: Zap,
+      },
+      {
+        title: "OAuth2 & JWT",
+        desc: "Enterprise-grade authentication and authorization.",
+        icon: ShieldCheck,
+      },
+      {
+        title: "Rate Limiting",
+        desc: "Advanced protection against DDoS and abuse.",
+        icon: ShieldCheck,
+      },
+      {
+        title: "Documentation",
+        desc: "Auto-generated, interactive Swagger/OpenAPI docs.",
+        icon: Terminal,
+      },
     ],
     process: [
-      { step: "01", title: "Endpoint Mapping", desc: "Identifying all data requirements and relationship structures." },
-      { step: "02", title: "Schema Design", desc: "Creating optimized JSON/GraphQL schemas for frontend efficiency." },
-      { step: "03", title: "Implementation", desc: "TDD-based development with 100% contract testing coverage." }
+      {
+        step: "01",
+        title: "Endpoint Mapping",
+        desc: "Identifying all data requirements and relationship structures.",
+      },
+      {
+        step: "02",
+        title: "Schema Design",
+        desc: "Creating optimized JSON/GraphQL schemas for frontend efficiency.",
+      },
+      {
+        step: "03",
+        title: "Implementation",
+        desc: "TDD-based development with 100% contract testing coverage.",
+      },
     ],
-    relatedTech: ["Laravel", "Swoole", "Redis", "Postman", "Docker"]
+    relatedTech: ["Laravel", "Swoole", "Redis", "Postman", "Docker"],
   },
   {
     id: 2,
     title: "Database Design",
     description: "Complex schema modeling and high-stakes query optimization.",
     icon: "Database",
-    bgImage: "https://images.unsplash.com/photo-1544383023-53f0c670710a?auto=format&fit=crop&q=80&w=1200",
-    fullDescription: "Data is your most valuable asset. I specialize in designing normalized, high-integrity database schemas that scale. Whether it's managing millions of rows in PostgreSQL or optimizing complex MySQL joins, I ensure your data layer is the strongest part of your application.",
+    bgImage:
+      "https://plus.unsplash.com/premium_photo-1681487942927-e1a2786e6036?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZGF0YWJhc2V8ZW58MHx8MHx8fDA%3D",
+    fullDescription:
+      "Data is your most valuable asset. I specialize in designing normalized, high-integrity database schemas that scale. Whether it's managing millions of rows in PostgreSQL or optimizing complex MySQL joins, I ensure your data layer is the strongest part of your application.",
     capabilities: [
-      { title: "Schema Modeling", desc: "Third-normal form normalization and logical design.", icon: Layers },
-      { title: "Query Profiling", desc: "Deep analysis of slow queries and bottleneck removal.", icon: Search },
-      { title: "Indexing Strategy", desc: "Precision B-Tree and GIST indexing for search speed.", icon: Zap },
-      { title: "Data Integrity", desc: "Atomic transactions and strict constraint enforcement.", icon: ShieldCheck }
+      {
+        title: "Schema Modeling",
+        desc: "Third-normal form normalization and logical design.",
+        icon: Layers,
+      },
+      {
+        title: "Query Profiling",
+        desc: "Deep analysis of slow queries and bottleneck removal.",
+        icon: Search,
+      },
+      {
+        title: "Indexing Strategy",
+        desc: "Precision B-Tree and GIST indexing for search speed.",
+        icon: Zap,
+      },
+      {
+        title: "Data Integrity",
+        desc: "Atomic transactions and strict constraint enforcement.",
+        icon: ShieldCheck,
+      },
     ],
     process: [
-      { step: "01", title: "Data Audit", desc: "Analyzing current data flows and identifying redundancies." },
-      { step: "02", title: "Logical Design", desc: "Building ER diagrams and defining entity relationships." },
-      { step: "03", title: "Optimization", desc: "Fine-tuning buffers, caches, and query execution plans." }
+      {
+        step: "01",
+        title: "Data Audit",
+        desc: "Analyzing current data flows and identifying redundancies.",
+      },
+      {
+        step: "02",
+        title: "Logical Design",
+        desc: "Building ER diagrams and defining entity relationships.",
+      },
+      {
+        step: "03",
+        title: "Optimization",
+        desc: "Fine-tuning buffers, caches, and query execution plans.",
+      },
     ],
-    relatedTech: ["PostgreSQL", "MySQL", "Redis", "Eloquent", "AWS Aurora"]
+    relatedTech: ["PostgreSQL", "MySQL", "Redis", "Eloquent", "AWS Aurora"],
   },
   {
     id: 3,
     title: "Cloud DevOps",
     description: "Kubernetes, Docker, and seamless CI/CD automation pipelines.",
     icon: "Cpu",
-    bgImage: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?auto=format&fit=crop&q=80&w=1200",
-    fullDescription: "Code only provides value when it's live. I build robust cloud infrastructure that ensures your Laravel apps are resilient, scalable, and easy to deploy. From containerization to automated horizontal scaling on AWS, I handle the operational heavy lifting.",
+    bgImage:
+      "https://images.unsplash.com/photo-1667984390527-850f63192709?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2xvdWQlMjBjb21wdXRpbmd8ZW58MHx8MHx8fDA%3D",
+    fullDescription:
+      "Code only provides value when it's live. I build robust cloud infrastructure that ensures your Laravel apps are resilient, scalable, and easy to deploy. From containerization to automated horizontal scaling on AWS, I handle the operational heavy lifting.",
     capabilities: [
-      { title: "Dockerization", desc: "Production-ready, multi-stage Docker builds.", icon: Server },
-      { title: "CI/CD Pipelines", desc: "Automated testing and deployment via GitHub Actions.", icon: Zap },
-      { title: "AWS Management", desc: "Architecting EC2, RDS, and S3 for high availability.", icon: Globe },
-      { title: "Monitoring", desc: "Real-time logging and alerting with ELK/Sentry.", icon: Search }
+      {
+        title: "Dockerization",
+        desc: "Production-ready, multi-stage Docker builds.",
+        icon: Server,
+      },
+      {
+        title: "CI/CD Pipelines",
+        desc: "Automated testing and deployment via GitHub Actions.",
+        icon: Zap,
+      },
+      {
+        title: "AWS Management",
+        desc: "Architecting EC2, RDS, and S3 for high availability.",
+        icon: Globe,
+      },
+      {
+        title: "Monitoring",
+        desc: "Real-time logging and alerting with ELK/Sentry.",
+        icon: Search,
+      },
     ],
     process: [
-      { step: "01", title: "Infra Audit", desc: "Reviewing current server setups and identifying risks." },
-      { step: "02", title: "Containerization", desc: "Standardizing environments for dev, stage, and prod." },
-      { step: "03", title: "Deployment Plan", desc: "Setting up blue-green or canary release strategies." }
+      {
+        step: "01",
+        title: "Infra Audit",
+        desc: "Reviewing current server setups and identifying risks.",
+      },
+      {
+        step: "02",
+        title: "Containerization",
+        desc: "Standardizing environments for dev, stage, and prod.",
+      },
+      {
+        step: "03",
+        title: "Deployment Plan",
+        desc: "Setting up blue-green or canary release strategies.",
+      },
     ],
-    relatedTech: ["AWS", "GitHub Actions", "Docker", "Terraform", "Forge"]
+    relatedTech: ["AWS", "GitHub Actions", "Docker", "Terraform", "Forge"],
   },
   {
     id: 4,
     title: "Scalable Systems",
     description: "Distributed architectures designed for extreme high traffic.",
     icon: "Layers",
-    bgImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1200",
-    fullDescription: "Success brings traffic, and traffic brings challenges. I build distributed systems that grow with your user base. By leveraging message brokers, microservices, and load balancing, I ensure your application never breaks under pressure.",
+    bgImage:
+      "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1200",
+    fullDescription:
+      "Success brings traffic, and traffic brings challenges. I build distributed systems that grow with your user base. By leveraging message brokers, microservices, and load balancing, I ensure your application never breaks under pressure.",
     capabilities: [
-      { title: "Microservices", desc: "Decoupling logic for independent scaling and failure.", icon: Cpu },
-      { title: "Message Queues", desc: "Async processing with RabbitMQ or Amazon SQS.", icon: Zap },
-      { title: "Load Balancing", desc: "Traffic distribution via Nginx or AWS ELB.", icon: Globe },
-      { title: "Caching Layers", desc: "Distributed caching strategies with Redis Clusters.", icon: Database }
+      {
+        title: "Microservices",
+        desc: "Decoupling logic for independent scaling and failure.",
+        icon: Cpu,
+      },
+      {
+        title: "Message Queues",
+        desc: "Async processing with RabbitMQ or Amazon SQS.",
+        icon: Zap,
+      },
+      {
+        title: "Load Balancing",
+        desc: "Traffic distribution via Nginx or AWS ELB.",
+        icon: Globe,
+      },
+      {
+        title: "Caching Layers",
+        desc: "Distributed caching strategies with Redis Clusters.",
+        icon: Database,
+      },
     ],
     process: [
-      { step: "01", title: "Bottleneck Analysis", desc: "Identifying single points of failure in architecture." },
-      { step: "02", title: "Decoupling", desc: "Breaking monolithic parts into manageable services." },
-      { step: "03", title: "Stress Testing", desc: "Simulating peak load to verify scaling triggers." }
+      {
+        step: "01",
+        title: "Bottleneck Analysis",
+        desc: "Identifying single points of failure in architecture.",
+      },
+      {
+        step: "02",
+        title: "Decoupling",
+        desc: "Breaking monolithic parts into manageable services.",
+      },
+      {
+        step: "03",
+        title: "Stress Testing",
+        desc: "Simulating peak load to verify scaling triggers.",
+      },
     ],
-    relatedTech: ["RabbitMQ", "Redis", "Kubernetes", "Octane", "Microservices"]
-  }
+    relatedTech: ["RabbitMQ", "Redis", "Kubernetes", "Octane", "Microservices"],
+  },
 ];
 
 export const SKILLS: Skill[] = [

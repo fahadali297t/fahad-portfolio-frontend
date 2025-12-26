@@ -61,7 +61,7 @@ const Experience: React.FC = () => {
             </h2>
           </div>
           
-          <div className="flex gap-4">
+          {/* <div className="flex gap-4">
             <button className="flex items-center gap-3 px-8 py-3 bg-white text-black rounded-full font-bold hover:scale-105 transition-transform">
               <span>Hire me</span>
               <MousePointer2 size={18} />
@@ -70,7 +70,7 @@ const Experience: React.FC = () => {
               <span>Watch Video</span>
               <Play size={18} fill="currentColor" />
             </button>
-          </div>
+          </div> */}
         </div>
 
         {/* List Section */}

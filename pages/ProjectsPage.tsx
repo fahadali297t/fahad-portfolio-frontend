@@ -16,12 +16,12 @@ const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({
       className="project-card absolute inset-0 w-full h-full flex items-center justify-center px-4 py-8 md:p-6"
       style={{ zIndex: index + 1 }}
     >
-      <div className="project-card-inner relative w-full max-w-6xl bg-[#121212] rounded-[2rem] md:rounded-[3rem] border border-white/10 shadow-[0_0_100px_rgba(0,0,0,0.6)] p-6 md:p-10 lg:p-12 overflow-hidden flex flex-col lg:flex-row gap-6 lg:gap-12 items-center">
+      <div className="project-card-inner relative w-full max-w-6xl bg-[#121212] rounded-[1rem] md:rounded-[3rem] border border-white/10 shadow-[0_0_100px_rgba(0,0,0,0.6)] p-6 md:p-10 lg:p-12 overflow-hidden flex flex-col lg:flex-row gap-6 lg:gap-12 items-center">
         {/* Decorative background glow */}
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#ff6b00]/5 blur-[120px] rounded-full pointer-events-none"></div>
 
         {/* Left Side: Image */}
-        <div className="w-full lg:w-[45%] aspect-[4/3] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden bg-slate-900 border border-white/5 shadow-2xl shrink-0 group/img relative">
+        <div className="w-full lg:w-[45%] aspect-[4/3] rounded-[1rem] md:rounded-[2rem] overflow-hidden bg-slate-900 border border-white/5 shadow-2xl shrink-0 group/img relative">
           <img
             src={project.image}
             alt={project.title}
@@ -184,7 +184,7 @@ const Projects: React.FC<{ isLandingPage?: boolean }> = ({ isLandingPage }) => {
   return (
     <>
       <div className="relative max-w-[70vw] mx-auto space-y-12">
-        <div className="bg-circle absolute top-[-50%] right-[-10%] w-[40vw] aspect-square bg-[#ff6b00]/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
+        <div className="bg-circle absolute top-[-50%] right-[-10%] w-[40vw] aspect-square  blur-[150px] rounded-full pointer-events-none z-0"></div>
 
         <div className="relative z-10 space-y-6 max-w-7xl">
           <div className="flex items-center gap-4">

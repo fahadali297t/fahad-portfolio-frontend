@@ -10,6 +10,8 @@ import {
   Layers,
   Shield,
   Zap,
+  MousePointer2,
+  Play,
 } from "lucide-react";
 import { SERVICES } from "../constants";
 
@@ -134,26 +136,25 @@ const Services: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto space-y-24">
         {/* Page Header */}
-        <div className="relative space-y-12">
-          <div className="bg-circle absolute top-[-50%] right-[-10%] w-[40vw] aspect-square bg-[#ff6b00]/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-24 gap-8">
+          <div className="space-y-2">
+            <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9]">
+              PROFESSIONAL
+            </h2>
+            <h2 className="text-4xl md:text-7xl font-serif italic text-[#ff6b00] leading-[0.9] tracking-tight">
+              SERVICES
+            </h2>
+          </div>
 
-          <div className="relative z-10 space-y-6 max-w-7xl">
-            <div className="flex items-center gap-4">
-              <span className="px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-[9px] font-mono uppercase tracking-[0.5em] text-[#ff6b00] font-bold">
-                The Offering
-              </span>
-              <div className="h-px flex-grow bg-white/10"></div>
-            </div>
-            <h1 className="text-6xl  md:text-[8vw] font-black tracking-tighter uppercase leading-[0.8]">
-              SERVICES  <br />
-            </h1>
-            {/* <h1 className="text-6xl text-right md:text-[8vw] font-black tracking-tighter uppercase leading-[0.8]">
-              <span className="ml-4"> PROVIDE</span>
-            </h1> */}
-            <p className="text-xl md:text-3xl text-slate-500 font-light leading-relaxed max-w-2xl">
-              High-performance backend ecosystems designed for massive scale and
-              uncompromising technical integrity.
-            </p>
+          <div className="flex  gap-4">
+            <button className="flex items-center gap-3 px-8 py-3 bg-white text-black rounded-full font-bold hover:scale-105 transition-transform">
+              <span>Hire me</span>
+              <MousePointer2 size={18} />
+            </button>
+            {/* <button className="flex items-center gap-3 px-8 py-3 border border-white/20 rounded-full font-bold hover:bg-white/5 transition-colors">
+              <span>Watch Video</span>
+              <Play size={18} fill="currentColor" />
+            </button> */}
           </div>
         </div>
 
