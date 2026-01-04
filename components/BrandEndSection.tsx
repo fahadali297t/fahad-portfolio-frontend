@@ -66,7 +66,7 @@ const BrandEndSection: React.FC = () => {
 
       <div className="relative flex items-center max-w-[90vw] justify-center w-full max-w-7xl mx-auto px-4">
         {/* Large Centered Title */}
-        <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tighter leading-none flex items-center select-none pointer-events-none relative z-0">
+        <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[16vw] font-black tracking-tighter leading-none flex items-center select-none pointer-events-none relative z-0">
           <span
             ref={textLeftRef}
             className="text-white inline-block transition-transform duration-1000 ease-out"

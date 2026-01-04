@@ -95,7 +95,7 @@ const ServiceDetail: React.FC = () => {
           <span className="hero-title-part text-[#ff6b00] font-mono text-xs uppercase tracking-[0.6em] block mb-8 font-bold">Specialized Solution</span>
           <h1 className="hero-title-part text-6xl md:text-[9rem] font-black tracking-tighter uppercase leading-[0.8] mb-12">
             {service.title.split(' ')[0]} <br/> 
-            <span className="text-slate-600 font-serif italic font-light lowercase">
+            <span className="text-slate-500 font-serif italic font-light lowercase">
                {service.title.split(' ').slice(1).join(' ')}
             </span>
           </h1>

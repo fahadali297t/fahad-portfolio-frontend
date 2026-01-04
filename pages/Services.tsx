@@ -154,14 +154,14 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({
             <div className="w-20 h-20 bg-white/5 rounded-3xl flex items-center justify-center text-[#ff6b00] group-hover:bg-[#ff6b00] group-hover:text-black transition-all duration-500 shadow-xl group-hover:shadow-[#ff6b00]/20">
               <IconComponent size={40} strokeWidth={1.5} />
             </div>
-            <div className="text-right">
+            {/* <div className="text-right">
               <span className="block text-[10px] font-mono text-slate-700 font-bold uppercase tracking-[0.3em] group-hover:text-white/40 transition-colors">
                 Module // 0{index + 1}
               </span>
               <span className="block text-[8px] font-mono text-slate-800 uppercase tracking-widest mt-1">
                 Status: Operational
               </span>
-            </div>
+            </div> */}
           </div>
 
           {/* Title & Desc */}
