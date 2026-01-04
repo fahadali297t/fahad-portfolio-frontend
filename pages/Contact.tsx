@@ -16,17 +16,17 @@ const Contact: React.FC = () => {
     {
       icon: CalendarDays,
       title: "Call Today",
-      value: "+1 (555) 123-4567"
+      value: "+92 3326067339"
     },
     {
       icon: Mail,
       title: "Email Me",
-      value: "designer@example.com"
+      value: "fahadali297t@gmail.com"
     },
     {
       icon: MapPin,
-      title: "Office location",
-      value: "12273 Dream Avenue, London United Kingdom"
+      title: "location",
+      value: "Lahore Punjab , Pakistan"
     }
   ];
 

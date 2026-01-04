@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SKILLS, TIMELINE, EDUCATION } from '../constants';
 import SkillBar from '../components/SkillBar';
 import { Award, Coffee, Code, BookOpen, Briefcase, Sparkles, Database, Terminal, Shield } from 'lucide-react';
+import Experience from '@/components/Experience';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -124,7 +125,6 @@ const About: React.FC = () => {
 
   return (
     <div ref={containerRef} className="bg-black text-white min-h-screen">
-      
       {/* Section 1: Hero & Bio */}
       <section className="relative pt-40 pb-32 px-6 overflow-hidden">
         {/* Background Atmosphere */}
@@ -135,25 +135,40 @@ const About: React.FC = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
           <div className="lg:col-span-7 space-y-12">
             <div className="space-y-6">
-              <span className="about-header-text inline-block text-[#ff6b00] font-mono text-xs md:text-sm uppercase tracking-[0.5em] font-bold">The Profile</span>
+              <span className="about-header-text inline-block text-[#ff6b00] font-mono text-xs md:text-sm uppercase tracking-[0.5em] font-bold">
+                The Profile
+              </span>
               <h1 className="about-header-text text-6xl md:text-[8rem] font-black tracking-tighter uppercase leading-[0.8]">
-                ARCHITECTING <br/> <span className="text-slate-700 font-serif italic font-light lowercase">digital</span> STRENGTH
+                ARCHITECTING <br />{" "}
+                <span className="text-slate-700 font-serif italic font-light lowercase">
+                  digital
+                </span>{" "}
+                STRENGTH
               </h1>
             </div>
 
             <div className="about-header-text space-y-8 max-w-2xl">
               <p className="text-xl md:text-2xl text-slate-400 font-light leading-relaxed">
-                With a deep focus on <span className="text-white font-medium">Laravel ecosystem</span> and distributed systems, I bridge the gap between complex business logic and high-performance server-side execution.
+                With a deep focus on{" "}
+                <span className="text-white font-medium">
+                  Laravel ecosystem
+                </span>{" "}
+                and distributed systems, I bridge the gap between complex
+                business logic and high-performance server-side execution.
               </p>
-              
+
               <div className="flex flex-wrap gap-8 py-6 border-y border-white/5">
                 <div className="flex items-center gap-4">
                   <div className="p-4 bg-white/5 rounded-2xl text-[#ff6b00]">
                     <Award size={28} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white uppercase tracking-tight">Lead Status</h4>
-                    <p className="text-slate-500 text-xs font-mono">Senior Backend Eng.</p>
+                    <h4 className="font-bold text-white uppercase tracking-tight">
+                      Lead Status
+                    </h4>
+                    <p className="text-slate-500 text-xs font-mono">
+                      Backend Eng.
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -161,8 +176,12 @@ const About: React.FC = () => {
                     <Sparkles size={28} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white uppercase tracking-tight">Laravel Expert</h4>
-                    <p className="text-slate-500 text-xs font-mono">Artisan Certified</p>
+                    <h4 className="font-bold text-white uppercase tracking-tight">
+                      Laravel Expert
+                    </h4>
+                    <p className="text-slate-500 text-xs font-mono">
+                      Certified
+                    </p>
                   </div>
                 </div>
               </div>
@@ -172,19 +191,23 @@ const About: React.FC = () => {
           <div className="lg:col-span-5 about-header-text flex justify-center lg:justify-end">
             <div className="relative group max-w-[440px]">
               <div className="aspect-[4/5] rounded-[3.5rem] overflow-hidden border border-white/10 shadow-2xl transition-all duration-1000 group-hover:scale-[1.03]">
-                <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1200" 
-                  alt="Portrait" 
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1200"
+                  alt="Portrait"
                   className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
               </div>
-              
+
               {/* Floating Stat Badge */}
               <div className="absolute -bottom-10 -right-6 bg-[#ff6b00] p-8 rounded-[2.5rem] shadow-2xl rotate-3 group-hover:rotate-0 transition-transform duration-500">
                 <div className="text-black text-center space-y-1">
-                  <span className="block text-4xl font-black tracking-tighter">7+</span>
-                  <span className="text-[10px] font-bold uppercase tracking-widest leading-none">Years in <br/> Production</span>
+                  <span className="block text-4xl font-black tracking-tighter">
+                    1+
+                  </span>
+                  <span className="text-[10px] font-bold uppercase tracking-widest leading-none">
+                    Years in <br /> Production
+                  </span>
                 </div>
               </div>
             </div>
@@ -192,54 +215,7 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      
-
-      {/* Section 3: Professional Timeline (Modern Vertical) */}
-      <section className="py-32 px-6 timeline-section relative">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-32 space-y-6">
-             <Briefcase className="mx-auto text-[#ff6b00]" size={48} />
-             <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-none">THE <span className="text-[#ff6b00] font-serif italic font-light lowercase">professional</span> JOURNEY</h2>
-             <p className="text-slate-500 font-mono text-xs uppercase tracking-[0.4em]">Chronological Evolution</p>
-          </div>
-
-          <div className="relative">
-            {/* The Unified Central Line */}
-            <div 
-              ref={timelineLineRef}
-              className="absolute left-6 md:left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#ff6b00] via-orange-900 to-transparent origin-top z-0"
-            />
-            
-            <div className="space-y-0">
-              {TIMELINE.map((item, i) => (
-                <TimelineNode key={item.id} item={item} index={i} type="work" />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 4: Academic Foundation (Modern Vertical) */}
-      <section className="py-32 px-6 bg-white/[0.02] border-t border-white/5 relative">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-32 space-y-6">
-             <BookOpen className="mx-auto text-[#ff6b00]" size={48} />
-             <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-none">ACADEMIC <span className="text-[#ff6b00] font-serif italic font-light lowercase">roots</span></h2>
-             <p className="text-slate-500 font-mono text-xs uppercase tracking-[0.4em]">Formal Engineering Education</p>
-          </div>
-
-          <div className="relative">
-            {/* Academic timeline aesthetic line (faded) */}
-            <div className="absolute left-6 md:left-1/2 -translate-x-1/2 top-0 bottom-0 w-[1px] bg-white/10 z-0" />
-            
-            <div className="space-y-0">
-              {EDUCATION.map((item, i) => (
-                <TimelineNode key={item.id} item={item} index={i + 1} type="edu" />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <Experience  />
 
       {/* Philosophy Callout */}
       <section className="py-40 px-6 text-center">
@@ -248,15 +224,23 @@ const About: React.FC = () => {
             <Terminal size={48} />
           </div>
           <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9]">
-            I DON'T JUST WRITE CODE. <br/>
-            <span className="text-[#ff6b00] font-serif italic font-light lowercase">I build engineering legacies.</span>
+            I DON'T JUST WRITE CODE. <br />
+            <span className="text-[#ff6b00] font-serif italic font-light lowercase">
+              I build engineering legacies.
+            </span>
           </h2>
           <p className="text-xl md:text-3xl text-slate-500 font-light leading-relaxed">
-            Every line of code I author is a commitment to scalability, security, and exceptional developer experience. 
+            Every line of code I author is a commitment to scalability,
+            security, and exceptional developer experience.
           </p>
           <div className="pt-12">
-            <button 
-              onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
+            <button
+              onClick={() =>
+                window.scrollTo({
+                  top: document.body.scrollHeight,
+                  behavior: "smooth",
+                })
+              }
               className="px-12 py-5 bg-[#ff6b00] text-black rounded-full font-black text-xl hover:scale-105 transition-all shadow-[0_0_40px_rgba(255,107,0,0.2)]"
             >
               Get in touch
@@ -264,7 +248,6 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
-
     </div>
   );
 };

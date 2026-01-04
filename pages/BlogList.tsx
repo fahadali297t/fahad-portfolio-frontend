@@ -119,7 +119,7 @@ const BlogList: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="bg-black text-white min-h-screen pt-20 sm:pt-24 md:pt-28 pb-20 sm:pb-32 md:pb-40 px-3 sm:px-5 md:px-6 relative overflow-hidden"
+      className="bg-black text-white min-h-screen pt-20 sm:pt-24 md:pt-16 pb-20 sm:pb-32 md:pb-40 px-3 sm:px-5 md:px-6 relative overflow-hidden"
     >
       {/* Decorative Parallax Glows - Pure dark aesthetic as requested */}
       <div className="bg-decoration fixed top-[-10%] left-[-10%] w-[70vw] sm:w-[60vw] aspect-square bg-[#ff6b00]/5 blur-[120px] sm:blur-[180px] md:blur-[200px] rounded-full pointer-events-none z-0"></div>
@@ -132,15 +132,15 @@ const BlogList: React.FC = () => {
             <div className="header-reveal flex items-center gap-2 sm:gap-3 md:gap-4">
               <div className="w-8 sm:w-10 md:w-12 h-px bg-[#ff6b00]"></div>
               <span className="text-[7px] sm:text-[9px] md:text-[10px] font-mono uppercase tracking-[0.3em] sm:tracking-[0.4em] md:tracking-[0.5em] text-[#ff6b00] font-bold">
-                The Technical Ledger
+                
               </span>
             </div>
-            <h1 className="header-reveal text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[9vw] font-black tracking-tighter uppercase leading-[0.85] mix-blend-difference">
+            <h1 className="header-reveal text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[8vw] font-black tracking-tighter uppercase leading-[0.85] mix-blend-difference">
               RESOURCES & <br />
-              <span className="text-slate-800 font-serif italic font-light lowercase">
-                architectural
+              <span className="text-slate-500 font-serif italic font-light lowercase">
+                Guides
               </span>
-              <span className="ml-1.5 sm:ml-2 md:ml-4">GUIDES</span>
+              {/* <span className="ml-1.5 sm:ml-2 md:ml-4">GUIDES</span> */}
             </h1>
             <p className="header-reveal text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-slate-500 font-light leading-relaxed max-w-3xl">
               Deep dives into Laravel internals, distributed systems, and the

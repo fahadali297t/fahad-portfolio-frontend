@@ -16,38 +16,38 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Mock data for demo
 const TIMELINE = [
-  {
-    id: 1,
-    year: "2023-24",
-    title: "Senior Engineer",
-    company: "Tech Corp",
-    description:
-      "Led architecture design and implementation of scalable microservices, improving system performance by 40%.",
-  },
+  // {
+  //   id: 1,
+  //   year: "2023-24",
+  //   title: "Senior Engineer",
+  //   company: "Tech Corp",
+  //   description:
+  //     "Led architecture design and implementation of scalable microservices, improving system performance by 40%.",
+  // },
   {
     id: 2,
-    year: "2021-23",
-    title: "Full Stack Developer",
-    company: "StartupXYZ",
+    year: "April 2025 - Present",
+    title: "Laravel Developer",
+    company: "Apexvim",
     description:
       "Built end-to-end solutions using modern frameworks, delivered 15+ production features.",
   },
   {
     id: 3,
-    year: "2023-25",
-    title: "Laravel Developer",
+    year: "February 2025 - April 2025",
+    title: "Laravel Internee",
     company: "Apexvim",
     description:
-      "Built end-to-end solutions using modern frameworks, delivered 15+ production features.",
+      "Supported senior engineers in building robust middleware, authentication flows, and unit testing suites for e-commerce clients.",
   },
 ];
 
 const EDUCATION = [
   {
     id: 1,
-    year: "2017-21",
-    title: "BS Computer Science",
-    company: "University Name",
+    year: "2022-26",
+    title: "BS Sofware Engineering",
+    company: "University of Sargodha",
     description:
       "Focused on distributed systems, algorithms, and software engineering principles.",
   },
@@ -167,12 +167,12 @@ const TimelineNode = ({ item, index, isWork }) => {
                   {item.year}
                 </span>
               </div>
-              <div className="flex items-center gap-1 sm:gap-1.5">
+              {/* <div className="flex items-center gap-1 sm:gap-1.5">
                 <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-[#ff6b00] animate-pulse"></div>
                 <span className="text-[7px] sm:text-[9px] md:text-[10px] font-mono text-slate-600 uppercase tracking-wider sm:tracking-widest font-bold">
                   v2.4
                 </span>
-              </div>
+              </div> */}
             </div>
 
             <div className="space-y-1.5 sm:space-y-3 md:space-y-4">
@@ -195,8 +195,8 @@ const TimelineNode = ({ item, index, isWork }) => {
 
             <div className="flex flex-wrap gap-1 sm:gap-1.5 pt-1 sm:pt-3 md:pt-4">
               {(isWork
-                ? ["Laravel", "Architecture", "TDD"]
-                : ["CompSci", "Distributed"]
+                ? ["Laravel", "MVC Architecture", "APi Development"]
+                : ["OOP", "DSA", 'DBMS' ]
               ).map((tag) => (
                 <span
                   key={tag}
@@ -266,6 +266,8 @@ const Experience = () => {
     return () => ctx.revert();
   }, []);
 
+  const hideBottomSections = location.pathname === "/about";
+
   return (
     <section
       ref={containerRef}
@@ -274,30 +276,18 @@ const Experience = () => {
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[95vw] sm:w-[90vw] h-[95vw] sm:h-[90vw] bg-[#ff6b00]/5 blur-[80px] sm:blur-[140px] md:blur-[200px] rounded-full pointer-events-none z-0"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <header className="timeline-header-reveal space-y-5 sm:space-y-10 md:space-y-12 mb-12 sm:mb-24 md:mb-40 max-w-5xl px-1 sm:px-0">
-          <div className="flex items-center gap-3 sm:gap-5 md:gap-6">
-            <div className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl sm:rounded-2xl md:rounded-[2rem] bg-[#ff6b00] flex items-center justify-center text-black flex-shrink-0">
-              <Activity className="w-5 h-5 sm:w-7 sm:h-7 md:w-8 md:h-8" />
-            </div>
-            <div className="space-y-0.5 sm:space-y-1">
-              <span className="text-[7px] sm:text-[9px] md:text-[10px] font-mono uppercase tracking-[0.3em] sm:tracking-[0.4em] md:tracking-[0.5em] text-[#ff6b00] font-bold block">
-                Chronological Archive
-              </span>
-              <p className="text-[6px] sm:text-[9px] md:text-xs text-slate-700 font-mono tracking-widest uppercase">
-                System Uptime: 2,555 Days
-              </p>
-            </div>
-          </div>
-          <h2 className="text-3xl sm:text-6xl md:text-8xl lg:text-[10rem] font-black tracking-tighter uppercase leading-[0.85] sm:leading-[0.82] md:leading-[0.8] mix-blend-difference">
-            TECHNICAL <br />
-            <span className="text-slate-800 font-serif italic font-light lowercase">
-              evolution
-            </span>
-            <span className="ml-1.5 sm:ml-3 md:ml-4">PATH</span>
+        <header className="mb-20 max-w-4xl space-y-6">
+          <span className="text-xs font-mono uppercase tracking-widest text-[#ff6b00]">
+            Experience
+          </span>
+
+          <h2 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight">
+            Technical Evolution
           </h2>
-          <p className="text-sm sm:text-xl md:text-2xl lg:text-3xl text-slate-500 font-light leading-relaxed max-w-3xl">
-            A precise mapping of my professional trajectory, architectural
-            milestones, and educational foundations.
+
+          <p className="text-base sm:text-lg md:text-xl text-slate-500 max-w-2xl">
+            A clear overview of my professional growth, key projects, and
+            technical milestones over time.
           </p>
         </header>
 
@@ -320,7 +310,7 @@ const Experience = () => {
               <div className="px-5 sm:px-10 md:px-12 py-2 sm:py-4 md:py-5 bg-[#0a0a0a] border border-white/10 rounded-full flex items-center gap-2 sm:gap-3 md:gap-4 shadow-2xl">
                 <Briefcase className="w-3.5 h-3.5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#ff6b00]" />
                 <span className="text-[8px] sm:text-xs md:text-sm font-mono font-black uppercase tracking-[0.25em] sm:tracking-[0.35em] md:tracking-[0.4em]">
-                  Professional Registry
+                  Professional Journey
                 </span>
               </div>
             </div>
@@ -339,7 +329,7 @@ const Experience = () => {
               <div className="px-5 sm:px-10 md:px-12 py-2 sm:py-4 md:py-5 bg-[#0a0a0a] border border-white/10 rounded-full flex items-center gap-2 sm:gap-3 md:gap-4 shadow-2xl">
                 <GraduationCap className="w-3.5 h-3.5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#ff6b00]" />
                 <span className="text-[8px] sm:text-xs md:text-sm font-mono font-black uppercase tracking-[0.25em] sm:tracking-[0.35em] md:tracking-[0.4em]">
-                  Academic Foundation
+                  Academic Journey
                 </span>
               </div>
             </div>
@@ -347,19 +337,18 @@ const Experience = () => {
               <TimelineNode
                 key={`edu-${item.id}`}
                 item={item}
-                index={i + 1}
+                index={i }
                 isWork={false}
               />
             ))}
           </div>
         </div>
 
-        <footer className="mt-16 sm:mt-28 md:mt-40 text-center space-y-5 sm:space-y-10 md:space-y-12">
+
+        {/* <footer className="mt-16 sm:mt-28 md:mt-40 text-center space-y-5 sm:space-y-10 md:space-y-12">
           <div className="w-px h-12 sm:h-24 md:h-32 bg-gradient-to-b from-white/10 to-transparent mx-auto"></div>
           <div className="space-y-2 sm:space-y-3 md:space-y-4 px-3 sm:px-4">
-            <span className="text-[#ff6b00] font-mono text-[7px] sm:text-[10px] md:text-xs uppercase tracking-[0.4em] sm:tracking-[0.5em] md:tracking-[0.6em] font-bold block">
-              Continuity Loop
-            </span>
+            
             <h3 className="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter text-white leading-tight">
               STILL{" "}
               <span className="text-[#ff6b00] font-serif italic font-light lowercase">
@@ -370,11 +359,11 @@ const Experience = () => {
           </div>
           <div className="pt-5 sm:pt-10 md:pt-12">
             <button className="inline-flex items-center gap-2 sm:gap-3 md:gap-4 px-5 sm:px-10 md:px-12 py-3 sm:py-5 md:py-6 border border-white/10 rounded-full hover:bg-white/5 transition-all text-[9px] sm:text-xs md:text-sm font-bold uppercase tracking-wider sm:tracking-widest text-slate-400 hover:text-white">
-              <span>Initialize Contact</span>
+              <span>Let’s Turn Ideas into Reality</span>
               <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-[#ff6b00]" />
             </button>
           </div>
-        </footer>
+        </footer> */}
       </div>
     </section>
   );

@@ -159,17 +159,25 @@ const Projects: React.FC = () => {
     >
       <div className="bg-circle fixed top-[-10%] right-[-10%] w-[50vw] aspect-square bg-[#ff6b00]/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
 
-      <header className="relative z-10 pt-32 pb-16 px-6 max-w-7xl mx-auto space-y-12">
-        <div className="space-y-6">
-          <span className="px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-[9px] font-mono uppercase tracking-[0.4em] text-[#ff6b00] font-bold">
-            The Registry
-          </span>
-          <h1 className="text-6xl md:text-[10vw] font-black tracking-tighter uppercase leading-[0.8]">
-            LATEST{" "}
-          </h1>
-          <h1 className="text-6xl  text-right sm:text-center ', md:text-[10vw] font-black tracking-tighter uppercase leading-[0.8]">
-            WORK
-          </h1>
+      <header className="relative z-10 pt-20 pb-16 px-6 max-w-7xl mx-auto space-y-12">
+        <div className="space-y-6 sm:space-y-10 md:space-y-12 lg:space-y-16 pt-4 ">
+          <div className="space-y-4 sm:space-y-6 md:space-y-8 max-w-5xl">
+            <div className="header-reveal flex items-center gap-2 sm:gap-3 md:gap-4">
+              <div className="w-8 sm:w-10 md:w-12 h-px bg-[#ff6b00]"></div>
+              <span className="text-[7px] sm:text-[9px] md:text-[10px] font-mono uppercase tracking-[0.3em] sm:tracking-[0.4em] md:tracking-[0.5em] text-[#ff6b00] font-bold"></span>
+            </div>
+            <h1 className="header-reveal text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[8vw] font-black tracking-tighter uppercase leading-[0.85] mix-blend-difference">
+              Projects & <br />
+              <span className="text-slate-500 font-serif italic font-light lowercase">
+                Case Studies
+              </span>
+              {/* <span className="ml-1.5 sm:ml-2 md:ml-4">GUIDES</span> */}
+            </h1>
+            {/* <p className="header-reveal text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-slate-500 font-light leading-relaxed max-w-3xl">
+              Deep dives into Laravel internals, distributed systems, and the
+              evolving landscape of high-performance backend engineering.
+            </p> */}
+          </div>
         </div>
       </header>
 

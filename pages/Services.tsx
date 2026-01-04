@@ -259,27 +259,26 @@ const Services: React.FC = () => {
 
       <div className="max-w-7xl mx-auto space-y-32">
         {/* Page Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-24 gap-8">
-          <div className="space-y-2">
-            <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9]">
-              PROFESSIONAL
-            </h2>
-            <h2 className="text-4xl md:text-7xl font-serif italic text-[#ff6b00] leading-[0.9] tracking-tight">
-              SERVICES
-            </h2>
+        <header className="space-y-6 sm:space-y-10 md:space-y-12 lg:space-y-16 pt-4 ">
+          <div className="space-y-4 sm:space-y-6 md:space-y-8 max-w-5xl">
+            <div className="header-reveal flex items-center gap-2 sm:gap-3 md:gap-4">
+              <div className="w-8 sm:w-10 md:w-12 h-px bg-[#ff6b00]"></div>
+              <span className="text-[7px] sm:text-[9px] md:text-[10px] font-mono uppercase tracking-[0.3em] sm:tracking-[0.4em] md:tracking-[0.5em] text-[#ff6b00] font-bold"></span>
+            </div>
+            <h1 className="header-reveal text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[8vw] font-black tracking-tighter uppercase leading-[0.85] mix-blend-difference">
+              Professional <br />
+              <span className="text-slate-500 font-serif italic font-light lowercase">
+                Services
+              </span>
+              {/* <span className="ml-1.5 sm:ml-2 md:ml-4">GUIDES</span> */}
+            </h1>
+            <p className="header-reveal text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-slate-500 font-light leading-relaxed max-w-3xl">
+              From WordPress websites to fully custom web applications, I
+              deliver secure, high-quality solutions tailored to real business
+              needs.
+            </p>
           </div>
-
-          <div className="flex  gap-4">
-            <button className="flex items-center gap-3 px-8 py-3 bg-white text-black rounded-full font-bold hover:scale-105 transition-transform">
-              <span>Hire me</span>
-              <MousePointer2 size={18} />
-            </button>
-            {/* <button className="flex items-center gap-3 px-8 py-3 border border-white/20 rounded-full font-bold hover:bg-white/5 transition-colors">
-              <span>Watch Video</span>
-              <Play size={18} fill="currentColor" />
-            </button> */}
-          </div>
-        </div>
+        </header>
         {/* Services Grid with Custom Scroll Animations */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 relative z-10">
           {SERVICES.map((service, index) => (
@@ -314,21 +313,27 @@ const Services: React.FC = () => {
           <div className="pt-12 flex flex-col md:flex-row items-center justify-center gap-8">
             <Link
               to="/contact"
-              className="group relative px-16 py-8 bg-[#ff6b00] text-black rounded-full font-black text-2xl hover:scale-105 transition-all shadow-[0_0_60px_rgba(255,107,0,0.2)] active:scale-95"
+              className="group relative px-16 py-8 bg-[#ff6b00] text-black rounded-full font-black text-2xl overflow-hidden shadow-[0_0_60px_rgba(255,107,0,0.2)] transition-transform duration-500 hover:scale-105 active:scale-95"
             >
-              <span className="relative z-10">Initialize Architecture</span>
-              <div className="absolute inset-0 rounded-full border-4 border-[#ff6b00] scale-100 group-hover:scale-110 opacity-0 group-hover:opacity-20 transition-all duration-500"></div>
+              <span className="relative z-10">Start Your Project</span>
+              {/* Animated glow ring */}
+              <div className="absolute inset-0 rounded-full border-4 border-[#ff6b00] opacity-0 group-hover:opacity-50 animate-pulse transition-all duration-500"></div>
+              {/* Gradient sliding overlay */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-yellow-400 via-orange-600 to-red-500 opacity-0 group-hover:opacity-40 blur-xl animate-slide transition-all duration-700"></div>
             </Link>
+
             <Link
               to="/projects"
-              className="px-12 py-8 border border-white/20 rounded-full font-bold text-lg hover:bg-white/5 transition-all uppercase tracking-widest"
+              className="group relative px-12 py-8 border border-white/20 rounded-full font-bold text-lg uppercase tracking-widest text-white overflow-hidden transition-all duration-500 hover:text-[#ff6b00] hover:border-[#ff6b00]"
             >
-              View Artifacts
+              <span className="relative z-10">Explore Work</span>
+              {/* Subtle shine effect */}
+              {/* <div className="absolute top-0 left-0 w-0 h-full bg-white/30 rotate-12 group-hover:w-full transition-all duration-500"></div> */}
             </Link>
           </div>
         </section>
         {/* Engineering Principles Ribbon */}
-        <section className="py-20 border-y border-white/5 overflow-hidden">
+        <section className="py-20 mt-2 border-y border-white/5 overflow-hidden">
           <div className="flex gap-20 animate-marquee whitespace-nowrap">
             {[...Array(10)].map((_, i) => (
               <div

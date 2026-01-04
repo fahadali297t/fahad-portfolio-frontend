@@ -1,5 +1,5 @@
 import React from 'react';
-import { Server, Database, Code2, Globe, Cpu, ShieldCheck, Zap, Layers, Search, Terminal } from 'lucide-react';
+import { Server, Database, Code2, Globe, Cpu, Layout , Box, Monitor,  ShieldCheck, Zap, Layers, Search, Terminal } from 'lucide-react';
 import { Project, Service, Skill, TimelineItem, Blog } from './types';
 
 export interface EnhancedProject extends Project {
@@ -214,209 +214,212 @@ export const TESTIMONIALS = [
   }
 ];
 
+
 export const SERVICES: EnhancedService[] = [
   {
     id: 1,
-    title: "API Architecture",
+    title: "Custom Website Development",
     description:
-      "High-performance REST & GraphQL endpoints designed for scale.",
-    icon: "Code2",
+      "Responsive, fast, and SEO-friendly websites built to convert.",
+    icon: Code2,
     bgImage:
-      "https://images.unsplash.com/photo-1690585703267-de31ea667ef0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXBpfGVufDB8fDB8fHww",
+      "https://images.unsplash.com/photo-1581091870621-3a20837d1f6f?w=500&auto=format&fit=crop&q=60",
     fullDescription:
-      "In the modern digital landscape, your API is the foundation of your product. I design and build high-performance, secure, and developer-friendly APIs using Laravel and GraphQL. My focus is on creating extensible architectures that handle massive traffic while maintaining consistent 50ms-100ms response times.",
+      "I build modern, responsive websites tailored to your brand and business goals. Using technologies like HTML, CSS, JS, and React or Vue, I create websites that are fast, interactive, and optimized for SEO and conversions.",
     capabilities: [
       {
-        title: "GraphQL Design",
-        desc: "Complex data fetching with Apollo and Lighthouse.",
+        title: "Responsive Design",
+        desc: "Websites that look perfect on mobile, tablet, and desktop.",
+        icon: Layout,
+      },
+      {
+        title: "SEO Optimization",
+        desc: "Technical and on-page SEO for better search visibility.",
+        icon: Globe,
+      },
+      {
+        title: "Performance",
+        desc: "Optimized for fast loading and smooth UX.",
         icon: Zap,
       },
       {
-        title: "OAuth2 & JWT",
-        desc: "Enterprise-grade authentication and authorization.",
-        icon: ShieldCheck,
-      },
-      {
-        title: "Rate Limiting",
-        desc: "Advanced protection against DDoS and abuse.",
-        icon: ShieldCheck,
-      },
-      {
-        title: "Documentation",
-        desc: "Auto-generated, interactive Swagger/OpenAPI docs.",
+        title: "Custom Features",
+        desc: "Forms, sliders, animations, and dynamic content.",
         icon: Terminal,
       },
     ],
     process: [
       {
         step: "01",
-        title: "Endpoint Mapping",
-        desc: "Identifying all data requirements and relationship structures.",
+        title: "Requirement Gathering",
+        desc: "Understanding your goals, target audience, and features.",
       },
       {
         step: "02",
-        title: "Schema Design",
-        desc: "Creating optimized JSON/GraphQL schemas for frontend efficiency.",
+        title: "Design & Prototype",
+        desc: "Creating wireframes and high-fidelity mockups for approval.",
       },
       {
         step: "03",
-        title: "Implementation",
-        desc: "TDD-based development with 100% contract testing coverage.",
+        title: "Development & Launch",
+        desc: "Turning designs into code and deploying a fully functional website.",
       },
     ],
-    relatedTech: ["Laravel", "Swoole", "Redis", "Postman", "Docker"],
+    relatedTech: ["HTML", "CSS", "JavaScript", "React", "Vue"],
   },
   {
     id: 2,
-    title: "Database Design",
-    description: "Complex schema modeling and high-stakes query optimization.",
-    icon: "Database",
+    title: "WordPress Development",
+    description: "Custom themes, plugins, and full WordPress solutions.",
+    icon: Box,
     bgImage:
-      "https://plus.unsplash.com/premium_photo-1681487942927-e1a2786e6036?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZGF0YWJhc2V8ZW58MHx8MHx8fDA%3D",
+      "https://images.unsplash.com/photo-1609944172732-07d59a8b2040?w=500&auto=format&fit=crop&q=60",
     fullDescription:
-      "Data is your most valuable asset. I specialize in designing normalized, high-integrity database schemas that scale. Whether it's managing millions of rows in PostgreSQL or optimizing complex MySQL joins, I ensure your data layer is the strongest part of your application.",
+      "I create professional WordPress websites with custom themes and plugins. From simple blogs to full e-commerce sites, your WordPress site will be fast, secure, and easy to manage.",
     capabilities: [
       {
-        title: "Schema Modeling",
-        desc: "Third-normal form normalization and logical design.",
-        icon: Layers,
+        title: "Custom Themes",
+        desc: "Tailored WordPress themes matching your brand.",
+        icon: Layout,
       },
       {
-        title: "Query Profiling",
-        desc: "Deep analysis of slow queries and bottleneck removal.",
-        icon: Search,
-      },
-      {
-        title: "Indexing Strategy",
-        desc: "Precision B-Tree and GIST indexing for search speed.",
+        title: "Plugin Development",
+        desc: "Custom functionality to meet unique requirements.",
         icon: Zap,
       },
       {
-        title: "Data Integrity",
-        desc: "Atomic transactions and strict constraint enforcement.",
+        title: "Performance & Security",
+        desc: "Optimized for speed and protected against attacks.",
+        icon: ShieldCheck,
+      },
+      {
+        title: "Maintenance",
+        desc: "Updates, backups, and site monitoring.",
+        icon: Monitor,
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Setup & Planning",
+        desc: "Choosing hosting, plugins, and overall site structure.",
+      },
+      {
+        step: "02",
+        title: "Theme & Plugin Customization",
+        desc: "Developing or modifying theme and plugins for your needs.",
+      },
+      {
+        step: "03",
+        title: "Launch & Training",
+        desc: "Deploying the website and teaching you to manage it easily.",
+      },
+    ],
+    relatedTech: ["WordPress", "PHP", "Elementor", "WooCommerce", "ACF"],
+  },
+  {
+    id: 3,
+    title: "E-Commerce Development",
+    description: "Online stores that sell and scale with your business.",
+    icon: Globe,
+    bgImage:
+      "https://images.unsplash.com/photo-1612832021151-9490b71edbdf?w=500&auto=format&fit=crop&q=60",
+    fullDescription:
+      "I develop fully functional e-commerce websites with Shopify, WooCommerce, or custom solutions. Features include payment gateways, product management, and inventory control, all designed to drive sales and customer satisfaction.",
+    capabilities: [
+      {
+        title: "Store Setup",
+        desc: "Products, categories, and payment integration.",
+        icon: Code2,
+      },
+      {
+        title: "Custom Features",
+        desc: "Dynamic pricing, discounts, subscriptions, and more.",
+        icon: Zap,
+      },
+      {
+        title: "Analytics & Tracking",
+        desc: "Integrate Google Analytics, conversions, and sales reports.",
+        icon: Terminal,
+      },
+      {
+        title: "Mobile Optimized",
+        desc: "Seamless shopping experience across all devices.",
+        icon: Monitor,
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Platform Selection",
+        desc: "Choosing WooCommerce, Shopify, or custom stack.",
+      },
+      {
+        step: "02",
+        title: "Design & Development",
+        desc: "Building an intuitive UI and integrating features.",
+      },
+      {
+        step: "03",
+        title: "Launch & Optimization",
+        desc: "Testing checkout flow, SEO, and analytics setup.",
+      },
+    ],
+    relatedTech: ["WooCommerce", "Shopify", "Stripe", "PayPal", "JavaScript"],
+  },
+  {
+    id: 4,
+    title: "UI/UX Design",
+    description:
+      "Intuitive and visually appealing interfaces that engage users.",
+    icon: Layout,
+    bgImage:
+      "https://images.unsplash.com/photo-1581093458792-5f9c0d0f05b2?w=500&auto=format&fit=crop&q=60",
+    fullDescription:
+      "Design is more than visuals — it’s about creating experiences. I craft UI/UX designs that are user-friendly, accessible, and aligned with your brand identity. From wireframes to interactive prototypes, I focus on engaging users effectively.",
+    capabilities: [
+      {
+        title: "Wireframing",
+        desc: "Low-fidelity layouts for early feedback.",
+        icon: Layout,
+      },
+      {
+        title: "Prototyping",
+        desc: "Interactive designs for usability testing.",
+        icon: Terminal,
+      },
+      {
+        title: "User Research",
+        desc: "Understanding user behavior to guide design decisions.",
+        icon: Globe,
+      },
+      {
+        title: "Brand Consistency",
+        desc: "Colors, typography, and elements aligned with your identity.",
         icon: ShieldCheck,
       },
     ],
     process: [
       {
         step: "01",
-        title: "Data Audit",
-        desc: "Analyzing current data flows and identifying redundancies.",
+        title: "Research & Strategy",
+        desc: "Understanding your target audience and goals.",
       },
       {
         step: "02",
-        title: "Logical Design",
-        desc: "Building ER diagrams and defining entity relationships.",
+        title: "Wireframes & Mockups",
+        desc: "Designing the structure and look of your website.",
       },
       {
         step: "03",
-        title: "Optimization",
-        desc: "Fine-tuning buffers, caches, and query execution plans.",
+        title: "Prototype & Feedback",
+        desc: "Creating interactive designs and iterating based on feedback.",
       },
     ],
-    relatedTech: ["PostgreSQL", "MySQL", "Redis", "Eloquent", "AWS Aurora"],
-  },
-  {
-    id: 3,
-    title: "Cloud DevOps",
-    description: "Kubernetes, Docker, and seamless CI/CD automation pipelines.",
-    icon: "Cpu",
-    bgImage:
-      "https://images.unsplash.com/photo-1667984390527-850f63192709?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2xvdWQlMjBjb21wdXRpbmd8ZW58MHx8MHx8fDA%3D",
-    fullDescription:
-      "Code only provides value when it's live. I build robust cloud infrastructure that ensures your Laravel apps are resilient, scalable, and easy to deploy. From containerization to automated horizontal scaling on AWS, I handle the operational heavy lifting.",
-    capabilities: [
-      {
-        title: "Dockerization",
-        desc: "Production-ready, multi-stage Docker builds.",
-        icon: Server,
-      },
-      {
-        title: "CI/CD Pipelines",
-        desc: "Automated testing and deployment via GitHub Actions.",
-        icon: Zap,
-      },
-      {
-        title: "AWS Management",
-        desc: "Architecting EC2, RDS, and S3 for high availability.",
-        icon: Globe,
-      },
-      {
-        title: "Monitoring",
-        desc: "Real-time logging and alerting with ELK/Sentry.",
-        icon: Search,
-      },
-    ],
-    process: [
-      {
-        step: "01",
-        title: "Infra Audit",
-        desc: "Reviewing current server setups and identifying risks.",
-      },
-      {
-        step: "02",
-        title: "Containerization",
-        desc: "Standardizing environments for dev, stage, and prod.",
-      },
-      {
-        step: "03",
-        title: "Deployment Plan",
-        desc: "Setting up blue-green or canary release strategies.",
-      },
-    ],
-    relatedTech: ["AWS", "GitHub Actions", "Docker", "Terraform", "Forge"],
-  },
-  {
-    id: 4,
-    title: "Scalable Systems",
-    description: "Distributed architectures designed for extreme high traffic.",
-    icon: "Layers",
-    bgImage:
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1200",
-    fullDescription:
-      "Success brings traffic, and traffic brings challenges. I build distributed systems that grow with your user base. By leveraging message brokers, microservices, and load balancing, I ensure your application never breaks under pressure.",
-    capabilities: [
-      {
-        title: "Microservices",
-        desc: "Decoupling logic for independent scaling and failure.",
-        icon: Cpu,
-      },
-      {
-        title: "Message Queues",
-        desc: "Async processing with RabbitMQ or Amazon SQS.",
-        icon: Zap,
-      },
-      {
-        title: "Load Balancing",
-        desc: "Traffic distribution via Nginx or AWS ELB.",
-        icon: Globe,
-      },
-      {
-        title: "Caching Layers",
-        desc: "Distributed caching strategies with Redis Clusters.",
-        icon: Database,
-      },
-    ],
-    process: [
-      {
-        step: "01",
-        title: "Bottleneck Analysis",
-        desc: "Identifying single points of failure in architecture.",
-      },
-      {
-        step: "02",
-        title: "Decoupling",
-        desc: "Breaking monolithic parts into manageable services.",
-      },
-      {
-        step: "03",
-        title: "Stress Testing",
-        desc: "Simulating peak load to verify scaling triggers.",
-      },
-    ],
-    relatedTech: ["RabbitMQ", "Redis", "Kubernetes", "Octane", "Microservices"],
+    relatedTech: ["Figma", "Adobe XD", "Sketch", "Tailwind", "Framer Motion"],
   },
 ];
+
 
 export const SKILLS: Skill[] = [
   { name: "Laravel", level: 95, category: 'Backend' },

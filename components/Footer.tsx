@@ -5,9 +5,9 @@ const Footer: React.FC = () => {
   const footerLinks = [
     { name: 'Home', path: '/' },
     { name: 'License', path: '#' },
-    { name: 'Style guide', path: '#' },
-    { name: 'Changelog', path: '#' },
-    { name: 'Instruction', path: '#' },
+    // { name: 'Style guide', path: '#' },
+    // { name: 'Changelog', path: '#' },
+    // { name: 'Instruction', path: '#' },
     { name: '404', path: '#' },
   ];
 
@@ -34,11 +34,11 @@ const Footer: React.FC = () => {
         <div className="flex flex-col items-center justify-center space-y-2 text-center">
           <p className="text-[10px] md:text-xs text-slate-500 uppercase tracking-widest font-light flex flex-wrap justify-center items-center gap-2">
             <span>© Copyright -</span> 
-            <a href="#" className="text-white hover:text-[#ff6b00] transition-colors underline underline-offset-4 decoration-white/20">Novanight</a>
-            <span className="mx-1 opacity-50">Designed by</span>
-            <a href="#" className="text-white hover:text-[#ff6b00] transition-colors underline underline-offset-4 decoration-white/20">Anova Flow</a>
-            <span className="mx-1 opacity-50">| License Powered by</span>
-            <a href="#" className="text-white hover:text-[#ff6b00] transition-colors underline underline-offset-4 decoration-white/20">Webflow</a>
+            <a href="#" className="text-white hover:text-[#ff6b00] transition-colors underline underline-offset-4 decoration-white/20">Fahad Ali</a>
+            {/* <span className="mx-1 opacity-50">Designed by</span>
+            <a href="#" className="text-white hover:text-[#ff6b00] transition-colors underline underline-offset-4 decoration-white/20">Anova Flow</a> */}
+            {/* <span className="mx-1 opacity-50">| License Powered by</span>
+            <a href="#" className="text-white hover:text-[#ff6b00] transition-colors underline underline-offset-4 decoration-white/20">Webflow</a> */}
           </p>
         </div>
       </div>

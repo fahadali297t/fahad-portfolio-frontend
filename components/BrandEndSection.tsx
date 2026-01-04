@@ -71,41 +71,19 @@ const BrandEndSection: React.FC = () => {
             ref={textLeftRef}
             className="text-white inline-block transition-transform duration-1000 ease-out"
           >
-            MICHE
+            Fahad
           </span>
           <span className="w-8 sm:w-12 md:w-16 lg:w-20 xl:w-24"></span>
           <span
             ref={textRightRef}
             className="text-orange-500 inline-block transition-transform duration-1000 ease-out"
           >
-            ONSON
+            Ali
           </span>
         </h2>
 
         {/* Floating Tilted Card */}
-        <div
-          ref={cardRef}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          className="absolute z-20 w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 aspect-[3/4] rounded-[2rem] bg-neutral-900 border-[8px] border-neutral-800 shadow-[0_0_80px_rgba(255,107,0,0.15)] overflow-hidden cursor-pointer origin-center transition-transform duration-1000 ease-out"
-          style={{ transform: "rotate(-4deg)" }}
-        >
-          {/* Inner Glow */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none"></div>
-
-          <img
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800"
-            alt="Portrait"
-            className="w-full h-full object-cover transition-all duration-700 scale-110"
-            style={{ filter: "grayscale(0.3)" }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.filter = "grayscale(0)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.filter = "grayscale(0.3)";
-            }}
-          />
-        </div>
+       
       </div>
     </section>
   );
