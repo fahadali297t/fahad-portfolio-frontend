@@ -83,7 +83,7 @@ const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({
 
           {/* Metrics & Links */}
           <div className="flex flex-wrap items-center justify-between gap-6">
-            <div className="flex flex-wrap gap-8 items-center">
+            {/*   <div className="flex flex-wrap gap-8 items-center">
               {project.metrics.map((metric, mIdx) => (
                 <div key={mIdx} className="flex flex-col">
                   <span className="text-3xl md:text-4xl font-black text-white tracking-tighter mb-0">
@@ -95,6 +95,7 @@ const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({
                 </div>
               ))}
             </div>
+             */}
 
             <div className="flex gap-3">
               <Link
