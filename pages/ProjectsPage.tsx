@@ -1,228 +1,178 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { PROJECTS, EnhancedProject } from "../constants";
-import { Github, ExternalLink, ArrowRight } from "lucide-react";
-
-gsap.registerPlugin(ScrollTrigger);
+import { Github, ArrowUpRight, Database, Server, Code2 } from "lucide-react";
 
 const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({
   project,
   index,
 }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div
-      className="project-card absolute inset-0 w-full h-full flex items-center justify-center px-4 py-8 md:p-6"
-      style={{ zIndex: index + 1 }}
+      ref={cardRef}
+      className={`group relative transition-all duration-1000 transform ${
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+      }`}
+      style={{ transitionDelay: `${index * 100}ms` }}
     >
-      <div className="project-card-inner relative w-full max-w-6xl bg-[#121212] rounded-[1rem] md:rounded-[3rem] border border-white/10 shadow-[0_0_100px_rgba(0,0,0,0.6)] p-6 md:p-10 lg:p-12 overflow-hidden flex flex-col lg:flex-row gap-6 lg:gap-12 items-center">
-        {/* Decorative background glow */}
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#ff6b00]/5 blur-[120px] rounded-full pointer-events-none"></div>
+      <Link
+        to={`/projects/${project.id}`}
+        className="block relative overflow-hidden rounded-[2.5rem] bg-slate-900 aspect-[16/10] mb-8 group-hover:shadow-[0_20px_80px_rgba(255,107,0,0.15)] transition-all duration-700"
+      >
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700 ease-out"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-40 group-hover:opacity-20 transition-opacity duration-700"></div>
 
-        {/* Left Side: Image */}
-        <div className="w-full lg:w-[45%] aspect-[4/3] rounded-[1rem] md:rounded-[2rem] overflow-hidden bg-slate-900 border border-white/5 shadow-2xl shrink-0 group/img relative">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover grayscale-[0.2] group-hover/img:grayscale-0 group-hover/img:scale-105 transition-all duration-1000"
-          />
-          <Link
-            to={`/projects/${project.id}`}
-            className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300"
-          >
-            <div className="p-6 bg-[#ff6b00] rounded-full text-black transform translate-y-4 group-hover/img:translate-y-0 transition-transform duration-500">
-              <ArrowRight size={32} strokeWidth={2.5} />
-            </div>
-          </Link>
+        {/* Floating Tags */}
+        <div className="absolute top-6 left-6 flex gap-2">
+          {project.techStackDetailed.slice(0, 2).map((tech, i) => (
+            <span
+              key={i}
+              className="px-3 py-1 bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-[9px] font-mono font-bold text-[#ff6b00] uppercase tracking-widest"
+            >
+              {tech}
+            </span>
+          ))}
         </div>
 
-        {/* Right Side: Content */}
-        <div className="w-full lg:w-[55%] flex flex-col justify-center space-y-4 md:space-y-8 relative z-10">
-          <div className="space-y-3">
-            <div className="flex items-center gap-3">
-              <span className="text-[#ff6b00] font-mono text-[10px] uppercase tracking-[0.4em] font-bold">
-                Project {String(index + 1).padStart(2, "0")}
+        {/* Corner Button */}
+        <div className="absolute bottom-6 right-6 p-4 bg-[#ff6b00] rounded-2xl text-black translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+          <ArrowUpRight size={24} strokeWidth={2.5} />
+        </div>
+      </Link>
+
+      <div className="space-y-4 px-2">
+        <div className="flex items-center justify-between">
+          <span className="text-[10px] font-mono text-slate-500 uppercase tracking-[0.3em] font-bold">
+            Registry: 0{project.id}
+          </span>
+          <div className="flex gap-4">
+            <a
+              href={project.github}
+              className="text-slate-500 hover:text-[#ff6b00] transition-colors"
+            >
+              <Github size={18} />
+            </a>
+          </div>
+        </div>
+
+        <Link to={`/projects/${project.id}`} className="block group/title">
+          <h3 className="text-3xl font-black tracking-tighter uppercase leading-none text-white group-hover/title:text-[#ff6b00] transition-colors">
+            {project.title}{" "}
+            <span className="font-serif italic font-light lowercase text-xl opacity-60 ml-2">
+              {project.type}
+            </span>
+          </h3>
+        </Link>
+
+        <p className="text-slate-500 text-sm leading-relaxed font-light line-clamp-2">
+          {project.description}
+        </p>
+
+        <div className="flex items-center gap-8 pt-2">
+          {project.metrics.slice(0, 2).map((metric, i) => (
+            <div key={i} className="flex flex-col">
+              <span className="text-xl font-black text-white">
+                {metric.value}
               </span>
-              <div className="h-px w-8 bg-white/10"></div>
+              <span className="text-[8px] font-mono text-slate-600 uppercase tracking-widest">
+                {metric.label}
+              </span>
             </div>
-            <Link to={`/projects/${project.id}`} className="block group/title">
-              <h3 className="text-3xl md:text-5xl font-black tracking-tighter flex flex-wrap items-baseline gap-2 md:gap-3 uppercase leading-tight">
-                <span className="text-white group-hover/title:text-[#ff6b00] transition-colors">
-                  {project.title}
-                </span>
-                <span className="font-serif italic font-light text-[#ff6b00] opacity-80 text-2xl md:text-4xl">
-                  {project.type}
-                </span>
-              </h3>
-            </Link>
-            <p className="text-slate-400 text-sm md:text-lg leading-relaxed max-w-xl font-light">
-              {project.description}
-            </p>
-          </div>
-
-          {/* Challenge & Solution */}
-          <div className="hidden sm:grid grid-cols-2 gap-8 py-6 border-y border-white/5">
-            <div className="space-y-2">
-              <h4 className="text-[10px] font-bold tracking-[0.3em] text-white uppercase opacity-70">
-                The Challenge
-              </h4>
-              <p className="text-xs text-slate-500 leading-relaxed font-light line-clamp-2">
-                {project.challenge}
-              </p>
-            </div>
-            <div className="space-y-2">
-              <h4 className="text-[10px] font-bold tracking-[0.3em] text-white uppercase opacity-70">
-                The Solution
-              </h4>
-              <p className="text-xs text-slate-500 leading-relaxed font-light line-clamp-2">
-                {project.solution}
-              </p>
-            </div>
-          </div>
-
-          {/* Metrics & Links */}
-          <div className="flex flex-wrap items-center justify-between gap-6">
-            {/*   <div className="flex flex-wrap gap-8 items-center">
-              {project.metrics.map((metric, mIdx) => (
-                <div key={mIdx} className="flex flex-col">
-                  <span className="text-3xl md:text-4xl font-black text-white tracking-tighter mb-0">
-                    {metric.value}
-                  </span>
-                  <span className="text-[9px] uppercase tracking-[0.2em] text-[#ff6b00] font-bold">
-                    {metric.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-             */}
-
-            <div className="flex gap-3">
-              <Link
-                to={`/projects/${project.id}`}
-                className="group px-6 py-3 bg-white/5 hover:bg-[#ff6b00] text-white hover:text-black rounded-full transition-all duration-500 border border-white/10 flex items-center gap-2 font-bold uppercase text-xs tracking-widest"
-              >
-                View Details
-              </Link>
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group p-3 md:p-4 bg-white/5 hover:bg-[#ff6b00] rounded-full transition-all duration-500 border border-white/10"
-              >
-                <Github
-                  size={20}
-                  className="text-white group-hover:text-black transition-colors"
-                />
-              </a>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
   );
 };
 
-const Projects: React.FC<{ isLandingPage?: boolean }> = ({ isLandingPage }) => {
-  const mainRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Landing page animations with pin and scrub
-      const cards = gsap.utils.toArray(".project-card") as HTMLElement[];
-
-      const scrollHeight = cards.length * 100;
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: mainRef.current,
-          start: "top top",
-          end: `+=${scrollHeight}%`,
-          pin: true,
-          pinSpacing: true,
-          scrub: 1.2,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      });
-
-      cards.forEach((card, i) => {
-        const inner = card.querySelector(".project-card-inner");
-
-        if (i > 0) {
-          tl.fromTo(
-            card,
-            { y: "110%", opacity: 0 },
-            { y: "0%", opacity: 1, ease: "none" },
-            i
-          );
-        }
-
-        if (i < cards.length - 1) {
-          tl.to(
-            inner,
-            {
-              scale: 0.9,
-              opacity: 0.25,
-              y: -60,
-              filter: "blur(2px)",
-              ease: "none",
-            },
-            i + 0.5
-          );
-        }
-      });
-    }, mainRef);
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-      ScrollTrigger.refresh();
-      ScrollTrigger.clearScrollMemory();
-      ctx.revert();
-    };
-  }, [isLandingPage]);
-
+const ProjectsSection: React.FC = () => {
   return (
-    <>
-      <div className="relative max-w-[70vw] mx-auto space-y-12">
-        <div className="bg-circle absolute top-[-50%] right-[-10%] w-[40vw] aspect-square  blur-[150px] rounded-full pointer-events-none z-0"></div>
-
-        <div className="relative z-10 space-y-6 max-w-7xl">
-          <div className="flex items-center gap-4">
-            <span className="px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-[9px] font-mono uppercase tracking-[0.5em] text-[#ff6b00] font-bold">
-              The masterpiece
-            </span>
-            <div className="h-px flex-grow bg-white/10"></div>
+    <section id="projects" className="bg-black py-32 px-6">
+      <div className="max-w-7xl mx-auto">
+        <header className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+          <div className="space-y-6">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-px bg-[#ff6b00]"></div>
+              <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-[#ff6b00] font-black">
+                Curated Portfolio
+              </span>
+            </div>
+            <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.8]">
+              FEATURED <br />
+              <span className="text-slate-800 font-serif italic font-light lowercase">
+                architectural
+              </span>
+              <span className="ml-2">ARTIFACTS</span>
+            </h2>
           </div>
-          <h1 className="text-6xl  md:text-[8vw] font-black tracking-tighter uppercase leading-[0.8]">
-            Latest Work <br />
-          </h1>
-          <p className="text-xl md:text-3xl text-slate-500 font-light leading-relaxed max-w-2xl">
-            High-performance backend ecosystems designed for massive scale and
-            uncompromising technical integrity.
-          </p>
+          <div className="pb-2">
+            <p className="text-slate-500 text-lg md:text-xl font-light leading-relaxed max-w-sm border-l border-white/10 pl-8">
+              A precise selection of systems engineered for high-stakes
+              performance and logical integrity.
+            </p>
+          </div>
+        </header>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-x-12 md:gap-y-24">
+          {PROJECTS.slice(0, 4).map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
+          ))}
+        </div>
+
+        <div className="mt-24 pt-20 border-t border-white/5 flex flex-col items-center text-center space-y-10">
+          <div className="flex items-center gap-8 text-slate-800 opacity-90">
+            <Server size={40} strokeWidth={1} />
+            <Database size={40} strokeWidth={1} />
+            <Code2 size={40} strokeWidth={1} />
+          </div>
+          <div className="space-y-4">
+            <h4 className="text-2xl font-bold uppercase tracking-tight text-white">
+              More Projects Available
+            </h4>
+            <p className="text-slate-500 text-sm max-w-md mx-auto">
+              Explore all the Projects of production-grade systems,
+              including performance benchmarks and technical documentation.
+            </p>
+          </div>
+          <Link
+            to="/projects"
+            className="group flex items-center gap-4 px-12 py-5 bg-white text-black rounded-full font-black uppercase text-xs tracking-widest hover:bg-[#ff6b00] transition-all hover:scale-105"
+          >
+            Load More Projects{" "}
+            <ArrowUpRight
+              size={18}
+              className="group-hover:rotate-45 transition-transform"
+            />
+          </Link>
         </div>
       </div>
-        <section
-      ref={mainRef}
-      className="relative bg-black  min-h-screen overflow-hidden z-40"
-    >
-      
-      {/* Background Decorative Text */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 opacity-[0.02] pointer-events-none select-none">
-        <h2 className="text-[25vw] font-black tracking-tighter uppercase leading-none">
-          WORK
-        </h2>
-      </div>
-
-      <div className="relative w-full h-screen">
-        {PROJECTS.map((project, index) => (
-          <ProjectCard key={project.id} project={project} index={index} />
-        ))}
-      </div>
     </section>
-    </>
   );
 };
 
-export default Projects;
+export default ProjectsSection;

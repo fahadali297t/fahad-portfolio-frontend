@@ -12,6 +12,7 @@ import WorkingProcess from "../components/WorkingProcess";
 // import ProjectsSection from "../components/ProjectsSection";
 import Contact from "./Contact";
 import Projects from "./ProjectsPage";
+import BentoSection from "@/components/BentoSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -74,14 +75,16 @@ const Home: React.FC = () => {
       <Hero />
 
       {/* Other Sections */}
-      <div id="experience">
+      {/* <div id="experience">
         <Experience />
-      </div>
+      </div> */}
       <TechStack />
       <div id="services">
         <Services />
       </div>
       <WorkingProcess />
+      <BentoSection />
+
       <div id="projects">
         <Projects isLandingPage={true} />
       </div>
