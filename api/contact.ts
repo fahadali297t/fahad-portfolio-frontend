@@ -56,6 +56,8 @@ await resend.emails.send({
       <p style="font-size: 12px; color: #888;">Frontend & Backend Developer | Performance Optimization | Architectural Consulting</p>
     </div>
   `,
+  replyTo: "fahadali2951@gmail.com"
+,
 });
 
 
