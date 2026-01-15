@@ -19,7 +19,7 @@ export interface Service {
 export interface Skill {
   name: string;
   level: number;
-  category: 'Backend' | 'Frontend' | 'DevOps' | 'Database';
+  category: "Backend" | "Wordpress" | "Frontend" | "DevOps" | "Database";
 }
 
 export interface TimelineItem {

@@ -521,14 +521,17 @@ export const SERVICES: EnhancedService[] = [
 
 
 export const SKILLS: Skill[] = [
-  { name: "Laravel", level: 95, category: 'Backend' },
-  { name: "PHP", level: 90, category: 'Backend' },
-  { name: "MySQL / PostgreSQL", level: 85, category: 'Database' },
-  { name: "Redis", level: 80, category: 'Database' },
-  { name: "Docker", level: 75, category: 'DevOps' },
-  { name: "AWS", level: 70, category: 'DevOps' },
-  { name: "Vue.js / React", level: 65, category: 'Frontend' },
-  { name: "Tailwind CSS", level: 80, category: 'Frontend' }
+  { name: "Laravel", level: 95, category: "Backend" },
+  { name: "PHP", level: 90, category: "Backend" },
+  { name: "MySQL / PostgreSQL", level: 85, category: "Database" },
+  { name: "Elementor", level: 95, category: "Wordpress" },
+  { name: "WooCommerce", level: 85, category: "Wordpress" },
+  { name: "Custom Css", level: 80, category: "Wordpress" },
+  // { name: "Vue.js / React", level: 65, category: "Frontend" },
+  { name: "React js", level: 80, category: "Frontend" },
+  { name: "Tailwind CSS", level: 99, category: "Frontend" },
+  { name: "Blade with Livewire", level: 95, category: "Frontend" },
+  { name: "Vue", level: 65, category: "Frontend" },
 ];
 
 export const TIMELINE: TimelineItem[] = [

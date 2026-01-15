@@ -1,14 +1,29 @@
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { SKILLS, TIMELINE, EDUCATION } from '../constants';
-import SkillBar from '../components/SkillBar';
-import { Award, Coffee, Code, BookOpen, Briefcase, Sparkles, Database, Terminal, Shield } from 'lucide-react';
-import Experience from '@/components/Experience';
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SKILLS, TIMELINE, EDUCATION } from "../constants";
+import SkillBar from "../components/SkillBar";
+import {
+  Award,
+  Coffee,
+  Code,
+  BookOpen,
+  Briefcase,
+  Sparkles,
+  Database,
+  Terminal,
+  SquareMousePointer,
+  Shield,
+} from "lucide-react";
+import Experience from "@/components/Experience";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const TimelineNode: React.FC<{ item: any; index: number; type: 'work' | 'edu' }> = ({ item, index, type }) => {
+const TimelineNode: React.FC<{
+  item: any;
+  index: number;
+  type: "work" | "edu";
+}> = ({ item, index, type }) => {
   const nodeRef = useRef(null);
   const isEven = index % 2 === 0;
 
@@ -21,17 +36,22 @@ const TimelineNode: React.FC<{ item: any; index: number; type: 'work' | 'edu' }>
         x: 0,
         opacity: 1,
         duration: 1.2,
-        ease: 'power4.out',
+        ease: "power4.out",
         scrollTrigger: {
           trigger: el,
-          start: 'top 85%',
+          start: "top 85%",
         },
       }
     );
   }, [isEven]);
 
   return (
-    <div ref={nodeRef} className={`relative flex flex-col md:flex-row items-center justify-between w-full mb-16 md:mb-24 ${isEven ? 'md:flex-row-reverse' : ''}`}>
+    <div
+      ref={nodeRef}
+      className={`relative flex flex-col md:flex-row items-center justify-between w-full mb-16 md:mb-24 ${
+        isEven ? "md:flex-row-reverse" : ""
+      }`}
+    >
       {/* Central Connector Dot */}
       <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-[#ff6b00] z-20 border-4 border-black shadow-[0_0_20px_rgba(255,107,0,0.6)]" />
 
@@ -40,21 +60,27 @@ const TimelineNode: React.FC<{ item: any; index: number; type: 'work' | 'edu' }>
         <div className="relative p-8 md:p-10 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] hover:border-[#ff6b00]/30 transition-all duration-500 overflow-hidden shadow-2xl">
           {/* Subtle background glow */}
           <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#ff6b00]/5 blur-3xl rounded-full group-hover:bg-[#ff6b00]/10 transition-colors"></div>
-          
+
           <div className="relative z-10 space-y-4">
             <div className="flex items-center justify-between">
-              <span className="text-[#ff6b00] font-mono text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase">{item.year}</span>
-              {type === 'work' ? <Briefcase size={16} className="text-slate-600" /> : <BookOpen size={16} className="text-slate-600" />}
+              <span className="text-[#ff6b00] font-mono text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase">
+                {item.year}
+              </span>
+              {type === "work" ? (
+                <Briefcase size={16} className="text-slate-600" />
+              ) : (
+                <BookOpen size={16} className="text-slate-600" />
+              )}
             </div>
-            
+
             <h3 className="text-2xl md:text-3xl font-black text-white tracking-tighter uppercase leading-none group-hover:text-[#ff6b00] transition-colors">
               {item.title}
             </h3>
-            
+
             <p className="text-slate-200 font-serif italic text-lg opacity-80">
               {item.company}
             </p>
-            
+
             <p className="text-slate-500 text-sm leading-relaxed font-light">
               {item.description}
             </p>
@@ -80,47 +106,73 @@ const About: React.FC = () => {
         opacity: 0,
         duration: 1.5,
         stagger: 0.2,
-        ease: "power4.out"
+        ease: "power4.out",
+      });
+
+      // Who Am I reveal
+      gsap.from(".who-am-i-reveal", {
+        y: 40,
+        opacity: 0,
+        filter: "blur(10px)",
+        stagger: 0.2,
+        duration: 1.5,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: ".who-am-i-section",
+          start: "top 80%",
+        },
       });
 
       // Animated drawing of the timeline center line
-      gsap.fromTo(timelineLineRef.current, 
+      gsap.fromTo(
+        timelineLineRef.current,
         { scaleY: 0 },
-        { 
-          scaleY: 1, 
-          ease: "none", 
+        {
+          scaleY: 1,
+          ease: "none",
           scrollTrigger: {
             trigger: ".timeline-section",
             start: "top 60%",
             end: "bottom 80%",
-            scrub: 1.5
-          }
+            scrub: 1.5,
+          },
         }
       );
 
       // Skill categories reveal
-      gsap.from(".skill-category", {
-        y: 40,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: ".skills-grid",
-          start: "top 80%",
-        }
-      });
+      // gsap.from(".skill-category", {
+      //   y: 40,
+      //   opacity: 0,
+      //   duration: 1,
+      //   stagger: 0.2,
+      //   scrollTrigger: {
+      //     trigger: ".skills-grid",
+      //     start: "top 80%",
+      //   },
+      // });
     }, containerRef);
-    return () => {
-      ctx.revert();
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
+    return () => ctx.revert();
   }, []);
 
   // Group skills for a more organized display
   const skillCategories = [
-    { title: 'Backend Core', icon: Database, skills: SKILLS.filter(s => s.category === 'Backend' || s.category === 'Database') },
-    { title: 'Cloud & Infrastructure', icon: Terminal, skills: SKILLS.filter(s => s.category === 'DevOps') },
-    { title: 'Frontend Integration', icon: Code, skills: SKILLS.filter(s => s.category === 'Frontend') }
+    {
+      title: "Frontend Integration",
+      icon: Code,
+      skills: SKILLS.filter((s) => s.category === "Frontend"),
+    },
+    {
+      title: "Backend Core",
+      icon: Database,
+      skills: SKILLS.filter(
+        (s) => s.category === "Backend" || s.category === "Database"
+      ),
+    },
+    {
+      title: "Wordpress",
+      icon: SquareMousePointer,
+      skills: SKILLS.filter((s) => s.category === "Wordpress"),
+    },
   ];
 
   return (
@@ -134,31 +186,13 @@ const About: React.FC = () => {
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
           <div className="lg:col-span-7 space-y-12">
-            <div className="space-y-4 sm:space-y-6">
-              <span
-                className="
-    about-header-text inline-block
-    text-[#ff6b00] font-mono font-bold uppercase
-    tracking-[0.35em] sm:tracking-[0.5em]
-    text-[10px] sm:text-xs md:text-sm
-  "
-              >
+            <div className="space-y-6">
+              <span className="about-header-text inline-block text-[#ff6b00] font-mono text-xs md:text-sm uppercase tracking-[0.5em] font-bold">
                 The Profile
               </span>
-
-              <h1
-                className="
-    about-header-text font-black uppercase tracking-tighter
-    leading-[0.95] sm:leading-[0.85] md:leading-[0.8]
-    text-4xl sm:text-5xl md:text-7xl lg:text-[8rem]
-  "
-              >
-                Developing <br />
-                <span
-                  className="
-      text-slate-400 font-serif italic font-light lowercase
-    "
-                >
+              <h1 className="about-header-text text-6xl md:text-[8rem] font-black tracking-tighter uppercase leading-[0.8]">
+                Developing <br />{" "}
+                <span className="text-slate-400 font-serif italic font-light lowercase">
                   digital
                 </span>{" "}
                 STRENGTH
@@ -168,11 +202,10 @@ const About: React.FC = () => {
             <div className="about-header-text space-y-8 max-w-2xl">
               <p className="text-xl md:text-2xl text-slate-400 font-light leading-relaxed">
                 With a deep focus on{" "}
-                <span className="text-white font-medium">
-                  Laravel ecosystem
-                </span>{" "}
-                and other Technologies, I bridge the gap between complex
-                business logic and high-performance server-side execution.
+                <span className="text-white font-medium">Web ecosystem</span>{" "}
+                and other technologies like Wordpress, Laravel, PHP, I bridge
+                the gap between complex business logic and high-performance web
+                applications.
               </p>
 
               <div className="flex flex-wrap gap-8 py-6 border-y border-white/5">
@@ -185,7 +218,7 @@ const About: React.FC = () => {
                       Skills
                     </h4>
                     <p className="text-slate-500 text-xs font-mono">
-                      Wordpress & Backend Eng.
+                      Laravel Engineer, with additional Wordpress Experties.
                     </p>
                   </div>
                 </div>
@@ -212,7 +245,7 @@ const About: React.FC = () => {
                 <img
                   src="profile.png"
                   alt="Portrait"
-                  className="w-full h-full object-cover transition-all duration-1000"
+                  className="w-full h-full object-cover  transition-all duration-1000"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
               </div>
@@ -221,7 +254,7 @@ const About: React.FC = () => {
               {/* <div className="absolute -bottom-10 -right-6 bg-[#ff6b00] p-8 rounded-[2.5rem] shadow-2xl rotate-3 group-hover:rotate-0 transition-transform duration-500">
                 <div className="text-black text-center space-y-1">
                   <span className="block text-4xl font-black tracking-tighter">
-                    1+
+                    7+
                   </span>
                   <span className="text-[10px] font-bold uppercase tracking-widest leading-none">
                     Years in <br /> Production
@@ -233,7 +266,88 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      <Experience />
+      {/* New Section: Who Am I */}
+      <section className="who-am-i-section py-32 sm:py-48 px-6 bg-black relative overflow-hidden text-center">
+        {/* Subtle background glow to mimic the image atmosphere */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-white/[0.02] blur-[100px] rounded-full pointer-events-none"></div>
+
+        <div className="max-w-4xl mx-auto space-y-8 relative z-10">
+          <div className="space-y-4">
+            <span className="who-am-i-reveal block text-[10px] sm:text-xs font-mono text-slate-500 uppercase tracking-[0.4em] font-medium">
+              A FEW LINES ABOUT ME
+            </span>
+            <h2 className="who-am-i-reveal text-6xl md:text-8xl font-serif text-white leading-tight">
+              Who Am I
+            </h2>
+          </div>
+
+          <p className="who-am-i-reveal text-lg sm:text-2xl text-slate-400 font-light leading-relaxed max-w-3xl mx-auto">
+            I'm a passionate developer who loves transforming ideas into
+            interactive, performant, and elegant digital experiences. My focus
+            is on clean code, creative problem-solving, and crafting UI that
+            speaks both beauty and logic. Whether it's Laravel, React, Tailwind,
+            or modern JS frameworks — I'm all about building things that
+            inspire. I also have expertise in WordPress development, delivering
+            custom themes, plugins, and scalable solutions.
+          </p>
+        </div>
+      </section>
+
+      {/* Section 2: Technical Mastery */}
+      <section className="py-32 px-6 bg-white/[0.02] border-y border-white/5 overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row justify-between items-end mb-24 gap-8">
+            <div className="space-y-4">
+              <span className="text-[#ff6b00] font-mono text-xs uppercase tracking-[0.5em] block">
+                Skillset Level
+              </span>
+              <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-none">
+                TECHNICAL{" "}
+                <span className="text-[#ff6b00] font-serif italic font-light lowercase">
+                  proficiency
+                </span>
+              </h2>
+            </div>
+            <div className="flex flex-col items-end gap-2 text-right">
+              <div className="h-px w-32 bg-[#ff6b00] mb-2"></div>
+              <p className="text-slate-500 max-w-xs font-light">
+                My expertise spans the entire development lifecycle, with a
+                heavy emphasis on architectural integrity.
+              </p>
+            </div>
+          </div>
+
+          <div className="skills-grid grid grid-cols-1 lg:grid-cols-3 gap-12">
+            {skillCategories.map((cat, i) => (
+              <div
+                key={i}
+                className="skill-category space-y-10 p-10 bg-black rounded-[3rem] border border-white/5 hover:border-[#ff6b00]/20 transition-all group"
+              >
+                <div className="flex items-center gap-6">
+                  <div className="p-5 bg-white/5 rounded-2xl text-[#ff6b00] group-hover:bg-[#ff6b00] group-hover:text-black transition-all">
+                    <cat.icon size={32} strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-xl font-bold uppercase tracking-tighter">
+                    {cat.title}
+                  </h3>
+                </div>
+
+                <div className="space-y-8">
+                  {cat.skills.map((skill, sIdx) => (
+                    <SkillBar
+                      key={sIdx}
+                      name={skill.name}
+                      level={skill.level}
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Experience/>
 
       {/* Philosophy Callout */}
       <section className="py-40 px-6 text-center">
