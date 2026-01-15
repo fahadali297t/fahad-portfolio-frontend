@@ -155,7 +155,7 @@ const Projects: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="bg-black text-white min-h-screen overflow-x-hidden pt-0"
+      className="bg-black text-white min-h-screen overflow-x-hidden pt-16"
     >
       <div className="bg-circle fixed top-[-10%] right-[-10%] w-[50vw] aspect-square bg-[#ff6b00]/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
 

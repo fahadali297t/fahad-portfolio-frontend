@@ -89,7 +89,7 @@ const BentoSection: React.FC = () => {
             </div>
             <div className="relative z-10 mt-auto">
               <span className="text-[10px] font-mono text-slate-700 uppercase tracking-widest block font-black">
-                Base of Operations
+                Open to Work Remotely
               </span>
             </div>
           </div>
@@ -120,7 +120,7 @@ const BentoSection: React.FC = () => {
                 Sign the Book →
               </h3>
               <p className="text-slate-500 text-sm font-light">
-                Join the architectural ledger.
+                Leave a review about my website.
               </p>
             </div>
           </Link>

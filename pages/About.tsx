@@ -134,13 +134,31 @@ const About: React.FC = () => {
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
           <div className="lg:col-span-7 space-y-12">
-            <div className="space-y-6">
-              <span className="about-header-text inline-block text-[#ff6b00] font-mono text-xs md:text-sm uppercase tracking-[0.5em] font-bold">
+            <div className="space-y-4 sm:space-y-6">
+              <span
+                className="
+    about-header-text inline-block
+    text-[#ff6b00] font-mono font-bold uppercase
+    tracking-[0.35em] sm:tracking-[0.5em]
+    text-[10px] sm:text-xs md:text-sm
+  "
+              >
                 The Profile
               </span>
-              <h1 className="about-header-text text-6xl md:text-[8rem] font-black tracking-tighter uppercase leading-[0.8]">
-                ARCHITECTING <br />{" "}
-                <span className="text-slate-700 font-serif italic font-light lowercase">
+
+              <h1
+                className="
+    about-header-text font-black uppercase tracking-tighter
+    leading-[0.95] sm:leading-[0.85] md:leading-[0.8]
+    text-4xl sm:text-5xl md:text-7xl lg:text-[8rem]
+  "
+              >
+                ARCHITECTING <br />
+                <span
+                  className="
+      text-slate-600 font-serif italic font-light lowercase
+    "
+                >
                   digital
                 </span>{" "}
                 STRENGTH
@@ -153,7 +171,7 @@ const About: React.FC = () => {
                 <span className="text-white font-medium">
                   Laravel ecosystem
                 </span>{" "}
-                and distributed systems, I bridge the gap between complex
+                and other Technologies, I bridge the gap between complex
                 business logic and high-performance server-side execution.
               </p>
 
@@ -215,7 +233,7 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      <Experience  />
+      <Experience />
 
       {/* Philosophy Callout */}
       <section className="py-40 px-6 text-center">

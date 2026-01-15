@@ -251,7 +251,7 @@ const Services: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="bg-black text-white min-h-screen pt-24 pb-40 px-6 overflow-hidden"
+      className="bg-black text-white min-h-screen pt-32 pb-0 px-6 overflow-hidden"
     >
       {/* Immersive Background Decorations */}
       <div className="bg-decoration fixed top-[-10%] left-[-10%] w-[50vw] aspect-square bg-[#ff6b00]/5 blur-[180px] rounded-full pointer-events-none z-0"></div>
@@ -286,7 +286,7 @@ const Services: React.FC = () => {
           ))}
         </div>
         {/* Philosophy Callout with Floating Element */}
-        <section className="relative py-40 text-center space-y-16">
+        <section className="relative py-0 text-center space-y-16">
           <div className="bg-decoration absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#ff6b00]/5 blur-[120px] rounded-full pointer-events-none"></div>
 
           <div className="relative group inline-block">
@@ -310,30 +310,50 @@ const Services: React.FC = () => {
             </p>
           </div>
 
-          <div className="pt-12 flex flex-col md:flex-row items-center justify-center gap-8">
+          <div className="pt-12 flex flex-col md:flex-row items-center justify-center gap-6 sm:gap-8">
+            {/* Primary CTA */}
             <Link
               to="/contact"
-              className="group relative px-16 py-8 bg-[#ff6b00] text-black rounded-full font-black text-2xl overflow-hidden shadow-[0_0_60px_rgba(255,107,0,0.2)] transition-transform duration-500 hover:scale-105 active:scale-95"
+              className="
+      group relative overflow-hidden
+      px-8 py-4 sm:px-12 sm:py-6 md:px-16 md:py-8
+      bg-[#ff6b00] text-black rounded-full font-black
+      text-base sm:text-xl md:text-2xl
+      shadow-[0_0_40px_rgba(255,107,0,0.25)]
+      transition-all duration-300 ease-out
+      hover:scale-[1.03] active:scale-95
+    "
             >
               <span className="relative z-10">Start Your Project</span>
-              {/* Animated glow ring */}
-              <div className="absolute inset-0 rounded-full border-4 border-[#ff6b00] opacity-0 group-hover:opacity-50 animate-pulse transition-all duration-500"></div>
-              {/* Gradient sliding overlay */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-yellow-400 via-orange-600 to-red-500 opacity-0 group-hover:opacity-40 blur-xl animate-slide transition-all duration-700"></div>
+
+              {/* Glow Ring */}
+              <span
+                className="
+        pointer-events-none absolute inset-0 rounded-full
+        border-2 sm:border-4 border-[#ff6b00]
+        opacity-0 group-hover:opacity-40
+        transition-opacity duration-500
+      "
+              />
+
+              {/* Gradient Glow */}
+              <span
+                className="
+        pointer-events-none absolute -inset-1
+        bg-gradient-to-r from-yellow-400 via-orange-600 to-red-500
+        opacity-0 group-hover:opacity-30
+        blur-xl
+        transition-opacity duration-700
+      "
+              />
             </Link>
 
-            <Link
-              to="/projects"
-              className="group relative px-12 py-8 border border-white/20 rounded-full font-bold text-lg uppercase tracking-widest text-white overflow-hidden transition-all duration-500 hover:text-[#ff6b00] hover:border-[#ff6b00]"
-            >
-              <span className="relative z-10">Explore Work</span>
-              {/* Subtle shine effect */}
-              {/* <div className="absolute top-0 left-0 w-0 h-full bg-white/30 rotate-12 group-hover:w-full transition-all duration-500"></div> */}
-            </Link>
+            {/* Secondary CTA */}
+            
           </div>
         </section>
         {/* Engineering Principles Ribbon */}
-        <section className="py-20 mt-2 border-y border-white/5 overflow-hidden">
+        {/* <section className="py-20 mt-2 border-y border-white/5 overflow-hidden">
           <div className="flex gap-20 animate-marquee whitespace-nowrap">
             {[...Array(10)].map((_, i) => (
               <div
@@ -350,7 +370,7 @@ const Services: React.FC = () => {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
       </div>
 
       <style

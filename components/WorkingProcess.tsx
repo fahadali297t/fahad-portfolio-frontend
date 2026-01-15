@@ -164,7 +164,7 @@ const WorkingProcess: React.FC = () => {
         className="lg:h-screen flex flex-col lg:justify-center px-4 md:px-12 py-10 md:py-20 max-w-7xl mx-auto lg:overflow-hidden"
       >
         {/* Section Heading */}
-        <div className="mb-8 md:mb-12 relative z-[20]">
+        <div className="mb-8 md:mb-12 mt-4 relative z-[20]">
           <span className="text-[#ff6b00] font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] md:tracking-[0.5em] block mb-2 md:mb-4">
             Strategic Workflow
           </span>

@@ -64,7 +64,7 @@ const App: React.FC = () => {
       <ScrollToTop />
       <div className="min-h-screen flex flex-col bg-black text-white relative">
         <Navbar />
-        <main className="flex-grow pt-16 relative z-10">
+        <main className="flex-grow  relative z-10">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

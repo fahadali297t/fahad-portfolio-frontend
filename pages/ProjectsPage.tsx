@@ -124,16 +124,16 @@ const ProjectsSection: React.FC = () => {
             </div>
             <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.8]">
               FEATURED <br />
-              <span className="text-slate-800 font-serif italic font-light lowercase">
-                architectural
+              <span className="text-slate-400 font-serif italic font-light lowercase">
+                Projects
               </span>
-              <span className="ml-2">ARTIFACTS</span>
+              {/* <span className="ml-2">ARTIFACTS</span> */}
             </h2>
           </div>
           <div className="pb-2">
             <p className="text-slate-500 text-lg md:text-xl font-light leading-relaxed max-w-sm border-l border-white/10 pl-8">
-              A precise selection of systems engineered for high-stakes
-              performance and logical integrity.
+              High-performance digital systems designed with precision and
+              structural clarity.
             </p>
           </div>
         </header>
@@ -155,8 +155,8 @@ const ProjectsSection: React.FC = () => {
               More Projects Available
             </h4>
             <p className="text-slate-500 text-sm max-w-md mx-auto">
-              Explore all the Projects of production-grade systems,
-              including performance benchmarks and technical documentation.
+              Browse real-world systems built for production, supported by
+              benchmarks and detailed documentation.
             </p>
           </div>
           <Link

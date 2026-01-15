@@ -156,7 +156,7 @@ const Hero: React.FC = () => {
           <div className="hero-fade-in">
             <span className="flex items-center gap-4 text-slate-500 dark:text-slate-400 font-mono text-[10px] sm:text-xs uppercase tracking-[0.6em] font-black">
               <div className="w-12 h-px bg-[#ff6b00]"></div>
-              Hi there , I am 
+              Hi there , I am
             </span>
           </div>
 
@@ -202,16 +202,37 @@ const Hero: React.FC = () => {
                     .getElementById("contact")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
-                className="group relative flex items-center space-x-6 px-12 py-6 bg-[#ff6b00] text-black rounded-full font-black transition-all hover:scale-105 active:scale-95 shadow-[0_0_60px_rgba(255,107,0,0.2)]"
+                className="
+    group relative flex items-center justify-center gap-4
+    px-6 py-4 sm:px-8 sm:py-4 md:px-12 md:py-6
+    bg-[#ff6b00] text-black rounded-full font-black
+    text-sm sm:text-base uppercase tracking-widest
+    transition-all duration-300 ease-out
+    hover:scale-[1.03] active:scale-95
+    shadow-[0_0_40px_rgba(255,107,0,0.25)]
+  "
               >
-                <span className="text-base uppercase tracking-widest">
-                  Start Collaboration
-                </span>
+                <span>Start Collaboration</span>
+
                 <ArrowUpRight
-                  size={26}
-                  className="group-hover:rotate-45 transition-transform"
+                  size={22}
+                  className="
+      transition-transform duration-300 ease-out
+      group-hover:translate-x-1 group-hover:-translate-y-1
+      md:group-hover:rotate-45
+    "
                 />
-                <div className="absolute inset-0 rounded-full border border-white/30 scale-125 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-700"></div>
+
+                {/* Hover Ring */}
+                <span
+                  className="
+      pointer-events-none absolute inset-0 rounded-full
+      border border-white/30
+      opacity-0 scale-110
+      group-hover:opacity-100 group-hover:scale-100
+      transition-all duration-500 ease-out
+    "
+                />
               </button>
             </div>
           </div>

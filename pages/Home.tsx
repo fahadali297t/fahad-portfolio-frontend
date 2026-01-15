@@ -63,7 +63,7 @@ const Home: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="overflow-x-hidden bg-transparent transition-colors duration-500"
+      className="overflow-x-hidden bg-transparent mt-16 transition-colors duration-500"
     >
       {/* Background Particles Layer */}
       <div
@@ -82,12 +82,13 @@ const Home: React.FC = () => {
       <div id="services">
         <Services />
       </div>
-      <WorkingProcess />
-      <BentoSection />
-
       <div id="projects">
         <Projects isLandingPage={true} />
       </div>
+
+      <BentoSection />
+      <WorkingProcess />
+
       <div id="blogs">
         <Blogs />
       </div>
