@@ -7,7 +7,7 @@ import { ArrowUpRight, Filter, Layers, Zap } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const CATEGORIES = ["All", "SaaS", "Fintech", "E-commerce", "DevOps"] as const;
+const CATEGORIES = ["All", "WordPress", "Laravel", "Fintech", "E-commerce", "DevOps"] as const;
 type Category = (typeof CATEGORIES)[number];
 
 const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({

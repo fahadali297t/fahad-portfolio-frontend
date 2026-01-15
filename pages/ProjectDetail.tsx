@@ -14,9 +14,11 @@ import {
   Code2, 
   Database, 
   Zap, 
-  Terminal as TerminalIcon 
+  Terminal as TerminalIcon, 
+  Globe
 } from 'lucide-react';
 import Terminal from '../components/Terminal';
+import { CgWebsite } from 'react-icons/cg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,17 +61,17 @@ const ProjectDetail: React.FC = () => {
       });
 
       // Technical chips animation
-      gsap.from('.tech-chip', {
-        scale: 0.8,
-        opacity: 0,
-        stagger: 0.1,
-        duration: 0.8,
-        ease: 'back.out(1.7)',
-        scrollTrigger: {
-          trigger: '.tech-grid',
-          start: 'top 80%',
-        }
-      });
+      // gsap.from('.tech-chip', {
+      //   scale: 0.8,
+      //   opacity: 0,
+      //   stagger: 0.1,
+      //   duration: 0.8,
+      //   ease: 'back.out(1.7)',
+      //   scrollTrigger: {
+      //     trigger: '.tech-grid',
+      //     start: 'top 80%',
+      //   }
+      // });
     }, containerRef);
 
     return () => {
@@ -145,7 +147,7 @@ const ProjectDetail: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           <div className="lg:col-span-8 space-y-10 reveal-section">
             <div className="space-y-4">
-               <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none">THE <span className="text-[#ff6b00] font-serif italic font-light lowercase">architectural</span> VISION</h2>
+               <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none">About<span className="text-[#ff6b00] font-serif italic font-light lowercase"> Project</span></h2>
                <div className="h-px w-24 bg-[#ff6b00]"></div>
             </div>
             <p className="text-xl md:text-2xl text-slate-400 font-light leading-relaxed">
@@ -167,7 +169,7 @@ const ProjectDetail: React.FC = () => {
       {/* Technical Arsenal Chips */}
       <section className="py-24 bg-white/[0.02] border-y border-white/5 px-6">
         <div className="max-w-7xl mx-auto">
-          <h3 className="text-sm font-mono text-slate-500 uppercase tracking-[0.4em] mb-12 text-center font-bold">Technology Ecosystem</h3>
+          <h3 className="text-sm font-mono text-slate-500 uppercase tracking-[0.4em] mb-12 text-center font-bold">Technology Used</h3>
           <div className="flex flex-wrap justify-center gap-4 tech-grid">
             {project.techStackDetailed.map((tech, i) => (
               <div key={i} className="tech-chip px-8 py-4 bg-white/5 rounded-2xl border border-white/10 text-slate-300 font-bold tracking-tight hover:bg-[#ff6b00] hover:text-black hover:border-transparent transition-all cursor-default">
@@ -191,13 +193,13 @@ const ProjectDetail: React.FC = () => {
             </p>
           </div>
           <div className="relative aspect-[16/10] rounded-[3rem] overflow-hidden border border-white/10 group">
-             <img src={project.gallery[0]} className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000" />
+             <img src={project.gallery[0]} className="w-full h-full object-cover  transition-all duration-1000" />
           </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center reveal-section lg:flex-row-reverse">
           <div className="relative aspect-[16/10] rounded-[3rem] overflow-hidden border border-white/10 group order-2 lg:order-1">
-             <img src={project.gallery[1]} className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000" />
+             <img src={project.gallery[1]} className="w-full h-full object-cover transition-all duration-1000" />
           </div>
           <div className="space-y-8 order-1 lg:order-2">
             <div className="inline-block p-4 bg-[#ff6b00]/10 text-[#ff6b00] rounded-2xl">
@@ -223,9 +225,9 @@ const ProjectDetail: React.FC = () => {
               Every system is built on solid principles. Here we leveraged Laravel's transactional capabilities to ensure financial consistency across micro-services.
             </p>
             <div className="flex gap-4">
-               <a href={project.github} className="flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-bold hover:scale-105 transition-transform">
-                 <Github size={20} />
-                 <span>Source Code</span>
+               <a href={project.github} target='_blank' className="flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-bold hover:scale-105 transition-transform">
+                 <Globe size={20} />
+                 <span>Live Preview</span>
                </a>
             </div>
           </div>
@@ -247,7 +249,7 @@ const ProjectDetail: React.FC = () => {
               <p className="text-slate-500 font-mono text-[10px] uppercase tracking-widest">Selected Screenshots</p>
            </div>
            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {project.gallery.slice(0, 2).map((img, i) => (
+              {project.gallery.map((img, i) => (
                 <div key={i} className="rounded-[2.5rem] overflow-hidden aspect-video border border-white/10 group">
                   <img src={img} className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
                 </div>

@@ -41,13 +41,13 @@ export const PROJECTS: EnhancedProject[] = [
     id: 7,
     title: "TurboDash Delivery",
     type: "LOGISTICS & DELIVERY PLATFORM",
-    category: "Logistics",
+    category: "Laravel",
     year: "2024",
     role: "Full-Stack Architect",
     description:
       "A high-performance delivery platform designed to streamline last-mile logistics and real-time order tracking.",
     fullDescription:
-      "TurboDash Delivery is a scalable logistics platform built for managing orders, riders, and real-time delivery operations across the UAE. The system focuses on speed, reliability, and operational transparency with live tracking and automated dispatch workflows.",
+      "TurboDash Delivery is a scalable logistics ecosystem built to power high-volume delivery operations across the UAE. The platform centralizes order management, rider coordination, and real-time tracking into a single operational interface, enabling logistics teams to move faster with greater precision. With automated dispatch workflows and live location intelligence, TurboDash reduces delivery latency while improving transparency across every stage of the delivery lifecycle. The system is designed to handle rapid growth without compromising performance, reliability, or control.",
     challenge:
       "Handling real-time order updates and rider location tracking without degrading system performance.",
     solution:
@@ -62,14 +62,14 @@ export const PROJECTS: EnhancedProject[] = [
     ],
     metrics: [
       { value: "70ms", label: "Realtime Update Latency" },
-      { value: "35%", label: "Dispatch Efficiency" },
+      { value: "82%", label: "Increase in Dispatch Efficiency" },
       { value: "99.9%", label: "Platform Uptime" },
     ],
-    image:  "image.png",
-    gallery: [],
+    image: "image.png",
+    gallery: ["turbo1.png", "turbo2.png"],
     codeSnippet: `// Order Status Broadcast\nevent(new OrderUpdated($order));`,
     tags: ["Laravel", "Logistics", "Realtime"],
-    github: "https://github.com",
+    github: "https://turbodashdelivery.ae/",
     demo: "https://turbodashdelivery.ae/",
   },
 
@@ -77,29 +77,33 @@ export const PROJECTS: EnhancedProject[] = [
     id: 8,
     title: "Arqam Grammar School",
     type: "EDUCATION MANAGEMENT SYSTEM",
-    category: "Education",
+    category: "Laravel",
     year: "2023",
     role: "Backend Developer",
     description:
       "A modern school website and management system built to enhance communication and academic transparency.",
     fullDescription:
-      "Arqam Grammar School’s platform provides parents, students, and staff with centralized access to academic information, announcements, and admissions. The system emphasizes clarity, accessibility, and performance.",
+      "The Arqam Grammar School platform serves as a centralized digital hub for academic operations and public engagement. It enables parents and students to access academic calendars, announcements, admissions details, and institutional updates through a clean, intuitive interface.Built with a strong focus on accessibility and performance, the system ensures critical academic information remains easily discoverable and readable across devices. The platform balances informative public-facing content with structured academic data, delivering a reliable digital presence for a modern educational institution.",
     challenge:
-      "Presenting academic content in a structured way while ensuring performance on low-bandwidth networks.",
+      "Organizing academic information in a clear and accessible way while maintaining fast performance across different devices and internet conditions.",
     solution:
-      "Optimized server-side rendering and implemented a lightweight UI with aggressive caching strategies.",
+      "Built a lightweight, User-friendly interface with optimized rendering and caching to ensure fast load times and smooth access to academic content.",
     techStackDetailed: ["Laravel", "Blade", "MySQL", "Bootstrap", "cPanel"],
     metrics: [
       { value: "60%", label: "Parent Engagement" },
       { value: "2x", label: "Inquiry Growth" },
-      { value: "90+", label: "Lighthouse Score" },
+      { value: "200%", label: "Increase in Enrollments" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80&w=1200",
-    gallery: [],
-    codeSnippet: `// Notice Board Query\nNotice::latest()->take(5)->get();`,
+    image: "arqam1.png",
+    gallery: ["arqam1.png"],
+    codeSnippet: `// Fetch latest school announcements
+Announcement::where('is_published', true)
+    ->latest()
+    ->take(5)
+    ->get();
+`,
     tags: ["Education", "Laravel", "CMS"],
-    github: "https://github.com",
+    github: "https://arqamgrammarschools.edu.pk/",
     demo: "https://arqamgrammarschools.edu.pk/",
   },
 
@@ -107,17 +111,17 @@ export const PROJECTS: EnhancedProject[] = [
     id: 9,
     title: "BinAzamex",
     type: "CORPORATE BUSINESS WEBSITE",
-    category: "Corporate",
+    category: "Laravel",
     year: "2024",
     role: "Web Engineer",
     description:
       "A professional corporate website designed to establish credibility and showcase business services.",
     fullDescription:
-      "Bin Azamex required a clean, authoritative digital presence to represent its services and corporate values. The project focused on performance, SEO, and a refined visual hierarchy.",
+      "Bin Azamex sought a clean, authoritative digital presence that could effectively communicate its services, values, and professional standing. The project emphasized structured content, refined typography, and a disciplined layout system to guide users through key information with confidence.Performance optimization and SEO best practices were embedded at the architectural level, ensuring fast load times, improved search visibility, and a future-ready platform aligned with the company’s growth objectives.",
     challenge:
-      "Balancing a premium corporate look with fast load times and SEO optimization.",
+      "Delivering a premium visual experience without compromising page speed or SEO standards.",
     solution:
-      "Implemented a minimalist UI with optimized assets and structured metadata for search engines.",
+      "Applied performance optimization techniques and implemented structured metadata across key pages.",
     techStackDetailed: [
       "Laravel",
       "Tailwind CSS",
@@ -126,54 +130,162 @@ export const PROJECTS: EnhancedProject[] = [
       "Vite",
     ],
     metrics: [
-      { value: "3x", label: "Organic Traffic" },
-      { value: "1.5s", label: "Page Load Time" },
+      { value: "10x", label: "Organic Traffic" },
+      { value: "0.1s", label: "Page Load Time" },
       { value: "95+", label: "SEO Score" },
     ],
-    image:
-      "binazamex.png",
-    gallery: [],
-    codeSnippet: `// SEO Meta Generator\nSEOTools::setTitle($page->title);`,
+    image: "binazamex.png",
+    gallery: ["binazamex.png", "binazam2.png"],
+    codeSnippet: `// Cached SEO meta generation
+cache()->remember("seo_{$page->id}", 3600, function () use ($page) {
+    SEOTools::setTitle($page->title);
+});
+`,
     tags: ["Corporate", "SEO", "Laravel"],
-    github: "https://github.com",
+    github: "https://binazamex.com",
     demo: "https://binazamex.com",
   },
+  {
+    id: 10,
+    title: "Imperium Global Media",
+    type: "CORPORATE MARKETING WEBSITE",
+    category: "WordPress",
+    year: "2025",
+    role: "WordPress Developer",
+    description:
+      "A sleek, performance-focused corporate website to showcase marketing services and client success stories.",
+    fullDescription:
+      "Imperium Global Media’s website was built to present the company as a leader in digital marketing and media solutions. With a clean, modern layout, the platform emphasizes service offerings, portfolio highlights, and client testimonials. The WordPress backend was customized for easy content updates, ensuring the marketing team can quickly refresh campaigns, blogs, and case studies.",
+    challenge:
+      "Creating a visually engaging corporate site while keeping WordPress lightweight and fast.",
+    solution:
+      "Developed a custom WordPress theme with optimized assets, caching, and SEO plugins to ensure smooth performance and content flexibility.",
+    techStackDetailed: [
+      "WordPress",
+      "PHP",
+      "Custom Theme",
+      "Elementor",
+      "SEO Plugins",
+      "Caching",
+    ],
+    metrics: [
+      { value: "98%", label: "Page Speed Score" },
+      { value: "15+", label: "Published Case Studies" },
+      { value: "50%", label: "Increase in Client Inquiries" },
+    ],
+    image: "im1.png",
+    gallery: [
+      "im1.png",
+      "im2.png",
+      "im3.png",
+      "im4.png",
+      "im5.png",
+      "im6.png",
+      "im7.png",
+    ],
+    codeSnippet: `// Custom WordPress Loop for Services
+$args = array('post_type' => 'service', 'posts_per_page' => 5);
+$services = new WP_Query($args);
+while($services->have_posts()): $services->the_post();
+    the_title();
+endwhile;`,
+    tags: ["WordPress", "Corporate", "Marketing"],
+    github: "",
+    demo: "https://imperiumglobalmedia.com/",
+  },
 
-  // {
-  //   id: 10,
-  //   title: "Niobi",
-  //   type: "DIGITAL PRODUCT PLATFORM",
-  //   category: "SaaS",
-  //   year: "2024",
-  //   role: "Backend Lead",
-  //   description:
-  //     "A sleek SaaS platform engineered to support scalable digital products and client onboarding.",
-  //   fullDescription:
-  //     "Niobi is a modern SaaS platform focused on delivering scalable digital solutions with a strong emphasis on performance, modular architecture, and developer-friendly APIs.",
-  //   challenge:
-  //     "Designing a flexible architecture that supports rapid feature expansion without technical debt.",
-  //   solution:
-  //     "Adopted a modular service-oriented backend with clear domain boundaries and reusable components.",
-  //   techStackDetailed: [
-  //     "Laravel",
-  //     "PostgreSQL",
-  //     "Redis",
-  //     "API-First Design",
-  //     "Docker",
-  //   ],
-  //   metrics: [
-  //     { value: "99.9%", label: "API Uptime" },
-  //     { value: "120ms", label: "Avg API Response" },
-  //     { value: "40%", label: "Dev Velocity Increase" },
-  //   ],
-  //   image:
-  //     "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=1200",
-  //   gallery: [],
-  //   codeSnippet: `// Modular Service Resolver\napp(ServiceRegistry::class)->resolve($key);`,
-  //   tags: ["SaaS", "Laravel", "API"],
-  //   github: "https://github.com",
-  //   demo: "https://www.niobi.co/",
-  // },
+  {
+    id: 11,
+    title: "Emerald Elevator",
+    type: "CORPORATE BUSINESS WEBSITE",
+    category: "WordPress",
+    year: "2025",
+    role: "WordPress Developer",
+    description:
+      "A professional website for Emerald Elevator, emphasizing product offerings and corporate values.",
+    fullDescription:
+      "Emerald Elevator’s website was crafted to showcase their elevator solutions, services, and corporate expertise. Built on WordPress, the platform features a clean navigation, visually appealing sections for products, client testimonials, and certifications. The backend was customized for easy updates to product catalogs and corporate announcements.",
+    challenge:
+      "Highlighting technical products while keeping the site fast and easy to maintain.",
+    solution:
+      "Implemented a lightweight custom WordPress theme, optimized images, and caching solutions to maintain speed and flexibility.",
+    techStackDetailed: [
+      "WordPress",
+      "PHP",
+      "Custom Theme",
+      "Elementor",
+      "Caching",
+      "SEO Optimization",
+    ],
+    metrics: [
+      { value: "99%", label: "Website Uptime" },
+      { value: "0.8s", label: "Average Page Load" },
+      { value: "30%", label: "Increase in Product Inquiries" },
+    ],
+    image: "em3.png",
+    gallery: ["em1.png", "em2.png", "em4.png", "em5.png", "em6.png", "em3.png"],
+    codeSnippet: `// Custom Post Type for Elevators
+function register_elevator_cpt() {
+    register_post_type('elevator', array(
+        'label' => 'Elevators',
+        'public' => true,
+        'supports' => ['title','editor','thumbnail']
+    ));
+}
+add_action('init', 'register_elevator_cpt');`,
+    tags: ["WordPress", "Corporate", "Products"],
+    github: "",
+    demo: "http://emeraldelevator.ae/",
+  },
+
+  {
+    id: 12,
+    title: "Head2Paws Pet Grooming",
+    type: "SERVICE BUSINESS WEBSITE",
+    category: "WordPress",
+    year: "2025",
+    role: "WordPress Developer",
+    description:
+      "A visually appealing, user-friendly website for a pet grooming service to attract and engage pet owners.",
+    fullDescription:
+      "Head2Paws Pet Grooming’s website was designed to create a warm and inviting experience for pet owners while clearly communicating services, pricing, and booking options. Built on WordPress, the platform includes online appointment forms, galleries, and blog sections to provide helpful pet care tips. Custom backend functionality allows easy updates to services, promotions, and galleries.",
+    challenge:
+      "Designing a playful yet professional site that is easy to navigate for pet owners of all ages.",
+    solution:
+      "Developed a custom WordPress theme with optimized visuals, appointment booking forms, and lightweight galleries for fast loading and user engagement.",
+    techStackDetailed: [
+      "WordPress",
+      "PHP",
+      "Custom Theme",
+      "Elementor",
+      "Booking Forms",
+      "SEO Plugins",
+    ],
+    metrics: [
+      { value: "45%", label: "Increase in Bookings" },
+      { value: "4.9/5", label: "Average Client Rating" },
+      { value: "80%", label: "Return Visitors" },
+    ],
+    image: "paw1.png",
+    gallery: [
+      "paw2.png",
+      "paw4.png",
+      "paw3.png",
+      "paw5.png",
+      "paw6.png",
+      "paw1.png",
+    ],
+    codeSnippet: `// Custom Booking Form Shortcode
+function h2p_booking_form() {
+    ob_start(); ?>
+    <form id="booking-form">...</form>
+    <?php return ob_get_clean();
+}
+add_shortcode('booking_form', 'h2p_booking_form');`,
+    tags: ["WordPress", "Services", "Pet Grooming"],
+    github: "",
+    demo: "https://head2pawspetgrooming.com/",
+  },
 ];
 
 
