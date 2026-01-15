@@ -269,9 +269,9 @@ const Hero: React.FC = () => {
 
             <div className="relative w-[320px] sm:w-[420px] aspect-[4/5] rounded-[4rem] overflow-hidden border border-black/5 dark:border-white/10 shadow-2xl transition-all duration-700 group-hover:shadow-[#ff6b00]/20 bg-slate-200 dark:bg-slate-900">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800"
+                src="profile.png"
                 alt="Professional Backend Developer"
-                className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
+                className="w-full h-full object-cover  transition-all duration-1000"
               />
 
               <div className="absolute bottom-10 left-10 p-5 bg-black/60 backdrop-blur-xl border border-white/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">

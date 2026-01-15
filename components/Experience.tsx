@@ -27,7 +27,7 @@ const TIMELINE = [
   {
     id: 2,
     year: "April 2025 - Present",
-    title: "Laravel Developer",
+    title: "Full Stack Web Developer",
     company: "Apexvim",
     description:
       "Built end-to-end solutions using modern frameworks, delivered 15+ production features.",
@@ -35,7 +35,7 @@ const TIMELINE = [
   {
     id: 3,
     year: "February 2025 - April 2025",
-    title: "Laravel Internee",
+    title: "Web Developer Internee",
     company: "Apexvim",
     description:
       "Supported senior engineers in building robust middleware, authentication flows, and unit testing suites for e-commerce clients.",
@@ -282,7 +282,7 @@ const Experience = () => {
           </span>
 
           <h2 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight">
-            Technical Evolution
+            My Professional Journey
           </h2>
 
           <p className="text-base sm:text-lg md:text-xl text-slate-500 max-w-2xl">

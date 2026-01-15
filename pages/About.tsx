@@ -153,10 +153,10 @@ const About: React.FC = () => {
     text-4xl sm:text-5xl md:text-7xl lg:text-[8rem]
   "
               >
-                ARCHITECTING <br />
+                Developing <br />
                 <span
                   className="
-      text-slate-600 font-serif italic font-light lowercase
+      text-slate-400 font-serif italic font-light lowercase
     "
                 >
                   digital
@@ -182,10 +182,10 @@ const About: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-white uppercase tracking-tight">
-                      Lead Status
+                      Skills
                     </h4>
                     <p className="text-slate-500 text-xs font-mono">
-                      Backend Eng.
+                      Wordpress & Backend Eng.
                     </p>
                   </div>
                 </div>
@@ -195,7 +195,7 @@ const About: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-white uppercase tracking-tight">
-                      Laravel Expert
+                      Web Dev Expert
                     </h4>
                     <p className="text-slate-500 text-xs font-mono">
                       Certified
@@ -210,15 +210,15 @@ const About: React.FC = () => {
             <div className="relative group max-w-[440px]">
               <div className="aspect-[4/5] rounded-[3.5rem] overflow-hidden border border-white/10 shadow-2xl transition-all duration-1000 group-hover:scale-[1.03]">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1200"
+                  src="profile.png"
                   alt="Portrait"
-                  className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
+                  className="w-full h-full object-cover transition-all duration-1000"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
               </div>
 
               {/* Floating Stat Badge */}
-              <div className="absolute -bottom-10 -right-6 bg-[#ff6b00] p-8 rounded-[2.5rem] shadow-2xl rotate-3 group-hover:rotate-0 transition-transform duration-500">
+              {/* <div className="absolute -bottom-10 -right-6 bg-[#ff6b00] p-8 rounded-[2.5rem] shadow-2xl rotate-3 group-hover:rotate-0 transition-transform duration-500">
                 <div className="text-black text-center space-y-1">
                   <span className="block text-4xl font-black tracking-tighter">
                     1+
@@ -227,7 +227,7 @@ const About: React.FC = () => {
                     Years in <br /> Production
                   </span>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
