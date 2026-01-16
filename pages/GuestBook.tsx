@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ArrowRight, Clock, User, Zap } from "lucide-react";
+import { ArrowRight, Clock, User, Zap, LogIn } from "lucide-react";
+import { supabase } from "../lib/supabase";
+import { User as SupabaseUser } from "@supabase/supabase-js";
 
 interface GuestbookEntry {
   id: string;
@@ -8,40 +10,67 @@ interface GuestbookEntry {
   message: string;
   timestamp: string;
   avatar: string;
+  created_at: string;
 }
 
-const INITIAL_ENTRIES: GuestbookEntry[] = [
-  {
-    id: "1",
-    name: "Sarah Jenkins",
-    message:
-      "Love the clean architectural feel of this portfolio. Truly artisan-grade work!",
-    timestamp: "2 hours ago",
-    avatar: "https://i.pravatar.cc/150?u=sarah",
-  },
-  {
-    id: "2",
-    name: "Marcello Rossi",
-    message:
-      "The microservices breakdown in the case studies is top-tier. Great job on the documentation.",
-    timestamp: "5 hours ago",
-    avatar: "https://i.pravatar.cc/150?u=marcello",
-  },
-];
-
 const Guestbook: React.FC = () => {
-  const [entries, setEntries] = useState<GuestbookEntry[]>(() => {
-    const saved = localStorage.getItem("guestbook_entries_v2");
-    return saved ? JSON.parse(saved) : INITIAL_ENTRIES;
-  });
-
+  const [entries, setEntries] = useState<GuestbookEntry[]>([]);
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [user, setUser] = useState<SupabaseUser | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // Check auth state on mount
   useEffect(() => {
-    localStorage.setItem("guestbook_entries_v2", JSON.stringify(entries));
-  }, [entries]);
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    fetchEntries();
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const fetchEntries = async () => {
+    const { data, error } = await supabase
+      .from("guestbook")
+      .select("*")
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      console.error("Error fetching guestbook:", error);
+    } else if (data) {
+      // Format the data to match our interface
+      const formattedEntries: GuestbookEntry[] = data.map((item: any) => ({
+        id: item.id.toString(),
+        name: item.user_name || "Anonymous",
+        message: item.content,
+        timestamp: new Date(item.created_at).toLocaleDateString(), // Simple formatting
+        avatar: item.user_avatar || "",
+        created_at: item.created_at,
+      }));
+      setEntries(formattedEntries);
+    }
+  };
+
+  const handleLogin = async () => {
+    await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: window.location.origin + "/guestbook",
+      },
+    });
+  };
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -77,25 +106,28 @@ const Guestbook: React.FC = () => {
     return () => ctx.revert();
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!message.trim()) return;
+    if (!message.trim() || !user) return;
 
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      const newEntry: GuestbookEntry = {
-        id: Date.now().toString(),
-        name: "Fahad Ali",
-        message: message,
-        timestamp: "Just now",
-        avatar: "bg-gradient-to-br from-purple-600 to-pink-500",
-      };
+    const { error } = await supabase.from("guestbook").insert({
+      content: message,
+      user_id: user.id,
+      user_email: user.email,
+      user_name: user.user_metadata?.full_name || user.email?.split("@")[0],
+      user_avatar: user.user_metadata?.avatar_url,
+    });
 
-      setEntries([newEntry, ...entries]);
+    if (error) {
+      console.error("Error posting message:", error);
+      alert("Failed to post message. Please try again.");
+    } else {
       setMessage("");
-      setIsSubmitting(false);
-    }, 800);
+      fetchEntries(); // Refresh list
+    }
+    setIsSubmitting(false);
   };
 
   return (
@@ -122,57 +154,88 @@ const Guestbook: React.FC = () => {
         {/* Input Card */}
         <section className="input-card">
           <div className="bg-[#0f0f11] border border-white/5 rounded-[2rem] p-6 sm:p-10 shadow-2xl space-y-8">
-            {/* User Session Header */}
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                  F
-                </div>
-                <div className="space-y-0.5">
-                  <h4 className="text-sm font-bold text-white tracking-tight">
-                    Fahad Ali
-                  </h4>
-                  <div className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
-                    <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">
-                      Writing Now
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <button className="text-[11px] font-mono text-slate-500 hover:text-white transition-colors uppercase tracking-widest">
-                Sign out
-              </button>
-            </div>
-
-            {/* Input Form */}
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <textarea
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                placeholder="Share your thoughts, feedback, or just say hello..."
-                className="w-full bg-[#161618] border border-white/5 rounded-2xl p-6 text-slate-300 placeholder-slate-700 outline-none focus:ring-1 focus:ring-white/10 transition-all text-sm sm:text-base leading-relaxed resize-none min-h-[160px]"
-              ></textarea>
-
-              <div className="flex justify-end">
+            {!user ? (
+              <div className="text-center py-10 space-y-6">
+                <h3 className="text-xl font-bold text-white">
+                  Join the conversation
+                </h3>
+                <p className="text-slate-400 max-w-md mx-auto">
+                  Sign in with Google to leave a permanent mark on my guestbook.
+                </p>
                 <button
-                  type="submit"
-                  disabled={isSubmitting || !message.trim()}
-                  className={`group flex items-center gap-4 px-8 py-3.5 bg-white text-black rounded-full font-bold text-sm tracking-tight transition-all
-                    ${
-                      isSubmitting || !message.trim()
-                        ? "opacity-50 cursor-not-allowed"
-                        : "hover:scale-105 active:scale-95 shadow-xl hover:shadow-white/10"
-                    }`}
+                  onClick={handleLogin}
+                  className="inline-flex items-center gap-3 px-8 py-3 bg-white text-black rounded-full font-bold text-sm tracking-tight hover:scale-105 transition-transform"
                 >
-                  {isSubmitting ? "Posting..." : "Post Note"}
-                  <ArrowRight
-                    size={18}
-                    className="group-hover:translate-x-1 transition-transform"
-                  />
+                  <LogIn size={18} />
+                  Sign in with Google
                 </button>
               </div>
-            </form>
+            ) : (
+              <>
+                {/* User Session Header */}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 flex items-center justify-center text-white font-bold text-lg shadow-lg overflow-hidden">
+                      {user.user_metadata?.avatar_url ? (
+                        <img
+                          src={user.user_metadata.avatar_url}
+                          alt="User"
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        user.email?.charAt(0).toUpperCase()
+                      )}
+                    </div>
+                    <div className="space-y-0.5">
+                      <h4 className="text-sm font-bold text-white tracking-tight">
+                        {user.user_metadata?.full_name || user.email}
+                      </h4>
+                      <div className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
+                        <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">
+                          Writing Now
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    onClick={handleLogout}
+                    className="text-[11px] font-mono text-slate-500 hover:text-white transition-colors uppercase tracking-widest"
+                  >
+                    Sign out
+                  </button>
+                </div>
+
+                {/* Input Form */}
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <textarea
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    placeholder="Share your thoughts, feedback, or just say hello..."
+                    className="w-full bg-[#161618] border border-white/5 rounded-2xl p-6 text-slate-300 placeholder-slate-700 outline-none focus:ring-1 focus:ring-white/10 transition-all text-sm sm:text-base leading-relaxed resize-none min-h-[160px]"
+                  ></textarea>
+
+                  <div className="flex justify-end">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting || !message.trim()}
+                      className={`group flex items-center gap-4 px-8 py-3.5 bg-white text-black rounded-full font-bold text-sm tracking-tight transition-all
+                      ${
+                        isSubmitting || !message.trim()
+                          ? "opacity-50 cursor-not-allowed"
+                          : "hover:scale-105 active:scale-95 shadow-xl hover:shadow-white/10"
+                      }`}
+                    >
+                      {isSubmitting ? "Posting..." : "Post Note"}
+                      <ArrowRight
+                        size={18}
+                        className="group-hover:translate-x-1 transition-transform"
+                      />
+                    </button>
+                  </div>
+                </form>
+              </>
+            )}
           </div>
         </section>
 
@@ -194,52 +257,50 @@ const Guestbook: React.FC = () => {
           </div>
 
           <div className="messages-list grid grid-cols-1 gap-6">
-            {entries.map((entry) => (
-              <div
-                key={entry.id}
-                className="message-item group relative p-8 bg-[#0a0a0c] border border-white/5 rounded-[2.5rem] hover:border-white/10 transition-all duration-500"
-              >
-                <div className="flex items-start gap-6">
-                  <div
-                    className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold shrink-0 shadow-lg ${
-                      entry.avatar.includes("http") ? "p-0" : entry.avatar
-                    }`}
-                  >
-                    {entry.avatar.includes("http") ? (
-                      <img
-                        src={entry.avatar}
-                        alt={entry.name}
-                        className="w-full h-full rounded-full object-cover"
-                      />
-                    ) : (
-                      entry.name.charAt(0)
-                    )}
-                  </div>
-
-                  <div className="space-y-3 flex-grow">
-                    <div className="flex items-center justify-between">
-                      <h4 className="text-sm font-bold text-white tracking-tight group-hover:text-[#ff6b00] transition-colors">
-                        {entry.name}
-                      </h4>
-                      <div className="flex items-center gap-2 text-[10px] font-mono text-slate-700 uppercase tracking-widest">
-                        <Clock size={12} />
-                        {entry.timestamp}
+            {entries.length === 0 ? (
+              <p className="text-center text-slate-500 italic">No messages yet. Be the first!</p>
+            ) : (
+                entries.map((entry) => (
+                    <div
+                      key={entry.id}
+                      className="message-item group relative p-8 bg-[#0a0a0c] border border-white/5 rounded-[2.5rem] hover:border-white/10 transition-all duration-500"
+                    >
+                      <div className="flex items-start gap-6">
+                        <div
+                          className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold shrink-0 shadow-lg ${
+                            entry.avatar && entry.avatar.includes("http") ? "p-0" : "bg-gradient-to-br from-gray-700 to-gray-600"
+                          }`}
+                        >
+                          {entry.avatar && entry.avatar.includes("http") ? (
+                            <img
+                              src={entry.avatar}
+                              alt={entry.name}
+                              className="w-full h-full rounded-full object-cover"
+                            />
+                          ) : (
+                            entry.name.charAt(0).toUpperCase()
+                          )}
+                        </div>
+      
+                        <div className="space-y-3 flex-grow">
+                          <div className="flex items-center justify-between">
+                            <h4 className="text-sm font-bold text-white tracking-tight group-hover:text-[#ff6b00] transition-colors">
+                              {entry.name}
+                            </h4>
+                            <div className="flex items-center gap-2 text-[10px] font-mono text-slate-700 uppercase tracking-widest">
+                              <Clock size={12} />
+                              {entry.timestamp}
+                            </div>
+                          </div>
+                          <p className="text-slate-400 text-sm sm:text-base font-light leading-relaxed">
+                            {entry.message}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                    <p className="text-slate-400 text-sm sm:text-base font-light leading-relaxed">
-                      {entry.message}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Decorative zap for recent ones */}
-                {entry.timestamp === "Just now" && (
-                  <div className="absolute top-6 right-6">
-                    <Zap size={14} className="text-[#ff6b00] animate-pulse" />
-                  </div>
-                )}
-              </div>
-            ))}
+                  ))
+            )}
+           
           </div>
         </section>
       </div>
@@ -248,3 +309,4 @@ const Guestbook: React.FC = () => {
 };
 
 export default Guestbook;
+
