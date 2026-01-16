@@ -3,6 +3,8 @@ import { gsap } from "gsap";
 import { ArrowRight, Clock, User, Zap, LogIn } from "lucide-react";
 import { supabase } from "../lib/supabase";
 import { User as SupabaseUser } from "@supabase/supabase-js";
+import toast from "react-hot-toast";
+
 
 interface GuestbookEntry {
   id: string;
@@ -108,7 +110,7 @@ const Guestbook: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!message.trim() || !user) return;
+    if (!message.trim() || !user || isSubmitting) return;
 
     setIsSubmitting(true);
 
@@ -122,13 +124,22 @@ const Guestbook: React.FC = () => {
 
     if (error) {
       console.error("Error posting message:", error);
-      alert("Failed to post message. Please try again.");
+
+      toast.error("Something went wrong. Please try again.", {
+        icon: "⚠️",
+      });
     } else {
       setMessage("");
-      fetchEntries(); // Refresh list
+      fetchEntries();
+
+      toast.success("Your message has been posted!", {
+        icon: "✨",
+      });
     }
+
     setIsSubmitting(false);
   };
+
 
   return (
     <div

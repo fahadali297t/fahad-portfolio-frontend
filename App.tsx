@@ -21,6 +21,7 @@ import BlogList from "./pages/BlogList";
 import BlogDetail from "./pages/BlogDetail";
 // import CaseStudies from "./pages/CaseStudies";
 import Guestbook from "./pages/GuestBook";
+import { Toaster } from "react-hot-toast";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -85,5 +86,34 @@ const App: React.FC = () => {
     </Router>
   );
 };
+
+
+<Toaster
+  position="top-right"
+  toastOptions={{
+    duration: 3500,
+    style: {
+      background: "rgba(15,15,17,0.95)",
+      color: "#fff",
+      borderRadius: "14px",
+      border: "1px solid rgba(255,255,255,0.08)",
+      backdropFilter: "blur(12px)",
+      fontSize: "14px",
+    },
+    success: {
+      iconTheme: {
+        primary: "#22c55e",
+        secondary: "#0f0f11",
+      },
+    },
+    error: {
+      iconTheme: {
+        primary: "#ef4444",
+        secondary: "#0f0f11",
+      },
+    },
+  }}
+/>;
+
 
 export default App;
