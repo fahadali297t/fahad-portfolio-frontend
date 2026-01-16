@@ -587,16 +587,13 @@ export const BLOG_POSTS: EnhancedBlog[] = [
     author: {
       name: "Artisan Dev",
       avatar: "https://i.pravatar.cc/150?u=artisan",
-      role: "Lead Backend Engineer",
+      role: "Lead Backend Engineer"
     },
     title: "The Power of Domain Driven Design in Laravel",
-    image:
-      "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800",
-    content:
-      "Domain-Driven Design (DDD) is not a set of rules, but a philosophy for building software. In the context of Laravel, it means moving beyond simple 'Models' and 'Controllers' to embrace Entities, Value Objects, and Repositories. By modeling the software based on the business domain, we reduce complexity and make the codebase more resilient to change.",
+    image: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800",
+    content: "Domain-Driven Design (DDD) is not a set of rules, but a philosophy for building software. In the context of Laravel, it means moving beyond simple 'Models' and 'Controllers' to embrace Entities, Value Objects, and Repositories. By modeling the software based on the business domain, we reduce complexity and make the codebase more resilient to change.",
     tags: ["Laravel", "DDD", "Clean Code"],
-    quote:
-      "Architecture is the art of what to leave out to make the core shine.",
+    quote: "Architecture is the art of what to leave out to make the core shine."
   },
   {
     id: 2,
@@ -606,15 +603,13 @@ export const BLOG_POSTS: EnhancedBlog[] = [
     author: {
       name: "Artisan Dev",
       avatar: "https://i.pravatar.cc/150?u=artisan",
-      role: "Lead Backend Engineer",
+      role: "Lead Backend Engineer"
     },
     title: "How Advanced Caching Strategies Shape User Experience",
-    image:
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800",
-    content:
-      "Caching is the secret weapon of high-performance backends. But 'caching everything' is a recipe for stale data and hard-to-debug bugs. We explore Tagged Caching in Redis, Atomic Locks for race conditions, and how to use Laravel's 'Cache::remember' to optimize expensive database queries without sacrificing data integrity.",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800",
+    content: "Caching is the secret weapon of high-performance backends. But 'caching everything' is a recipe for stale data and hard-to-debug bugs. We explore Tagged Caching in Redis, Atomic Locks for race conditions, and how to use Laravel's 'Cache::remember' to optimize expensive database queries without sacrificing data integrity.",
     tags: ["Redis", "Caching", "Performance"],
-    quote: "The fastest request is the one you never have to make.",
+    quote: "The fastest request is the one you never have to make."
   },
   {
     id: 3,
@@ -624,14 +619,13 @@ export const BLOG_POSTS: EnhancedBlog[] = [
     author: {
       name: "Artisan Dev",
       avatar: "https://i.pravatar.cc/150?u=artisan",
-      role: "Lead Backend Engineer",
+      role: "Lead Backend Engineer"
     },
     title: "Indexing Strategies for Massive PostgreSQL Datasets",
-    image: "https://images.pexels.com/photos/4597280/pexels-photo-4597280.jpeg",
-    content:
-      "PostgreSQL is a beast when configured correctly. However, a table with 100 million rows will crawl if your indexing strategy is wrong. This guide covers B-Tree versus GIN indexes, partial indexes for optimized filtering, and how to use EXPLAIN ANALYZE to debug slow-moving queries in your Laravel production environment.",
+    image: "https://images.unsplash.com/photo-1544383023-53f0c670710a?auto=format&fit=crop&q=80&w=800",
+    content: "PostgreSQL is a beast when configured correctly. However, a table with 100 million rows will crawl if your indexing strategy is wrong. This guide covers B-Tree versus GIN indexes, partial indexes for optimized filtering, and how to use EXPLAIN ANALYZE to debug slow-moving queries in your Laravel production environment.",
     tags: ["PostgreSQL", "Database", "SQL"],
-    quote: "A database is only as fast as its most complex join.",
+    quote: "A database is only as fast as its most complex join."
   },
   {
     id: 4,
@@ -641,14 +635,12 @@ export const BLOG_POSTS: EnhancedBlog[] = [
     author: {
       name: "Artisan Dev",
       avatar: "https://i.pravatar.cc/150?u=artisan",
-      role: "Lead Backend Engineer",
+      role: "Lead Backend Engineer"
     },
     title: "Zero-Downtime Deployments with GitHub Actions",
-    image:
-      "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?auto=format&fit=crop&q=80&w=800",
-    content:
-      "The days of 'Maintenance Mode' screens are over. Using GitHub Actions and a 'Blue-Green' deployment strategy, you can release new features while users are actively interacting with your platform. We'll set up a pipeline that builds Docker containers, runs PHPUnit tests, and swaps production environments seamlessly.",
+    image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?auto=format&fit=crop&q=80&w=800",
+    content: "The days of 'Maintenance Mode' screens are over. Using GitHub Actions and a 'Blue-Green' deployment strategy, you can release new features while users are actively interacting with your platform. We'll set up a pipeline that builds Docker containers, runs PHPUnit tests, and swaps production environments seamlessly.",
     tags: ["CI/CD", "Docker", "DevOps"],
-    quote: "Shipping code should be a non-event, not a panic attack.",
-  },
+    quote: "Shipping code should be a non-event, not a panic attack."
+  }
 ];

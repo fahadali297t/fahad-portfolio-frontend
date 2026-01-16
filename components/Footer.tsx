@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const footerLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'License', path: '#' },
-    // { name: 'Style guide', path: '#' },
-    // { name: 'Changelog', path: '#' },
-    // { name: 'Instruction', path: '#' },
-    { name: '404', path: '#' },
+    { name: "Home", path: "/" },
+    { name: "Work", path: "/projects" },
+    { name: "About", path: "/about" },
+    { name: "Services", path: "/services" },
+    { name: "Guestbook", path: "/guestbook" },
+    { name: "Blogs", path: "/blog" },
+    // { name: '404', path: '#' },
   ];
 
   return (

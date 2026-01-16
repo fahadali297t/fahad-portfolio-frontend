@@ -33,13 +33,13 @@ const Navbar: React.FC = () => {
     { name: "Work", path: "/projects" },
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" },
+    { name: "Guestbook", path: "/guestbook" },
   ];
 
   const moreLinks = [
     // { name: "Case Studies", path: "/case-studies" },
     { name: "Blog", path: "/blog" },
     // { name: "Setup", path: "/setup" },
-    { name: "Guestbook", path: "/guestbook" },
   ];
 
   return (
