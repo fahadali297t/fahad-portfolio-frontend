@@ -63,6 +63,33 @@ const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          duration: 3500,
+          style: {
+            background: "rgba(15,15,17,0.95)",
+            color: "#fff",
+            borderRadius: "14px",
+            border: "1px solid rgba(255,255,255,0.08)",
+            backdropFilter: "blur(12px)",
+            fontSize: "14px",
+          },
+          success: {
+            iconTheme: {
+              primary: "#22c55e",
+              secondary: "#0f0f11",
+            },
+          },
+          error: {
+            iconTheme: {
+              primary: "#ef4444",
+              secondary: "#0f0f11",
+            },
+          },
+        }}
+      />
+      ;
       <div className="min-h-screen flex flex-col bg-black text-white relative">
         <Navbar />
         <main className="flex-grow  relative z-10">
@@ -88,32 +115,6 @@ const App: React.FC = () => {
 };
 
 
-<Toaster
-  position="top-right"
-  toastOptions={{
-    duration: 3500,
-    style: {
-      background: "rgba(15,15,17,0.95)",
-      color: "#fff",
-      borderRadius: "14px",
-      border: "1px solid rgba(255,255,255,0.08)",
-      backdropFilter: "blur(12px)",
-      fontSize: "14px",
-    },
-    success: {
-      iconTheme: {
-        primary: "#22c55e",
-        secondary: "#0f0f11",
-      },
-    },
-    error: {
-      iconTheme: {
-        primary: "#ef4444",
-        secondary: "#0f0f11",
-      },
-    },
-  }}
-/>;
 
 
 export default App;
