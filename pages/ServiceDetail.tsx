@@ -83,11 +83,11 @@ const ServiceDetail: React.FC = () => {
       <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
         {/* Background Visual */}
         <div className="absolute inset-0 z-0">
-          <img 
+          {/* <img 
             src={service.bgImage} 
             className="w-full h-full object-cover grayscale opacity-30"
             alt={service.title}
-          />
+          /> */}
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
         </div>
 

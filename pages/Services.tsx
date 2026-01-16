@@ -181,7 +181,7 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({
           <div className="grid grid-cols-2 gap-4 pt-6 opacity-40 group-hover:opacity-100 transition-opacity duration-500">
             {service.capabilities.slice(0, 2).map((cap: any, i: number) => (
               <div key={i} className="space-y-1">
-                <span className="block text-[8px] font-mono font-bold text-[#ff6b00] uppercase tracking-widest">
+                <span className="block text-[14px] font-mono font-bold text-[#ff6b00] uppercase tracking-widest">
                   {cap.title}
                 </span>
                 <div className="h-0.5 w-8 bg-white/10 rounded-full group-hover:bg-[#ff6b00]/30 transition-colors"></div>
@@ -197,7 +197,7 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({
                 .map((tech: string, i: number) => (
                   <span
                     key={i}
-                    className="text-[9px] font-mono text-slate-700 uppercase tracking-widest bg-white/5 px-2 py-1 rounded border border-white/5 group-hover:text-[#ff6b00] group-hover:border-[#ff6b00]/10 transition-all"
+                    className="text-[10px] font-mono text-slate-700 uppercase tracking-widest bg-white/5 px-2 py-1 rounded border border-white/5 group-hover:text-[#ff6b00] group-hover:border-[#ff6b00]/10 transition-all"
                   >
                     {tech}
                   </span>

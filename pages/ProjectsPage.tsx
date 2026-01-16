@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { PROJECTS, EnhancedProject } from "../constants";
-import { Github, ArrowUpRight, Database, Server, Code2 } from "lucide-react";
+import { Github, ArrowUpRight, Database, Server, Code2, Globe } from "lucide-react";
 
 const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({
   project,
@@ -75,7 +75,7 @@ const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({
               href={project.github}
               className="text-slate-500 hover:text-[#ff6b00] transition-colors"
             >
-              <Github size={18} />
+              <Globe size={18} />
             </a>
           </div>
         </div>

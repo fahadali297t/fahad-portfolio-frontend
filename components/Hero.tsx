@@ -176,12 +176,13 @@ const Hero: React.FC = () => {
           </div>
 
           <p className="hero-fade-in text-slate-600 dark:text-slate-400 text-lg md:text-2xl max-w-xl leading-relaxed font-light">
-            Engineering{" "}
+            With a deep focus on{" "}
             <span className="text-slate-900 dark:text-white font-medium italic underline decoration-[#ff6b00]/40">
-              high-performance
+              Web ecosystem
             </span>{" "}
-            logical engines and distributed systems that scale without
-            compromise.
+            and other technologies like Wordpress, Laravel, PHP, I bridge the
+            gap between complex business logic and high-performance web
+            applications.
           </p>
 
           <div className="hero-fade-in flex flex-col space-y-10">
@@ -278,7 +279,7 @@ const Hero: React.FC = () => {
                 <div className="flex items-center gap-3 mb-2">
                   <Code2 className="text-[#ff6b00]" size={18} />
                   <span className="text-[10px] font-mono font-black uppercase tracking-widest text-white">
-                    PHP // LARAVEL
+                    Full Stack Web Developer
                   </span>
                 </div>
                 <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">

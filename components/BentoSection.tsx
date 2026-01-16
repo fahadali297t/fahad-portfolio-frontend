@@ -71,7 +71,7 @@ const BentoSection: React.FC = () => {
               <MapPin size={24} className="text-[#ff6b00] fill-[#ff6b00]/20" />
             </div>
 
-            <div className="relative z-10 flex justify-between items-start">
+            <div className="relative z-10 flex flex-col-reverse gap-4 md:gap-4 md:flex-row  justify-between items-start">
               <div className="space-y-1">
                 <h3 className="text-3xl font-serif text-white italic">
                   Pakistan
@@ -88,7 +88,7 @@ const BentoSection: React.FC = () => {
               </div>
             </div>
             <div className="relative z-10 mt-auto">
-              <span className="text-[10px] font-mono text-slate-700 uppercase tracking-widest block font-black">
+              <span className="text-[14px] font-mono text-slate-400 uppercase tracking-widest block font-black">
                 Open to Work Remotely
               </span>
             </div>
