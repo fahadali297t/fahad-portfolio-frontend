@@ -803,7 +803,7 @@ export const BLOG_POSTS: EnhancedBlog[] = [
     },
     title: "Indexing Strategies for Massive PostgreSQL Datasets",
     image:
-      "https://images.unsplash.com/photo-1544383023-53f0c670710a?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1667372459510-55b5e2087cd0?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     content:
       "PostgreSQL is a beast when configured correctly. However, a table with 100 million rows will crawl if your indexing strategy is wrong. This guide covers B-Tree versus GIN indexes, partial indexes for optimized filtering, and how to use EXPLAIN ANALYZE to debug slow-moving queries in your Laravel production environment.",
     tags: ["PostgreSQL", "Database", "SQL"],
