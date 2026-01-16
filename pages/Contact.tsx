@@ -132,7 +132,7 @@ const Contact: React.FC = () => {
                 <p className="text-[10px] font-mono text-slate-500 uppercase tracking-widest font-black">
                   Email Registry
                 </p>
-                <p className="text-lg font-bold text-white">
+                <p className="text-md font-bold text-white">
                   fahadali2951@gmail.com
                 </p>
               </div>
@@ -147,7 +147,7 @@ const Contact: React.FC = () => {
                 <p className="text-[10px] font-mono text-slate-500 uppercase tracking-widest font-black">
                   Base Location
                 </p>
-                <p className="text-lg font-bold text-white">
+                <p className="text-md font-bold text-white">
                   Sargodha, Pakistan
                 </p>
               </div>
@@ -161,7 +161,7 @@ const Contact: React.FC = () => {
             <div className="absolute inset-0 bg-black/80 backdrop-blur-sm z-50 flex flex-col items-center justify-center space-y-6">
               <div className="w-12 h-12 border-2 border-[#ff6b00] border-t-transparent rounded-full animate-spin"></div>
               <p className="font-mono text-xs uppercase tracking-widest text-[#ff6b00]">
-                Transmitting Data...
+                Sending Your Message...
               </p>
             </div>
           )}
@@ -173,7 +173,7 @@ const Contact: React.FC = () => {
               </div>
               <div className="text-center space-y-2">
                 <h3 className="text-3xl font-black uppercase tracking-tighter">
-                  Protocol Success
+                  Message Successfully Transmitted
                 </h3>
                 <p className="text-slate-400 font-light">
                   Emails dispatched. Checking registry...
@@ -194,14 +194,14 @@ const Contact: React.FC = () => {
           <form onSubmit={handleSubmit} className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-[10px] font-mono text-slate-700 uppercase tracking-widest font-black ml-4">
+                <label className="text-[10px] font-mono text-slate-400 uppercase tracking-widest font-black ml-4">
                   Full Name
                 </label>
                 <input
                   type="text"
                   required
                   placeholder="John Doe"
-                  className="w-full px-8 py-5 bg-white/5 border border-white/5 rounded-full text-white placeholder-slate-800 focus:ring-1 focus:ring-[#ff6b00]/40 outline-none transition-all"
+                  className="w-full px-8 py-5 bg-white/5 border border-white/5 rounded-full text-white placeholder-slate-400 focus:ring-1 focus:ring-[#ff6b00]/40 outline-none transition-all"
                   value={formState.name}
                   onChange={(e) =>
                     setFormState({ ...formState, name: e.target.value })
@@ -209,14 +209,14 @@ const Contact: React.FC = () => {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-[10px] font-mono text-slate-700 uppercase tracking-widest font-black ml-4">
+                <label className="text-[10px] font-mono text-slate-400 uppercase tracking-widest font-black ml-4">
                   Email Address
                 </label>
                 <input
                   type="email"
                   required
                   placeholder="john@example.com"
-                  className="w-full px-8 py-5 bg-white/5 border border-white/5 rounded-full text-white placeholder-slate-800 focus:ring-1 focus:ring-[#ff6b00]/40 outline-none transition-all"
+                  className="w-full px-8 py-5 bg-white/5 border border-white/5 rounded-full text-white placeholder-slate-400 focus:ring-1 focus:ring-[#ff6b00]/40 outline-none transition-all"
                   value={formState.email}
                   onChange={(e) =>
                     setFormState({ ...formState, email: e.target.value })
@@ -225,14 +225,14 @@ const Contact: React.FC = () => {
               </div>
             </div>
             <div className="space-y-2">
-              <label className="text-[10px] font-mono text-slate-700 uppercase tracking-widest font-black ml-4">
+              <label className="text-[10px] font-mono text-slate-400 uppercase tracking-widest font-black ml-4">
                 Inquiry / Message
               </label>
               <textarea
                 required
                 rows={5}
                 placeholder="Describe your project requirements..."
-                className="w-full px-8 py-6 bg-white/5 border border-white/5 rounded-[2.5rem] text-white placeholder-slate-800 focus:ring-1 focus:ring-[#ff6b00]/40 outline-none transition-all resize-none"
+                className="w-full px-8 py-6 bg-white/5 border border-white/5 rounded-[2.5rem] text-white placeholder-slate-400 focus:ring-1 focus:ring-[#ff6b00]/40 outline-none transition-all resize-none"
                 value={formState.message}
                 onChange={(e) =>
                   setFormState({ ...formState, message: e.target.value })
@@ -245,7 +245,7 @@ const Contact: React.FC = () => {
               disabled={status !== "idle"}
               className="group w-full py-6 bg-[#ff6b00] text-black rounded-full font-black text-sm uppercase tracking-[0.3em] transition-all hover:scale-[1.01] active:scale-95 flex items-center justify-center gap-4"
             >
-              <span>Initialize Send</span>
+              <span>Send</span>
               <Send
                 size={18}
                 className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
@@ -259,7 +259,7 @@ const Contact: React.FC = () => {
               <span>Encrypted Connection</span>
             </div>
             <span className="text-[10px] font-mono text-slate-800">
-              0x2291 // SMTP Protocol
+              0x2291 // Using secure channel
             </span>
           </div>
         </div>

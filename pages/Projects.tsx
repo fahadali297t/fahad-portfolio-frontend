@@ -128,7 +128,7 @@ const Projects: React.FC = () => {
   }, [filter]);
 
   const visibleProjects = useMemo(() => {
-    return filteredProjects.slice(0, visibleCount);
+    return filteredProjects;
   }, [filteredProjects, visibleCount]);
 
   useEffect(() => {
@@ -228,7 +228,7 @@ const Projects: React.FC = () => {
           </div>
         )}
 
-        {visibleCount < filteredProjects.length && (
+        {/* {visibleCount < filteredProjects.length && (
           <div className="mt-32 flex justify-center">
             <button
               onClick={() => setVisibleCount((prev) => prev + 2)}
@@ -242,7 +242,7 @@ const Projects: React.FC = () => {
               </span>
             </button>
           </div>
-        )}
+        )} */}
       </section>
     </div>
   );

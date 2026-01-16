@@ -144,7 +144,7 @@ const Guestbook: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="bg-black text-white min-h-screen pt-24 sm:pt-32 pb-40 px-4 sm:px-6 flex flex-col items-center relative overflow-hidden"
+      className="bg-black text-white min-h-screen pt-32 sm:pt-32 pb-40 px-4 sm:px-6 flex flex-col items-center relative overflow-hidden"
     >
       {/* Background Ambience */}
       <div className="bg-circle fixed top-[-10%] right-[-10%] w-[50vw] aspect-square bg-[#ff6b00]/5 blur-[150px] rounded-full pointer-events-none z-0"></div>

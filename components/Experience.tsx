@@ -124,7 +124,7 @@ const TimelineNode = ({ item, index, isWork }) => {
       }`}
     >
       {/* Central Connector Dot */}
-      <div
+      {/* <div
         ref={dotRef}
         className="absolute left-3 sm:left-5 md:left-1/2 md:-translate-x-1/2 top-6 md:top-1/2 md:-translate-y-1/2 w-5 h-5 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-lg sm:rounded-xl md:rounded-2xl bg-black border-2 border-[#ff6b00] z-30 flex items-center justify-center shadow-[0_0_12px_rgba(255,107,0,0.3)]"
       >
@@ -134,7 +134,7 @@ const TimelineNode = ({ item, index, isWork }) => {
           <GraduationCap className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 text-[#ff6b00]" />
         )}
         <div className="absolute inset-0 rounded-lg sm:rounded-xl md:rounded-2xl bg-[#ff6b00] animate-pulse opacity-10"></div>
-      </div>
+      </div> */}
 
       {/* Horizontal Connector Line (Desktop) */}
       <div

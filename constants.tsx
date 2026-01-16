@@ -1,6 +1,20 @@
-import React from 'react';
-import { Server, Database, Code2, Globe, Cpu, Layout , Box, Monitor,  ShieldCheck, Zap, Layers, Search, Terminal } from 'lucide-react';
-import { Project, Service, Skill, TimelineItem, Blog } from './types';
+import React from "react";
+import {
+  Server,
+  Database,
+  Code2,
+  Globe,
+  Cpu,
+  Layout,
+  Box,
+  Monitor,
+  ShieldCheck,
+  Zap,
+  Layers,
+  Search,
+  Terminal,
+} from "lucide-react";
+import { Project, Service, Skill, TimelineItem, Blog } from "./types";
 
 export interface EnhancedProject extends Project {
   challenge: string;
@@ -72,41 +86,49 @@ export const PROJECTS: EnhancedProject[] = [
     github: "https://turbodashdelivery.ae/",
     demo: "https://turbodashdelivery.ae/",
   },
-
   {
-    id: 8,
-    title: "Arqam Grammar School",
-    type: "EDUCATION MANAGEMENT SYSTEM",
-    category: "Laravel",
-    year: "2023",
-    role: "Backend Developer",
+    id: 11,
+    title: "Emerald Elevator",
+    type: "CORPORATE BUSINESS WEBSITE",
+    category: "WordPress",
+    year: "2025",
+    role: "WordPress Developer",
     description:
-      "A modern school website and management system built to enhance communication and academic transparency.",
+      "A professional website for Emerald Elevator, emphasizing product offerings and corporate values.",
     fullDescription:
-      "The Arqam Grammar School platform serves as a centralized digital hub for academic operations and public engagement. It enables parents and students to access academic calendars, announcements, admissions details, and institutional updates through a clean, intuitive interface.Built with a strong focus on accessibility and performance, the system ensures critical academic information remains easily discoverable and readable across devices. The platform balances informative public-facing content with structured academic data, delivering a reliable digital presence for a modern educational institution.",
+      "Emerald Elevator’s website was crafted to showcase their elevator solutions, services, and corporate expertise. Built on WordPress, the platform features a clean navigation, visually appealing sections for products, client testimonials, and certifications. The backend was customized for easy updates to product catalogs and corporate announcements.",
     challenge:
-      "Organizing academic information in a clear and accessible way while maintaining fast performance across different devices and internet conditions.",
+      "Highlighting technical products while keeping the site fast and easy to maintain.",
     solution:
-      "Built a lightweight, User-friendly interface with optimized rendering and caching to ensure fast load times and smooth access to academic content.",
-    techStackDetailed: ["Laravel", "Blade", "MySQL", "Bootstrap", "cPanel"],
-    metrics: [
-      { value: "60%", label: "Parent Engagement" },
-      { value: "2x", label: "Inquiry Growth" },
-      { value: "200%", label: "Increase in Enrollments" },
+      "Implemented a lightweight custom WordPress theme, optimized images, and caching solutions to maintain speed and flexibility.",
+    techStackDetailed: [
+      "WordPress",
+      "PHP",
+      "Custom Theme",
+      "Elementor",
+      "Caching",
+      "SEO Optimization",
     ],
-    image: "arqam1.png",
-    gallery: ["arqam1.png"],
-    codeSnippet: `// Fetch latest school announcements
-Announcement::where('is_published', true)
-    ->latest()
-    ->take(5)
-    ->get();
-`,
-    tags: ["Education", "Laravel", "CMS"],
-    github: "https://arqamgrammarschools.edu.pk/",
-    demo: "https://arqamgrammarschools.edu.pk/",
+    metrics: [
+      { value: "99%", label: "Website Uptime" },
+      { value: "0.8s", label: "Average Page Load" },
+      { value: "30%", label: "Increase in Product Inquiries" },
+    ],
+    image: "em3.png",
+    gallery: ["em1.png", "em2.png", "em4.png", "em5.png", "em6.png", "em3.png"],
+    codeSnippet: `// Custom Post Type for Elevators
+function register_elevator_cpt() {
+    register_post_type('elevator', array(
+        'label' => 'Elevators',
+        'public' => true,
+        'supports' => ['title','editor','thumbnail']
+    ));
+}
+add_action('init', 'register_elevator_cpt');`,
+    tags: ["WordPress", "Corporate", "Products"],
+    github: "",
+    demo: "http://emeraldelevator.ae/",
   },
-
   {
     id: 9,
     title: "BinAzamex",
@@ -145,6 +167,40 @@ cache()->remember("seo_{$page->id}", 3600, function () use ($page) {
     github: "https://binazamex.com",
     demo: "https://binazamex.com",
   },
+  {
+    id: 8,
+    title: "Arqam Grammar School",
+    type: "EDUCATION MANAGEMENT SYSTEM",
+    category: "Laravel",
+    year: "2023",
+    role: "Backend Developer",
+    description:
+      "A modern school website and management system built to enhance communication and academic transparency.",
+    fullDescription:
+      "The Arqam Grammar School platform serves as a centralized digital hub for academic operations and public engagement. It enables parents and students to access academic calendars, announcements, admissions details, and institutional updates through a clean, intuitive interface.Built with a strong focus on accessibility and performance, the system ensures critical academic information remains easily discoverable and readable across devices. The platform balances informative public-facing content with structured academic data, delivering a reliable digital presence for a modern educational institution.",
+    challenge:
+      "Organizing academic information in a clear and accessible way while maintaining fast performance across different devices and internet conditions.",
+    solution:
+      "Built a lightweight, User-friendly interface with optimized rendering and caching to ensure fast load times and smooth access to academic content.",
+    techStackDetailed: ["Laravel", "Blade", "MySQL", "Bootstrap", "cPanel"],
+    metrics: [
+      { value: "60%", label: "Parent Engagement" },
+      { value: "2x", label: "Inquiry Growth" },
+      { value: "200%", label: "Increase in Enrollments" },
+    ],
+    image: "arqam1.png",
+    gallery: ["arqam1.png"],
+    codeSnippet: `// Fetch latest school announcements
+Announcement::where('is_published', true)
+    ->latest()
+    ->take(5)
+    ->get();
+`,
+    tags: ["Education", "Laravel", "CMS"],
+    github: "https://arqamgrammarschools.edu.pk/",
+    demo: "https://arqamgrammarschools.edu.pk/",
+  },
+
   {
     id: 10,
     title: "Imperium Global Media",
@@ -195,50 +251,6 @@ endwhile;`,
   },
 
   {
-    id: 11,
-    title: "Emerald Elevator",
-    type: "CORPORATE BUSINESS WEBSITE",
-    category: "WordPress",
-    year: "2025",
-    role: "WordPress Developer",
-    description:
-      "A professional website for Emerald Elevator, emphasizing product offerings and corporate values.",
-    fullDescription:
-      "Emerald Elevator’s website was crafted to showcase their elevator solutions, services, and corporate expertise. Built on WordPress, the platform features a clean navigation, visually appealing sections for products, client testimonials, and certifications. The backend was customized for easy updates to product catalogs and corporate announcements.",
-    challenge:
-      "Highlighting technical products while keeping the site fast and easy to maintain.",
-    solution:
-      "Implemented a lightweight custom WordPress theme, optimized images, and caching solutions to maintain speed and flexibility.",
-    techStackDetailed: [
-      "WordPress",
-      "PHP",
-      "Custom Theme",
-      "Elementor",
-      "Caching",
-      "SEO Optimization",
-    ],
-    metrics: [
-      { value: "99%", label: "Website Uptime" },
-      { value: "0.8s", label: "Average Page Load" },
-      { value: "30%", label: "Increase in Product Inquiries" },
-    ],
-    image: "em3.png",
-    gallery: ["em1.png", "em2.png", "em4.png", "em5.png", "em6.png", "em3.png"],
-    codeSnippet: `// Custom Post Type for Elevators
-function register_elevator_cpt() {
-    register_post_type('elevator', array(
-        'label' => 'Elevators',
-        'public' => true,
-        'supports' => ['title','editor','thumbnail']
-    ));
-}
-add_action('init', 'register_elevator_cpt');`,
-    tags: ["WordPress", "Corporate", "Products"],
-    github: "",
-    demo: "http://emeraldelevator.ae/",
-  },
-
-  {
     id: 12,
     title: "Head2Paws Pet Grooming",
     type: "SERVICE BUSINESS WEBSITE",
@@ -286,33 +298,189 @@ add_shortcode('booking_form', 'h2p_booking_form');`,
     github: "",
     demo: "https://head2pawspetgrooming.com/",
   },
-];
 
+  // -----------------------------parctice----------------------------
+  {
+    id: 13,
+    title: "Practice Corporate Layout",
+    type: "PRACTICE WORDPRESS WEBSITE",
+    category: "WordPress",
+    year: "2025",
+    role: "WordPress Developer",
+    description:
+      "A clean corporate-style WordPress website built as a practice project to refine layout structure and responsiveness.",
+    fullDescription:
+      "This practice WordPress website focuses on building a professional corporate layout with structured sections, clean typography, and responsive design. The project was developed to improve theme customization skills, layout hierarchy, and performance optimization within WordPress. Emphasis was placed on reusable components, clear navigation, and maintaining fast load times across devices.",
+    challenge:
+      "Designing a professional corporate layout while keeping the theme lightweight and responsive.",
+    solution:
+      "Created a custom WordPress layout with optimized assets, responsive grid systems, and minimal plugin usage.",
+    techStackDetailed: [
+      "WordPress",
+      "PHP",
+      "Custom Theme",
+      "HTML",
+      "CSS",
+      "Responsive Design",
+    ],
+    metrics: [
+      { value: "100%", label: "Custom Layout" },
+      { value: "0.5s", label: "Average Load Time" },
+      { value: "Mobile-First", label: "Responsive Design" },
+    ],
+    image: "cp1.png",
+    gallery: ["cp2.png", "cp3.png", "cp4.png", "cp5.png", "cp6.png", "cp7.png"],
+    codeSnippet: `// Basic WordPress Theme Setup
+add_theme_support('post-thumbnails');
+add_theme_support('title-tag');`,
+    tags: ["WordPress", "Practice", "Corporate"],
+    github: "",
+    demo: "https://dodgerblue-jackal-438096.hostingersite.com/",
+  },
+
+  {
+    id: 14,
+    title: "Practice Business Landing Page",
+    type: "PRACTICE WORDPRESS WEBSITE",
+    category: "WordPress",
+    year: "2025",
+    role: "WordPress Developer",
+    description:
+      "A business-focused landing page built with WordPress to practice conversions and section-based layouts.",
+    fullDescription:
+      "This project was created as a hands-on practice website to experiment with business landing page structures, call-to-action placement, and content flow. The site emphasizes clarity, visual balance, and conversion-focused sections such as services, highlights, and contact areas. It serves as a learning project to refine WordPress customization and front-end presentation skills.",
+    challenge:
+      "Creating a visually engaging landing page without relying on heavy plugins.",
+    solution:
+      "Used a lightweight custom theme with clean HTML structure and optimized styling for performance.",
+    techStackDetailed: [
+      "WordPress",
+      "PHP",
+      "Custom Theme",
+      "CSS",
+      "Landing Page Design",
+    ],
+    metrics: [
+      { value: "Minimal", label: "Plugin Usage" },
+      { value: "Fast", label: "Page Performance" },
+      { value: "Clear", label: "Content Flow" },
+    ],
+    image: "bl1.png",
+    gallery: ["bl2.png", "bl3.png", "bl4.png", "bl5.png", "bl6.png", "bl7.png"],
+    codeSnippet: `// Register Navigation Menu
+register_nav_menus([
+  'primary' => 'Primary Menu'
+]);`,
+    tags: ["WordPress", "Practice", "Landing Page"],
+    github: "",
+    demo: "https://lightyellow-herring-994411.hostingersite.com/",
+  },
+
+  {
+    id: 15,
+    title: "Practice Portfolio Website",
+    type: "PRACTICE WORDPRESS WEBSITE",
+    category: "WordPress",
+    year: "2025",
+    role: "WordPress Developer",
+    description:
+      "A portfolio-style WordPress website built to practice layout composition and content presentation.",
+    fullDescription:
+      "This practice project explores portfolio website design using WordPress, focusing on visual hierarchy, section spacing, and content readability. The site layout highlights services, sample sections, and clean design patterns. The goal was to strengthen understanding of custom WordPress theming and reusable layout blocks.",
+    challenge: "Balancing visual appeal with simplicity and performance.",
+    solution:
+      "Designed a minimal layout with optimized images and clean CSS styling.",
+    techStackDetailed: [
+      "WordPress",
+      "PHP",
+      "Custom Theme",
+      "CSS",
+      "UI Layout Design",
+    ],
+    metrics: [
+      { value: "Clean", label: "Visual Design" },
+      { value: "Responsive", label: "All Devices" },
+      { value: "Optimized", label: "Assets" },
+    ],
+    image: "pl1.png",
+    gallery: ["pl2.png", "pl3.png", "pl1.png", "pl4.png", "pl5.png"],
+    codeSnippet: `// Enqueue Theme Styles
+function theme_styles() {
+  wp_enqueue_style('main-style', get_stylesheet_uri());
+}
+add_action('wp_enqueue_scripts', 'theme_styles');`,
+    tags: ["WordPress", "Practice", "Portfolio"],
+    github: "",
+    demo: "https://cornflowerblue-porcupine-990874.hostingersite.com/",
+  },
+
+  {
+    id: 16,
+    title: "Practice Service Website",
+    type: "PRACTICE WORDPRESS WEBSITE",
+    category: "WordPress",
+    year: "2025",
+    role: "WordPress Developer",
+    description:
+      "A service-oriented WordPress website built to practice content structure and service sections.",
+    fullDescription:
+      "This practice WordPress site focuses on structuring service-based content, including service listings, feature sections, and contact areas. The project helped refine theme customization skills, spacing consistency, and responsive layouts while maintaining a simple and professional appearance.",
+    challenge:
+      "Presenting service information clearly without cluttering the layout.",
+    solution:
+      "Implemented well-spaced sections with consistent typography and minimal design elements.",
+    techStackDetailed: [
+      "WordPress",
+      "PHP",
+      "Custom Theme",
+      "HTML",
+      "CSS",
+      "Service Layouts",
+    ],
+    metrics: [
+      { value: "Structured", label: "Service Sections" },
+      { value: "Simple", label: "Design Approach" },
+      { value: "Responsive", label: "Layout" },
+    ],
+    image: "dm1.png",
+    gallery: ["dm2.png", "dm3.png", "dm1.png", "dm4.png",],
+    codeSnippet: `// Custom Page Template
+/*
+Template Name: Services Page
+*/
+get_header();`,
+    tags: ["WordPress", "Practice", "Services"],
+    github: "",
+    demo: "https://royalblue-wombat-172150.hostingersite.com/",
+  },
+];
 
 export const TESTIMONIALS = [
   {
     id: 1,
     name: "Sarah Jenkins",
     role: "CTO at FinStream",
-    content: "The API architecture delivered was flawless. Our latency dropped by 40% after the migration to the new microservices structure.",
-    avatar: "https://i.pravatar.cc/150?u=sarah"
+    content:
+      "The API architecture delivered was flawless. Our latency dropped by 40% after the migration to the new microservices structure.",
+    avatar: "https://i.pravatar.cc/150?u=sarah",
   },
   {
     id: 2,
     name: "Marcello Rossi",
     role: "Lead Architect",
-    content: "Rare to find a developer who truly understands the internals of the Eloquent ORM. The database optimizations saved us thousands in RDS costs.",
-    avatar: "https://i.pravatar.cc/150?u=marcello"
+    content:
+      "Rare to find a developer who truly understands the internals of the Eloquent ORM. The database optimizations saved us thousands in RDS costs.",
+    avatar: "https://i.pravatar.cc/150?u=marcello",
   },
   {
     id: 3,
     name: "Elena de Luca",
     role: "Product Manager",
-    content: "Professional, communicative, and exceptionally skilled in TDD. Every feature was delivered with 100% test coverage.",
-    avatar: "https://i.pravatar.cc/150?u=elena"
-  }
+    content:
+      "Professional, communicative, and exceptionally skilled in TDD. Every feature was delivered with 100% test coverage.",
+    avatar: "https://i.pravatar.cc/150?u=elena",
+  },
 ];
-
 
 export const SERVICES: EnhancedService[] = [
   {
@@ -519,7 +687,6 @@ export const SERVICES: EnhancedService[] = [
   },
 ];
 
-
 export const SKILLS: Skill[] = [
   { name: "Laravel", level: 95, category: "Backend" },
   { name: "PHP", level: 90, category: "Backend" },
@@ -540,25 +707,31 @@ export const TIMELINE: TimelineItem[] = [
     year: "2023 - PRESENT",
     title: "SENIOR BACKEND ENGINEER",
     company: "TECHNOVA STUDIO",
-    description: "Led API architecture for SaaS platforms and cloud-native apps; collaborated with cross-functional teams to deliver high-performance systems.",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200"
+    description:
+      "Led API architecture for SaaS platforms and cloud-native apps; collaborated with cross-functional teams to deliver high-performance systems.",
+    image:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200",
   },
   {
     id: 2,
     year: "2021 - 2023",
     title: "BACKEND DEVELOPER",
     company: "GROWTHSTACK CORE",
-    description: "Redesigned core data models and query strategies, improving system throughput and reducing server latency by 45%.",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200"
+    description:
+      "Redesigned core data models and query strategies, improving system throughput and reducing server latency by 45%.",
+    image:
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200",
   },
   {
     id: 3,
     year: "2019 - 2021",
     title: "PHP ARTISAN",
     company: "DIGITAL CRAFT LABS",
-    description: "Supported senior engineers in building robust middleware, authentication flows, and unit testing suites for e-commerce clients.",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1200"
-  }
+    description:
+      "Supported senior engineers in building robust middleware, authentication flows, and unit testing suites for e-commerce clients.",
+    image:
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1200",
+  },
 ];
 
 export const EDUCATION: TimelineItem[] = [
@@ -567,15 +740,17 @@ export const EDUCATION: TimelineItem[] = [
     year: "2017 - 2019",
     title: "M.SC. COMPUTER SCIENCE",
     company: "UNIVERSITY OF AMSTERDAM",
-    description: "Focused on Distributed Systems and High-Performance Computing. Graduated with honors.",
+    description:
+      "Focused on Distributed Systems and High-Performance Computing. Graduated with honors.",
   },
   {
     id: 2,
     year: "2013 - 2017",
     title: "B.SC. SOFTWARE ENGINEERING",
     company: "DELFT UNIVERSITY OF TECHNOLOGY",
-    description: "Foundation in algorithms, data structures, and software architecture patterns.",
-  }
+    description:
+      "Foundation in algorithms, data structures, and software architecture patterns.",
+  },
 ];
 
 export const BLOG_POSTS: EnhancedBlog[] = [
@@ -587,13 +762,16 @@ export const BLOG_POSTS: EnhancedBlog[] = [
     author: {
       name: "Artisan Dev",
       avatar: "https://i.pravatar.cc/150?u=artisan",
-      role: "Lead Backend Engineer"
+      role: "Lead Backend Engineer",
     },
     title: "The Power of Domain Driven Design in Laravel",
-    image: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800",
-    content: "Domain-Driven Design (DDD) is not a set of rules, but a philosophy for building software. In the context of Laravel, it means moving beyond simple 'Models' and 'Controllers' to embrace Entities, Value Objects, and Repositories. By modeling the software based on the business domain, we reduce complexity and make the codebase more resilient to change.",
+    image:
+      "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800",
+    content:
+      "Domain-Driven Design (DDD) is not a set of rules, but a philosophy for building software. In the context of Laravel, it means moving beyond simple 'Models' and 'Controllers' to embrace Entities, Value Objects, and Repositories. By modeling the software based on the business domain, we reduce complexity and make the codebase more resilient to change.",
     tags: ["Laravel", "DDD", "Clean Code"],
-    quote: "Architecture is the art of what to leave out to make the core shine."
+    quote:
+      "Architecture is the art of what to leave out to make the core shine.",
   },
   {
     id: 2,
@@ -603,13 +781,15 @@ export const BLOG_POSTS: EnhancedBlog[] = [
     author: {
       name: "Artisan Dev",
       avatar: "https://i.pravatar.cc/150?u=artisan",
-      role: "Lead Backend Engineer"
+      role: "Lead Backend Engineer",
     },
     title: "How Advanced Caching Strategies Shape User Experience",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800",
-    content: "Caching is the secret weapon of high-performance backends. But 'caching everything' is a recipe for stale data and hard-to-debug bugs. We explore Tagged Caching in Redis, Atomic Locks for race conditions, and how to use Laravel's 'Cache::remember' to optimize expensive database queries without sacrificing data integrity.",
+    image:
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800",
+    content:
+      "Caching is the secret weapon of high-performance backends. But 'caching everything' is a recipe for stale data and hard-to-debug bugs. We explore Tagged Caching in Redis, Atomic Locks for race conditions, and how to use Laravel's 'Cache::remember' to optimize expensive database queries without sacrificing data integrity.",
     tags: ["Redis", "Caching", "Performance"],
-    quote: "The fastest request is the one you never have to make."
+    quote: "The fastest request is the one you never have to make.",
   },
   {
     id: 3,
@@ -619,13 +799,15 @@ export const BLOG_POSTS: EnhancedBlog[] = [
     author: {
       name: "Artisan Dev",
       avatar: "https://i.pravatar.cc/150?u=artisan",
-      role: "Lead Backend Engineer"
+      role: "Lead Backend Engineer",
     },
     title: "Indexing Strategies for Massive PostgreSQL Datasets",
-    image: "https://images.unsplash.com/photo-1544383023-53f0c670710a?auto=format&fit=crop&q=80&w=800",
-    content: "PostgreSQL is a beast when configured correctly. However, a table with 100 million rows will crawl if your indexing strategy is wrong. This guide covers B-Tree versus GIN indexes, partial indexes for optimized filtering, and how to use EXPLAIN ANALYZE to debug slow-moving queries in your Laravel production environment.",
+    image:
+      "https://images.unsplash.com/photo-1544383023-53f0c670710a?auto=format&fit=crop&q=80&w=800",
+    content:
+      "PostgreSQL is a beast when configured correctly. However, a table with 100 million rows will crawl if your indexing strategy is wrong. This guide covers B-Tree versus GIN indexes, partial indexes for optimized filtering, and how to use EXPLAIN ANALYZE to debug slow-moving queries in your Laravel production environment.",
     tags: ["PostgreSQL", "Database", "SQL"],
-    quote: "A database is only as fast as its most complex join."
+    quote: "A database is only as fast as its most complex join.",
   },
   {
     id: 4,
@@ -635,12 +817,14 @@ export const BLOG_POSTS: EnhancedBlog[] = [
     author: {
       name: "Artisan Dev",
       avatar: "https://i.pravatar.cc/150?u=artisan",
-      role: "Lead Backend Engineer"
+      role: "Lead Backend Engineer",
     },
     title: "Zero-Downtime Deployments with GitHub Actions",
-    image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?auto=format&fit=crop&q=80&w=800",
-    content: "The days of 'Maintenance Mode' screens are over. Using GitHub Actions and a 'Blue-Green' deployment strategy, you can release new features while users are actively interacting with your platform. We'll set up a pipeline that builds Docker containers, runs PHPUnit tests, and swaps production environments seamlessly.",
+    image:
+      "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?auto=format&fit=crop&q=80&w=800",
+    content:
+      "The days of 'Maintenance Mode' screens are over. Using GitHub Actions and a 'Blue-Green' deployment strategy, you can release new features while users are actively interacting with your platform. We'll set up a pipeline that builds Docker containers, runs PHPUnit tests, and swaps production environments seamlessly.",
     tags: ["CI/CD", "Docker", "DevOps"],
-    quote: "Shipping code should be a non-event, not a panic attack."
-  }
+    quote: "Shipping code should be a non-event, not a panic attack.",
+  },
 ];

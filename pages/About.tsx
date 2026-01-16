@@ -157,12 +157,12 @@ const About: React.FC = () => {
   // Group skills for a more organized display
   const skillCategories = [
     {
-      title: "Frontend Integration",
+      title: "Frontend Skills",
       icon: Code,
       skills: SKILLS.filter((s) => s.category === "Frontend"),
     },
     {
-      title: "Backend Core",
+      title: "Backend Skills",
       icon: Database,
       skills: SKILLS.filter(
         (s) => s.category === "Backend" || s.category === "Database"

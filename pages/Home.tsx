@@ -87,7 +87,7 @@ const Home: React.FC = () => {
       </div>
 
       <BentoSection />
-      <WorkingProcess />
+      {/* <WorkingProcess /> */}
 
       <div id="blogs">
         <Blogs />
