@@ -70,10 +70,15 @@ const App: React.FC = () => {
           style: {
             background: "rgba(15,15,17,0.95)",
             color: "#fff",
-            borderRadius: "14px",
+            borderRadius: "16px",
             border: "1px solid rgba(255,255,255,0.08)",
             backdropFilter: "blur(12px)",
-            fontSize: "14px",
+
+            /* 👇 size fixes */
+            fontSize: "16px",
+            padding: "16px 20px",
+            minWidth: "320px",
+            lineHeight: "1.4",
           },
           success: {
             iconTheme: {
@@ -89,7 +94,7 @@ const App: React.FC = () => {
           },
         }}
       />
-      ;
+
       <div className="min-h-screen flex flex-col bg-black text-white relative">
         <Navbar />
         <main className="flex-grow  relative z-10">
