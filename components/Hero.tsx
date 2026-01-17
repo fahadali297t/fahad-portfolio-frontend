@@ -163,7 +163,7 @@ const Hero: React.FC = () => {
           <div className="space-y-4 perspective-1000">
             <h1
               ref={titleRef}
-              className="text-7xl md:text-9xl font-black tracking-tighter leading-[0.8] text-slate-900 dark:text-white uppercase overflow-hidden"
+              className="text-7xl md:text-9xl  tracking-tighter leading-[0.8] text-slate-900 text-white uppercase overflow-hidden"
             >
               {splitText("Fahad")}
             </h1>
@@ -177,7 +177,7 @@ const Hero: React.FC = () => {
 
           <p className="hero-fade-in text-slate-600 dark:text-slate-400 text-lg md:text-2xl max-w-xl leading-relaxed font-light">
             With a deep focus on{" "}
-            <span className="text-slate-900 dark:text-white font-medium italic underline decoration-[#ff6b00]/40">
+            <span className="text-white dark:text-white font-medium italic underline decoration-[#ff6b00]/40">
               Web ecosystem
             </span>{" "}
             and other technologies like Wordpress, Laravel, PHP, I bridge the
