@@ -102,7 +102,7 @@ const Contact: React.FC = () => {
               href="https://wa.me/923326067339"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between p-8 bg-green-500/5 border border-green-500/20 rounded-[2.5rem] group hover:border-green-500/50 transition-all shadow-[0_0_40px_rgba(34,197,94,0.05)]"
+              className="flex items-center justify-between p-6 md:p-8 bg-green-500/5 border border-green-500/20 rounded-[2.5rem] group hover:border-green-500/50 transition-all shadow-[0_0_40px_rgba(34,197,94,0.05)]"
             >
               <div className="flex items-center gap-6">
                 <div className="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center text-black shadow-[0_0_20px_rgba(34,197,94,0.3)]">
@@ -124,8 +124,8 @@ const Contact: React.FC = () => {
             </a>
 
             {/* Email Card */}
-            <div className="flex items-center gap-6 p-8 bg-white/5 border border-white/5 rounded-[2.5rem]">
-              <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-[#ff6b00]">
+            <div className="flex items-center gap-6 p-6 md:p-8 bg-white/5 border border-white/5 rounded-[2.5rem]">
+              <div className="w-16 h-16 md:bg-white/5 rounded-2xl flex items-center justify-center text-[#ff6b00]">
                 <Mail size={28} strokeWidth={1.5} />
               </div>
               <div>
@@ -139,8 +139,8 @@ const Contact: React.FC = () => {
             </div>
 
             {/* Location Card */}
-            <div className="flex items-center gap-6 p-8 bg-white/5 border border-white/5 rounded-[2.5rem]">
-              <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-slate-500">
+            <div className="flex items-center gap-6 p-6 md:p-8 bg-white/5 border border-white/5 rounded-[2.5rem]">
+              <div className="w-16 h-16 md:bg-white/5 rounded-2xl flex items-center justify-center text-slate-500">
                 <Globe size={28} strokeWidth={1.5} />
               </div>
               <div>
@@ -156,7 +156,7 @@ const Contact: React.FC = () => {
         </div>
 
         {/* Form Column */}
-        <div className="lg:col-span-7 bg-[#0a0a0a] rounded-[3.5rem] p-8 md:p-16 border border-white/5 relative overflow-hidden shadow-2xl">
+        <div className="lg:col-span-7 bg-[#0a0a0a] rounded-[2rem] md:rounded-[3.5rem] p-8 md:p-16 border border-white/5 relative overflow-hidden shadow-2xl">
           {status === "sending" && (
             <div className="absolute inset-0 bg-black/80 backdrop-blur-sm z-50 flex flex-col items-center justify-center space-y-6">
               <div className="w-12 h-12 border-2 border-[#ff6b00] border-t-transparent rounded-full animate-spin"></div>
@@ -201,7 +201,7 @@ const Contact: React.FC = () => {
                   type="text"
                   required
                   placeholder="John Doe"
-                  className="w-full px-8 py-5 bg-white/5 border border-white/5 rounded-full text-white placeholder-slate-400 focus:ring-1 focus:ring-[#ff6b00]/40 outline-none transition-all"
+                  className="w-full px-6 xl:px-8 rounded-[1.5rem] xl:rounded-full py-5 bg-white/5 border border-white/5  text-white placeholder-slate-400 focus:ring-1 focus:ring-[#ff6b00]/40 outline-none transition-all"
                   value={formState.name}
                   onChange={(e) =>
                     setFormState({ ...formState, name: e.target.value })
@@ -216,7 +216,7 @@ const Contact: React.FC = () => {
                   type="email"
                   required
                   placeholder="john@example.com"
-                  className="w-full px-8 py-5 bg-white/5 border border-white/5 rounded-full text-white placeholder-slate-400 focus:ring-1 focus:ring-[#ff6b00]/40 outline-none transition-all"
+                  className="w-full px-6 xl:px-8 py-5 rounded-[1.5rem] xl:rounded-full bg-white/5 border border-white/5  text-white placeholder-slate-400 focus:ring-1 focus:ring-[#ff6b00]/40 outline-none transition-all"
                   value={formState.email}
                   onChange={(e) =>
                     setFormState({ ...formState, email: e.target.value })
@@ -232,7 +232,7 @@ const Contact: React.FC = () => {
                 required
                 rows={5}
                 placeholder="Describe your project requirements..."
-                className="w-full px-8 py-6 bg-white/5 border border-white/5 rounded-[2.5rem] text-white placeholder-slate-400 focus:ring-1 focus:ring-[#ff6b00]/40 outline-none transition-all resize-none"
+                className="w-full px-6 xl:px-8 py-5 rounded-[1.5rem] xl:rounded-[2.5rem] bg-white/5 border border-white/5  text-white placeholder-slate-400 focus:ring-1 focus:ring-[#ff6b00]/40 outline-none transition-all resize-none"
                 value={formState.message}
                 onChange={(e) =>
                   setFormState({ ...formState, message: e.target.value })
