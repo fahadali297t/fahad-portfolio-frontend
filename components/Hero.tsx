@@ -251,7 +251,7 @@ const Hero: React.FC = () => {
                   className="tech-popper-icon absolute opacity-0 scale-0 p-5 bg-white/10 dark:bg-black/40 backdrop-blur-xl border border-white/20 dark:border-white/10 rounded-2xl shadow-2xl flex flex-col items-center gap-2"
                 >
                   <Icon className={item.color} size={32} />
-                  <span className="text-[8px] font-mono font-black uppercase text-slate-900 dark:text-white/60 tracking-widest">
+                  <span className="text-[8px] font-mono font-black uppercase text-slate-60 dark:text-white/60 tracking-widest">
                     {item.label}
                   </span>
                 </div>
