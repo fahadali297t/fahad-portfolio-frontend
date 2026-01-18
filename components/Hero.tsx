@@ -175,7 +175,7 @@ const Hero: React.FC = () => {
             </h1>
           </div>
 
-          <p className="hero-fade-in text-slate-600 dark:text-slate-400 text-lg md:text-2xl max-w-xl leading-relaxed font-light">
+          <p className="hero-fade-in text-slate-400  text-lg md:text-2xl max-w-xl leading-relaxed font-light">
             With a deep focus on{" "}
             <span className="text-white dark:text-white font-medium italic underline decoration-[#ff6b00]/40">
               Web ecosystem
@@ -191,7 +191,7 @@ const Hero: React.FC = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-4 w-4 bg-[#ff6b00]"></span>
               </div>
-              <span className="text-xs font-mono font-black tracking-[0.3em] text-slate-500 dark:text-slate-400 uppercase">
+              <span className="text-xs font-mono font-black tracking-[0.3em] text-slate-400 dark:text-slate-400 uppercase">
                 Status: Accepting High-Traffic Projects
               </span>
             </div>
