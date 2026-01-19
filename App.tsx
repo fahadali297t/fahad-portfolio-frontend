@@ -20,6 +20,9 @@ import Setup from "./pages/Setup";
 import BlogList from "./pages/BlogList";
 import BlogDetail from "./pages/BlogDetail";
 // import CaseStudies from "./pages/CaseStudies";
+
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Terms from "./pages/Terms";
 import Guestbook from "./pages/GuestBook";
 import { Toaster } from "react-hot-toast";
 
@@ -111,6 +114,8 @@ const App: React.FC = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/setup" element={<Setup />} />
             <Route path="/guestbook" element={<Guestbook />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<Terms />} />
           </Routes>
         </main>
         <Footer />
