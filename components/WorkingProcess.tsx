@@ -165,7 +165,7 @@ const WorkingProcess: React.FC = () => {
       >
         {/* Section Heading */}
         <div className="mb-8 md:mb-12 mt-4 relative z-[20]">
-          <span className="text-[#004aad] font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] md:tracking-[0.5em] block mb-2 md:mb-4">
+          <span className="text-[#004aad] font-poppins text-[10px] md:text-xs uppercase tracking-[0.3em] md:tracking-[0.5em] block mb-2 md:mb-4">
             Strategic Workflow
           </span>
           <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9]">
@@ -190,13 +190,13 @@ const WorkingProcess: React.FC = () => {
                     <Icon size={28} className="md:w-8 md:h-8" />
                   </div>
                   <div className="space-y-3 md:space-y-4">
-                    <span className="text-[9px] md:text-[10px] font-mono text-slate-600 uppercase tracking-widest">
+                    <span className="text-[9px] md:text-[10px] font-poppins text-slate-400 uppercase tracking-widest">
                       Step 0{i + 1}
                     </span>
                     <h3 className="text-2xl md:text-3xl font-black text-white uppercase leading-none">
                       {step.title}
                     </h3>
-                    <p className="text-slate-500 text-xs md:text-sm leading-relaxed">
+                    <p className="text-slate-400 text-xs md:text-sm leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -258,13 +258,13 @@ const WorkingProcess: React.FC = () => {
                     <Icon size={32} />
                   </div>
                   <div className="space-y-4">
-                    <span className="text-[10px] font-mono text-slate-600 uppercase tracking-widest">
+                    <span className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest">
                       Step 0{i + 1}
                     </span>
                     <h3 className="text-3xl font-black text-white uppercase leading-none">
                       {step.title}
                     </h3>
-                    <p className="text-slate-500 text-sm leading-relaxed">
+                    <p className="text-slate-400 text-sm leading-relaxed">
                       {step.description}
                     </p>
                   </div>

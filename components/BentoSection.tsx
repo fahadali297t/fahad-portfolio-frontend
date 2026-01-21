@@ -76,19 +76,19 @@ const BentoSection: React.FC = () => {
                 <h3 className="text-3xl font-serif text-white italic">
                   Pakistan
                 </h3>
-                <p className="text-[11px] font-mono text-slate-500 uppercase tracking-widest">
+                <p className="text-[11px] font-poppins text-slate-400 uppercase tracking-widest">
                   Sargodha • Punjab
                 </p>
               </div>
               <div className="px-4 py-2 bg-black/40 backdrop-blur-md rounded-full border border-white/10 flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
-                <span className="text-[10px] font-mono text-slate-300 font-bold uppercase tracking-widest">
+                <span className="text-[10px] font-poppins text-slate-300 font-bold uppercase tracking-widest">
                   {pktTime} PKT
                 </span>
               </div>
             </div>
             <div className="relative z-10 mt-auto">
-              <span className="text-[14px] font-mono text-slate-400 uppercase tracking-widest block font-black">
+              <span className="text-[14px] font-poppins text-slate-400 uppercase tracking-widest block font-black">
                 Open to Work Remotely
               </span>
             </div>
@@ -119,7 +119,7 @@ const BentoSection: React.FC = () => {
               <h3 className="text-3xl font-bold text-white tracking-tighter">
                 Sign the Book →
               </h3>
-              <p className="text-slate-500 text-sm font-light">
+              <p className="text-slate-400 text-sm font-light">
                 Leave a review about my website.
               </p>
             </div>
@@ -174,7 +174,7 @@ const BentoSection: React.FC = () => {
                 <h3 className="text-xl font-bold text-white tracking-tight">
                   Edge Deployment
                 </h3>
-                <p className="text-[10px] font-mono text-slate-600 uppercase tracking-widest">
+                <p className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest">
                   Global CDN Infrastructure
                 </p>
               </div>
@@ -188,7 +188,7 @@ const BentoSection: React.FC = () => {
               </div>
             </div>
 
-            <p className="relative z-10 text-slate-500 text-sm font-light leading-relaxed">
+            <p className="relative z-10 text-slate-400 text-sm font-light leading-relaxed">
               Multi-region architecture on AWS for global low-latency.
             </p>
           </div>
@@ -196,7 +196,7 @@ const BentoSection: React.FC = () => {
           {/* 5. "Harden" CI/CD Card (Resilience) */}
           <div className="bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] p-10 flex flex-col justify-between group relative overflow-hidden">
             <div className="space-y-1">
-              <span className="text-[10px] font-mono text-[#004aad] uppercase tracking-widest font-black">
+              <span className="text-[10px] font-poppins text-[#004aad] uppercase tracking-widest font-black">
                 Architecture Philosophy
               </span>
               <h3 className="text-2xl font-bold text-white uppercase tracking-tighter">
@@ -218,7 +218,7 @@ const BentoSection: React.FC = () => {
                     <span className="text-sm font-bold text-slate-300">
                       {step.label}
                     </span>
-                    <span className="text-[9px] font-mono text-slate-600 uppercase tracking-widest">
+                    <span className="text-[9px] font-poppins text-slate-400 uppercase tracking-widest">
                       {step.status}
                     </span>
                   </div>
@@ -226,7 +226,7 @@ const BentoSection: React.FC = () => {
               ))}
             </div>
 
-            <p className="text-slate-500 text-sm font-light">
+            <p className="text-slate-400 text-sm font-light">
               Automated testing and zero-downtime deployment.
             </p>
           </div>
@@ -238,7 +238,7 @@ const BentoSection: React.FC = () => {
                 <h3 className="text-2xl font-bold text-white uppercase tracking-tighter">
                   Uptime & Speed
                 </h3>
-                <p className="text-[10px] font-mono text-slate-600 uppercase tracking-widest">
+                <p className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest">
                   Real-time Metrics
                 </p>
               </div>
@@ -270,7 +270,7 @@ const BentoSection: React.FC = () => {
                 <Zap size={14} className="text-[#004aad]" />
                 <span className="text-xl font-black text-white">45ms</span>
               </div>
-              <span className="text-[10px] font-mono text-slate-600 uppercase tracking-widest">
+              <span className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest">
                 Average response
               </span>
             </div>

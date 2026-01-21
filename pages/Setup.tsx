@@ -75,7 +75,7 @@ const MacbookModel: React.FC<{ mouseX: number; mouseY: number }> = ({ mouseX, mo
                   <div className="w-2 h-2 rounded-full bg-[#ffbd2e]"></div>
                   <div className="w-2 h-2 rounded-full bg-[#27c93f]"></div>
                 </div>
-                <div className="text-[7px] font-mono text-slate-600 tracking-widest uppercase flex items-center gap-1">
+                <div className="text-[7px] font-poppins text-slate-400 tracking-widest uppercase flex items-center gap-1">
                   <Command size={8} /> ARTISAN-OS M4
                 </div>
               </div>
@@ -108,7 +108,7 @@ const MacbookModel: React.FC<{ mouseX: number; mouseY: number }> = ({ mouseX, mo
               <div className="w-64 h-40 bg-gradient-to-br from-[#004aad]/20 to-[#004aad]/5 border border-[#004aad]/30 rounded-3xl flex items-center justify-center backdrop-blur-sm">
                 <div className="text-center">
                   <Monitor className="w-16 h-16 text-[#004aad] mx-auto mb-3 opacity-60" />
-                  <p className="text-sm text-white/60 font-mono">MacBook Model</p>
+                  <p className="text-sm text-white/60 font-poppins">MacBook Model</p>
                 </div>
               </div>
             </div>
@@ -167,7 +167,7 @@ const Setup: React.FC = () => {
           </div>
 
           <div className="relative z-10 mb-10">
-            <span className="text-[#004aad] font-mono text-xs uppercase tracking-[0.5em] block mb-4">
+            <span className="text-[#004aad] font-poppins text-xs uppercase tracking-[0.5em] block mb-4">
               Workspace Environment
             </span>
             <h1 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.8]">
@@ -226,7 +226,7 @@ const Setup: React.FC = () => {
             My workspace is architected for deep work. Leveraging the efficiency of Apple Silicon M4 with an UltraWide
             ecosystem allows me to maintain complex domain models in mind while executing performance-critical code.
           </p>
-          <div className="flex justify-center items-center gap-8 text-[#004aad] font-mono text-sm tracking-[0.3em] uppercase">
+          <div className="flex justify-center items-center gap-8 text-[#004aad] font-poppins text-sm tracking-[0.3em] uppercase">
             <span className="h-px flex-grow bg-gradient-to-r from-transparent to-[#004aad]"></span>
             <span className="shrink-0">SYSTEM SPECS 2024</span>
             <span className="h-px flex-grow bg-gradient-to-l from-transparent to-[#004aad]"></span>
@@ -239,7 +239,7 @@ const Setup: React.FC = () => {
             <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase">
               HARDWARE <span className="text-[#004aad] font-serif italic font-light lowercase">& gear</span>
             </h2>
-            <p className="text-slate-500 font-mono text-xs uppercase tracking-widest">Selected Inventory</p>
+            <p className="text-slate-400 font-poppins text-xs uppercase tracking-widest">Selected Inventory</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -252,7 +252,7 @@ const Setup: React.FC = () => {
                   <item.icon size={32} strokeWidth={1.2} />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 tracking-tight">{item.title}</h3>
-                <p className="text-slate-500 text-base leading-relaxed group-hover:text-slate-300 transition-colors">
+                <p className="text-slate-400 text-base leading-relaxed group-hover:text-slate-300 transition-colors">
                   {item.desc}
                 </p>
               </div>
@@ -264,7 +264,7 @@ const Setup: React.FC = () => {
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center pb-24">
           <div className="space-y-12">
             <div className="space-y-4">
-              <span className="text-[#004aad] font-mono text-xs uppercase tracking-[0.4em] block">
+              <span className="text-[#004aad] font-poppins text-xs uppercase tracking-[0.4em] block">
                 Sustained Performance
               </span>
               <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none">
@@ -296,7 +296,7 @@ const Setup: React.FC = () => {
                     <h4 className="text-lg font-bold text-white uppercase tracking-tight group-hover:text-[#004aad] transition-colors">
                       {acc.title}
                     </h4>
-                    <p className="text-slate-500 text-base leading-relaxed">{acc.value}</p>
+                    <p className="text-slate-400 text-base leading-relaxed">{acc.value}</p>
                   </div>
                 </div>
               ))}
@@ -312,7 +312,7 @@ const Setup: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
             <div className="absolute bottom-12 left-12 right-12 flex justify-between items-end">
               <div>
-                <span className="text-xs font-mono text-[#004aad] uppercase tracking-widest block mb-3">
+                <span className="text-xs font-poppins text-[#004aad] uppercase tracking-widest block mb-3">
                   Reference Image
                 </span>
                 <p className="text-xl text-white font-bold uppercase tracking-tighter leading-tight">

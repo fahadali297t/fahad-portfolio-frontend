@@ -15,10 +15,10 @@ const Terminal: React.FC<TerminalProps> = ({ title = "artisan-shell", children }
           <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
           <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
         </div>
-        <span className="text-xs font-mono text-slate-500">{title}</span>
+        <span className="text-xs font-poppins text-slate-400">{title}</span>
         <div className="w-12"></div>
       </div>
-      <div className="p-6 font-mono text-sm leading-relaxed overflow-x-auto">
+      <div className="p-6 font-poppins text-sm leading-relaxed overflow-x-auto">
         {children}
       </div>
     </div>

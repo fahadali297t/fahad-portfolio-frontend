@@ -92,16 +92,16 @@ const ServiceDetail: React.FC = () => {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-          <span className="hero-title-part text-[#004aad] font-mono text-xs uppercase tracking-[0.6em] block mb-8 font-bold">Specialized Solution</span>
+          <span className="hero-title-part text-[#004aad] font-poppins text-xs uppercase tracking-[0.6em] block mb-8 font-bold">Specialized Solution</span>
           <h1 className="hero-title-part text-6xl md:text-[9rem] font-black tracking-tighter uppercase leading-[0.8] mb-12">
             {service.title.split(' ')[0]} <br/> 
-            <span className="text-slate-500 font-serif italic font-light lowercase">
+            <span className="text-slate-400 font-serif italic font-light lowercase">
                {service.title.split(' ').slice(1).join(' ')}
             </span>
           </h1>
           <div className="hero-title-part flex justify-center gap-4 flex-wrap">
              {service.relatedTech.map((tech, i) => (
-               <span key={i} className="px-6 py-2 rounded-full border border-white/10 bg-white/5 text-xs font-mono uppercase tracking-widest text-slate-400">
+               <span key={i} className="px-6 py-2 rounded-full border border-white/10 bg-white/5 text-xs font-poppins uppercase tracking-widest text-slate-400">
                  {tech}
                </span>
              ))}
@@ -124,7 +124,7 @@ const ServiceDetail: React.FC = () => {
           
           <div className="lg:col-span-4 reveal-on-scroll">
             <div className="p-10 bg-white/5 border border-white/10 rounded-[3rem] space-y-8">
-              <h4 className="text-sm font-mono text-[#004aad] uppercase tracking-widest font-bold">Key Focus Areas</h4>
+              <h4 className="text-sm font-poppins text-[#004aad] uppercase tracking-widest font-bold">Key Focus Areas</h4>
               <ul className="space-y-6">
                  {service.capabilities.map((cap, i) => (
                    <li key={i} className="flex gap-4 group">
@@ -145,16 +145,16 @@ const ServiceDetail: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
           <div className="lg:col-span-5 space-y-12 reveal-on-scroll">
             <div className="space-y-4">
-              <span className="text-[#004aad] font-mono text-xs uppercase tracking-[0.5em] block">Methodology</span>
+              <span className="text-[#004aad] font-poppins text-xs uppercase tracking-[0.5em] block">Methodology</span>
               <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none">MY <br/> <span className="text-[#004aad] font-serif italic font-light lowercase">approach</span></h2>
             </div>
-            <p className="text-lg text-slate-500 font-light leading-relaxed">
+            <p className="text-lg text-slate-400 font-light leading-relaxed">
               Engineering isn't just about code—it's about the process. I follow a rigorous methodology to ensure every line written adds measurable value.
             </p>
             <div className="pt-8">
                <div className="p-8 bg-[#004aad]/10 rounded-[2rem] border border-[#004aad]/20 text-center">
                   <span className="text-3xl font-black text-[#004aad] block mb-2">100%</span>
-                  <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-400">Commitment to Architecture Integrity</p>
+                  <p className="text-[10px] font-poppins uppercase tracking-[0.2em] text-slate-400">Commitment to Architecture Integrity</p>
                </div>
             </div>
           </div>
@@ -162,10 +162,10 @@ const ServiceDetail: React.FC = () => {
           <div className="lg:col-span-7 space-y-6">
             {service.process.map((step, i) => (
               <div key={i} className="reveal-on-scroll group p-10 bg-white/5 rounded-[2.5rem] border border-white/10 hover:border-[#004aad]/40 transition-all flex flex-col md:flex-row gap-8 items-start">
-                 <span className="text-4xl font-black text-slate-800 group-hover:text-[#004aad] transition-colors">{step.step}</span>
+                 <span className="text-4xl font-black text-slate-400 group-hover:text-[#004aad] transition-colors">{step.step}</span>
                  <div className="space-y-2">
                     <h4 className="text-2xl font-bold uppercase tracking-tight">{step.title}</h4>
-                    <p className="text-slate-500 group-hover:text-slate-400 transition-colors leading-relaxed">
+                    <p className="text-slate-400 group-hover:text-slate-400 transition-colors leading-relaxed">
                       {step.desc}
                     </p>
                  </div>
@@ -190,7 +190,7 @@ const ServiceDetail: React.FC = () => {
                  {service.title.toLowerCase()}?
                </span>
             </h2>
-            <p className="text-xl md:text-2xl text-slate-500 font-light max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-slate-400 font-light max-w-2xl mx-auto leading-relaxed">
               Let's architect a solution that drives your product forward. I'm currently accepting new projects.
             </p>
           </div>
@@ -211,7 +211,7 @@ const ServiceDetail: React.FC = () => {
              </button>
           </div>
           
-          <div className="pt-12 flex justify-center items-center gap-8 text-[10px] font-mono uppercase tracking-[0.4em] text-slate-600">
+          <div className="pt-12 flex justify-center items-center gap-8 text-[10px] font-poppins uppercase tracking-[0.4em] text-slate-400">
              <span className="h-px w-12 bg-white/10"></span>
              <span>Trusted by Global Architects</span>
              <span className="h-px w-12 bg-white/10"></span>

@@ -154,7 +154,7 @@ const Hero: React.FC = () => {
         {/* Left Content */}
         <div className="lg:col-span-7 space-y-12">
           <div className="hero-fade-in">
-            <span className="flex items-center gap-4 text-slate-500 dark:text-slate-400 font-mono text-[10px] sm:text-xs uppercase tracking-[0.6em] font-black">
+            <span className="flex items-center gap-4 text-slate-400 dark:text-slate-400 font-poppins text-[12px] sm:text-xs uppercase tracking-[0.3em] font-black">
               <div className="w-12 h-px bg-[#004aad]"></div>
               Hi there , I am
             </span>
@@ -163,26 +163,25 @@ const Hero: React.FC = () => {
           <div className="space-y-4 perspective-1000">
             <h1
               ref={titleRef}
-              className="text-7xl md:text-9xl  tracking-tighter leading-[0.8] text-slate-900 text-white uppercase overflow-hidden"
+              className="text-7xl md:text-9xl  tracking-tighter leading-[0.8] text-slate-400 text-white uppercase overflow-hidden"
             >
               {splitText("Fahad")}
             </h1>
             <h1 className="text-7xl md:text-9xl font-serif italic text-[#004aad] leading-[0.8] tracking-tight hero-fade-in relative">
               Ali
-              <span className="absolute -top-4 -right-8 text-[10px] font-mono font-bold text-slate-500 uppercase tracking-widest opacity-40">
+              <span className="absolute -top-4 -right-8 text-[10px] font-poppins font-bold text-slate-400 uppercase tracking-widest opacity-40">
                 v.23.0.0
               </span>
             </h1>
           </div>
 
           <p className="hero-fade-in text-slate-400  text-lg md:text-2xl max-w-xl leading-relaxed font-light">
-            With a deep focus on{" "}
+            I help businesses turn{" "}
             <span className="text-white dark:text-white font-medium italic underline decoration-[#004aad]/40">
-              Web ecosystem
+              complex ideas
             </span>{" "}
-            and other technologies like Wordpress, Laravel, PHP, I bridge the
-            gap between complex business logic and high-performance web
-            applications.
+            into high-performance websites using WordPress, Laravel, and modern
+            web technologies.
           </p>
 
           <div className="hero-fade-in flex flex-col space-y-10">
@@ -191,8 +190,8 @@ const Hero: React.FC = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-4 w-4 bg-[#004aad]"></span>
               </div>
-              <span className="text-xs font-mono font-black tracking-[0.3em] text-slate-400 dark:text-slate-400 uppercase">
-                 Accepting High-Traffic Projects
+              <span className="text-xs font-poppins font-black tracking-[0.1em] text-slate-400 dark:text-slate-400 uppercase">
+                Handling High-Traffic Websites with Confidence
               </span>
             </div>
 
@@ -252,7 +251,7 @@ const Hero: React.FC = () => {
                   className="tech-popper-icon absolute opacity-0 scale-0 p-5 bg-white/10 dark:bg-black/40 backdrop-blur-xl border border-white/20 dark:border-white/10 rounded-2xl shadow-2xl flex flex-col items-center gap-2"
                 >
                   <Icon className={item.color} size={32} />
-                  <span className="text-[8px] font-mono font-black uppercase text-slate-60 dark:text-white/60 tracking-widest">
+                  <span className="text-[8px] font-poppins font-black uppercase text-slate-60 dark:text-white/60 tracking-widest">
                     {item.label}
                   </span>
                 </div>
@@ -279,7 +278,7 @@ const Hero: React.FC = () => {
               <div className="absolute bottom-10 left-10 p-5 bg-black/60 backdrop-blur-xl border border-white/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
                 <div className="flex items-center gap-3 mb-2">
                   <Code2 className="text-[#004aad]" size={18} />
-                  <span className="text-[10px] font-mono font-black uppercase tracking-widest text-white">
+                  <span className="text-[10px] font-poppins font-black uppercase tracking-widest text-white">
                     Full Stack Web Developer
                   </span>
                 </div>

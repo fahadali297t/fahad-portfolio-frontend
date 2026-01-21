@@ -155,10 +155,10 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({
               <IconComponent size={40} strokeWidth={1.5} />
             </div>
             {/* <div className="text-right">
-              <span className="block text-[10px] font-mono text-slate-700 font-bold uppercase tracking-[0.3em] group-hover:text-white/40 transition-colors">
+              <span className="block text-[10px] font-poppins text-slate-400 font-bold uppercase tracking-[0.3em] group-hover:text-white/40 transition-colors">
                 Module // 0{index + 1}
               </span>
-              <span className="block text-[8px] font-mono text-slate-800 uppercase tracking-widest mt-1">
+              <span className="block text-[8px] font-poppins text-slate-400 uppercase tracking-widest mt-1">
                 Status: Operational
               </span>
             </div> */}
@@ -168,11 +168,11 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({
           <div className="space-y-6">
             <h3 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-[0.85] group-hover:text-[#004aad] transition-colors duration-500">
               {service.title.split(" ")[0]} <br />
-              <span className="text-2xl md:text-3xl font-serif italic font-light text-slate-600 group-hover:text-white transition-colors duration-500 lowercase">
+              <span className="text-2xl md:text-3xl font-serif italic font-light text-slate-400 group-hover:text-white transition-colors duration-500 lowercase">
                 {service.title.split(" ").slice(1).join(" ")}
               </span>
             </h3>
-            <p className="text-slate-500 text-base leading-relaxed font-light group-hover:text-slate-300 transition-colors duration-500 max-w-sm">
+            <p className="text-slate-400 text-base leading-relaxed font-light group-hover:text-slate-300 transition-colors duration-500 max-w-sm">
               {service.description}
             </p>
           </div>
@@ -181,7 +181,7 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({
           <div className="grid grid-cols-2 gap-4 pt-6 opacity-40 group-hover:opacity-100 transition-opacity duration-500">
             {service.capabilities.slice(0, 2).map((cap: any, i: number) => (
               <div key={i} className="space-y-1">
-                <span className="block text-[14px] font-mono font-bold text-[#004aad] uppercase tracking-widest">
+                <span className="block text-[14px] font-poppins font-bold text-[#004aad] uppercase tracking-widest">
                   {cap.title}
                 </span>
                 <div className="h-0.5 w-8 bg-white/10 rounded-full group-hover:bg-[#004aad]/30 transition-colors"></div>
@@ -197,7 +197,7 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({
                 .map((tech: string, i: number) => (
                   <span
                     key={i}
-                    className="text-[10px] font-mono text-slate-700 uppercase tracking-widest bg-white/5 px-2 py-1 rounded border border-white/5 group-hover:text-[#004aad] group-hover:border-[#004aad]/10 transition-all"
+                    className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest bg-white/5 px-2 py-1 rounded border border-white/5 group-hover:text-[#004aad] group-hover:border-[#004aad]/10 transition-all"
                   >
                     {tech}
                   </span>
@@ -263,16 +263,16 @@ const Services: React.FC = () => {
           <div className="space-y-4 sm:space-y-6 md:space-y-8 max-w-5xl">
             <div className="header-reveal flex items-center gap-2 sm:gap-3 md:gap-4">
               <div className="w-8 sm:w-10 md:w-12 h-px bg-[#004aad]"></div>
-              <span className="text-[7px] sm:text-[9px] md:text-[10px] font-mono uppercase tracking-[0.3em] sm:tracking-[0.4em] md:tracking-[0.5em] text-[#004aad] font-bold"></span>
+              <span className="text-[7px] sm:text-[9px] md:text-[10px] font-poppins uppercase tracking-[0.3em] sm:tracking-[0.4em] md:tracking-[0.5em] text-[#004aad] font-bold"></span>
             </div>
             <h1 className="header-reveal text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[8vw] font-black tracking-tighter uppercase leading-[0.85] mix-blend-difference">
               Professional <br />
-              <span className="text-slate-500 font-serif italic font-light lowercase">
+              <span className="text-slate-400 font-serif italic font-light lowercase">
                 Services
               </span>
               {/* <span className="ml-1.5 sm:ml-2 md:ml-4">GUIDES</span> */}
             </h1>
-            <p className="header-reveal text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-slate-500 font-light leading-relaxed max-w-3xl">
+            <p className="header-reveal text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-slate-400 font-light leading-relaxed max-w-3xl">
               From WordPress websites to fully custom web applications, I
               deliver secure, high-quality solutions tailored to real business
               needs.
@@ -292,21 +292,24 @@ const Services: React.FC = () => {
           <div className="relative group inline-block">
             <div className="absolute -inset-8 bg-[#004aad]/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             <div className="relative w-24 h-24 mx-auto bg-white/5 rounded-[2.5rem] border border-white/10 flex items-center justify-center text-[#004aad] rotate-12 group-hover:rotate-0 transition-all duration-700 shadow-2xl">
-              <Terminal size={48} strokeWidth={1} />
+              {/* <Terminal size={48} strokeWidth={1} /> */}
+              <img
+                src="./1.png"
+                className="w-16 h-16 text-black group-hover:text-white"
+              />
             </div>
           </div>
 
           <div className="space-y-8 relative">
             <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.9]">
-              ENGINEERED FOR <br />{" "}
+              DESIGNED FOR <br />{" "}
               <span className="text-[#004aad] font-serif italic font-light lowercase">
-                maximum impact
+                Business Growth
               </span>
             </h2>
-            <p className="text-xl md:text-2xl text-slate-500 font-light max-w-3xl mx-auto leading-relaxed">
-              I don't just ship features; I deliver technical artifacts that
-              serve as the high-stakes foundation for multi-million dollar
-              digital platforms.
+            <p className="text-xl md:text-2xl text-slate-400 font-light max-w-3xl mx-auto leading-relaxed">
+              I don’t just build websites — I create digital solutions that help
+              businesses scale with confidence.
             </p>
           </div>
 
@@ -350,7 +353,6 @@ const Services: React.FC = () => {
             </Link>
 
             {/* Secondary CTA */}
-            
           </div>
         </section>
         {/* Engineering Principles Ribbon */}
@@ -359,7 +361,7 @@ const Services: React.FC = () => {
             {[...Array(10)].map((_, i) => (
               <div
                 key={i}
-                className="flex items-center gap-8 text-[10px] font-mono text-slate-700 uppercase tracking-[0.5em] font-bold"
+                className="flex items-center gap-8 text-[10px] font-poppins text-slate-400 uppercase tracking-[0.5em] font-bold"
               >
                 <span>Scalable Infrastructure</span>
                 <div className="w-2 h-2 rounded-full bg-[#004aad]"></div>

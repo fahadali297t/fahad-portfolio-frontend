@@ -52,7 +52,7 @@ const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({
           {project.techStackDetailed.slice(0, 2).map((tech, i) => (
             <span
               key={i}
-              className="px-3 py-1 bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-[9px] font-mono font-bold text-[#004aad] uppercase tracking-widest"
+              className="px-3 py-1 bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-[9px] font-poppins font-bold text-[#fff] uppercase tracking-widest"
             >
               {tech}
             </span>
@@ -67,13 +67,13 @@ const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({
 
       <div className="space-y-4 px-2">
         <div className="flex items-center justify-between">
-          <span className="text-[10px] font-mono text-slate-500 uppercase tracking-[0.3em] font-bold">
+          <span className="text-[10px] font-poppins text-slate-400 uppercase tracking-[0.3em] font-bold">
             Registry: 0{project.id}
           </span>
           <div className="flex gap-4">
             <a
               href={project.github}
-              className="text-slate-500 hover:text-[#004aad] transition-colors"
+              className="text-slate-400 hover:text-[#004aad] transition-colors"
             >
               <Globe size={18} />
             </a>
@@ -89,7 +89,7 @@ const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({
           </h3>
         </Link>
 
-        <p className="text-slate-500 text-sm leading-relaxed font-light line-clamp-2">
+        <p className="text-slate-400 text-sm leading-relaxed font-light line-clamp-2">
           {project.description}
         </p>
 
@@ -99,7 +99,7 @@ const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({
               <span className="text-xl font-black text-white">
                 {metric.value}
               </span>
-              <span className="text-[8px] font-mono text-slate-600 uppercase tracking-widest">
+              <span className="text-[8px] font-poppins text-slate-400 uppercase tracking-widest">
                 {metric.label}
               </span>
             </div>
@@ -118,7 +118,7 @@ const ProjectsSection: React.FC = () => {
           <div className="space-y-6">
             <div className="flex items-center gap-4">
               <div className="w-12 h-px bg-[#004aad]"></div>
-              <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-[#004aad] font-black">
+              <span className="text-[10px] font-poppins uppercase tracking-[0.5em] text-[#004aad] font-black">
                 Curated Portfolio
               </span>
             </div>
@@ -131,7 +131,7 @@ const ProjectsSection: React.FC = () => {
             </h2>
           </div>
           <div className="pb-2">
-            <p className="text-slate-500 text-lg md:text-xl font-light leading-relaxed max-w-sm border-l border-white/10 pl-8">
+            <p className="text-slate-400 text-lg md:text-xl font-light leading-relaxed max-w-sm border-l border-white/10 pl-8">
               High-performance digital systems designed with precision and
               structural clarity.
             </p>
@@ -145,7 +145,7 @@ const ProjectsSection: React.FC = () => {
         </div>
 
         <div className="mt-24 pt-20 border-t border-white/5 flex flex-col items-center text-center space-y-10">
-          <div className="flex items-center gap-8 text-slate-800 opacity-90">
+          <div className="flex items-center gap-8 text-slate-400 opacity-90">
             <Server size={40} strokeWidth={1} />
             <Database size={40} strokeWidth={1} />
             <Code2 size={40} strokeWidth={1} />
@@ -154,7 +154,7 @@ const ProjectsSection: React.FC = () => {
             <h4 className="text-2xl font-bold uppercase tracking-tight text-white">
               More Projects Available
             </h4>
-            <p className="text-slate-500 text-sm max-w-md mx-auto">
+            <p className="text-slate-400 text-sm max-w-md mx-auto">
               Browse real-world systems built for production, supported by
               benchmarks and detailed documentation.
             </p>

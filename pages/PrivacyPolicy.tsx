@@ -25,17 +25,17 @@ const PrivacyPolicy: React.FC = () => {
         <header className="space-y-8 text-center sm:text-left">
           <div className="policy-reveal flex items-center justify-center sm:justify-start gap-4">
             <div className="w-10 h-px bg-[#004aad]"></div>
-            <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-[#004aad] font-black">
+            <span className="text-[10px] font-poppins uppercase tracking-[0.5em] text-[#004aad] font-black">
               Data Protocol // v1.0
             </span>
           </div>
           <h1 className="policy-reveal text-6xl sm:text-8xl font-black tracking-tighter uppercase leading-[0.85]">
             PRIVACY <br />{" "}
-            <span className="text-slate-800 font-serif italic font-light lowercase">
+            <span className="text-slate-400 font-serif italic font-light lowercase">
               policy
             </span>
           </h1>
-          <p className="policy-reveal text-slate-500 text-lg font-light leading-relaxed max-w-2xl">
+          <p className="policy-reveal text-slate-400 text-lg font-light leading-relaxed max-w-2xl">
             Understanding how your data is processed within the Artisan
             ecosystem. I prioritize technical integrity and transparency.
           </p>
@@ -119,14 +119,14 @@ const PrivacyPolicy: React.FC = () => {
         {/* Footer info */}
         <footer className="policy-reveal pt-20 border-t border-white/5 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-8">
           <div className="space-y-1">
-            <span className="text-[10px] font-mono text-slate-700 uppercase tracking-widest font-black">
+            <span className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest font-black">
               Last Audit
             </span>
-            <p className="text-xs font-bold text-slate-500">October 24, 2024</p>
+            <p className="text-xs font-bold text-slate-400">October 24, 2024</p>
           </div>
-          <div className="flex items-center gap-4 text-slate-800">
+          <div className="flex items-center gap-4 text-slate-400">
             <Shield size={20} />
-            <span className="text-[10px] font-mono uppercase tracking-[0.4em]">
+            <span className="text-[10px] font-poppins uppercase tracking-[0.4em]">
               Protocol Secured
             </span>
           </div>

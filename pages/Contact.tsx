@@ -80,7 +80,7 @@ const Contact: React.FC = () => {
           <div className="space-y-6">
             <div className="flex items-center gap-3">
               <Zap size={14} className="text-[#004aad]" />
-              <span className="text-[10px] font-mono text-slate-500 uppercase tracking-[0.4em] font-black">
+              <span className="text-[10px] font-poppins text-slate-400 uppercase tracking-[0.4em] font-black">
                 Direct Access
               </span>
             </div>
@@ -90,7 +90,7 @@ const Contact: React.FC = () => {
                 touch
               </span>
             </h2>
-            <p className="text-slate-500 text-lg font-light leading-relaxed max-w-md">
+            <p className="text-slate-400 text-lg font-light leading-relaxed max-w-md">
               Available for architectural consulting, backend development, and
               performance optimization.
             </p>
@@ -109,7 +109,7 @@ const Contact: React.FC = () => {
                   <BsWhatsapp size={32} />
                 </div>
                 <div className="text-left">
-                  <p className="text-[10px] font-mono text-green-500 uppercase tracking-widest font-black">
+                  <p className="text-[10px] font-poppins text-green-500 uppercase tracking-widest font-black">
                     Direct Response
                   </p>
                   <p className="text-2xl font-bold text-white uppercase">
@@ -129,7 +129,7 @@ const Contact: React.FC = () => {
                 <Mail size={28} strokeWidth={1.5} />
               </div>
               <div>
-                <p className="text-[10px] font-mono text-slate-500 uppercase tracking-widest font-black">
+                <p className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest font-black">
                   Email Registry
                 </p>
                 <p className="text-md font-bold text-white">
@@ -140,11 +140,11 @@ const Contact: React.FC = () => {
 
             {/* Location Card */}
             <div className="flex items-center gap-6 p-6 md:p-8 bg-white/5 border border-white/5 rounded-[2.5rem]">
-              <div className="w-16 h-16 md:bg-white/5 rounded-2xl flex items-center justify-center text-slate-500">
+              <div className="w-16 h-16 md:bg-white/5 rounded-2xl flex items-center justify-center text-slate-400">
                 <Globe size={28} strokeWidth={1.5} />
               </div>
               <div>
-                <p className="text-[10px] font-mono text-slate-500 uppercase tracking-widest font-black">
+                <p className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest font-black">
                   Base Location
                 </p>
                 <p className="text-md font-bold text-white">
@@ -160,7 +160,7 @@ const Contact: React.FC = () => {
           {status === "sending" && (
             <div className="absolute inset-0 bg-black/80 backdrop-blur-sm z-50 flex flex-col items-center justify-center space-y-6">
               <div className="w-12 h-12 border-2 border-[#004aad] border-t-transparent rounded-full animate-spin"></div>
-              <p className="font-mono text-xs uppercase tracking-widest text-[#004aad]">
+              <p className="font-poppins text-xs uppercase tracking-widest text-[#004aad]">
                 Sending Your Message...
               </p>
             </div>
@@ -194,7 +194,7 @@ const Contact: React.FC = () => {
           <form onSubmit={handleSubmit} className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-[10px] font-mono text-slate-400 uppercase tracking-widest font-black ml-4">
+                <label className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest font-black ml-4">
                   Full Name
                 </label>
                 <input
@@ -209,7 +209,7 @@ const Contact: React.FC = () => {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-[10px] font-mono text-slate-400 uppercase tracking-widest font-black ml-4">
+                <label className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest font-black ml-4">
                   Email Address
                 </label>
                 <input
@@ -225,7 +225,7 @@ const Contact: React.FC = () => {
               </div>
             </div>
             <div className="space-y-2">
-              <label className="text-[10px] font-mono text-slate-400 uppercase tracking-widest font-black ml-4">
+              <label className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest font-black ml-4">
                 Inquiry / Message
               </label>
               <textarea
@@ -254,11 +254,11 @@ const Contact: React.FC = () => {
           </form>
 
           <div className="mt-12 pt-8 border-t border-white/5 flex items-center justify-between">
-            <div className="flex items-center gap-4 text-[10px] font-mono text-slate-700 uppercase tracking-widest font-black">
+            <div className="flex items-center gap-4 text-[10px] font-poppins text-slate-400 uppercase tracking-widest font-black">
               <ShieldCheck size={14} className="text-green-500/50" />
               <span>Encrypted Connection</span>
             </div>
-            <span className="text-[10px] font-mono text-slate-800">
+            <span className="text-[10px] font-poppins text-slate-400">
               0x2291 // Using secure channel
             </span>
           </div>

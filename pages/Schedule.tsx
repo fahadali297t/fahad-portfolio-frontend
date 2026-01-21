@@ -64,7 +64,7 @@ const Schedule: React.FC = () => {
         <header className="text-center space-y-8 max-w-3xl mx-auto">
           <div className="reveal-simple flex items-center justify-center gap-3">
             <Sparkles size={18} className="text-[#004aad]" />
-            <span className="text-[11px] font-mono uppercase tracking-[0.5em] text-[#004aad] font-black">
+            <span className="text-[11px] font-poppins uppercase tracking-[0.5em] text-[#004aad] font-black">
               Let's Connect
             </span>
           </div>
@@ -97,10 +97,10 @@ const Schedule: React.FC = () => {
                   <Calendar size={36} strokeWidth={1.5} />
                 </div>
                 <div className="text-right">
-                  <span className="block text-[10px] font-mono text-slate-600 uppercase tracking-widest font-black">
+                  <span className="block text-[10px] font-poppins text-slate-400 uppercase tracking-widest font-black">
                     30 MINUTE SESSION
                   </span>
-                  <span className="block text-[8px] font-mono text-green-500 uppercase tracking-widest mt-1">
+                  <span className="block text-[8px] font-poppins text-green-500 uppercase tracking-widest mt-1">
                     Available This Week
                   </span>
                 </div>
@@ -110,7 +110,7 @@ const Schedule: React.FC = () => {
                 <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter leading-none group-hover:text-[#004aad] transition-colors">
                   Schedule <br /> a Call
                 </h2>
-                <p className="text-slate-500 text-lg font-light leading-relaxed">
+                <p className="text-slate-400 text-lg font-light leading-relaxed">
                   A dedicated time to discuss your project goals, timelines, and
                   how we can achieve your business objectives.
                 </p>
@@ -153,10 +153,10 @@ const Schedule: React.FC = () => {
                   <BsWhatsapp size={36} />
                 </div>
                 <div className="text-right">
-                  <span className="block text-[10px] font-mono text-slate-600 uppercase tracking-widest font-black">
+                  <span className="block text-[10px] font-poppins text-slate-400 uppercase tracking-widest font-black">
                     INSTANT ACCESS
                   </span>
-                  <span className="block text-[8px] font-mono text-green-500 uppercase tracking-widest mt-1">
+                  <span className="block text-[8px] font-poppins text-green-500 uppercase tracking-widest mt-1">
                     Typical Reply: <span className="font-bold">Minutes</span>
                   </span>
                 </div>
@@ -166,7 +166,7 @@ const Schedule: React.FC = () => {
                 <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter leading-none group-hover:text-green-500 transition-colors">
                   Direct <br /> Message
                 </h2>
-                <p className="text-slate-500 text-lg font-light leading-relaxed">
+                <p className="text-slate-400 text-lg font-light leading-relaxed">
                   Have a quick question or need an immediate response? Connect
                   with me directly on WhatsApp for real-time chat.
                 </p>
@@ -204,7 +204,7 @@ const Schedule: React.FC = () => {
         {/* Trust Footer */}
         <footer className="pt-24 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
           <div className="space-y-2">
-            <span className="text-[10px] font-mono text-slate-700 uppercase tracking-widest font-black">
+            <span className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest font-black">
               Business Hours
             </span>
             <p className="text-sm font-bold text-slate-400">
@@ -213,7 +213,7 @@ const Schedule: React.FC = () => {
           </div>
           <div className="flex items-center gap-8">
             <div className="flex flex-col items-center md:items-end">
-              <span className="text-[10px] font-mono text-slate-700 uppercase tracking-widest font-black">
+              <span className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest font-black">
                 Client Satisfaction
               </span>
               <p className="text-2xl font-black text-white">100% Guaranteed</p>

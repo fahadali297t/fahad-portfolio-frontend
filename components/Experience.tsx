@@ -163,13 +163,13 @@ const TimelineNode = ({ item, index, isWork }) => {
             <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-3">
               <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 md:px-5 py-1 sm:py-1.5 md:py-2 bg-white/5 rounded-lg sm:rounded-xl md:rounded-2xl border border-white/10">
                 <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-[#004aad]" />
-                <span className="text-[8px] sm:text-[10px] md:text-[11px] font-mono font-black text-white uppercase tracking-wider sm:tracking-widest">
+                <span className="text-[8px] sm:text-[10px] md:text-[11px] font-poppins font-black text-white uppercase tracking-wider sm:tracking-widest">
                   {item.year}
                 </span>
               </div>
               {/* <div className="flex items-center gap-1 sm:gap-1.5">
                 <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-[#004aad] animate-pulse"></div>
-                <span className="text-[7px] sm:text-[9px] md:text-[10px] font-mono text-slate-600 uppercase tracking-wider sm:tracking-widest font-bold">
+                <span className="text-[7px] sm:text-[9px] md:text-[10px] font-poppins text-slate-400 uppercase tracking-wider sm:tracking-widest font-bold">
                   v2.4
                 </span>
               </div> */}
@@ -180,7 +180,7 @@ const TimelineNode = ({ item, index, isWork }) => {
                 {item.title}
               </h3>
               <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3 text-slate-400 font-serif italic">
-                <Building2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-slate-700 flex-shrink-0" />
+                <Building2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-slate-400 flex-shrink-0" />
                 <span className="group-hover:text-slate-200 transition-colors text-sm sm:text-lg md:text-2xl">
                   {item.company}
                 </span>
@@ -189,7 +189,7 @@ const TimelineNode = ({ item, index, isWork }) => {
 
             <div className="h-px w-full bg-gradient-to-r from-[#004aad]/10 to-transparent"></div>
 
-            <p className="text-slate-500 text-xs sm:text-base md:text-lg leading-relaxed font-light group-hover:text-slate-300 transition-colors">
+            <p className="text-slate-400 text-xs sm:text-base md:text-lg leading-relaxed font-light group-hover:text-slate-300 transition-colors">
               {item.description}
             </p>
 
@@ -200,7 +200,7 @@ const TimelineNode = ({ item, index, isWork }) => {
               ).map((tag) => (
                 <span
                   key={tag}
-                  className="text-[6px] sm:text-[8px] md:text-[9px] font-mono uppercase tracking-wider sm:tracking-widest text-slate-700 border border-white/5 px-1.5 sm:px-2 py-0.5 rounded"
+                  className="text-[6px] sm:text-[8px] md:text-[9px] font-poppins uppercase tracking-wider sm:tracking-widest text-slate-400 border border-white/5 px-1.5 sm:px-2 py-0.5 rounded"
                 >
                   {tag}
                 </span>
@@ -277,7 +277,7 @@ const Experience = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <header className="mb-20 max-w-4xl space-y-6">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#004aad]">
+          <span className="text-xs font-poppins uppercase tracking-widest text-[#004aad]">
             Experience
           </span>
 
@@ -285,7 +285,7 @@ const Experience = () => {
             My Professional Journey
           </h2>
 
-          <p className="text-base sm:text-lg md:text-xl text-slate-500 max-w-2xl">
+          <p className="text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl">
             A clear overview of my professional growth, key projects, and
             technical milestones over time.
           </p>
@@ -309,7 +309,7 @@ const Experience = () => {
             <div className="timeline-header-reveal flex justify-center mb-10 sm:mb-20 md:mb-32 relative">
               <div className="px-5 sm:px-10 md:px-12 py-2 sm:py-4 md:py-5 bg-[#0a0a0a] border border-white/10 rounded-full flex items-center gap-2 sm:gap-3 md:gap-4 shadow-2xl">
                 <Briefcase className="w-3.5 h-3.5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#004aad]" />
-                <span className="text-[8px] sm:text-xs md:text-sm font-mono font-black uppercase tracking-[0.25em] sm:tracking-[0.35em] md:tracking-[0.4em]">
+                <span className="text-[8px] sm:text-xs md:text-sm font-poppins font-black uppercase tracking-[0.25em] sm:tracking-[0.35em] md:tracking-[0.4em]">
                   Professional Journey
                 </span>
               </div>
@@ -328,7 +328,7 @@ const Experience = () => {
             <div className="timeline-header-reveal flex justify-center mb-10 sm:mb-20 md:mb-32 relative">
               <div className="px-5 sm:px-10 md:px-12 py-2 sm:py-4 md:py-5 bg-[#0a0a0a] border border-white/10 rounded-full flex items-center gap-2 sm:gap-3 md:gap-4 shadow-2xl">
                 <GraduationCap className="w-3.5 h-3.5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#004aad]" />
-                <span className="text-[8px] sm:text-xs md:text-sm font-mono font-black uppercase tracking-[0.25em] sm:tracking-[0.35em] md:tracking-[0.4em]">
+                <span className="text-[8px] sm:text-xs md:text-sm font-poppins font-black uppercase tracking-[0.25em] sm:tracking-[0.35em] md:tracking-[0.4em]">
                   Academic Journey
                 </span>
               </div>

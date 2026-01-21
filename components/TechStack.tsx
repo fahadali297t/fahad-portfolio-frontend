@@ -78,7 +78,7 @@ const TechStack: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 w-full relative z-10">
         <div className="text-center mb-24">
-          <span className="text-[#004aad] font-mono text-sm uppercase tracking-widest font-bold">
+          <span className="text-[#004aad] font-poppins text-sm uppercase tracking-widest font-bold">
             Tech Stack
           </span>
           <h2 className="text-4xl md:text-5xl font-black text-white mt-2 mb-4">
@@ -113,7 +113,7 @@ const TechStack: React.FC = () => {
 
                 <div className="mt-4 text-center">
                   <span
-                    className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] 
+                    className="font-poppins text-[10px] font-bold uppercase tracking-[0.2em] 
                     text-zinc-600 
                     group-hover:text-[#004aad] transition-colors"
                   >

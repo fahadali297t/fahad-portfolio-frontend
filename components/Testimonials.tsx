@@ -60,7 +60,7 @@ const TestimonialCard: React.FC<{
               <h4 className="text-lg font-bold text-white tracking-tight">
                 {testimonial.name}
               </h4>
-              <p className="text-[10px] font-mono text-[#004aad] uppercase tracking-widest font-black">
+              <p className="text-[10px] font-poppins text-[#004aad] uppercase tracking-widest font-black">
                 {testimonial.role}
               </p>
             </div>
@@ -68,11 +68,11 @@ const TestimonialCard: React.FC<{
           <div className="flex flex-col items-end gap-1">
             <div className="flex items-center gap-2 px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-full">
               <div className="w-1 h-1 rounded-full bg-green-500 animate-pulse"></div>
-              <span className="text-[8px] font-mono text-green-500 uppercase font-black">
+              <span className="text-[8px] font-poppins text-green-500 uppercase font-black">
                 Verified
               </span>
             </div>
-            <span className="text-[8px] font-mono text-slate-800 uppercase tracking-widest">
+            <span className="text-[8px] font-poppins text-slate-400 uppercase tracking-widest">
               {testimonial.verificationCode}
             </span>
           </div>
@@ -94,13 +94,13 @@ const TestimonialCard: React.FC<{
       <div className="relative z-10 mt-12 pt-8 border-t border-white/5 flex items-end justify-between">
         <div className="space-y-4">
           <div className="flex items-center gap-2">
-            <Globe size={14} className="text-slate-700" />
-            <span className="text-[10px] font-mono text-slate-600 uppercase tracking-[0.3em] font-black">
+            <Globe size={14} className="text-slate-400" />
+            <span className="text-[10px] font-poppins text-slate-400 uppercase tracking-[0.3em] font-black">
               {testimonial.industry} Dossier
             </span>
           </div>
           <div className="flex flex-col">
-            <span className="text-xs font-mono text-slate-700 uppercase tracking-widest mb-1">
+            <span className="text-xs font-poppins text-slate-400 uppercase tracking-widest mb-1">
               Impact Metric
             </span>
             <div className="flex items-center gap-3">
@@ -112,7 +112,7 @@ const TestimonialCard: React.FC<{
           </div>
         </div>
         <div className="flex flex-col items-center group/check">
-          <div className="w-12 h-12 rounded-full border border-white/5 flex items-center justify-center text-slate-800 group-hover:text-green-500 group-hover:border-green-500/20 group-hover:bg-green-500/5 transition-all">
+          <div className="w-12 h-12 rounded-full border border-white/5 flex items-center justify-center text-slate-400 group-hover:text-green-500 group-hover:border-green-500/20 group-hover:bg-green-500/5 transition-all">
             <CheckCircle size={24} />
           </div>
         </div>
@@ -157,10 +157,10 @@ const Testimonials: React.FC = () => {
               <ShieldCheck size={24} />
             </div>
             <div className="space-y-1">
-              <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-[#004aad] font-black block">
+              <span className="text-[10px] font-poppins uppercase tracking-[0.5em] text-[#004aad] font-black block">
                 Verification Engine
               </span>
-              <p className="text-[8px] text-slate-700 font-mono tracking-widest uppercase">
+              <p className="text-[8px] text-slate-400 font-poppins tracking-widest uppercase">
                 Encryption Status: AES-256
               </p>
             </div>
@@ -170,14 +170,14 @@ const Testimonials: React.FC = () => {
             <div className="lg:col-span-8 space-y-6">
               <h2 className="trust-header-reveal text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85] text-white">
                 TRUSTED <br />
-                <span className="text-slate-800 font-serif italic font-light lowercase">
+                <span className="text-slate-400 font-serif italic font-light lowercase">
                   Clients
                 </span>
                 <span className="ml-2">Reviews</span>
               </h2>
             </div>
             <div className="lg:col-span-4 pb-2 trust-header-reveal">
-              <p className="text-slate-500 text-lg font-light leading-relaxed border-l border-white/10 pl-8">
+              <p className="text-slate-400 text-lg font-light leading-relaxed border-l border-white/10 pl-8">
                 Validated feedback from industry leaders and technical
                 architects who have integrated my engineered systems.
               </p>
@@ -208,7 +208,7 @@ const Testimonials: React.FC = () => {
               key={i}
               className="flex flex-col items-center md:items-start space-y-2"
             >
-              <span className="text-[9px] font-mono uppercase tracking-[0.4em] text-slate-700 font-black">
+              <span className="text-[9px] font-poppins uppercase tracking-[0.4em] text-slate-400 font-black">
                 {stat.label}
               </span>
               <div className="text-3xl font-black text-white tracking-tighter uppercase">

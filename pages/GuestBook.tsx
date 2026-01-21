@@ -151,7 +151,7 @@ const Guestbook: React.FC = () => {
       <div className="w-full max-w-4xl relative z-10 space-y-16">
         {/* Hero Section */}
         <header className="text-center space-y-6">
-          <span className="hero-text text-[10px] sm:text-xs font-mono uppercase tracking-[0.4em] text-slate-500 block">
+          <span className="hero-text text-[10px] sm:text-xs font-poppins uppercase tracking-[0.4em] text-slate-400 block">
             The Guestbook
           </span>
           <h1 className="hero-text text-4xl sm:text-6xl md:text-7xl font-serif text-white leading-tight">
@@ -203,7 +203,7 @@ const Guestbook: React.FC = () => {
                       </h4>
                       <div className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
-                        <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">
+                        <span className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest">
                           Writing Now
                         </span>
                       </div>
@@ -211,7 +211,7 @@ const Guestbook: React.FC = () => {
                   </div>
                   <button
                     onClick={handleLogout}
-                    className="text-[11px] font-mono text-slate-500 hover:text-white transition-colors uppercase tracking-widest"
+                    className="text-[11px] font-poppins text-slate-400 hover:text-white transition-colors uppercase tracking-widest"
                   >
                     Sign out
                   </button>
@@ -261,7 +261,7 @@ const Guestbook: React.FC = () => {
               <div className="w-full border-t border-white/[0.05]"></div>
             </div>
             <div className="relative flex justify-center">
-              <span className="bg-black px-8 text-[10px] sm:text-xs font-mono text-slate-600 uppercase tracking-[0.4em] font-bold">
+              <span className="bg-black px-8 text-[10px] sm:text-xs font-poppins text-slate-400 uppercase tracking-[0.4em] font-bold">
                 Recent Messages
               </span>
             </div>
@@ -269,7 +269,7 @@ const Guestbook: React.FC = () => {
 
           <div className="messages-list grid grid-cols-1 gap-6">
             {entries.length === 0 ? (
-              <p className="text-center text-slate-500 italic">No messages yet. Be the first!</p>
+              <p className="text-center text-slate-400 italic">No messages yet. Be the first!</p>
             ) : (
                 entries.map((entry) => (
                     <div
@@ -298,7 +298,7 @@ const Guestbook: React.FC = () => {
                             <h4 className="text-sm font-bold text-white tracking-tight group-hover:text-[#004aad] transition-colors">
                               {entry.name}
                             </h4>
-                            <div className="flex items-center gap-2 text-[10px] font-mono text-slate-700 uppercase tracking-widest">
+                            <div className="flex items-center gap-2 text-[10px] font-poppins text-slate-400 uppercase tracking-widest">
                               <Clock size={12} />
                               {entry.timestamp}
                             </div>

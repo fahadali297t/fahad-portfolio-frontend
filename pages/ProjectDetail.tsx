@@ -119,7 +119,7 @@ const ProjectDetail: React.FC = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center space-y-8">
           <div className="space-y-4">
-            <span className="text-[#004aad] font-mono text-xs uppercase tracking-[0.5em] block animate-pulse">
+            <span className="text-[#004aad] font-poppins text-xs uppercase tracking-[0.5em] block animate-pulse">
               Deep Case Study
             </span>
             <h1 className="text-6xl md:text-[10rem] font-black tracking-tighter uppercase leading-[0.8] drop-shadow-2xl">
@@ -129,7 +129,7 @@ const ProjectDetail: React.FC = () => {
           <div className="flex flex-wrap justify-center gap-12 pt-8">
             <div className="flex flex-col items-center gap-2">
               <Calendar size={20} className="text-[#004aad]" />
-              <span className="text-[10px] font-mono uppercase tracking-widest text-slate-500">
+              <span className="text-[10px] font-poppins uppercase tracking-widest text-slate-400">
                 Year
               </span>
               <span className="font-bold text-lg uppercase tracking-tight">
@@ -138,7 +138,7 @@ const ProjectDetail: React.FC = () => {
             </div>
             <div className="flex flex-col items-center gap-2">
               <User size={20} className="text-[#004aad]" />
-              <span className="text-[10px] font-mono uppercase tracking-widest text-slate-500">
+              <span className="text-[10px] font-poppins uppercase tracking-widest text-slate-400">
                 Role
               </span>
               <span className="font-bold text-lg uppercase tracking-tight">
@@ -147,7 +147,7 @@ const ProjectDetail: React.FC = () => {
             </div>
             <div className="flex flex-col items-center gap-2">
               <Tag size={20} className="text-[#004aad]" />
-              <span className="text-[10px] font-mono uppercase tracking-widest text-slate-500">
+              <span className="text-[10px] font-poppins uppercase tracking-widest text-slate-400">
                 Type
               </span>
               <span className="font-bold text-lg uppercase tracking-tight">
@@ -186,7 +186,7 @@ const ProjectDetail: React.FC = () => {
                 <span className="text-4xl md:text-5xl font-black text-white tracking-tighter block group-hover:text-[#004aad] transition-colors">
                   {metric.value}
                 </span>
-                <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-slate-500 font-bold">
+                <span className="text-[10px] font-poppins uppercase tracking-[0.3em] text-slate-400 font-bold">
                   {metric.label}
                 </span>
               </div>
@@ -198,7 +198,7 @@ const ProjectDetail: React.FC = () => {
       {/* Technical Arsenal Chips */}
       <section className="py-24 bg-white/[0.02] border-y border-white/5 px-6">
         <div className="max-w-7xl mx-auto">
-          <h3 className="text-sm font-mono text-slate-500 uppercase tracking-[0.4em] mb-12 text-center font-bold">
+          <h3 className="text-sm font-poppins text-slate-400 uppercase tracking-[0.4em] mb-12 text-center font-bold">
             Technology Used
           </h3>
           <div className="flex flex-wrap justify-center gap-4 tech-grid">
@@ -270,7 +270,7 @@ const ProjectDetail: React.FC = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-5 space-y-8">
             <div className="space-y-4">
-              <span className="text-[#004aad] font-mono text-xs uppercase tracking-[0.5em] block">
+              <span className="text-[#004aad] font-poppins text-xs uppercase tracking-[0.5em] block">
                 The Engine Room
               </span>
               <h3 className="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-none">
@@ -280,7 +280,7 @@ const ProjectDetail: React.FC = () => {
                 </span>
               </h3>
             </div>
-            <p className="text-slate-500 font-light leading-relaxed">
+            <p className="text-slate-400 font-light leading-relaxed">
               Every system is built on solid principles. Here we leveraged
               Laravel's transactional capabilities to ensure financial
               consistency across micro-services.
@@ -316,7 +316,7 @@ const ProjectDetail: React.FC = () => {
                 visuals
               </span>
             </h3>
-            <p className="text-slate-500 font-mono text-[10px] uppercase tracking-widest">
+            <p className="text-slate-400 font-poppins text-[10px] uppercase tracking-widest">
               Selected Screenshots
             </p>
           </div>
@@ -347,7 +347,7 @@ const ProjectDetail: React.FC = () => {
         </div>
 
         <div className="relative z-10 space-y-6">
-          <span className="text-[#004aad] font-mono text-xs uppercase tracking-[0.5em] block">
+          <span className="text-[#004aad] font-poppins text-xs uppercase tracking-[0.5em] block">
             Continue Exploring
           </span>
           <Link to={`/projects/${nextProject.id}`} className="block">

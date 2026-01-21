@@ -153,7 +153,7 @@ export const MacBookViewer: React.FC = () => {
           <div className="bg-black/50 backdrop-blur-xl border border-[#004aad]/20 rounded-3xl p-8 space-y-4 pointer-events-auto">
             <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6">
               <div>
-                <p className="text-[#004aad] font-mono text-xs uppercase tracking-widest mb-3">
+                <p className="text-[#004aad] font-poppins text-xs uppercase tracking-widest mb-3">
                   Central Processing Unit
                 </p>
                 <h3 className="text-2xl md:text-3xl font-black tracking-tighter uppercase mb-2">Apple Silicon M1</h3>
@@ -163,9 +163,9 @@ export const MacBookViewer: React.FC = () => {
                 </p>
               </div>
               <div className="text-right space-y-2 text-slate-300 text-sm md:text-base">
-                <p className="font-mono">16" Liquid Retina XDR Display</p>
-                <p className="font-mono">512GB SSD Storage</p>
-                <p className="text-slate-500 text-xs">The epicenter of creation</p>
+                <p className="font-poppins">16" Liquid Retina XDR Display</p>
+                <p className="font-poppins">512GB SSD Storage</p>
+                <p className="text-slate-400 text-xs">The epicenter of creation</p>
               </div>
             </div>
           </div>

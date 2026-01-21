@@ -57,8 +57,8 @@ const Navbar: React.FC = () => {
           <div className="flex justify-between items-center h-12">
             {/* Logo Section */}
             <Link to="/" className="flex items-center space-x-2 group shrink-0">
-              <div className="w-8 h-8 bg-[#004aad] rounded-lg flex items-center justify-center transition-all duration-500 group-hover:bg-[#CC5500]">
-                <TerminalIcon className="w-5 h-5 text-black group-hover:text-white" />
+              <div className="w-8 h-8 bg-[#fff] rounded-lg flex items-center justify-center transition-all duration-500 ">
+                <img src="./1.png" className="w-5 h-5 text-black group-hover:text-white" />
               </div>
               <span className="hidden sm:block text-sm font-black tracking-tighter text-white uppercase">
                 Fahad Ali
@@ -104,7 +104,7 @@ const Navbar: React.FC = () => {
                         className={`block px-5 py-3 text-xs font-semibold hover:bg-[#004aad]/10 hover:text-[#004aad] transition-all ${
                           isActive(link.path)
                             ? "text-[#004aad] bg-[#004aad]/5"
-                            : "text-slate-500"
+                            : "text-slate-400"
                         }`}
                       >
                         {link.name}

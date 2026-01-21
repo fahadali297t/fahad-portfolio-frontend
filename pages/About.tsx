@@ -63,13 +63,13 @@ const TimelineNode: React.FC<{
 
           <div className="relative z-10 space-y-4">
             <div className="flex items-center justify-between">
-              <span className="text-[#004aad] font-mono text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase">
+              <span className="text-[#004aad] font-poppins text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase">
                 {item.year}
               </span>
               {type === "work" ? (
-                <Briefcase size={16} className="text-slate-600" />
+                <Briefcase size={16} className="text-slate-400" />
               ) : (
-                <BookOpen size={16} className="text-slate-600" />
+                <BookOpen size={16} className="text-slate-400" />
               )}
             </div>
 
@@ -81,7 +81,7 @@ const TimelineNode: React.FC<{
               {item.company}
             </p>
 
-            <p className="text-slate-500 text-sm leading-relaxed font-light">
+            <p className="text-slate-400 text-sm leading-relaxed font-light">
               {item.description}
             </p>
           </div>
@@ -187,7 +187,7 @@ const About: React.FC = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
           <div className="lg:col-span-7 space-y-12">
             <div className="space-y-6">
-              <span className="about-header-text inline-block text-[#004aad] font-mono text-xs md:text-sm uppercase tracking-[0.5em] font-bold">
+              <span className="about-header-text inline-block text-[#004aad] font-poppins text-xs md:text-sm uppercase tracking-[0.5em] font-bold">
                 The Profile
               </span>
               <h1 className="about-header-text text-6xl md:text-[8rem] font-black tracking-tighter uppercase leading-[0.8]">
@@ -217,7 +217,7 @@ const About: React.FC = () => {
                     <h4 className="font-bold text-white uppercase tracking-tight">
                       Skills
                     </h4>
-                    <p className="text-slate-500 text-xs font-mono">
+                    <p className="text-slate-400 text-xs font-poppins">
                       Laravel Engineer, with additional Wordpress Experties.
                     </p>
                   </div>
@@ -230,7 +230,7 @@ const About: React.FC = () => {
                     <h4 className="font-bold text-white uppercase tracking-tight">
                       Web Dev Expert
                     </h4>
-                    <p className="text-slate-500 text-xs font-mono">
+                    <p className="text-slate-400 text-xs font-poppins">
                       Certified
                     </p>
                   </div>
@@ -273,7 +273,7 @@ const About: React.FC = () => {
 
         <div className="max-w-4xl mx-auto space-y-8 relative z-10">
           <div className="space-y-4">
-            <span className="who-am-i-reveal block text-[10px] sm:text-xs font-mono text-slate-500 uppercase tracking-[0.4em] font-medium">
+            <span className="who-am-i-reveal block text-[10px] sm:text-xs font-poppins text-slate-400 uppercase tracking-[0.4em] font-medium">
               A FEW LINES ABOUT ME
             </span>
             <h2 className="who-am-i-reveal text-6xl md:text-8xl font-serif text-white leading-tight">
@@ -298,7 +298,7 @@ const About: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row justify-between items-end mb-24 gap-8">
             <div className="space-y-4">
-              <span className="text-[#004aad] font-mono text-xs uppercase tracking-[0.5em] block">
+              <span className="text-[#004aad] font-poppins text-xs uppercase tracking-[0.5em] block">
                 Skillset Level
               </span>
               <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-none">
@@ -310,7 +310,7 @@ const About: React.FC = () => {
             </div>
             <div className="flex flex-col items-end gap-2 text-right">
               <div className="h-px w-32 bg-[#004aad] mb-2"></div>
-              <p className="text-slate-500 max-w-xs font-light">
+              <p className="text-slate-400 max-w-xs font-light">
                 My expertise spans the entire development lifecycle, with a
                 heavy emphasis on architectural integrity.
               </p>
@@ -361,7 +361,7 @@ const About: React.FC = () => {
               I build engineering legacies.
             </span>
           </h2>
-          <p className="text-xl md:text-3xl text-slate-500 font-light leading-relaxed">
+          <p className="text-xl md:text-3xl text-slate-400 font-light leading-relaxed">
             Every line of code I author is a commitment to scalability,
             security, and exceptional developer experience.
           </p>

@@ -69,7 +69,7 @@ const BlogDetail: React.FC = () => {
     return (
       <div className="h-screen flex flex-col items-center justify-center bg-black text-white">
         <h1 className="text-4xl font-bold mb-4 uppercase tracking-tighter">Blog Not Found</h1>
-        <Link to="/" className="text-[#004aad] hover:underline font-mono text-sm uppercase tracking-widest">Back to Home</Link>
+        <Link to="/" className="text-[#004aad] hover:underline font-poppins text-sm uppercase tracking-widest">Back to Home</Link>
       </div>
     );
   }
@@ -109,11 +109,11 @@ const BlogDetail: React.FC = () => {
             <span className="px-5 py-2 bg-[#004aad] text-black rounded-full text-[10px] font-black uppercase tracking-[0.2em]">
               {blog.category}
             </span>
-            <div className="flex items-center gap-2 text-slate-400 font-mono text-xs uppercase tracking-widest">
+            <div className="flex items-center gap-2 text-slate-400 font-poppins text-xs uppercase tracking-widest">
               <Calendar size={14} className="text-[#004aad]" />
               <span>{blog.date}</span>
             </div>
-            <div className="flex items-center gap-2 text-slate-400 font-mono text-xs uppercase tracking-widest">
+            <div className="flex items-center gap-2 text-slate-400 font-poppins text-xs uppercase tracking-widest">
               <Clock size={14} className="text-[#004aad]" />
               <span>{blog.readTime}</span>
             </div>
@@ -130,7 +130,7 @@ const BlogDetail: React.FC = () => {
         {/* Left: Article Meta Sidebar */}
         <aside className="lg:col-span-3 space-y-16 lg:sticky lg:top-32 self-start hidden lg:block">
           <div className="space-y-6">
-            <span className="text-xs font-mono text-[#004aad] uppercase tracking-[0.4em] block">
+            <span className="text-xs font-poppins text-[#004aad] uppercase tracking-[0.4em] block">
               Architect
             </span>
             <div className="flex items-center gap-4">
@@ -143,7 +143,7 @@ const BlogDetail: React.FC = () => {
                 <p className="font-bold text-lg leading-none">
                   {blog.author.name}
                 </p>
-                <p className="text-slate-500 text-[10px] font-mono uppercase tracking-widest mt-1">
+                <p className="text-slate-400 text-[10px] font-poppins uppercase tracking-widest mt-1">
                   {blog.author.role}
                 </p>
               </div>
@@ -151,7 +151,7 @@ const BlogDetail: React.FC = () => {
           </div>
 
           <div className="space-y-4">
-            <span className="text-xs font-mono text-[#004aad] uppercase tracking-[0.4em] block">
+            <span className="text-xs font-poppins text-[#004aad] uppercase tracking-[0.4em] block">
               Technical Tags
             </span>
             <div className="flex flex-wrap gap-2">
@@ -199,7 +199,7 @@ const BlogDetail: React.FC = () => {
               infrastructure
             </h2>
 
-            <p className="text-lg md:text-xl text-slate-500 font-light leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-400 font-light leading-relaxed">
               Backend engineering is often the invisible force that defines a
               project's success. It's not just about writing clean PHP or
               leveraging the latest Laravel features; it's about predicting how
@@ -219,7 +219,7 @@ const BlogDetail: React.FC = () => {
               </p>
               <div className="mt-8 flex items-center gap-4">
                 <div className="h-px w-12 bg-[#004aad]"></div>
-                <span className="text-sm font-mono uppercase tracking-[0.2em] text-slate-500">
+                <span className="text-sm font-poppins uppercase tracking-[0.2em] text-slate-400">
                   Industry Insights
                 </span>
               </div>
@@ -233,7 +233,7 @@ const BlogDetail: React.FC = () => {
                 implementation
               </span>
             </h3>
-            <p className="text-lg text-slate-500 font-light leading-relaxed">
+            <p className="text-lg text-slate-400 font-light leading-relaxed">
               Every line of code should be an intentional choice. Whether you're
               optimizing an Eloquent query or setting up a complex message queue
               with RabbitMQ, the focus should always be on clarity and
@@ -249,7 +249,7 @@ const BlogDetail: React.FC = () => {
               />
             </div>
 
-            <p className="text-lg text-slate-500 font-light leading-relaxed">
+            <p className="text-lg text-slate-400 font-light leading-relaxed">
               Designing for the future means understanding that the future is
               uncertain. We build systems that are decoupled, modular, and easy
               to extend. That is the true mark of an artisan.
@@ -258,7 +258,7 @@ const BlogDetail: React.FC = () => {
 
           {/* Mobile Author Info */}
           <div className="lg:hidden p-10 bg-white/5 rounded-[2.5rem] border border-white/10 space-y-6">
-            <span className="text-xs font-mono text-[#004aad] uppercase tracking-widest font-bold">
+            <span className="text-xs font-poppins text-[#004aad] uppercase tracking-widest font-bold">
               About Author
             </span>
             <div className="flex items-center gap-6">
@@ -271,7 +271,7 @@ const BlogDetail: React.FC = () => {
                 <p className="font-bold text-xl leading-none">
                   {blog.author.name}
                 </p>
-                <p className="text-slate-500 text-xs font-mono uppercase tracking-widest mt-2">
+                <p className="text-slate-400 text-xs font-poppins uppercase tracking-widest mt-2">
                   {blog.author.role}
                 </p>
               </div>
@@ -294,7 +294,7 @@ const BlogDetail: React.FC = () => {
             <br />
             IN YOUR INBOX
           </h2>
-          <p className="text-xl md:text-2xl text-slate-500 font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-slate-400 font-light max-w-2xl mx-auto leading-relaxed">
             Join a community of 2.5k+ senior engineers receiving monthly deep
             dives on architecture and Laravel internals.
           </p>
