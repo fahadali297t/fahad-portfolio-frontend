@@ -7,6 +7,10 @@ import {
   ArrowUpRight,
   ShieldCheck,
   Zap,
+  Linkedin,
+  Instagram,
+  Facebook,
+  Send as Telegram,
   Globe,
 } from "lucide-react";
 import { BsWhatsapp } from "react-icons/bs";
@@ -71,6 +75,32 @@ const Contact: React.FC = () => {
       alert("Failed to send message");
     }
   };
+    const socials = [
+      {
+        name: "LinkedIn",
+        icon: Linkedin,
+        url: "https://linkedin.com/in/fahadali2951",
+        color: "hover:text-blue-500",
+      },
+      {
+        name: "Telegram",
+        icon: Telegram,
+        url: "https://t.me/fahadali2951",
+        color: "hover:text-cyan-400",
+      },
+      {
+        name: "Instagram",
+        icon: Instagram,
+        url: "https://instagram.com/fahadali2951",
+        color: "hover:text-pink-500",
+      },
+      {
+        name: "Facebook",
+        icon: Facebook,
+        url: "https://facebook.com/fahadali2951",
+        color: "hover:text-blue-600",
+      },
+    ];
 
   return (
     <section className="bg-black text-white py-32 px-6 md:px-12 min-h-screen flex flex-col justify-center">
@@ -139,18 +169,24 @@ const Contact: React.FC = () => {
             </div>
 
             {/* Location Card */}
-            <div className="flex items-center gap-6 p-6 md:p-8 bg-white/5 border border-white/5 rounded-[2.5rem]">
-              <div className="w-16 h-16 md:bg-white/5 rounded-2xl flex items-center justify-center text-slate-400">
-                <Globe size={28} strokeWidth={1.5} />
-              </div>
-              <div>
-                <p className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest font-black">
-                  Base Location
-                </p>
-                <p className="text-md font-bold text-white">
-                  Sargodha, Pakistan
-                </p>
-              </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {socials.map((social, idx) => (
+                <a
+                  key={idx}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center justify-center gap-4 p-6 bg-white/5 border border-white/5 rounded-[2rem] transition-all hover:bg-white/10 group ${social.color}`}
+                >
+                  <social.icon
+                    size={24}
+                    className=" transition-transform group-hover:scale-110"
+                  />
+                  {/* <span className="text-[10px] font-mono uppercase tracking-widest font-black text-slate-400 group-hover:text-white transition-colors">
+                    {social.name}
+                  </span> */}
+                </a>
+              ))}
             </div>
           </div>
         </div>

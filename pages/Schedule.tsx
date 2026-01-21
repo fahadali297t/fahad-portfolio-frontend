@@ -11,6 +11,10 @@ import {
   Sparkles,
   Zap,
   ChevronRight,
+  Linkedin,
+  Instagram,
+  Facebook,
+  Send as Telegram,
 } from "lucide-react";
 import { BsWhatsapp } from "react-icons/bs";
 
@@ -44,6 +48,32 @@ const Schedule: React.FC = () => {
     window.open("https://calendly.com/fahadali297t/30min", "_blank");
   };
 
+  const socials = [
+    {
+      name: "LinkedIn",
+      icon: Linkedin,
+      url: "https://linkedin.com/in/fahadali2951",
+      color: "hover:text-blue-500",
+    },
+    {
+      name: "Telegram",
+      icon: Telegram,
+      url: "https://t.me/fahadali2951",
+      color: "hover:text-cyan-400",
+    },
+    {
+      name: "Instagram",
+      icon: Instagram,
+      url: "https://instagram.com/fahadali2951",
+      color: "hover:text-pink-500",
+    },
+    {
+      name: "Facebook",
+      icon: Facebook,
+      url: "https://facebook.com/fahadali2951",
+      color: "hover:text-blue-600",
+    },
+  ];
   return (
     <div
       ref={containerRef}
@@ -199,6 +229,26 @@ const Schedule: React.FC = () => {
               <BsWhatsapp size={18} />
             </a>
           </div>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          {socials.map((social, idx) => (
+            <a
+              key={idx}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`flex items-center justify-center gap-4 p-6 bg-white/5 border border-white/5 rounded-[2rem] transition-all hover:bg-white/10 group ${social.color}`}
+            >
+              <social.icon
+                size={24}
+                className=" transition-transform group-hover:scale-110"
+              />
+              <span className="text-[14px] font-poppins uppercase tracking-widest font-black text-slate-400 group-hover:text-white transition-colors">
+                    {social.name}
+                  </span>
+            </a>
+          ))}
         </div>
 
         {/* Trust Footer */}
