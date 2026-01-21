@@ -277,7 +277,7 @@ const Guestbook: React.FC = () => {
                       className="message-item group relative p-8 bg-[#0a0a0c] border border-white/5 rounded-[2.5rem] hover:border-white/10 transition-all duration-500"
                     >
                       <div className="flex items-start gap-6">
-                        <div
+                        {/* <div
                           className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold shrink-0 shadow-lg ${
                             entry.avatar && entry.avatar.includes("http") ? "p-0" : "bg-gradient-to-br from-gray-700 to-gray-600"
                           }`}
@@ -291,7 +291,7 @@ const Guestbook: React.FC = () => {
                           ) : (
                             entry.name.charAt(0).toUpperCase()
                           )}
-                        </div>
+                        </div> */}
       
                         <div className="space-y-3 flex-grow">
                           <div className="flex items-center justify-between">
