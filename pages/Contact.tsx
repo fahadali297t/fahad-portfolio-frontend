@@ -3,13 +3,13 @@ import {
   Send,
   Mail,
   MapPin,
-  MessageCircle,
   Check,
   ArrowUpRight,
   ShieldCheck,
   Zap,
   Globe,
 } from "lucide-react";
+import { BsWhatsapp } from "react-icons/bs";
 
 const Contact: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -106,7 +106,7 @@ const Contact: React.FC = () => {
             >
               <div className="flex items-center gap-6">
                 <div className="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center text-black shadow-[0_0_20px_rgba(34,197,94,0.3)]">
-                  <MessageCircle size={32} strokeWidth={1.5} />
+                  <BsWhatsapp size={32} />
                 </div>
                 <div className="text-left">
                   <p className="text-[10px] font-mono text-green-500 uppercase tracking-widest font-black">

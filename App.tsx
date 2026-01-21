@@ -25,6 +25,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import Guestbook from "./pages/GuestBook";
 import { Toaster } from "react-hot-toast";
+import Schedule from "./pages/Schedule";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -116,6 +117,7 @@ const App: React.FC = () => {
             <Route path="/guestbook" element={<Guestbook />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/schedule-call" element={<Schedule/>}/>
           </Routes>
         </main>
         <Footer />

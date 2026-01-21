@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
   const moreLinks = [
     // { name: "Case Studies", path: "/case-studies" },
     { name: "Blog", path: "/blog" },
-    // { name: "Setup", path: "/setup" },
+    { name: "Schedule a call", path: "/schedule-call" },
   ];
 
   return (

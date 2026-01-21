@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import {
   MapPin,
-  MessageCircle,
   Globe,
   Zap,
   Activity,
@@ -13,6 +12,7 @@ import {
   Cloud,
   ArrowRight,
 } from "lucide-react";
+import { BsWhatsapp } from "react-icons/bs";
 
 const BentoSection: React.FC = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -134,8 +134,8 @@ const BentoSection: React.FC = () => {
           >
             <div className="absolute inset-0 bg-green-500/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
-            <div className="relative mb-10 w-24 h-24 bg-green-500/10 rounded-[2rem] flex items-center justify-center text-green-500 group-hover:scale-110 transition-transform">
-              <MessageCircle
+            <div className="relative mb-10 w-24 h-24 lg:bg-green-500/10 rounded-[2rem] flex items-center justify-center text-green-500 group-hover:scale-110 transition-transform">
+              <BsWhatsapp
                 size={48}
                 className="drop-shadow-[0_0_15px_rgba(34,197,94,0.3)]"
               />
@@ -146,7 +146,7 @@ const BentoSection: React.FC = () => {
             </h3>
 
             <div className="px-8 py-4 bg-green-500 text-black rounded-full text-xs font-black uppercase tracking-widest transition-all hover:bg-green-400 active:scale-95 flex items-center gap-2">
-              <MessageCircle size={14} />
+              <BsWhatsapp size={14} />
               Chat on WhatsApp
             </div>
           </a>
