@@ -3,7 +3,7 @@
     <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9]">
       PROFESSIONAL
     </h2>
-    <h2 className="text-4xl md:text-7xl font-serif italic text-[#ff6b00] leading-[0.9] tracking-tight">
+    <h2 className="text-4xl md:text-7xl font-serif italic text-[#004aad] leading-[0.9] tracking-tight">
       SERVICES
     </h2>
   </div>

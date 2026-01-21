@@ -69,7 +69,7 @@ const BlogDetail: React.FC = () => {
     return (
       <div className="h-screen flex flex-col items-center justify-center bg-black text-white">
         <h1 className="text-4xl font-bold mb-4 uppercase tracking-tighter">Blog Not Found</h1>
-        <Link to="/" className="text-[#ff6b00] hover:underline font-mono text-sm uppercase tracking-widest">Back to Home</Link>
+        <Link to="/" className="text-[#004aad] hover:underline font-mono text-sm uppercase tracking-widest">Back to Home</Link>
       </div>
     );
   }
@@ -83,7 +83,7 @@ const BlogDetail: React.FC = () => {
       <div className=" hidden lg:fixed top-24 left-8 z-50">
         <Link
           to="/"
-          className="p-4 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 hover:bg-[#ff6b00] hover:text-black transition-all group flex items-center justify-center shadow-2xl"
+          className="p-4 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 hover:bg-[#004aad] hover:text-black transition-all group flex items-center justify-center shadow-2xl"
           aria-label="Back to home"
         >
           <ArrowLeft
@@ -106,15 +106,15 @@ const BlogDetail: React.FC = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full space-y-8">
           <div className="flex flex-wrap items-center gap-6">
-            <span className="px-5 py-2 bg-[#ff6b00] text-black rounded-full text-[10px] font-black uppercase tracking-[0.2em]">
+            <span className="px-5 py-2 bg-[#004aad] text-black rounded-full text-[10px] font-black uppercase tracking-[0.2em]">
               {blog.category}
             </span>
             <div className="flex items-center gap-2 text-slate-400 font-mono text-xs uppercase tracking-widest">
-              <Calendar size={14} className="text-[#ff6b00]" />
+              <Calendar size={14} className="text-[#004aad]" />
               <span>{blog.date}</span>
             </div>
             <div className="flex items-center gap-2 text-slate-400 font-mono text-xs uppercase tracking-widest">
-              <Clock size={14} className="text-[#ff6b00]" />
+              <Clock size={14} className="text-[#004aad]" />
               <span>{blog.readTime}</span>
             </div>
           </div>
@@ -130,7 +130,7 @@ const BlogDetail: React.FC = () => {
         {/* Left: Article Meta Sidebar */}
         <aside className="lg:col-span-3 space-y-16 lg:sticky lg:top-32 self-start hidden lg:block">
           <div className="space-y-6">
-            <span className="text-xs font-mono text-[#ff6b00] uppercase tracking-[0.4em] block">
+            <span className="text-xs font-mono text-[#004aad] uppercase tracking-[0.4em] block">
               Architect
             </span>
             <div className="flex items-center gap-4">
@@ -151,7 +151,7 @@ const BlogDetail: React.FC = () => {
           </div>
 
           <div className="space-y-4">
-            <span className="text-xs font-mono text-[#ff6b00] uppercase tracking-[0.4em] block">
+            <span className="text-xs font-mono text-[#004aad] uppercase tracking-[0.4em] block">
               Technical Tags
             </span>
             <div className="flex flex-wrap gap-2">
@@ -168,13 +168,13 @@ const BlogDetail: React.FC = () => {
 
           <div className="flex gap-4 pt-8 border-t border-white/10">
             <button
-              className="p-3 bg-white/5 rounded-full hover:bg-[#ff6b00] hover:text-black transition-all"
+              className="p-3 bg-white/5 rounded-full hover:bg-[#004aad] hover:text-black transition-all"
               title="Share Article"
             >
               <Share2 size={20} />
             </button>
             <button
-              className="p-3 bg-white/5 rounded-full hover:bg-[#ff6b00] hover:text-black transition-all"
+              className="p-3 bg-white/5 rounded-full hover:bg-[#004aad] hover:text-black transition-all"
               title="Bookmark"
             >
               <Bookmark size={20} />
@@ -193,7 +193,7 @@ const BlogDetail: React.FC = () => {
 
             <h2 className="text-3xl md:text-5xl font-black tracking-tighter uppercase">
               Building{" "}
-              <span className="text-[#ff6b00] font-serif italic font-light lowercase">
+              <span className="text-[#004aad] font-serif italic font-light lowercase">
                 resilient
               </span>{" "}
               infrastructure
@@ -209,16 +209,16 @@ const BlogDetail: React.FC = () => {
           </div>
 
           {blog.quote && (
-            <div className="read-animate py-16 px-12 bg-white/[0.03] rounded-[3rem] border-l-[8px] border-[#ff6b00] relative group">
+            <div className="read-animate py-16 px-12 bg-white/[0.03] rounded-[3rem] border-l-[8px] border-[#004aad] relative group">
               <Quote
                 size={64}
-                className="absolute -top-6 -left-6 text-[#ff6b00] opacity-10 group-hover:scale-110 transition-transform"
+                className="absolute -top-6 -left-6 text-[#004aad] opacity-10 group-hover:scale-110 transition-transform"
               />
               <p className="text-2xl md:text-4xl font-serif italic text-white leading-tight relative z-10">
                 "{blog.quote}"
               </p>
               <div className="mt-8 flex items-center gap-4">
-                <div className="h-px w-12 bg-[#ff6b00]"></div>
+                <div className="h-px w-12 bg-[#004aad]"></div>
                 <span className="text-sm font-mono uppercase tracking-[0.2em] text-slate-500">
                   Industry Insights
                 </span>
@@ -229,7 +229,7 @@ const BlogDetail: React.FC = () => {
           <div className="read-animate space-y-10">
             <h3 className="text-2xl md:text-4xl font-black uppercase tracking-tighter">
               THE CORE{" "}
-              <span className="text-[#ff6b00] font-serif italic font-light lowercase">
+              <span className="text-[#004aad] font-serif italic font-light lowercase">
                 implementation
               </span>
             </h3>
@@ -258,7 +258,7 @@ const BlogDetail: React.FC = () => {
 
           {/* Mobile Author Info */}
           <div className="lg:hidden p-10 bg-white/5 rounded-[2.5rem] border border-white/10 space-y-6">
-            <span className="text-xs font-mono text-[#ff6b00] uppercase tracking-widest font-bold">
+            <span className="text-xs font-mono text-[#004aad] uppercase tracking-widest font-bold">
               About Author
             </span>
             <div className="flex items-center gap-6">
@@ -283,12 +283,12 @@ const BlogDetail: React.FC = () => {
       {/* Newsletter Section */}
       <section className="py-40 px-6 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-black">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-[#ff6b00]/5 blur-[180px] rounded-full pointer-events-none"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-[#004aad]/5 blur-[180px] rounded-full pointer-events-none"></div>
         </div>
         <div className="relative z-10 max-w-4xl mx-auto space-y-12">
           <h2 className="text-4xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85]">
             CRAFTED{" "}
-            <span className="text-[#ff6b00] font-serif italic font-light lowercase">
+            <span className="text-[#004aad] font-serif italic font-light lowercase">
               insight
             </span>{" "}
             <br />
@@ -302,9 +302,9 @@ const BlogDetail: React.FC = () => {
             <input
               type="email"
               placeholder="your@email.com"
-              className="px-10 py-6 bg-white/5 border border-white/10 rounded-full text-white placeholder-slate-700 focus:ring-2 focus:ring-[#ff6b00]/30 outline-none w-full md:w-[450px] transition-all"
+              className="px-10 py-6 bg-white/5 border border-white/10 rounded-full text-white placeholder-slate-700 focus:ring-2 focus:ring-[#004aad]/30 outline-none w-full md:w-[450px] transition-all"
             />
-            <button className="px-12 py-6 bg-[#ff6b00] text-black rounded-full font-black text-xl hover:scale-105 transition-all shadow-2xl shadow-orange-500/20 w-full md:w-auto">
+            <button className="px-12 py-6 bg-[#004aad] text-black rounded-full font-black text-xl hover:scale-105 transition-all shadow-2xl shadow-blue-500/20 w-full md:w-auto">
               Subscribe
             </button>
           </div>

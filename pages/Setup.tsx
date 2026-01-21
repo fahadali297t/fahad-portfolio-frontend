@@ -87,8 +87,8 @@ const MacbookModel: React.FC<{ mouseX: number; mouseY: number }> = ({ mouseX, mo
                     className="flex flex-col items-center gap-1 animate-pulse"
                     style={{ animationDelay: `${idx * 100}ms` }}
                   >
-                    <div className="p-2 bg-[#ff6b00]/10 border border-[#ff6b00]/20 rounded-lg">
-                      <Icon size={16} className="text-[#ff6b00]" />
+                    <div className="p-2 bg-[#004aad]/10 border border-[#004aad]/20 rounded-lg">
+                      <Icon size={16} className="text-[#004aad]" />
                     </div>
                     <div className="w-6 h-0.5 bg-white/5 rounded-full"></div>
                   </div>
@@ -105,9 +105,9 @@ const MacbookModel: React.FC<{ mouseX: number; mouseY: number }> = ({ mouseX, mo
         <Group position={[0, -0.8, 0]}>
           <Html center position={[0, 0, 0]}>
             <div className="flex flex-col items-center gap-4">
-              <div className="w-64 h-40 bg-gradient-to-br from-[#ff6b00]/20 to-[#ff6b00]/5 border border-[#ff6b00]/30 rounded-3xl flex items-center justify-center backdrop-blur-sm">
+              <div className="w-64 h-40 bg-gradient-to-br from-[#004aad]/20 to-[#004aad]/5 border border-[#004aad]/30 rounded-3xl flex items-center justify-center backdrop-blur-sm">
                 <div className="text-center">
-                  <Monitor className="w-16 h-16 text-[#ff6b00] mx-auto mb-3 opacity-60" />
+                  <Monitor className="w-16 h-16 text-[#004aad] mx-auto mb-3 opacity-60" />
                   <p className="text-sm text-white/60 font-mono">MacBook Model</p>
                 </div>
               </div>
@@ -163,15 +163,15 @@ const Setup: React.FC = () => {
         {/* Hero Section */}
         <section className="relative h-[85vh] flex flex-col items-center justify-center text-center">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl z-0 opacity-40 blur-[150px] pointer-events-none">
-            <div className="aspect-[2/1] bg-gradient-to-tr from-[#ff6b00] via-orange-900 to-transparent rounded-full"></div>
+            <div className="aspect-[2/1] bg-gradient-to-tr from-[#004aad] via-blue-900 to-transparent rounded-full"></div>
           </div>
 
           <div className="relative z-10 mb-10">
-            <span className="text-[#ff6b00] font-mono text-xs uppercase tracking-[0.5em] block mb-4">
+            <span className="text-[#004aad] font-mono text-xs uppercase tracking-[0.5em] block mb-4">
               Workspace Environment
             </span>
             <h1 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.8]">
-              STUDIO <br /> <span className="font-serif italic font-light lowercase text-[#ff6b00]">setup</span>
+              STUDIO <br /> <span className="font-serif italic font-light lowercase text-[#004aad]">setup</span>
             </h1>
           </div>
 
@@ -181,13 +181,13 @@ const Setup: React.FC = () => {
               <Suspense
                 fallback={
                   <Html center>
-                    <Loader2 className="w-12 h-12 text-[#ff6b00] animate-spin" />
+                    <Loader2 className="w-12 h-12 text-[#004aad] animate-spin" />
                   </Html>
                 }
               >
                 <AmbientLight intensity={0.8} />
 
-                <SpotLight position={[8, 12, 8]} angle={0.25} penumbra={1.5} intensity={2} color="#ff6b00" />
+                <SpotLight position={[8, 12, 8]} angle={0.25} penumbra={1.5} intensity={2} color="#004aad" />
 
                 <SpotLight position={[-8, 8, -10]} angle={0.2} penumbra={1} intensity={1.2} color="#ffffff" />
 
@@ -215,21 +215,21 @@ const Setup: React.FC = () => {
         {/* Studio Philosophy */}
         <section className="max-w-4xl mx-auto text-center space-y-12 px-4 reveal-section">
           <div className="flex justify-center mb-4">
-            <div className="p-5 bg-white/5 rounded-full border border-white/10 text-[#ff6b00]">
+            <div className="p-5 bg-white/5 rounded-full border border-white/10 text-[#004aad]">
               <Cpu size={40} strokeWidth={1} />
             </div>
           </div>
           <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-none">
-            ENGINEERED FOR <span className="text-[#ff6b00] font-serif italic font-light lowercase">precision</span>
+            ENGINEERED FOR <span className="text-[#004aad] font-serif italic font-light lowercase">precision</span>
           </h2>
           <p className="text-xl md:text-2xl text-slate-400 leading-relaxed font-light">
             My workspace is architected for deep work. Leveraging the efficiency of Apple Silicon M4 with an UltraWide
             ecosystem allows me to maintain complex domain models in mind while executing performance-critical code.
           </p>
-          <div className="flex justify-center items-center gap-8 text-[#ff6b00] font-mono text-sm tracking-[0.3em] uppercase">
-            <span className="h-px flex-grow bg-gradient-to-r from-transparent to-[#ff6b00]"></span>
+          <div className="flex justify-center items-center gap-8 text-[#004aad] font-mono text-sm tracking-[0.3em] uppercase">
+            <span className="h-px flex-grow bg-gradient-to-r from-transparent to-[#004aad]"></span>
             <span className="shrink-0">SYSTEM SPECS 2024</span>
-            <span className="h-px flex-grow bg-gradient-to-l from-transparent to-[#ff6b00]"></span>
+            <span className="h-px flex-grow bg-gradient-to-l from-transparent to-[#004aad]"></span>
           </div>
         </section>
 
@@ -237,7 +237,7 @@ const Setup: React.FC = () => {
         <section className="space-y-16">
           <div className="flex flex-col md:flex-row justify-between items-end gap-6 border-b border-white/10 pb-8">
             <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase">
-              HARDWARE <span className="text-[#ff6b00] font-serif italic font-light lowercase">& gear</span>
+              HARDWARE <span className="text-[#004aad] font-serif italic font-light lowercase">& gear</span>
             </h2>
             <p className="text-slate-500 font-mono text-xs uppercase tracking-widest">Selected Inventory</p>
           </div>
@@ -246,9 +246,9 @@ const Setup: React.FC = () => {
             {gearItems.map((item, i) => (
               <div
                 key={i}
-                className="group p-10 bg-white/[0.02] border border-white/5 rounded-[3rem] hover:bg-white/[0.04] hover:border-[#ff6b00]/20 transition-all duration-500 hover:-translate-y-2"
+                className="group p-10 bg-white/[0.02] border border-white/5 rounded-[3rem] hover:bg-white/[0.04] hover:border-[#004aad]/20 transition-all duration-500 hover:-translate-y-2"
               >
-                <div className="mb-8 p-5 bg-white/5 w-fit rounded-2xl text-[#ff6b00] group-hover:bg-[#ff6b00] group-hover:text-black transition-all duration-500">
+                <div className="mb-8 p-5 bg-white/5 w-fit rounded-2xl text-[#004aad] group-hover:bg-[#004aad] group-hover:text-black transition-all duration-500">
                   <item.icon size={32} strokeWidth={1.2} />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 tracking-tight">{item.title}</h3>
@@ -264,12 +264,12 @@ const Setup: React.FC = () => {
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center pb-24">
           <div className="space-y-12">
             <div className="space-y-4">
-              <span className="text-[#ff6b00] font-mono text-xs uppercase tracking-[0.4em] block">
+              <span className="text-[#004aad] font-mono text-xs uppercase tracking-[0.4em] block">
                 Sustained Performance
               </span>
               <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none">
                 THE CRAFT <br />{" "}
-                <span className="text-[#ff6b00] font-serif italic font-light lowercase">essentials</span>
+                <span className="text-[#004aad] font-serif italic font-light lowercase">essentials</span>
               </h2>
             </div>
 
@@ -290,10 +290,10 @@ const Setup: React.FC = () => {
               ].map((acc, i) => (
                 <div key={i} className="flex gap-8 group">
                   <div className="w-2 h-auto bg-white/5 rounded-full overflow-hidden">
-                    <div className="w-full h-0 group-hover:h-full bg-[#ff6b00] transition-all duration-700"></div>
+                    <div className="w-full h-0 group-hover:h-full bg-[#004aad] transition-all duration-700"></div>
                   </div>
                   <div className="space-y-2">
-                    <h4 className="text-lg font-bold text-white uppercase tracking-tight group-hover:text-[#ff6b00] transition-colors">
+                    <h4 className="text-lg font-bold text-white uppercase tracking-tight group-hover:text-[#004aad] transition-colors">
                       {acc.title}
                     </h4>
                     <p className="text-slate-500 text-base leading-relaxed">{acc.value}</p>
@@ -312,14 +312,14 @@ const Setup: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
             <div className="absolute bottom-12 left-12 right-12 flex justify-between items-end">
               <div>
-                <span className="text-xs font-mono text-[#ff6b00] uppercase tracking-widest block mb-3">
+                <span className="text-xs font-mono text-[#004aad] uppercase tracking-widest block mb-3">
                   Reference Image
                 </span>
                 <p className="text-xl text-white font-bold uppercase tracking-tighter leading-tight">
                   Minimalist Workspace <br /> Aesthetic
                 </p>
               </div>
-              <div className="p-6 bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 text-[#ff6b00] hover:bg-[#ff6b00] hover:text-black transition-all cursor-pointer">
+              <div className="p-6 bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 text-[#004aad] hover:bg-[#004aad] hover:text-black transition-all cursor-pointer">
                 <Coffee size={32} strokeWidth={1.5} />
               </div>
             </div>

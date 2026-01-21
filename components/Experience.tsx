@@ -126,14 +126,14 @@ const TimelineNode = ({ item, index, isWork }) => {
       {/* Central Connector Dot */}
       {/* <div
         ref={dotRef}
-        className="absolute left-3 sm:left-5 md:left-1/2 md:-translate-x-1/2 top-6 md:top-1/2 md:-translate-y-1/2 w-5 h-5 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-lg sm:rounded-xl md:rounded-2xl bg-black border-2 border-[#ff6b00] z-30 flex items-center justify-center shadow-[0_0_12px_rgba(255,107,0,0.3)]"
+        className="absolute left-3 sm:left-5 md:left-1/2 md:-translate-x-1/2 top-6 md:top-1/2 md:-translate-y-1/2 w-5 h-5 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-lg sm:rounded-xl md:rounded-2xl bg-black border-2 border-[#004aad] z-30 flex items-center justify-center shadow-[0_0_12px_rgba(0,74,173,0.3)]"
       >
         {isWork ? (
-          <Code className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 text-[#ff6b00]" />
+          <Code className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 text-[#004aad]" />
         ) : (
-          <GraduationCap className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 text-[#ff6b00]" />
+          <GraduationCap className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 text-[#004aad]" />
         )}
-        <div className="absolute inset-0 rounded-lg sm:rounded-xl md:rounded-2xl bg-[#ff6b00] animate-pulse opacity-10"></div>
+        <div className="absolute inset-0 rounded-lg sm:rounded-xl md:rounded-2xl bg-[#004aad] animate-pulse opacity-10"></div>
       </div> */}
 
       {/* Horizontal Connector Line (Desktop) */}
@@ -141,8 +141,8 @@ const TimelineNode = ({ item, index, isWork }) => {
         ref={connectorRef}
         className={`hidden md:block absolute top-1/2 -translate-y-1/2 w-1/2 h-px bg-gradient-to-r ${
           isEven
-            ? "from-transparent to-[#ff6b00]/30 right-1/2 origin-right"
-            : "from-[#ff6b00]/30 to-transparent left-1/2 origin-left"
+            ? "from-transparent to-[#004aad]/30 right-1/2 origin-right"
+            : "from-[#004aad]/30 to-transparent left-1/2 origin-left"
         } pointer-events-none`}
       />
 
@@ -151,7 +151,7 @@ const TimelineNode = ({ item, index, isWork }) => {
         ref={itemRef}
         className="w-full md:w-[45%] pl-10 sm:pl-14 md:pl-0 pr-4 sm:pr-6 md:pr-0"
       >
-        <div className="relative p-5 sm:p-7 md:p-10 bg-[#0a0a0a] border border-white/5 rounded-2xl sm:rounded-3xl md:rounded-[3rem] transition-all duration-700 hover:border-[#ff6b00]/30 hover:bg-white/[0.02] shadow-2xl overflow-hidden group">
+        <div className="relative p-5 sm:p-7 md:p-10 bg-[#0a0a0a] border border-white/5 rounded-2xl sm:rounded-3xl md:rounded-[3rem] transition-all duration-700 hover:border-[#004aad]/30 hover:bg-white/[0.02] shadow-2xl overflow-hidden group">
           {/* Section Indicator Overlay */}
           <div className="absolute top-2 right-2 sm:top-4 sm:right-4 md:top-6 md:right-6 opacity-[0.03] sm:opacity-[0.04] md:opacity-[0.05] group-hover:opacity-10 transition-opacity duration-700">
             <span className="text-4xl sm:text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none select-none">
@@ -162,13 +162,13 @@ const TimelineNode = ({ item, index, isWork }) => {
           <div className="relative z-10 space-y-4 sm:space-y-6 md:space-y-8">
             <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-3">
               <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 md:px-5 py-1 sm:py-1.5 md:py-2 bg-white/5 rounded-lg sm:rounded-xl md:rounded-2xl border border-white/10">
-                <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-[#ff6b00]" />
+                <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-[#004aad]" />
                 <span className="text-[8px] sm:text-[10px] md:text-[11px] font-mono font-black text-white uppercase tracking-wider sm:tracking-widest">
                   {item.year}
                 </span>
               </div>
               {/* <div className="flex items-center gap-1 sm:gap-1.5">
-                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-[#ff6b00] animate-pulse"></div>
+                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-[#004aad] animate-pulse"></div>
                 <span className="text-[7px] sm:text-[9px] md:text-[10px] font-mono text-slate-600 uppercase tracking-wider sm:tracking-widest font-bold">
                   v2.4
                 </span>
@@ -176,7 +176,7 @@ const TimelineNode = ({ item, index, isWork }) => {
             </div>
 
             <div className="space-y-1.5 sm:space-y-3 md:space-y-4">
-              <h3 className="text-xl sm:text-2xl md:text-4xl font-black text-white tracking-tighter uppercase leading-tight sm:leading-tight md:leading-[0.95] group-hover:text-[#ff6b00] transition-colors">
+              <h3 className="text-xl sm:text-2xl md:text-4xl font-black text-white tracking-tighter uppercase leading-tight sm:leading-tight md:leading-[0.95] group-hover:text-[#004aad] transition-colors">
                 {item.title}
               </h3>
               <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3 text-slate-400 font-serif italic">
@@ -187,7 +187,7 @@ const TimelineNode = ({ item, index, isWork }) => {
               </div>
             </div>
 
-            <div className="h-px w-full bg-gradient-to-r from-[#ff6b00]/10 to-transparent"></div>
+            <div className="h-px w-full bg-gradient-to-r from-[#004aad]/10 to-transparent"></div>
 
             <p className="text-slate-500 text-xs sm:text-base md:text-lg leading-relaxed font-light group-hover:text-slate-300 transition-colors">
               {item.description}
@@ -273,11 +273,11 @@ const Experience = () => {
       ref={containerRef}
       className="bg-black text-white py-12 sm:py-24 md:py-40 px-3 sm:px-5 md:px-6 overflow-hidden relative"
     >
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[95vw] sm:w-[90vw] h-[95vw] sm:h-[90vw] bg-[#ff6b00]/5 blur-[80px] sm:blur-[140px] md:blur-[200px] rounded-full pointer-events-none z-0"></div>
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[95vw] sm:w-[90vw] h-[95vw] sm:h-[90vw] bg-[#004aad]/5 blur-[80px] sm:blur-[140px] md:blur-[200px] rounded-full pointer-events-none z-0"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <header className="mb-20 max-w-4xl space-y-6">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#ff6b00]">
+          <span className="text-xs font-mono uppercase tracking-widest text-[#004aad]">
             Experience
           </span>
 
@@ -296,19 +296,19 @@ const Experience = () => {
 
           <div
             ref={lineRef}
-            className="absolute left-3 sm:left-5 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-0.5 sm:w-0.5 md:w-1 bg-gradient-to-b from-[#ff6b00] via-[#ff6b00]/50 to-transparent origin-top z-0"
+            className="absolute left-3 sm:left-5 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-0.5 sm:w-0.5 md:w-1 bg-gradient-to-b from-[#004aad] via-[#004aad]/50 to-transparent origin-top z-0"
           >
-            <div className="absolute inset-0 bg-[#ff6b00] blur-sm sm:blur-md opacity-20"></div>
+            <div className="absolute inset-0 bg-[#004aad] blur-sm sm:blur-md opacity-20"></div>
             <div
               ref={scrollTrackerRef}
-              className="absolute left-1/2 -translate-x-1/2 top-0 w-1.5 sm:w-2 md:w-3 h-6 sm:h-10 md:h-12 bg-gradient-to-b from-[#ff6b00] to-transparent rounded-full shadow-[0_0_15px_rgba(255,107,0,0.6)]"
+              className="absolute left-1/2 -translate-x-1/2 top-0 w-1.5 sm:w-2 md:w-3 h-6 sm:h-10 md:h-12 bg-gradient-to-b from-[#004aad] to-transparent rounded-full shadow-[0_0_15px_rgba(0,74,173,0.6)]"
             />
           </div>
 
           <div className="space-y-0 relative z-10">
             <div className="timeline-header-reveal flex justify-center mb-10 sm:mb-20 md:mb-32 relative">
               <div className="px-5 sm:px-10 md:px-12 py-2 sm:py-4 md:py-5 bg-[#0a0a0a] border border-white/10 rounded-full flex items-center gap-2 sm:gap-3 md:gap-4 shadow-2xl">
-                <Briefcase className="w-3.5 h-3.5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#ff6b00]" />
+                <Briefcase className="w-3.5 h-3.5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#004aad]" />
                 <span className="text-[8px] sm:text-xs md:text-sm font-mono font-black uppercase tracking-[0.25em] sm:tracking-[0.35em] md:tracking-[0.4em]">
                   Professional Journey
                 </span>
@@ -327,7 +327,7 @@ const Experience = () => {
           <div className="pt-12 sm:pt-20 md:pt-32 space-y-0 relative z-10">
             <div className="timeline-header-reveal flex justify-center mb-10 sm:mb-20 md:mb-32 relative">
               <div className="px-5 sm:px-10 md:px-12 py-2 sm:py-4 md:py-5 bg-[#0a0a0a] border border-white/10 rounded-full flex items-center gap-2 sm:gap-3 md:gap-4 shadow-2xl">
-                <GraduationCap className="w-3.5 h-3.5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#ff6b00]" />
+                <GraduationCap className="w-3.5 h-3.5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#004aad]" />
                 <span className="text-[8px] sm:text-xs md:text-sm font-mono font-black uppercase tracking-[0.25em] sm:tracking-[0.35em] md:tracking-[0.4em]">
                   Academic Journey
                 </span>
@@ -351,7 +351,7 @@ const Experience = () => {
             
             <h3 className="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter text-white leading-tight">
               STILL{" "}
-              <span className="text-[#ff6b00] font-serif italic font-light lowercase">
+              <span className="text-[#004aad] font-serif italic font-light lowercase">
                 building
               </span>{" "}
               HISTORY
@@ -360,7 +360,7 @@ const Experience = () => {
           <div className="pt-5 sm:pt-10 md:pt-12">
             <button className="inline-flex items-center gap-2 sm:gap-3 md:gap-4 px-5 sm:px-10 md:px-12 py-3 sm:py-5 md:py-6 border border-white/10 rounded-full hover:bg-white/5 transition-all text-[9px] sm:text-xs md:text-sm font-bold uppercase tracking-wider sm:tracking-widest text-slate-400 hover:text-white">
               <span>Let’s Turn Ideas into Reality</span>
-              <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-[#ff6b00]" />
+              <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-[#004aad]" />
             </button>
           </div>
         </footer> */}

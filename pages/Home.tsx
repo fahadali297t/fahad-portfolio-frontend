@@ -37,7 +37,7 @@ const Home: React.FC = () => {
           gsap.set(p, {
             width: size,
             height: size,
-            backgroundColor: isHighlight ? "#ff6b00" : "#475569",
+            backgroundColor: isHighlight ? "#004aad" : "#475569",
             opacity: Math.random() * 0.4 + 0.1,
             x: Math.random() * window.innerWidth,
             y: Math.random() * window.innerHeight,

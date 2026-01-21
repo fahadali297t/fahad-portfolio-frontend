@@ -85,7 +85,7 @@ const ProjectDetail: React.FC = () => {
     return (
       <div className="h-screen flex flex-col items-center justify-center bg-black text-white">
         <h1 className="text-4xl font-bold mb-4">Project Not Found</h1>
-        <Link to="/projects" className="text-[#ff6b00] hover:underline">Back to Projects</Link>
+        <Link to="/projects" className="text-[#004aad] hover:underline">Back to Projects</Link>
       </div>
     );
   }
@@ -97,7 +97,7 @@ const ProjectDetail: React.FC = () => {
       {/* Back Button */}
       <button
         onClick={() => navigate(-1)}
-        className="fixed top-24 left-8 z-50 p-4 bg-white/5 backdrop-blur-md rounded-full border border-white/10 hover:bg-[#ff6b00] hover:text-black transition-all group hidden md:flex"
+        className="fixed top-24 left-8 z-50 p-4 bg-white/5 backdrop-blur-md rounded-full border border-white/10 hover:bg-[#004aad] hover:text-black transition-all group hidden md:flex"
       >
         <ArrowLeft
           size={24}
@@ -119,7 +119,7 @@ const ProjectDetail: React.FC = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center space-y-8">
           <div className="space-y-4">
-            <span className="text-[#ff6b00] font-mono text-xs uppercase tracking-[0.5em] block animate-pulse">
+            <span className="text-[#004aad] font-mono text-xs uppercase tracking-[0.5em] block animate-pulse">
               Deep Case Study
             </span>
             <h1 className="text-6xl md:text-[10rem] font-black tracking-tighter uppercase leading-[0.8] drop-shadow-2xl">
@@ -128,7 +128,7 @@ const ProjectDetail: React.FC = () => {
           </div>
           <div className="flex flex-wrap justify-center gap-12 pt-8">
             <div className="flex flex-col items-center gap-2">
-              <Calendar size={20} className="text-[#ff6b00]" />
+              <Calendar size={20} className="text-[#004aad]" />
               <span className="text-[10px] font-mono uppercase tracking-widest text-slate-500">
                 Year
               </span>
@@ -137,7 +137,7 @@ const ProjectDetail: React.FC = () => {
               </span>
             </div>
             <div className="flex flex-col items-center gap-2">
-              <User size={20} className="text-[#ff6b00]" />
+              <User size={20} className="text-[#004aad]" />
               <span className="text-[10px] font-mono uppercase tracking-widest text-slate-500">
                 Role
               </span>
@@ -146,7 +146,7 @@ const ProjectDetail: React.FC = () => {
               </span>
             </div>
             <div className="flex flex-col items-center gap-2">
-              <Tag size={20} className="text-[#ff6b00]" />
+              <Tag size={20} className="text-[#004aad]" />
               <span className="text-[10px] font-mono uppercase tracking-widest text-slate-500">
                 Type
               </span>
@@ -165,12 +165,12 @@ const ProjectDetail: React.FC = () => {
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none">
                 About
-                <span className="text-[#ff6b00] font-serif italic font-light lowercase">
+                <span className="text-[#004aad] font-serif italic font-light lowercase">
                   {" "}
                   Project
                 </span>
               </h2>
-              <div className="h-px w-24 bg-[#ff6b00]"></div>
+              <div className="h-px w-24 bg-[#004aad]"></div>
             </div>
             <p className="text-xl md:text-2xl text-slate-400 font-light leading-relaxed">
               {project.fullDescription}
@@ -181,9 +181,9 @@ const ProjectDetail: React.FC = () => {
             {project.metrics.map((metric, i) => (
               <div
                 key={i}
-                className="p-10 bg-white/5 border border-white/10 rounded-[2.5rem] hover:border-[#ff6b00]/30 transition-all group"
+                className="p-10 bg-white/5 border border-white/10 rounded-[2.5rem] hover:border-[#004aad]/30 transition-all group"
               >
-                <span className="text-4xl md:text-5xl font-black text-white tracking-tighter block group-hover:text-[#ff6b00] transition-colors">
+                <span className="text-4xl md:text-5xl font-black text-white tracking-tighter block group-hover:text-[#004aad] transition-colors">
                   {metric.value}
                 </span>
                 <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-slate-500 font-bold">
@@ -205,7 +205,7 @@ const ProjectDetail: React.FC = () => {
             {project.techStackDetailed.map((tech, i) => (
               <div
                 key={i}
-                className="tech-chip px-8 py-4 bg-white/5 rounded-2xl border border-white/10 text-slate-300 font-bold tracking-tight hover:bg-[#ff6b00] hover:text-black hover:border-transparent transition-all cursor-default"
+                className="tech-chip px-8 py-4 bg-white/5 rounded-2xl border border-white/10 text-slate-300 font-bold tracking-tight hover:bg-[#004aad] hover:text-black hover:border-transparent transition-all cursor-default"
               >
                 {tech}
               </div>
@@ -218,12 +218,12 @@ const ProjectDetail: React.FC = () => {
       <section className="py-32 px-6 max-w-7xl mx-auto space-y-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center reveal-section">
           <div className="space-y-8">
-            <div className="inline-block p-4 bg-[#ff6b00]/10 text-[#ff6b00] rounded-2xl">
+            <div className="inline-block p-4 bg-[#004aad]/10 text-[#004aad] rounded-2xl">
               <Zap size={32} />
             </div>
             <h3 className="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-none">
               THE <br />{" "}
-              <span className="text-[#ff6b00] font-serif italic font-light lowercase">
+              <span className="text-[#004aad] font-serif italic font-light lowercase">
                 critical
               </span>{" "}
               CHALLENGE
@@ -248,12 +248,12 @@ const ProjectDetail: React.FC = () => {
             />
           </div>
           <div className="space-y-8 order-1 lg:order-2">
-            <div className="inline-block p-4 bg-[#ff6b00]/10 text-[#ff6b00] rounded-2xl">
+            <div className="inline-block p-4 bg-[#004aad]/10 text-[#004aad] rounded-2xl">
               <Database size={32} />
             </div>
             <h3 className="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-none">
               THE <br />{" "}
-              <span className="text-[#ff6b00] font-serif italic font-light lowercase">
+              <span className="text-[#004aad] font-serif italic font-light lowercase">
                 elegant
               </span>{" "}
               SOLUTION
@@ -270,12 +270,12 @@ const ProjectDetail: React.FC = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-5 space-y-8">
             <div className="space-y-4">
-              <span className="text-[#ff6b00] font-mono text-xs uppercase tracking-[0.5em] block">
+              <span className="text-[#004aad] font-mono text-xs uppercase tracking-[0.5em] block">
                 The Engine Room
               </span>
               <h3 className="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-none">
                 INTERNAL <br />{" "}
-                <span className="text-[#ff6b00] font-serif italic font-light lowercase">
+                <span className="text-[#004aad] font-serif italic font-light lowercase">
                   logic
                 </span>
               </h3>
@@ -298,7 +298,7 @@ const ProjectDetail: React.FC = () => {
           </div>
           <div className="lg:col-span-7">
             <Terminal title="artisan-os // aurora-v1.php">
-              <pre className="text-[#ff6b00] text-xs md:text-sm">
+              <pre className="text-[#004aad] text-xs md:text-sm">
                 {project.codeSnippet}
               </pre>
             </Terminal>
@@ -312,7 +312,7 @@ const ProjectDetail: React.FC = () => {
           <div className="flex justify-between items-end mb-12">
             <h3 className="text-4xl font-black uppercase tracking-tighter">
               PROJECT{" "}
-              <span className="text-[#ff6b00] font-serif italic font-light lowercase">
+              <span className="text-[#004aad] font-serif italic font-light lowercase">
                 visuals
               </span>
             </h3>
@@ -347,11 +347,11 @@ const ProjectDetail: React.FC = () => {
         </div>
 
         <div className="relative z-10 space-y-6">
-          <span className="text-[#ff6b00] font-mono text-xs uppercase tracking-[0.5em] block">
+          <span className="text-[#004aad] font-mono text-xs uppercase tracking-[0.5em] block">
             Continue Exploring
           </span>
           <Link to={`/projects/${nextProject.id}`} className="block">
-            <h2 className="text-5xl md:text-[8vw] font-black tracking-tighter uppercase leading-none text-white group-hover:text-[#ff6b00] transition-colors">
+            <h2 className="text-5xl md:text-[8vw] font-black tracking-tighter uppercase leading-none text-white group-hover:text-[#004aad] transition-colors">
               NEXT <br />{" "}
               <span className="font-serif italic font-light lowercase">
                 project

@@ -30,8 +30,8 @@ const Terms: React.FC = () => {
         {/* Header */}
         <header className="space-y-8 text-center sm:text-left">
           <div className="terms-reveal flex items-center justify-center sm:justify-start gap-4">
-            <div className="w-10 h-px bg-[#ff6b00]"></div>
-            <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-[#ff6b00] font-black">
+            <div className="w-10 h-px bg-[#004aad]"></div>
+            <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-[#004aad] font-black">
               Legal Framework
             </span>
           </div>
@@ -50,7 +50,7 @@ const Terms: React.FC = () => {
         {/* Sections */}
         <div className="space-y-20">
           <section className="terms-reveal space-y-6">
-            <div className="flex items-center gap-4 text-[#ff6b00]">
+            <div className="flex items-center gap-4 text-[#004aad]">
               <FileText size={24} />
               <h3 className="text-xl font-bold uppercase tracking-tight">
                 01. Acceptance of Terms
@@ -65,7 +65,7 @@ const Terms: React.FC = () => {
           </section>
 
           <section className="terms-reveal space-y-6">
-            <div className="flex items-center gap-4 text-[#ff6b00]">
+            <div className="flex items-center gap-4 text-[#004aad]">
               <HardDrive size={24} />
               <h3 className="text-xl font-bold uppercase tracking-tight">
                 02. Intellectual Property
@@ -80,7 +80,7 @@ const Terms: React.FC = () => {
           </section>
 
           <section className="terms-reveal space-y-6">
-            <div className="flex items-center gap-4 text-[#ff6b00]">
+            <div className="flex items-center gap-4 text-[#004aad]">
               <Terminal size={24} />
               <h3 className="text-xl font-bold uppercase tracking-tight">
                 03. Usage License
@@ -94,7 +94,7 @@ const Terms: React.FC = () => {
           </section>
 
           <section className="terms-reveal space-y-6">
-            <div className="flex items-center gap-4 text-[#ff6b00]">
+            <div className="flex items-center gap-4 text-[#004aad]">
               <AlertCircle size={24} />
               <h3 className="text-xl font-bold uppercase tracking-tight">
                 04. Disclaimer & Liability

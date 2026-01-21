@@ -79,14 +79,14 @@ const Contact: React.FC = () => {
         <div className="lg:col-span-5 space-y-12">
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <Zap size={14} className="text-[#ff6b00]" />
+              <Zap size={14} className="text-[#004aad]" />
               <span className="text-[10px] font-mono text-slate-500 uppercase tracking-[0.4em] font-black">
                 Direct Access
               </span>
             </div>
             <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85]">
               GET IN <br />
-              <span className="text-[#ff6b00] font-serif italic font-light lowercase">
+              <span className="text-[#004aad] font-serif italic font-light lowercase">
                 touch
               </span>
             </h2>
@@ -125,7 +125,7 @@ const Contact: React.FC = () => {
 
             {/* Email Card */}
             <div className="flex items-center gap-6 p-6 md:p-8 bg-white/5 border border-white/5 rounded-[2.5rem]">
-              <div className="w-16 h-16 md:bg-white/5 rounded-2xl flex items-center justify-center text-[#ff6b00]">
+              <div className="w-16 h-16 md:bg-white/5 rounded-2xl flex items-center justify-center text-[#004aad]">
                 <Mail size={28} strokeWidth={1.5} />
               </div>
               <div>
@@ -159,8 +159,8 @@ const Contact: React.FC = () => {
         <div className="lg:col-span-7 bg-[#0a0a0a] rounded-[2rem] md:rounded-[3.5rem] p-8 md:p-16 border border-white/5 relative overflow-hidden shadow-2xl">
           {status === "sending" && (
             <div className="absolute inset-0 bg-black/80 backdrop-blur-sm z-50 flex flex-col items-center justify-center space-y-6">
-              <div className="w-12 h-12 border-2 border-[#ff6b00] border-t-transparent rounded-full animate-spin"></div>
-              <p className="font-mono text-xs uppercase tracking-widest text-[#ff6b00]">
+              <div className="w-12 h-12 border-2 border-[#004aad] border-t-transparent rounded-full animate-spin"></div>
+              <p className="font-mono text-xs uppercase tracking-widest text-[#004aad]">
                 Sending Your Message...
               </p>
             </div>
@@ -185,7 +185,7 @@ const Contact: React.FC = () => {
           <div className="mb-12">
             <h3 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase">
               DROP A{" "}
-              <span className="font-serif italic text-[#ff6b00] font-light lowercase">
+              <span className="font-serif italic text-[#004aad] font-light lowercase">
                 line
               </span>
             </h3>
@@ -201,7 +201,7 @@ const Contact: React.FC = () => {
                   type="text"
                   required
                   placeholder="John Doe"
-                  className="w-full px-6 xl:px-8 rounded-[1.5rem] xl:rounded-full py-5 bg-white/5 border border-white/5  text-white placeholder-slate-400 focus:ring-1 focus:ring-[#ff6b00]/40 outline-none transition-all"
+                  className="w-full px-6 xl:px-8 rounded-[1.5rem] xl:rounded-full py-5 bg-white/5 border border-white/5  text-white placeholder-slate-400 focus:ring-1 focus:ring-[#004aad]/40 outline-none transition-all"
                   value={formState.name}
                   onChange={(e) =>
                     setFormState({ ...formState, name: e.target.value })
@@ -216,7 +216,7 @@ const Contact: React.FC = () => {
                   type="email"
                   required
                   placeholder="john@example.com"
-                  className="w-full px-6 xl:px-8 py-5 rounded-[1.5rem] xl:rounded-full bg-white/5 border border-white/5  text-white placeholder-slate-400 focus:ring-1 focus:ring-[#ff6b00]/40 outline-none transition-all"
+                  className="w-full px-6 xl:px-8 py-5 rounded-[1.5rem] xl:rounded-full bg-white/5 border border-white/5  text-white placeholder-slate-400 focus:ring-1 focus:ring-[#004aad]/40 outline-none transition-all"
                   value={formState.email}
                   onChange={(e) =>
                     setFormState({ ...formState, email: e.target.value })
@@ -232,7 +232,7 @@ const Contact: React.FC = () => {
                 required
                 rows={5}
                 placeholder="Describe your project requirements..."
-                className="w-full px-6 xl:px-8 py-5 rounded-[1.5rem] xl:rounded-[2.5rem] bg-white/5 border border-white/5  text-white placeholder-slate-400 focus:ring-1 focus:ring-[#ff6b00]/40 outline-none transition-all resize-none"
+                className="w-full px-6 xl:px-8 py-5 rounded-[1.5rem] xl:rounded-[2.5rem] bg-white/5 border border-white/5  text-white placeholder-slate-400 focus:ring-1 focus:ring-[#004aad]/40 outline-none transition-all resize-none"
                 value={formState.message}
                 onChange={(e) =>
                   setFormState({ ...formState, message: e.target.value })
@@ -243,7 +243,7 @@ const Contact: React.FC = () => {
             <button
               type="submit"
               disabled={status !== "idle"}
-              className="group w-full py-6 bg-[#ff6b00] text-black rounded-full font-black text-sm uppercase tracking-[0.3em] transition-all hover:scale-[1.01] active:scale-95 flex items-center justify-center gap-4"
+              className="group w-full py-6 bg-[#004aad] text-black rounded-full font-black text-sm uppercase tracking-[0.3em] transition-all hover:scale-[1.01] active:scale-95 flex items-center justify-center gap-4"
             >
               <span>Send</span>
               <Send

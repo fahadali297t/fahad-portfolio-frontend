@@ -36,7 +36,7 @@ const TestimonialCard: React.FC<{
   return (
     <div
       ref={cardRef}
-      className="group relative bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] p-10 flex flex-col justify-between overflow-hidden hover:border-[#ff6b00]/30 transition-all duration-700 h-full"
+      className="group relative bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] p-10 flex flex-col justify-between overflow-hidden hover:border-[#004aad]/30 transition-all duration-700 h-full"
     >
       {/* Background HUD Accents */}
       <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity">
@@ -49,7 +49,7 @@ const TestimonialCard: React.FC<{
         {/* Dossier Header */}
         <div className="flex justify-between items-start">
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-2xl overflow-hidden border border-white/10 group-hover:border-[#ff6b00]/30 transition-colors">
+            <div className="w-14 h-14 rounded-2xl overflow-hidden border border-white/10 group-hover:border-[#004aad]/30 transition-colors">
               <img
                 src={testimonial.avatar}
                 alt={testimonial.name}
@@ -60,7 +60,7 @@ const TestimonialCard: React.FC<{
               <h4 className="text-lg font-bold text-white tracking-tight">
                 {testimonial.name}
               </h4>
-              <p className="text-[10px] font-mono text-[#ff6b00] uppercase tracking-widest font-black">
+              <p className="text-[10px] font-mono text-[#004aad] uppercase tracking-widest font-black">
                 {testimonial.role}
               </p>
             </div>
@@ -81,7 +81,7 @@ const TestimonialCard: React.FC<{
         {/* The Quote */}
         <div className="relative">
           <Quote
-            className="absolute -top-4 -left-6 text-white opacity-5 group-hover:text-[#ff6b00]/10 transition-colors"
+            className="absolute -top-4 -left-6 text-white opacity-5 group-hover:text-[#004aad]/10 transition-colors"
             size={64}
           />
           <p className="text-xl md:text-2xl text-slate-400 font-light leading-relaxed italic group-hover:text-slate-200 transition-colors relative z-10">
@@ -104,8 +104,8 @@ const TestimonialCard: React.FC<{
               Impact Metric
             </span>
             <div className="flex items-center gap-3">
-              <Activity size={18} className="text-[#ff6b00]" />
-              <span className="text-2xl font-black text-white group-hover:text-[#ff6b00] transition-colors">
+              <Activity size={18} className="text-[#004aad]" />
+              <span className="text-2xl font-black text-white group-hover:text-[#004aad] transition-colors">
                 {testimonial.impactMetric}
               </span>
             </div>
@@ -153,11 +153,11 @@ const Testimonials: React.FC = () => {
         {/* Section Header */}
         <header className="trust-header mb-24 space-y-10">
           <div className="flex items-center gap-4 trust-header-reveal">
-            <div className="w-12 h-12 bg-[#ff6b00]/10 rounded-2xl flex items-center justify-center text-[#ff6b00] border border-[#ff6b00]/20">
+            <div className="w-12 h-12 bg-[#004aad]/10 rounded-2xl flex items-center justify-center text-[#004aad] border border-[#004aad]/20">
               <ShieldCheck size={24} />
             </div>
             <div className="space-y-1">
-              <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-[#ff6b00] font-black block">
+              <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-[#004aad] font-black block">
                 Verification Engine
               </span>
               <p className="text-[8px] text-slate-700 font-mono tracking-widest uppercase">
@@ -214,7 +214,7 @@ const Testimonials: React.FC = () => {
               <div className="text-3xl font-black text-white tracking-tighter uppercase">
                 {stat.value}
               </div>
-              <div className="h-px w-8 bg-[#ff6b00]/40"></div>
+              <div className="h-px w-8 bg-[#004aad]/40"></div>
             </div>
           ))}
         </div> */}

@@ -62,7 +62,7 @@ const BrandEndSection: React.FC = () => {
       className="relative bg-black  mx-auto min-h-screen flex items-center justify-center overflow-hidden py-24"
     >
       {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-orange-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none"></div>
 
       <div className="relative flex items-center max-w-[90vw] justify-center w-full max-w-7xl mx-auto px-4">
         {/* Large Centered Title */}
@@ -76,7 +76,7 @@ const BrandEndSection: React.FC = () => {
           <span className="w-8 sm:w-12 md:w-16 lg:w-20 xl:w-24"></span>
           <span
             ref={textRightRef}
-            className="text-orange-500 inline-block transition-transform duration-1000 ease-out"
+            className="text-blue-500 inline-block transition-transform duration-1000 ease-out"
           >
             Ali
           </span>

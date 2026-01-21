@@ -133,7 +133,7 @@ const Hero: React.FC = () => {
   };
 
   const popperIcons = [
-    { Icon: Layers, color: "text-[#ff6b00]", label: "Laravel" },
+    { Icon: Layers, color: "text-[#004aad]", label: "Laravel" },
     { Icon: Database, color: "text-blue-500", label: "Postgres" },
     { Icon: Box, color: "text-red-500", label: "Redis" },
     { Icon: Cpu, color: "text-emerald-500", label: "Docker" },
@@ -155,7 +155,7 @@ const Hero: React.FC = () => {
         <div className="lg:col-span-7 space-y-12">
           <div className="hero-fade-in">
             <span className="flex items-center gap-4 text-slate-500 dark:text-slate-400 font-mono text-[10px] sm:text-xs uppercase tracking-[0.6em] font-black">
-              <div className="w-12 h-px bg-[#ff6b00]"></div>
+              <div className="w-12 h-px bg-[#004aad]"></div>
               Hi there , I am
             </span>
           </div>
@@ -167,7 +167,7 @@ const Hero: React.FC = () => {
             >
               {splitText("Fahad")}
             </h1>
-            <h1 className="text-7xl md:text-9xl font-serif italic text-[#ff6b00] leading-[0.8] tracking-tight hero-fade-in relative">
+            <h1 className="text-7xl md:text-9xl font-serif italic text-[#004aad] leading-[0.8] tracking-tight hero-fade-in relative">
               Ali
               <span className="absolute -top-4 -right-8 text-[10px] font-mono font-bold text-slate-500 uppercase tracking-widest opacity-40">
                 v.23.0.0
@@ -177,7 +177,7 @@ const Hero: React.FC = () => {
 
           <p className="hero-fade-in text-slate-400  text-lg md:text-2xl max-w-xl leading-relaxed font-light">
             With a deep focus on{" "}
-            <span className="text-white dark:text-white font-medium italic underline decoration-[#ff6b00]/40">
+            <span className="text-white dark:text-white font-medium italic underline decoration-[#004aad]/40">
               Web ecosystem
             </span>{" "}
             and other technologies like Wordpress, Laravel, PHP, I bridge the
@@ -188,11 +188,11 @@ const Hero: React.FC = () => {
           <div className="hero-fade-in flex flex-col space-y-10">
             <div className="flex items-center space-x-5">
               <div className="relative flex h-4 w-4">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-4 w-4 bg-[#ff6b00]"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-4 w-4 bg-[#004aad]"></span>
               </div>
               <span className="text-xs font-mono font-black tracking-[0.3em] text-slate-400 dark:text-slate-400 uppercase">
-                Status: Accepting High-Traffic Projects
+                 Accepting High-Traffic Projects
               </span>
             </div>
 
@@ -206,11 +206,12 @@ const Hero: React.FC = () => {
                 className="
     group relative flex items-center justify-center gap-4
     px-6 py-4 sm:px-8 sm:py-4 md:px-12 md:py-6
-    bg-[#ff6b00] text-black rounded-full font-black
+    bg-[#004aad] text-black rounded-full font-black
     text-sm sm:text-base uppercase tracking-widest
     transition-all duration-300 ease-out
     hover:scale-[1.03] active:scale-95
-    shadow-[0_0_40px_rgba(255,107,0,0.25)]
+    shadow-[0_0_40px_rgba(0,74,173,0.25)]
+
   "
               >
                 <span>Start Collaboration</span>
@@ -266,9 +267,9 @@ const Hero: React.FC = () => {
             onMouseLeave={() => setIsHovered(false)}
             style={{ transformStyle: "preserve-3d" }}
           >
-            <div className="dev-aura absolute inset-0 bg-[#ff6b00] blur-[100px] rounded-full opacity-10 pointer-events-none transition-all duration-700"></div>
+            <div className="dev-aura absolute inset-0 bg-[#004aad] blur-[100px] rounded-full opacity-10 pointer-events-none transition-all duration-700"></div>
 
-            <div className="relative w-[320px] sm:w-[420px] aspect-[4/5] rounded-[4rem] overflow-hidden border border-black/5 dark:border-white/10 shadow-2xl transition-all duration-700 group-hover:shadow-[#ff6b00]/20 bg-slate-200 dark:bg-slate-900">
+            <div className="relative w-[320px] sm:w-[420px] aspect-[4/5] rounded-[4rem] overflow-hidden border border-black/5 dark:border-white/10 shadow-2xl transition-all duration-700 group-hover:shadow-[#004aad]/20 bg-slate-200 dark:bg-slate-900">
               <img
                 src="profile.png"
                 alt="Professional Backend Developer"
@@ -277,19 +278,19 @@ const Hero: React.FC = () => {
 
               <div className="absolute bottom-10 left-10 p-5 bg-black/60 backdrop-blur-xl border border-white/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
                 <div className="flex items-center gap-3 mb-2">
-                  <Code2 className="text-[#ff6b00]" size={18} />
+                  <Code2 className="text-[#004aad]" size={18} />
                   <span className="text-[10px] font-mono font-black uppercase tracking-widest text-white">
                     Full Stack Web Developer
                   </span>
                 </div>
                 <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
-                  <div className="w-[95%] h-full bg-[#ff6b00]"></div>
+                  <div className="w-[95%] h-full bg-[#004aad]"></div>
                 </div>
               </div>
             </div>
 
-            <div className="absolute -top-6 -right-6 w-32 h-32 border-t-2 border-r-2 border-[#ff6b00]/40 rounded-tr-[4rem] pointer-events-none"></div>
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 border-b-2 border-l-2 border-[#ff6b00]/40 rounded-bl-[4rem] pointer-events-none"></div>
+            <div className="absolute -top-6 -right-6 w-32 h-32 border-t-2 border-r-2 border-[#004aad]/40 rounded-tr-[4rem] pointer-events-none"></div>
+            <div className="absolute -bottom-6 -left-6 w-32 h-32 border-b-2 border-l-2 border-[#004aad]/40 rounded-bl-[4rem] pointer-events-none"></div>
           </div>
         </div>
       </div>
@@ -302,7 +303,7 @@ const Hero: React.FC = () => {
         }
       >
         <div className="w-8 h-14 border-2 border-slate-900/10 dark:border-white/10 rounded-full flex justify-center p-1.5 relative overflow-hidden">
-          <div className="w-1 h-3 bg-[#ff6b00] rounded-full animate-scroll-dot"></div>
+          <div className="w-1 h-3 bg-[#004aad] rounded-full animate-scroll-dot"></div>
         </div>
       </div>
 

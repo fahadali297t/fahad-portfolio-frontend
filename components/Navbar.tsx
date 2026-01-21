@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
           <div className="flex justify-between items-center h-12">
             {/* Logo Section */}
             <Link to="/" className="flex items-center space-x-2 group shrink-0">
-              <div className="w-8 h-8 bg-[#ff6b00] rounded-lg flex items-center justify-center transition-all duration-500 group-hover:bg-[#CC5500]">
+              <div className="w-8 h-8 bg-[#004aad] rounded-lg flex items-center justify-center transition-all duration-500 group-hover:bg-[#CC5500]">
                 <TerminalIcon className="w-5 h-5 text-black group-hover:text-white" />
               </div>
               <span className="hidden sm:block text-sm font-black tracking-tighter text-white uppercase">
@@ -71,8 +71,8 @@ const Navbar: React.FC = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`text-[13px] font-semibold transition-all duration-300 hover:text-[#ff6b00] ${
-                    isActive(link.path) ? "text-[#ff6b00]" : "text-slate-300"
+                  className={`text-[13px] font-semibold transition-all duration-300 hover:text-[#004aad] ${
+                    isActive(link.path) ? "text-[#004aad]" : "text-slate-300"
                   }`}
                 >
                   {link.name}
@@ -83,7 +83,7 @@ const Navbar: React.FC = () => {
               <div className="relative" ref={moreRef}>
                 <button
                   onClick={() => setShowMore(!showMore)}
-                  className="flex items-center gap-1.5 text-[13px] font-semibold text-slate-300 hover:text-[#ff6b00] transition-all"
+                  className="flex items-center gap-1.5 text-[13px] font-semibold text-slate-300 hover:text-[#004aad] transition-all"
                 >
                   More{" "}
                   <ChevronDown
@@ -101,9 +101,9 @@ const Navbar: React.FC = () => {
                         key={link.path}
                         to={link.path}
                         onClick={() => setShowMore(false)}
-                        className={`block px-5 py-3 text-xs font-semibold hover:bg-[#ff6b00]/10 hover:text-[#ff6b00] transition-all ${
+                        className={`block px-5 py-3 text-xs font-semibold hover:bg-[#004aad]/10 hover:text-[#004aad] transition-all ${
                           isActive(link.path)
-                            ? "text-[#ff6b00] bg-[#ff6b00]/5"
+                            ? "text-[#004aad] bg-[#004aad]/5"
                             : "text-slate-500"
                         }`}
                       >
@@ -119,7 +119,7 @@ const Navbar: React.FC = () => {
             <div className="flex items-center space-x-4">
               <Link
                 to="/contact"
-                className="relative overflow-hidden group bg-[#ff6b00] text-black px-6 py-2.5 rounded-full text-[11px] font-black uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#ff6b00]/30"
+                className="relative overflow-hidden group bg-[#004aad] text-black px-6 py-2.5 rounded-full text-[11px] font-black uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#004aad]/30"
               >
                 <span className="relative z-10">Let's Talk</span>
                 <div className="absolute inset-0 bg-black/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
@@ -127,7 +127,7 @@ const Navbar: React.FC = () => {
               {/* Mobile Menu Toggle */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="lg:hidden p-2 text-slate-300 hover:text-[#ff6b00] transition-colors"
+                className="lg:hidden p-2 text-slate-300 hover:text-[#004aad] transition-colors"
               >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -146,13 +146,13 @@ const Navbar: React.FC = () => {
                   onClick={() => setIsOpen(false)}
                   className={`flex items-center justify-between px-8 py-4 rounded-2xl text-[12px] font-bold uppercase tracking-widest transition-all ${
                     isActive(link.path)
-                      ? "bg-[#ff6b00]/10 text-[#ff6b00]"
+                      ? "bg-[#004aad]/10 text-[#004aad]"
                       : "text-slate-400 hover:bg-white/5"
                   }`}
                 >
                   {link.name}
                   {isActive(link.path) && (
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#ff6b00]"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#004aad]"></div>
                   )}
                 </Link>
               ))}

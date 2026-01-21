@@ -24,8 +24,8 @@ const PrivacyPolicy: React.FC = () => {
         {/* Header */}
         <header className="space-y-8 text-center sm:text-left">
           <div className="policy-reveal flex items-center justify-center sm:justify-start gap-4">
-            <div className="w-10 h-px bg-[#ff6b00]"></div>
-            <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-[#ff6b00] font-black">
+            <div className="w-10 h-px bg-[#004aad]"></div>
+            <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-[#004aad] font-black">
               Data Protocol // v1.0
             </span>
           </div>
@@ -45,7 +45,7 @@ const PrivacyPolicy: React.FC = () => {
         <div className="space-y-20">
           {/* Section 1: Collection */}
           <section className="policy-reveal space-y-6">
-            <div className="flex items-center gap-4 text-[#ff6b00]">
+            <div className="flex items-center gap-4 text-[#004aad]">
               <Eye size={24} />
               <h3 className="text-xl font-bold uppercase tracking-tight">
                 01. Data Collection
@@ -60,11 +60,11 @@ const PrivacyPolicy: React.FC = () => {
           </section>
 
           {/* CRITICAL Section: Guestbook Notice */}
-          <section className="policy-reveal p-10 bg-[#0a0a0a] border border-[#ff6b00]/30 rounded-[2.5rem] space-y-6 relative overflow-hidden group">
+          <section className="policy-reveal p-10 bg-[#0a0a0a] border border-[#004aad]/30 rounded-[2.5rem] space-y-6 relative overflow-hidden group">
             <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
               <Globe size={120} />
             </div>
-            <div className="relative z-10 flex items-center gap-4 text-[#ff6b00]">
+            <div className="relative z-10 flex items-center gap-4 text-[#004aad]">
               <Globe size={24} />
               <h3 className="text-xl font-bold uppercase tracking-tight">
                 02. Public Contributions (Guestbook)
@@ -86,7 +86,7 @@ const PrivacyPolicy: React.FC = () => {
 
           {/* Section 3: Usage */}
           <section className="policy-reveal space-y-6">
-            <div className="flex items-center gap-4 text-[#ff6b00]">
+            <div className="flex items-center gap-4 text-[#004aad]">
               <Lock size={24} />
               <h3 className="text-xl font-bold uppercase tracking-tight">
                 03. Information Security
@@ -102,7 +102,7 @@ const PrivacyPolicy: React.FC = () => {
 
           {/* Section 4: Cookies */}
           <section className="policy-reveal space-y-6">
-            <div className="flex items-center gap-4 text-[#ff6b00]">
+            <div className="flex items-center gap-4 text-[#004aad]">
               <Terminal size={24} />
               <h3 className="text-xl font-bold uppercase tracking-tight">
                 04. Session Tracking

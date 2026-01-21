@@ -48,7 +48,7 @@ const BlogCard: React.FC<{ blog: EnhancedBlog; index: number }> = ({
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
           {/* Hover Arrow Overlay */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 sm:p-4 md:p-5 bg-[#ff6b00] rounded-full text-black opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 shadow-2xl">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 sm:p-4 md:p-5 bg-[#004aad] rounded-full text-black opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 shadow-2xl">
             <ArrowUpRight
               size={20}
               className="sm:w-6 sm:h-6 md:w-7 md:h-7"
@@ -59,7 +59,7 @@ const BlogCard: React.FC<{ blog: EnhancedBlog; index: number }> = ({
 
         {/* Meta Row - Matching Reference Design */}
         <div className="flex items-center justify-between mt-4 sm:mt-6 md:mt-8 mb-2 sm:mb-3 md:mb-4">
-          <div className="px-3 sm:px-4 md:px-5 py-1 sm:py-1.5 md:py-2 bg-[#1a1a1a] rounded-full text-[8px] sm:text-[9px] md:text-[10px] font-bold tracking-wider sm:tracking-widest text-slate-400 group-hover:bg-[#ff6b00] group-hover:text-black transition-all">
+          <div className="px-3 sm:px-4 md:px-5 py-1 sm:py-1.5 md:py-2 bg-[#1a1a1a] rounded-full text-[8px] sm:text-[9px] md:text-[10px] font-bold tracking-wider sm:tracking-widest text-slate-400 group-hover:bg-[#004aad] group-hover:text-black transition-all">
             {blog.category}
           </div>
           <div className="flex items-center gap-1.5 sm:gap-2 text-slate-500 text-[9px] sm:text-[10px] md:text-[11px] font-medium">
@@ -69,7 +69,7 @@ const BlogCard: React.FC<{ blog: EnhancedBlog; index: number }> = ({
         </div>
 
         {/* Title - Clean, Bold Sans-serif as in reference */}
-        <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white group-hover:text-[#ff6b00] transition-colors duration-500 leading-tight">
+        <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white group-hover:text-[#004aad] transition-colors duration-500 leading-tight">
           {blog.title}
         </h3>
       </div>
@@ -122,16 +122,16 @@ const BlogList: React.FC = () => {
       className="bg-black text-white min-h-screen pt-20 sm:pt-24 md:pt-16 pb-20 sm:pb-32 md:pb-40 px-3 sm:px-5 md:px-6 relative overflow-hidden"
     >
       {/* Decorative Parallax Glows - Pure dark aesthetic as requested */}
-      <div className="bg-decoration fixed top-[-10%] left-[-10%] w-[70vw] sm:w-[60vw] aspect-square bg-[#ff6b00]/5 blur-[120px] sm:blur-[180px] md:blur-[200px] rounded-full pointer-events-none z-0"></div>
-      <div className="bg-decoration fixed bottom-[-20%] right-[-10%] w-[50vw] sm:w-[40vw] aspect-square bg-orange-900/10 blur-[120px] sm:blur-[160px] md:blur-[180px] rounded-full pointer-events-none z-0"></div>
+      <div className="bg-decoration fixed top-[-10%] left-[-10%] w-[70vw] sm:w-[60vw] aspect-square bg-[#004aad]/5 blur-[120px] sm:blur-[180px] md:blur-[200px] rounded-full pointer-events-none z-0"></div>
+      <div className="bg-decoration fixed bottom-[-20%] right-[-10%] w-[50vw] sm:w-[40vw] aspect-square bg-blue-900/10 blur-[120px] sm:blur-[160px] md:blur-[180px] rounded-full pointer-events-none z-0"></div>
 
       <div className="max-w-7xl mx-auto space-y-10 sm:space-y-16 md:space-y-20 lg:space-y-32 relative z-10">
         {/* Page Header */}
         <header className="space-y-6 sm:space-y-10 md:space-y-12 lg:space-y-16 pt-4 sm:pt-8 md:pt-12">
           <div className="space-y-4 sm:space-y-6 md:space-y-8 max-w-5xl">
             <div className="header-reveal flex items-center gap-2 sm:gap-3 md:gap-4">
-              <div className="w-8 sm:w-10 md:w-12 h-px bg-[#ff6b00]"></div>
-              <span className="text-[7px] sm:text-[9px] md:text-[10px] font-mono uppercase tracking-[0.3em] sm:tracking-[0.4em] md:tracking-[0.5em] text-[#ff6b00] font-bold">
+              <div className="w-8 sm:w-10 md:w-12 h-px bg-[#004aad]"></div>
+              <span className="text-[7px] sm:text-[9px] md:text-[10px] font-mono uppercase tracking-[0.3em] sm:tracking-[0.4em] md:tracking-[0.5em] text-[#004aad] font-bold">
                 
               </span>
             </div>
@@ -161,7 +161,7 @@ const BlogList: React.FC = () => {
               placeholder="Filter topics, architecture, security..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 sm:pl-14 md:pl-16 pr-4 sm:pr-6 md:pr-8 py-3 sm:py-4 md:py-5 bg-white/5 border border-white/10 rounded-full text-white placeholder-slate-700 focus:ring-2 focus:ring-[#ff6b00]/30 outline-none transition-all text-xs sm:text-sm"
+              className="w-full pl-12 sm:pl-14 md:pl-16 pr-4 sm:pr-6 md:pr-8 py-3 sm:py-4 md:py-5 bg-white/5 border border-white/10 rounded-full text-white placeholder-slate-700 focus:ring-2 focus:ring-[#004aad]/30 outline-none transition-all text-xs sm:text-sm"
             />
           </div>
         </section>
@@ -195,12 +195,12 @@ const BlogList: React.FC = () => {
 
         {/* Newsletter Callout */}
         <section className="relative py-12 sm:py-20 md:py-32 lg:py-40 text-center space-y-6 sm:space-y-10 md:space-y-12">
-          <div className="bg-decoration absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] sm:w-[80%] md:w-[600px] h-[90%] sm:h-[80%] md:h-[600px] bg-[#ff6b00]/5 blur-[80px] sm:blur-[100px] md:blur-[120px] rounded-full pointer-events-none"></div>
+          <div className="bg-decoration absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] sm:w-[80%] md:w-[600px] h-[90%] sm:h-[80%] md:h-[600px] bg-[#004aad]/5 blur-[80px] sm:blur-[100px] md:blur-[120px] rounded-full pointer-events-none"></div>
 
           <div className="space-y-4 sm:space-y-6 md:space-y-8 relative px-3 sm:px-4">
             <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tighter uppercase leading-[0.9]">
               STAY IN THE <br />{" "}
-              <span className="text-[#ff6b00] font-serif italic font-light lowercase text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[8vw]">
+              <span className="text-[#004aad] font-serif italic font-light lowercase text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[8vw]">
                 architectural
               </span>{" "}
               <br /> LOOP
@@ -214,9 +214,9 @@ const BlogList: React.FC = () => {
               <input
                 type="email"
                 placeholder="your@email.com"
-                className="w-full px-5 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 lg:py-6 bg-white/5 border border-white/10 rounded-full text-white placeholder-slate-700 outline-none focus:ring-2 focus:ring-[#ff6b00]/30 transition-all text-sm sm:text-base"
+                className="w-full px-5 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 lg:py-6 bg-white/5 border border-white/10 rounded-full text-white placeholder-slate-700 outline-none focus:ring-2 focus:ring-[#004aad]/30 transition-all text-sm sm:text-base"
               />
-              <button className="w-full sm:w-auto px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 lg:py-6 bg-[#ff6b00] text-black rounded-full font-black text-sm sm:text-base md:text-lg hover:scale-105 active:scale-95 transition-all shadow-xl shadow-orange-500/20">
+              <button className="w-full sm:w-auto px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 lg:py-6 bg-[#004aad] text-black rounded-full font-black text-sm sm:text-base md:text-lg hover:scale-105 active:scale-95 transition-all shadow-xl shadow-blue-500/20">
                 Subscribe
               </button>
             </div>

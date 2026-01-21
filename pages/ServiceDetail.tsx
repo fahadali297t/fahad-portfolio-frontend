@@ -63,7 +63,7 @@ const ServiceDetail: React.FC = () => {
     return (
       <div className="h-screen flex flex-col items-center justify-center bg-black text-white">
         <h1 className="text-4xl font-bold mb-4">Service Not Found</h1>
-        <Link to="/services" className="text-[#ff6b00] hover:underline">Back to Services</Link>
+        <Link to="/services" className="text-[#004aad] hover:underline">Back to Services</Link>
       </div>
     );
   }
@@ -74,7 +74,7 @@ const ServiceDetail: React.FC = () => {
       {/* Dynamic Back Button */}
       <button 
         onClick={() => navigate(-1)}
-        className="fixed top-24 left-8 z-50 p-4 bg-white/5 backdrop-blur-md rounded-full border border-white/10 hover:bg-[#ff6b00] hover:text-black transition-all group hidden md:flex"
+        className="fixed top-24 left-8 z-50 p-4 bg-white/5 backdrop-blur-md rounded-full border border-white/10 hover:bg-[#004aad] hover:text-black transition-all group hidden md:flex"
       >
         <ArrowLeft size={24} className="group-hover:-translate-x-1 transition-transform" />
       </button>
@@ -92,7 +92,7 @@ const ServiceDetail: React.FC = () => {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-          <span className="hero-title-part text-[#ff6b00] font-mono text-xs uppercase tracking-[0.6em] block mb-8 font-bold">Specialized Solution</span>
+          <span className="hero-title-part text-[#004aad] font-mono text-xs uppercase tracking-[0.6em] block mb-8 font-bold">Specialized Solution</span>
           <h1 className="hero-title-part text-6xl md:text-[9rem] font-black tracking-tighter uppercase leading-[0.8] mb-12">
             {service.title.split(' ')[0]} <br/> 
             <span className="text-slate-500 font-serif italic font-light lowercase">
@@ -114,8 +114,8 @@ const ServiceDetail: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           <div className="lg:col-span-8 space-y-10 reveal-on-scroll">
             <div className="space-y-4">
-               <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none">THE <span className="text-[#ff6b00] font-serif italic font-light lowercase">backend</span> PHILOSOPHY</h2>
-               <div className="h-px w-24 bg-[#ff6b00]"></div>
+               <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none">THE <span className="text-[#004aad] font-serif italic font-light lowercase">backend</span> PHILOSOPHY</h2>
+               <div className="h-px w-24 bg-[#004aad]"></div>
             </div>
             <p className="text-xl md:text-3xl text-slate-400 font-light leading-relaxed">
               {service.fullDescription}
@@ -124,12 +124,12 @@ const ServiceDetail: React.FC = () => {
           
           <div className="lg:col-span-4 reveal-on-scroll">
             <div className="p-10 bg-white/5 border border-white/10 rounded-[3rem] space-y-8">
-              <h4 className="text-sm font-mono text-[#ff6b00] uppercase tracking-widest font-bold">Key Focus Areas</h4>
+              <h4 className="text-sm font-mono text-[#004aad] uppercase tracking-widest font-bold">Key Focus Areas</h4>
               <ul className="space-y-6">
                  {service.capabilities.map((cap, i) => (
                    <li key={i} className="flex gap-4 group">
                       <div className="mt-1">
-                        <ChevronRight size={16} className="text-[#ff6b00] group-hover:translate-x-1 transition-transform" />
+                        <ChevronRight size={16} className="text-[#004aad] group-hover:translate-x-1 transition-transform" />
                       </div>
                       <span className="text-slate-300 font-medium group-hover:text-white transition-colors">{cap.title}</span>
                    </li>
@@ -145,15 +145,15 @@ const ServiceDetail: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
           <div className="lg:col-span-5 space-y-12 reveal-on-scroll">
             <div className="space-y-4">
-              <span className="text-[#ff6b00] font-mono text-xs uppercase tracking-[0.5em] block">Methodology</span>
-              <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none">MY <br/> <span className="text-[#ff6b00] font-serif italic font-light lowercase">approach</span></h2>
+              <span className="text-[#004aad] font-mono text-xs uppercase tracking-[0.5em] block">Methodology</span>
+              <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none">MY <br/> <span className="text-[#004aad] font-serif italic font-light lowercase">approach</span></h2>
             </div>
             <p className="text-lg text-slate-500 font-light leading-relaxed">
               Engineering isn't just about code—it's about the process. I follow a rigorous methodology to ensure every line written adds measurable value.
             </p>
             <div className="pt-8">
-               <div className="p-8 bg-[#ff6b00]/10 rounded-[2rem] border border-[#ff6b00]/20 text-center">
-                  <span className="text-3xl font-black text-[#ff6b00] block mb-2">100%</span>
+               <div className="p-8 bg-[#004aad]/10 rounded-[2rem] border border-[#004aad]/20 text-center">
+                  <span className="text-3xl font-black text-[#004aad] block mb-2">100%</span>
                   <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-400">Commitment to Architecture Integrity</p>
                </div>
             </div>
@@ -161,8 +161,8 @@ const ServiceDetail: React.FC = () => {
 
           <div className="lg:col-span-7 space-y-6">
             {service.process.map((step, i) => (
-              <div key={i} className="reveal-on-scroll group p-10 bg-white/5 rounded-[2.5rem] border border-white/10 hover:border-[#ff6b00]/40 transition-all flex flex-col md:flex-row gap-8 items-start">
-                 <span className="text-4xl font-black text-slate-800 group-hover:text-[#ff6b00] transition-colors">{step.step}</span>
+              <div key={i} className="reveal-on-scroll group p-10 bg-white/5 rounded-[2.5rem] border border-white/10 hover:border-[#004aad]/40 transition-all flex flex-col md:flex-row gap-8 items-start">
+                 <span className="text-4xl font-black text-slate-800 group-hover:text-[#004aad] transition-colors">{step.step}</span>
                  <div className="space-y-2">
                     <h4 className="text-2xl font-bold uppercase tracking-tight">{step.title}</h4>
                     <p className="text-slate-500 group-hover:text-slate-400 transition-colors leading-relaxed">
@@ -179,14 +179,14 @@ const ServiceDetail: React.FC = () => {
       <section className="relative py-40 px-6 overflow-hidden">
         {/* Animated Background Atmosphere */}
         <div className="absolute inset-0 bg-[#080808]">
-           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#ff6b00]/10 blur-[150px] rounded-full animate-pulse"></div>
+           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#004aad]/10 blur-[150px] rounded-full animate-pulse"></div>
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto text-center space-y-16">
           <div className="space-y-6">
             <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85]">
                NEED EXPERT <br/>
-               <span className="text-[#ff6b00] font-serif italic font-light lowercase">
+               <span className="text-[#004aad] font-serif italic font-light lowercase">
                  {service.title.toLowerCase()}?
                </span>
             </h2>
@@ -198,7 +198,7 @@ const ServiceDetail: React.FC = () => {
           <div className="flex flex-col md:flex-row items-center justify-center gap-8">
              <Link 
                to="/contact"
-               className="group flex items-center gap-6 px-12 py-6 bg-[#ff6b00] text-black rounded-full font-black text-xl hover:scale-105 transition-all shadow-[0_0_50px_rgba(255,107,0,0.2)]"
+               className="group flex items-center gap-6 px-12 py-6 bg-[#004aad] text-black rounded-full font-black text-xl hover:scale-105 transition-all shadow-[0_0_50px_rgba(0,74,173,0.2)]"
              >
                <span>Hire for {service.title}</span>
                <ArrowUpRight size={28} className="group-hover:rotate-45 transition-transform" />

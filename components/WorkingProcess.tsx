@@ -165,12 +165,12 @@ const WorkingProcess: React.FC = () => {
       >
         {/* Section Heading */}
         <div className="mb-8 md:mb-12 mt-4 relative z-[20]">
-          <span className="text-[#ff6b00] font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] md:tracking-[0.5em] block mb-2 md:mb-4">
+          <span className="text-[#004aad] font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] md:tracking-[0.5em] block mb-2 md:mb-4">
             Strategic Workflow
           </span>
           <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9]">
             WORKING{" "}
-            <span className="font-serif italic font-light text-[#ff6b00] lowercase">
+            <span className="font-serif italic font-light text-[#004aad] lowercase">
               process
             </span>
           </h2>
@@ -186,7 +186,7 @@ const WorkingProcess: React.FC = () => {
                 className="w-full bg-[#111] border border-white/5 rounded-[2rem] p-6 md:p-8 flex flex-col justify-center shadow-2xl"
               >
                 <div className="space-y-6">
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-white/5 rounded-xl md:rounded-2xl flex items-center justify-center text-[#ff6b00]">
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-white/5 rounded-xl md:rounded-2xl flex items-center justify-center text-[#004aad]">
                     <Icon size={28} className="md:w-8 md:h-8" />
                   </div>
                   <div className="space-y-3 md:space-y-4">
@@ -206,7 +206,7 @@ const WorkingProcess: React.FC = () => {
           })}
 
           {/* Final CTA Card - Mobile/Tablet */}
-          <div className="w-full bg-[#ff6b00] rounded-[2rem] p-8 md:p-12 flex flex-col justify-center items-center text-center overflow-hidden mt-8 relative">
+          <div className="w-full bg-[#004aad] rounded-[2rem] p-8 md:p-12 flex flex-col justify-center items-center text-center overflow-hidden mt-8 relative">
             <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] pointer-events-none"></div>
 
             <div className="relative z-10 space-y-6 md:space-y-8">
@@ -228,7 +228,7 @@ const WorkingProcess: React.FC = () => {
                       .getElementById("contact")
                       ?.scrollIntoView({ behavior: "smooth" })
                   }
-                  className="group/btn flex items-center gap-4 px-8 py-4 bg-black text-[#ff6b00] rounded-full font-bold text-lg hover:scale-105 transition-all shadow-2xl shadow-black/30"
+                  className="group/btn flex items-center gap-4 px-8 py-4 bg-black text-[#004aad] rounded-full font-bold text-lg hover:scale-105 transition-all shadow-2xl shadow-black/30"
                 >
                   <span>Launch Project</span>
                   <ArrowUpRight
@@ -254,7 +254,7 @@ const WorkingProcess: React.FC = () => {
                 style={{ zIndex: i + 1 }}
               >
                 <div className="space-y-8">
-                  <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-[#ff6b00]">
+                  <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-[#004aad]">
                     <Icon size={32} />
                   </div>
                   <div className="space-y-4">
@@ -276,7 +276,7 @@ const WorkingProcess: React.FC = () => {
           {/* Final CTA Card - Desktop */}
           <div
             ref={finalCardRef}
-            className="final-cta-card absolute inset-0 w-full h-full bg-[#ff6b00] border-none rounded-[2.5rem] p-20 flex flex-col justify-center items-center text-center z-[15] overflow-hidden"
+            className="final-cta-card absolute inset-0 w-full h-full bg-[#004aad] border-none rounded-[2.5rem] p-20 flex flex-col justify-center items-center text-center z-[15] overflow-hidden"
           >
             <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] pointer-events-none"></div>
 
@@ -299,7 +299,7 @@ const WorkingProcess: React.FC = () => {
                       .getElementById("contact")
                       ?.scrollIntoView({ behavior: "smooth" })
                   }
-                  className="group/btn flex items-center gap-6 px-14 py-7 bg-black text-[#ff6b00] rounded-full font-bold text-2xl hover:scale-105 transition-all shadow-2xl shadow-black/30"
+                  className="group/btn flex items-center gap-6 px-14 py-7 bg-black text-[#004aad] rounded-full font-bold text-2xl hover:scale-105 transition-all shadow-2xl shadow-black/30"
                 >
                   <span>Launch Project</span>
                   <ArrowUpRight

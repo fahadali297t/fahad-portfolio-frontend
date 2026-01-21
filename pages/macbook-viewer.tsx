@@ -29,7 +29,7 @@ const MacBookModel = () => {
           <boxGeometry args={[2.28, 1.42, 0.001]} />
           <meshStandardMaterial
             color="#050505"
-            emissive="#ff6b00"
+            emissive="#004aad"
             emissiveIntensity={0.12}
             metalness={0.3}
             roughness={0.2}
@@ -114,7 +114,7 @@ const MacBookScene = () => {
     <>
       <ambientLight intensity={0.5} />
       <directionalLight position={[8, 12, 8]} intensity={1.2} color="#ffffff" />
-      <directionalLight position={[-6, 8, -8]} intensity={0.8} color="#ff6b00" />
+      <directionalLight position={[-6, 8, -8]} intensity={0.8} color="#004aad" />
       <pointLight position={[0, -5, 0]} intensity={0.4} color="#ffffff" />
 
       <OrbitControls ref={controlsRef} enableZoom={false} autoRotate={false} enablePan={false} rotateSpeed={0.8} />
@@ -139,7 +139,7 @@ export const MacBookViewer: React.FC = () => {
         <div className="text-center space-y-6 z-10">
           <div className="space-y-2">
             <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-none">MACBOOK</h2>
-            <p className="text-[#ff6b00] font-serif italic text-2xl md:text-4xl font-light">Pro M1 16"</p>
+            <p className="text-[#004aad] font-serif italic text-2xl md:text-4xl font-light">Pro M1 16"</p>
           </div>
           <p className="text-slate-400 text-sm md:text-base font-light tracking-widest uppercase">
             Drag to rotate • Scroll to zoom
@@ -150,10 +150,10 @@ export const MacBookViewer: React.FC = () => {
       {/* Bottom Info Card */}
       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent pointer-events-none">
         <div className="max-w-2xl mx-auto px-6 pb-12 pt-24">
-          <div className="bg-black/50 backdrop-blur-xl border border-[#ff6b00]/20 rounded-3xl p-8 space-y-4 pointer-events-auto">
+          <div className="bg-black/50 backdrop-blur-xl border border-[#004aad]/20 rounded-3xl p-8 space-y-4 pointer-events-auto">
             <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6">
               <div>
-                <p className="text-[#ff6b00] font-mono text-xs uppercase tracking-widest mb-3">
+                <p className="text-[#004aad] font-mono text-xs uppercase tracking-widest mb-3">
                   Central Processing Unit
                 </p>
                 <h3 className="text-2xl md:text-3xl font-black tracking-tighter uppercase mb-2">Apple Silicon M1</h3>

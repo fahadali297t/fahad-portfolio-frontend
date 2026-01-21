@@ -78,7 +78,7 @@ const TechStack: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 w-full relative z-10">
         <div className="text-center mb-24">
-          <span className="text-[#ff6b00] font-mono text-sm uppercase tracking-widest font-bold">
+          <span className="text-[#004aad] font-mono text-sm uppercase tracking-widest font-bold">
             Tech Stack
           </span>
           <h2 className="text-4xl md:text-5xl font-black text-white mt-2 mb-4">
@@ -98,14 +98,14 @@ const TechStack: React.FC = () => {
             >
               <div className="group relative">
                 {/* Subtle Glow effect */}
-                <div className="absolute -inset-4 bg-[#ff6b00]/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute -inset-4 bg-[#004aad]/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 <div
                   className={`relative p-8 rounded-3xl bg-[#0a0a0a] 
                     border border-zinc-800 
                     shadow-sm transition-all duration-300 
-                    group-hover:border-[#ff6b00]/50 
-                    group-hover:shadow-xl group-hover:shadow-orange-500/5
+                    group-hover:border-[#004aad]/50 
+                    group-hover:shadow-xl group-hover:shadow-blue-500/5
                     ${color}`}
                 >
                   <Icon className="text-[40px]" />
@@ -115,7 +115,7 @@ const TechStack: React.FC = () => {
                   <span
                     className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] 
                     text-zinc-600 
-                    group-hover:text-[#ff6b00] transition-colors"
+                    group-hover:text-[#004aad] transition-colors"
                   >
                     {label}
                   </span>

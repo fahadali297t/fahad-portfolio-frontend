@@ -97,7 +97,7 @@ const Home: React.FC = () => {
               <h1 className="text-7xl md:text-9xl font-bold tracking-tighter leading-[0.85] text-white uppercase">
                 Fahad
               </h1>
-              <h1 className="text-7xl md:text-9xl font-serif italic text-[#ff6b00] leading-[0.85] tracking-tight">
+              <h1 className="text-7xl md:text-9xl font-serif italic text-[#004aad] leading-[0.85] tracking-tight">
                 Ali
               </h1>
             </div>
@@ -109,8 +109,8 @@ const Home: React.FC = () => {
             <div className="hero-text-animate flex flex-col space-y-8">
               <div className="flex items-center space-x-3">
                 <span className="relative flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-[#ff6b00]"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-[#004aad]"></span>
                 </span>
                 <span className="text-sm font-medium tracking-wide text-slate-200">Available for new project</span>
               </div>
@@ -118,7 +118,7 @@ const Home: React.FC = () => {
               <div className="flex flex-wrap items-center gap-6">
                 <button
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="group flex items-center space-x-3 px-8 py-4 bg-[#ff6b00] text-black rounded-full font-bold transition-all hover:scale-105 active:scale-95 shadow-xl shadow-orange-500/10"
+                  className="group flex items-center space-x-3 px-8 py-4 bg-[#004aad] text-black rounded-full font-bold transition-all hover:scale-105 active:scale-95 shadow-xl shadow-blue-500/10"
                 >
                   <span className="text-lg">Lets Talk Brief</span>
                   <ArrowUpRight size={22} className="group-hover:rotate-45 transition-transform" />

@@ -147,7 +147,7 @@ const Guestbook: React.FC = () => {
       className="bg-black text-white min-h-screen pt-32 sm:pt-32 pb-40 px-4 sm:px-6 flex flex-col items-center relative overflow-hidden"
     >
       {/* Background Ambience */}
-      <div className="bg-circle fixed top-[-10%] right-[-10%] w-[50vw] aspect-square bg-[#ff6b00]/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
+      <div className="bg-circle fixed top-[-10%] right-[-10%] w-[50vw] aspect-square bg-[#004aad]/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
       <div className="w-full max-w-4xl relative z-10 space-y-16">
         {/* Hero Section */}
         <header className="text-center space-y-6">
@@ -295,7 +295,7 @@ const Guestbook: React.FC = () => {
       
                         <div className="space-y-3 flex-grow">
                           <div className="flex items-center justify-between">
-                            <h4 className="text-sm font-bold text-white tracking-tight group-hover:text-[#ff6b00] transition-colors">
+                            <h4 className="text-sm font-bold text-white tracking-tight group-hover:text-[#004aad] transition-colors">
                               {entry.name}
                             </h4>
                             <div className="flex items-center gap-2 text-[10px] font-mono text-slate-700 uppercase tracking-widest">

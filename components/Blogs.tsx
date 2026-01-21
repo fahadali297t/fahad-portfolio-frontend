@@ -46,7 +46,7 @@ const Blogs: React.FC = () => {
             <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9]">
               RESOURCES
             </h2>
-            <h2 className="text-4xl md:text-7xl font-serif italic text-[#ff6b00] leading-[0.9] tracking-tight">
+            <h2 className="text-4xl md:text-7xl font-serif italic text-[#004aad] leading-[0.9] tracking-tight">
               & GUIDES
             </h2>
           </div>
@@ -72,7 +72,7 @@ const Blogs: React.FC = () => {
 
               {/* Meta info */}
               <div className="flex items-center gap-4 mb-4">
-                <span className="px-4 py-1.5 bg-white/10 rounded-full text-[10px] font-bold tracking-widest text-slate-400 group-hover:bg-[#ff6b00] group-hover:text-black transition-all">
+                <span className="px-4 py-1.5 bg-white/10 rounded-full text-[10px] font-bold tracking-widest text-slate-400 group-hover:bg-[#004aad] group-hover:text-black transition-all">
                   {blog.category}
                 </span>
                 <span className="text-slate-500 text-xs">
@@ -81,7 +81,7 @@ const Blogs: React.FC = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-2xl md:text-3xl font-bold text-white group-hover:text-[#ff6b00] transition-colors leading-tight max-w-lg">
+              <h3 className="text-2xl md:text-3xl font-bold text-white group-hover:text-[#004aad] transition-colors leading-tight max-w-lg">
                 {blog.title}
               </h3>
             </Link>

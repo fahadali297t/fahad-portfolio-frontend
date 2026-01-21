@@ -127,13 +127,13 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({
         ref={cardRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="relative h-full flex flex-col p-8 md:p-12 bg-[#080808] border border-white/5 rounded-[2.5rem] transition-colors duration-500 hover:border-[#ff6b00]/30 overflow-hidden shadow-2xl"
+        className="relative h-full flex flex-col p-8 md:p-12 bg-[#080808] border border-white/5 rounded-[2.5rem] transition-colors duration-500 hover:border-[#004aad]/30 overflow-hidden shadow-2xl"
         style={{ transformStyle: "preserve-3d" }}
       >
         {/* Interactive Mouse Glow */}
         <div
           ref={glowRef}
-          className="absolute -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#ff6b00] blur-[100px] rounded-full pointer-events-none opacity-0 transition-opacity duration-500 z-0"
+          className="absolute -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#004aad] blur-[100px] rounded-full pointer-events-none opacity-0 transition-opacity duration-500 z-0"
         />
 
         {/* Background Decorative Pattern */}
@@ -151,7 +151,7 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({
         >
           {/* Header */}
           <div className="flex justify-between items-start">
-            <div className="w-20 h-20 bg-white/5 rounded-3xl flex items-center justify-center text-[#ff6b00] group-hover:bg-[#ff6b00] group-hover:text-black transition-all duration-500 shadow-xl group-hover:shadow-[#ff6b00]/20">
+            <div className="w-20 h-20 bg-white/5 rounded-3xl flex items-center justify-center text-[#004aad] group-hover:bg-[#004aad] group-hover:text-black transition-all duration-500 shadow-xl group-hover:shadow-[#004aad]/20">
               <IconComponent size={40} strokeWidth={1.5} />
             </div>
             {/* <div className="text-right">
@@ -166,7 +166,7 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({
 
           {/* Title & Desc */}
           <div className="space-y-6">
-            <h3 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-[0.85] group-hover:text-[#ff6b00] transition-colors duration-500">
+            <h3 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-[0.85] group-hover:text-[#004aad] transition-colors duration-500">
               {service.title.split(" ")[0]} <br />
               <span className="text-2xl md:text-3xl font-serif italic font-light text-slate-600 group-hover:text-white transition-colors duration-500 lowercase">
                 {service.title.split(" ").slice(1).join(" ")}
@@ -181,10 +181,10 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({
           <div className="grid grid-cols-2 gap-4 pt-6 opacity-40 group-hover:opacity-100 transition-opacity duration-500">
             {service.capabilities.slice(0, 2).map((cap: any, i: number) => (
               <div key={i} className="space-y-1">
-                <span className="block text-[14px] font-mono font-bold text-[#ff6b00] uppercase tracking-widest">
+                <span className="block text-[14px] font-mono font-bold text-[#004aad] uppercase tracking-widest">
                   {cap.title}
                 </span>
-                <div className="h-0.5 w-8 bg-white/10 rounded-full group-hover:bg-[#ff6b00]/30 transition-colors"></div>
+                <div className="h-0.5 w-8 bg-white/10 rounded-full group-hover:bg-[#004aad]/30 transition-colors"></div>
               </div>
             ))}
           </div>
@@ -197,15 +197,15 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({
                 .map((tech: string, i: number) => (
                   <span
                     key={i}
-                    className="text-[10px] font-mono text-slate-700 uppercase tracking-widest bg-white/5 px-2 py-1 rounded border border-white/5 group-hover:text-[#ff6b00] group-hover:border-[#ff6b00]/10 transition-all"
+                    className="text-[10px] font-mono text-slate-700 uppercase tracking-widest bg-white/5 px-2 py-1 rounded border border-white/5 group-hover:text-[#004aad] group-hover:border-[#004aad]/10 transition-all"
                   >
                     {tech}
                   </span>
                 ))}
             </div>
             <div className="relative group/btn">
-              <div className="absolute inset-0 bg-[#ff6b00] blur-xl opacity-0 group-hover:opacity-30 transition-opacity"></div>
-              <div className="relative w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 group-hover:bg-[#ff6b00] group-hover:text-black group-hover:rotate-45 transition-all duration-500">
+              <div className="absolute inset-0 bg-[#004aad] blur-xl opacity-0 group-hover:opacity-30 transition-opacity"></div>
+              <div className="relative w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 group-hover:bg-[#004aad] group-hover:text-black group-hover:rotate-45 transition-all duration-500">
                 <ArrowUpRight size={24} strokeWidth={2.5} />
               </div>
             </div>
@@ -254,16 +254,16 @@ const Services: React.FC = () => {
       className="bg-black text-white min-h-screen pt-32 pb-0 px-6 overflow-hidden"
     >
       {/* Immersive Background Decorations */}
-      <div className="bg-decoration fixed top-[-10%] left-[-10%] w-[50vw] aspect-square bg-[#ff6b00]/5 blur-[180px] rounded-full pointer-events-none z-0"></div>
-      <div className="bg-decoration fixed bottom-[-10%] right-[-10%] w-[30vw] aspect-square bg-orange-900/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
+      <div className="bg-decoration fixed top-[-10%] left-[-10%] w-[50vw] aspect-square bg-[#004aad]/5 blur-[180px] rounded-full pointer-events-none z-0"></div>
+      <div className="bg-decoration fixed bottom-[-10%] right-[-10%] w-[30vw] aspect-square bg-blue-900/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
 
       <div className="max-w-7xl mx-auto space-y-32">
         {/* Page Header */}
         <header className="space-y-6 sm:space-y-10 md:space-y-12 lg:space-y-16 pt-4 ">
           <div className="space-y-4 sm:space-y-6 md:space-y-8 max-w-5xl">
             <div className="header-reveal flex items-center gap-2 sm:gap-3 md:gap-4">
-              <div className="w-8 sm:w-10 md:w-12 h-px bg-[#ff6b00]"></div>
-              <span className="text-[7px] sm:text-[9px] md:text-[10px] font-mono uppercase tracking-[0.3em] sm:tracking-[0.4em] md:tracking-[0.5em] text-[#ff6b00] font-bold"></span>
+              <div className="w-8 sm:w-10 md:w-12 h-px bg-[#004aad]"></div>
+              <span className="text-[7px] sm:text-[9px] md:text-[10px] font-mono uppercase tracking-[0.3em] sm:tracking-[0.4em] md:tracking-[0.5em] text-[#004aad] font-bold"></span>
             </div>
             <h1 className="header-reveal text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[8vw] font-black tracking-tighter uppercase leading-[0.85] mix-blend-difference">
               Professional <br />
@@ -287,11 +287,11 @@ const Services: React.FC = () => {
         </div>
         {/* Philosophy Callout with Floating Element */}
         <section className="relative py-0 text-center space-y-16">
-          <div className="bg-decoration absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#ff6b00]/5 blur-[120px] rounded-full pointer-events-none"></div>
+          <div className="bg-decoration absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#004aad]/5 blur-[120px] rounded-full pointer-events-none"></div>
 
           <div className="relative group inline-block">
-            <div className="absolute -inset-8 bg-[#ff6b00]/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-            <div className="relative w-24 h-24 mx-auto bg-white/5 rounded-[2.5rem] border border-white/10 flex items-center justify-center text-[#ff6b00] rotate-12 group-hover:rotate-0 transition-all duration-700 shadow-2xl">
+            <div className="absolute -inset-8 bg-[#004aad]/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div className="relative w-24 h-24 mx-auto bg-white/5 rounded-[2.5rem] border border-white/10 flex items-center justify-center text-[#004aad] rotate-12 group-hover:rotate-0 transition-all duration-700 shadow-2xl">
               <Terminal size={48} strokeWidth={1} />
             </div>
           </div>
@@ -299,7 +299,7 @@ const Services: React.FC = () => {
           <div className="space-y-8 relative">
             <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.9]">
               ENGINEERED FOR <br />{" "}
-              <span className="text-[#ff6b00] font-serif italic font-light lowercase">
+              <span className="text-[#004aad] font-serif italic font-light lowercase">
                 maximum impact
               </span>
             </h2>
@@ -317,9 +317,10 @@ const Services: React.FC = () => {
               className="
       group relative overflow-hidden
       px-8 py-4 sm:px-12 sm:py-6 md:px-16 md:py-8
-      bg-[#ff6b00] text-black rounded-full font-black
+      bg-[#004aad] text-black rounded-full font-black
       text-base sm:text-xl md:text-2xl
-      shadow-[0_0_40px_rgba(255,107,0,0.25)]
+      shadow-[0_0_40px_rgba(0,74,173,0.25)]
+
       transition-all duration-300 ease-out
       hover:scale-[1.03] active:scale-95
     "
@@ -330,7 +331,7 @@ const Services: React.FC = () => {
               <span
                 className="
         pointer-events-none absolute inset-0 rounded-full
-        border-2 sm:border-4 border-[#ff6b00]
+        border-2 sm:border-4 border-[#004aad]
         opacity-0 group-hover:opacity-40
         transition-opacity duration-500
       "
@@ -340,7 +341,7 @@ const Services: React.FC = () => {
               <span
                 className="
         pointer-events-none absolute -inset-1
-        bg-gradient-to-r from-yellow-400 via-orange-600 to-red-500
+        bg-gradient-to-r from-yellow-400 via-blue-600 to-red-500
         opacity-0 group-hover:opacity-30
         blur-xl
         transition-opacity duration-700
@@ -361,11 +362,11 @@ const Services: React.FC = () => {
                 className="flex items-center gap-8 text-[10px] font-mono text-slate-700 uppercase tracking-[0.5em] font-bold"
               >
                 <span>Scalable Infrastructure</span>
-                <div className="w-2 h-2 rounded-full bg-[#ff6b00]"></div>
+                <div className="w-2 h-2 rounded-full bg-[#004aad]"></div>
                 <span>Secure Protocol</span>
                 <div className="w-2 h-2 rounded-full bg-slate-800"></div>
                 <span>High Availability</span>
-                <div className="w-2 h-2 rounded-full bg-[#ff6b00]"></div>
+                <div className="w-2 h-2 rounded-full bg-[#004aad]"></div>
                 <span>Elastic Compute</span>
               </div>
             ))}

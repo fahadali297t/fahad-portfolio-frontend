@@ -38,7 +38,7 @@ const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({
     >
       <Link
         to={`/projects/${project.id}`}
-        className="block relative overflow-hidden rounded-[2.5rem] bg-slate-900 aspect-[16/10] mb-8 group-hover:shadow-[0_20px_80px_rgba(255,107,0,0.15)] transition-all duration-700"
+        className="block relative overflow-hidden rounded-[2.5rem] bg-slate-900 aspect-[16/10] mb-8 group-hover:shadow-[0_20px_80px_rgba(0,74,173,0.15)] transition-all duration-700"
       >
         <img
           src={project.image}
@@ -52,7 +52,7 @@ const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({
           {project.techStackDetailed.slice(0, 2).map((tech, i) => (
             <span
               key={i}
-              className="px-3 py-1 bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-[9px] font-mono font-bold text-[#ff6b00] uppercase tracking-widest"
+              className="px-3 py-1 bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-[9px] font-mono font-bold text-[#004aad] uppercase tracking-widest"
             >
               {tech}
             </span>
@@ -60,7 +60,7 @@ const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({
         </div>
 
         {/* Corner Button */}
-        <div className="absolute bottom-6 right-6 p-4 bg-[#ff6b00] rounded-2xl text-black translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+        <div className="absolute bottom-6 right-6 p-4 bg-[#004aad] rounded-2xl text-black translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
           <ArrowUpRight size={24} strokeWidth={2.5} />
         </div>
       </Link>
@@ -73,7 +73,7 @@ const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({
           <div className="flex gap-4">
             <a
               href={project.github}
-              className="text-slate-500 hover:text-[#ff6b00] transition-colors"
+              className="text-slate-500 hover:text-[#004aad] transition-colors"
             >
               <Globe size={18} />
             </a>
@@ -81,7 +81,7 @@ const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({
         </div>
 
         <Link to={`/projects/${project.id}`} className="block group/title">
-          <h3 className="text-3xl font-black tracking-tighter uppercase leading-none text-white group-hover/title:text-[#ff6b00] transition-colors">
+          <h3 className="text-3xl font-black tracking-tighter uppercase leading-none text-white group-hover/title:text-[#004aad] transition-colors">
             {project.title}{" "}
             <span className="font-serif italic font-light lowercase text-xl opacity-60 ml-2">
               {project.type}
@@ -117,8 +117,8 @@ const ProjectsSection: React.FC = () => {
         <header className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div className="space-y-6">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-px bg-[#ff6b00]"></div>
-              <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-[#ff6b00] font-black">
+              <div className="w-12 h-px bg-[#004aad]"></div>
+              <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-[#004aad] font-black">
                 Curated Portfolio
               </span>
             </div>
@@ -161,7 +161,7 @@ const ProjectsSection: React.FC = () => {
           </div>
           <Link
             to="/projects"
-            className="group flex items-center gap-4 px-12 py-5 bg-white text-black rounded-full font-black uppercase text-xs tracking-widest hover:bg-[#ff6b00] transition-all hover:scale-105"
+            className="group flex items-center gap-4 px-12 py-5 bg-white text-black rounded-full font-black uppercase text-xs tracking-widest hover:bg-[#004aad] transition-all hover:scale-105"
           >
             Load More Projects{" "}
             <ArrowUpRight

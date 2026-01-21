@@ -53,17 +53,17 @@ const TimelineNode: React.FC<{
       }`}
     >
       {/* Central Connector Dot */}
-      <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-[#ff6b00] z-20 border-4 border-black shadow-[0_0_20px_rgba(255,107,0,0.6)]" />
+      <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-[#004aad] z-20 border-4 border-black shadow-[0_0_20px_rgba(0,74,173,0.6)]" />
 
       {/* Content Card */}
       <div className={`w-full md:w-[42%] ml-12 md:ml-0 group`}>
-        <div className="relative p-8 md:p-10 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] hover:border-[#ff6b00]/30 transition-all duration-500 overflow-hidden shadow-2xl">
+        <div className="relative p-8 md:p-10 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] hover:border-[#004aad]/30 transition-all duration-500 overflow-hidden shadow-2xl">
           {/* Subtle background glow */}
-          <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#ff6b00]/5 blur-3xl rounded-full group-hover:bg-[#ff6b00]/10 transition-colors"></div>
+          <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#004aad]/5 blur-3xl rounded-full group-hover:bg-[#004aad]/10 transition-colors"></div>
 
           <div className="relative z-10 space-y-4">
             <div className="flex items-center justify-between">
-              <span className="text-[#ff6b00] font-mono text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase">
+              <span className="text-[#004aad] font-mono text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase">
                 {item.year}
               </span>
               {type === "work" ? (
@@ -73,7 +73,7 @@ const TimelineNode: React.FC<{
               )}
             </div>
 
-            <h3 className="text-2xl md:text-3xl font-black text-white tracking-tighter uppercase leading-none group-hover:text-[#ff6b00] transition-colors">
+            <h3 className="text-2xl md:text-3xl font-black text-white tracking-tighter uppercase leading-none group-hover:text-[#004aad] transition-colors">
               {item.title}
             </h3>
 
@@ -181,13 +181,13 @@ const About: React.FC = () => {
       <section className="relative pt-40 pb-32 px-6 overflow-hidden">
         {/* Background Atmosphere */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full z-0 opacity-20 blur-[120px] pointer-events-none">
-          <div className="aspect-square w-full bg-[#ff6b00]/10 rounded-full"></div>
+          <div className="aspect-square w-full bg-[#004aad]/10 rounded-full"></div>
         </div>
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
           <div className="lg:col-span-7 space-y-12">
             <div className="space-y-6">
-              <span className="about-header-text inline-block text-[#ff6b00] font-mono text-xs md:text-sm uppercase tracking-[0.5em] font-bold">
+              <span className="about-header-text inline-block text-[#004aad] font-mono text-xs md:text-sm uppercase tracking-[0.5em] font-bold">
                 The Profile
               </span>
               <h1 className="about-header-text text-6xl md:text-[8rem] font-black tracking-tighter uppercase leading-[0.8]">
@@ -210,7 +210,7 @@ const About: React.FC = () => {
 
               <div className="flex flex-wrap gap-8 py-6 border-y border-white/5">
                 <div className="flex items-center gap-4">
-                  <div className="p-4 bg-white/5 rounded-2xl text-[#ff6b00]">
+                  <div className="p-4 bg-white/5 rounded-2xl text-[#004aad]">
                     <Award size={28} />
                   </div>
                   <div>
@@ -223,7 +223,7 @@ const About: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="p-4 bg-white/5 rounded-2xl text-[#ff6b00]">
+                  <div className="p-4 bg-white/5 rounded-2xl text-[#004aad]">
                     <Sparkles size={28} />
                   </div>
                   <div>
@@ -251,7 +251,7 @@ const About: React.FC = () => {
               </div>
 
               {/* Floating Stat Badge */}
-              {/* <div className="absolute -bottom-10 -right-6 bg-[#ff6b00] p-8 rounded-[2.5rem] shadow-2xl rotate-3 group-hover:rotate-0 transition-transform duration-500">
+              {/* <div className="absolute -bottom-10 -right-6 bg-[#004aad] p-8 rounded-[2.5rem] shadow-2xl rotate-3 group-hover:rotate-0 transition-transform duration-500">
                 <div className="text-black text-center space-y-1">
                   <span className="block text-4xl font-black tracking-tighter">
                     7+
@@ -298,18 +298,18 @@ const About: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row justify-between items-end mb-24 gap-8">
             <div className="space-y-4">
-              <span className="text-[#ff6b00] font-mono text-xs uppercase tracking-[0.5em] block">
+              <span className="text-[#004aad] font-mono text-xs uppercase tracking-[0.5em] block">
                 Skillset Level
               </span>
               <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-none">
                 TECHNICAL{" "}
-                <span className="text-[#ff6b00] font-serif italic font-light lowercase">
+                <span className="text-[#004aad] font-serif italic font-light lowercase">
                   proficiency
                 </span>
               </h2>
             </div>
             <div className="flex flex-col items-end gap-2 text-right">
-              <div className="h-px w-32 bg-[#ff6b00] mb-2"></div>
+              <div className="h-px w-32 bg-[#004aad] mb-2"></div>
               <p className="text-slate-500 max-w-xs font-light">
                 My expertise spans the entire development lifecycle, with a
                 heavy emphasis on architectural integrity.
@@ -321,10 +321,10 @@ const About: React.FC = () => {
             {skillCategories.map((cat, i) => (
               <div
                 key={i}
-                className="skill-category space-y-10 p-10 bg-black rounded-[3rem] border border-white/5 hover:border-[#ff6b00]/20 transition-all group"
+                className="skill-category space-y-10 p-10 bg-black rounded-[3rem] border border-white/5 hover:border-[#004aad]/20 transition-all group"
               >
                 <div className="flex items-center gap-6">
-                  <div className="p-5 bg-white/5 rounded-2xl text-[#ff6b00] group-hover:bg-[#ff6b00] group-hover:text-black transition-all">
+                  <div className="p-5 bg-white/5 rounded-2xl text-[#004aad] group-hover:bg-[#004aad] group-hover:text-black transition-all">
                     <cat.icon size={32} strokeWidth={1.5} />
                   </div>
                   <h3 className="text-xl font-bold uppercase tracking-tighter">
@@ -352,12 +352,12 @@ const About: React.FC = () => {
       {/* Philosophy Callout */}
       <section className="py-40 px-6 text-center">
         <div className="max-w-4xl mx-auto space-y-16">
-          <div className="inline-block p-6 bg-white/5 rounded-full text-[#ff6b00]">
+          <div className="inline-block p-6 bg-white/5 rounded-full text-[#004aad]">
             <Terminal size={48} />
           </div>
           <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9]">
             I DON'T JUST WRITE CODE. <br />
-            <span className="text-[#ff6b00] font-serif italic font-light lowercase">
+            <span className="text-[#004aad] font-serif italic font-light lowercase">
               I build engineering legacies.
             </span>
           </h2>
@@ -373,7 +373,7 @@ const About: React.FC = () => {
                   behavior: "smooth",
                 })
               }
-              className="px-12 py-5 bg-[#ff6b00] text-black rounded-full font-black text-xl hover:scale-105 transition-all shadow-[0_0_40px_rgba(255,107,0,0.2)]"
+              className="px-12 py-5 bg-[#004aad] text-black rounded-full font-black text-xl hover:scale-105 transition-all shadow-[0_0_40px_rgba(0,74,173,0.2)]"
             >
               Get in touch
             </button>
