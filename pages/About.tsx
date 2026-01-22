@@ -282,13 +282,12 @@ const About: React.FC = () => {
           </div>
 
           <p className="who-am-i-reveal text-lg sm:text-2xl text-slate-400 font-light leading-relaxed max-w-3xl mx-auto">
-            I'm a passionate developer who loves transforming ideas into
-            interactive, performant, and elegant digital experiences. My focus
-            is on clean code, creative problem-solving, and crafting UI that
-            speaks both beauty and logic. Whether it's Laravel, React, Tailwind,
-            or modern JS frameworks — I'm all about building things that
-            inspire. I also have expertise in WordPress development, delivering
-            custom themes, plugins, and scalable solutions.
+            I help businesses turn ideas into fast, beautiful, and easy-to-use
+            websites and applications. My goal is to build digital products that
+            not only look great, but also perform smoothly, attract users, and
+            support your business growth. <br />
+            <br /> From concept to launch, I make sure your product is
+            efficient, user-friendly, and ready to grow with your business.
           </p>
         </div>
       </section>
