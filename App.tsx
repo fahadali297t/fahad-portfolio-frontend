@@ -26,6 +26,8 @@ import Terms from "./pages/Terms";
 import Guestbook from "./pages/GuestBook";
 import { Toaster } from "react-hot-toast";
 import Schedule from "./pages/Schedule";
+import Pricing from "./pages/Pricing";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -117,7 +119,8 @@ const App: React.FC = () => {
             <Route path="/guestbook" element={<Guestbook />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<Terms />} />
-            <Route path="/schedule-call" element={<Schedule/>}/>
+            <Route path="/schedule-call" element={<Schedule />} />
+            <Route path="/pricing" element={<Pricing />} />
           </Routes>
         </main>
         <Footer />

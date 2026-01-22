@@ -14,7 +14,14 @@ import {
   Search,
   Terminal,
 } from "lucide-react";
-import { Project, Service, Skill, TimelineItem, Blog } from "./types";
+import {
+  Project,
+  Service,
+  Skill,
+  TimelineItem,
+  Blog,
+  PricingPlan,
+} from "./types";
 
 export interface EnhancedProject extends Project {
   challenge: string;
@@ -827,5 +834,68 @@ export const BLOG_POSTS: EnhancedBlog[] = [
       "The days of 'Maintenance Mode' screens are over. Using GitHub Actions and a 'Blue-Green' deployment strategy, you can release new features while users are actively interacting with your platform. We'll set up a pipeline that builds Docker containers, runs PHPUnit tests, and swaps production environments seamlessly.",
     tags: ["CI/CD", "Docker", "DevOps"],
     quote: "Shipping code should be a non-event, not a panic attack.",
+  },
+];
+
+
+export const PRICING_PLANS: PricingPlan[] = [
+  {
+    id: 1,
+    name: "Website Audit & Fix",
+    price: "$499",
+    period: "One-off", // Changed to match "One-off" tag in image
+    description:
+      "Perfect for business owners looking to optimize their current site's performance and security.",
+    features: [
+      "Security & Performance Check",
+      "Fixing Slow Pages",
+      "Code & Workflow Recommendations",
+      "Plugin & Dependency Updates",
+      "Step-by-Step Improvement Plan",
+      "Updates delivered every 2-3 days", // Added to match image style
+    ],
+    recommended: false,
+    cta: "Book a call ",
+    icon: "Search",
+  },
+  {
+    id: 2,
+    name: "Startup Website / MVP",
+    price: "$1500", // Adjusted to match the first card in the image
+    period: "One-off",
+    description:
+      "Perfect for service-based business owners looking for a high-converting landing page.",
+    features: [
+      "Custom Website or App Setup",
+      "Secure User Login & Forms",
+      "Mobile-Friendly Design",
+      "Optimized for Speed & SEO",
+      "Easy-to-Manage Dashboard",
+      "Unlimited revisions until launch", // Key feature from image
+      "Video guide for self-management", // Key feature from image
+    ],
+    recommended: true,
+    cta: "Book a call ",
+    icon: "Zap",
+  },
+  {
+    id: 3,
+    name: "Full Brand & Web Launch",
+    price: "$2500", // Adjusted to match the second card in the image
+    period: "One-off",
+    description:
+      "Perfect for business owners looking for a high-converting landing page and an optimized brand.",
+    features: [
+      "Branding (logo and brand guidelines)",
+      "Premium Landing Page design",
+      "Development in WordPress / Custom",
+      "LinkedIn Profile Rebrand",
+      "Updates delivered every 2-3 days",
+      "Unlimited revisions until launch",
+      "Video guide for self-management",
+    ],
+    recommended: false,
+    cta: "Book a call ",
+    icon: "ShieldCheck",
   },
 ];

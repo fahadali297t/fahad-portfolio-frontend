@@ -1,4 +1,3 @@
-
 export interface Project {
   id: number;
   title: string;
@@ -37,4 +36,16 @@ export interface Blog {
   readTime: string;
   title: string;
   image: string;
+}
+
+export interface PricingPlan {
+  id: number;
+  name: string;
+  price: string;
+  period: string;
+  description: string;
+  features: string[];
+  recommended: boolean;
+  cta: string;
+  icon: string;
 }

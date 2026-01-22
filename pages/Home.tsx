@@ -14,6 +14,7 @@ import Contact from "./Contact";
 import Projects from "./ProjectsPage";
 import BentoSection from "@/components/BentoSection";
 import ProjectCarousel from "@/components/ProjectCarousel";
+import PricingSection from "@/components/PricingSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -88,6 +89,8 @@ const Home: React.FC = () => {
       </div>
 
       <BentoSection />
+      <PricingSection />
+
       {/* <WorkingProcess /> */}
 
       <div id="blogs">
