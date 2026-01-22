@@ -1,25 +1,35 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Terminal as TerminalIcon, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showMore, setShowMore] = useState(false);
   const location = useLocation();
+
   const moreRef = useRef<HTMLDivElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null); // Ref for mobile menu
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
 
     const handleClickOutside = (event: MouseEvent) => {
+      // Close desktop "More" dropdown
       if (moreRef.current && !moreRef.current.contains(event.target as Node)) {
         setShowMore(false);
       }
+      // Close mobile menu
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
     };
-    document.addEventListener("mousedown", handleClickOutside);
 
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
       window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("mousedown", handleClickOutside);
@@ -27,6 +37,9 @@ const Navbar: React.FC = () => {
   }, []);
 
   const isActive = (path: string) => location.pathname === path;
+
+  // Check if any sub-link in "More" is active to highlight the parent
+  const isMoreActive = () => moreLinks.some((link) => isActive(link.path));
 
   const mainLinks = [
     { name: "Home", path: "/" },
@@ -37,7 +50,6 @@ const Navbar: React.FC = () => {
   ];
 
   const moreLinks = [
-    // { name: "Case Studies", path: "/case-studies" },
     { name: "Pricing", path: "/pricing" },
     { name: "Blog", path: "/blog" },
     { name: "Schedule a call", path: "/schedule-call" },
@@ -49,7 +61,7 @@ const Navbar: React.FC = () => {
         isScrolled ? "translate-y-[-10px]" : ""
       }`}
     >
-      <nav className="max-w-7xl mx-auto">
+      <nav className="max-w-7xl mx-auto" ref={mobileMenuRef}>
         <div
           className={`relative px-6 py-3 rounded-full border border-white/20 backdrop-blur-2xl transition-all duration-500 shadow-2xl ${
             isScrolled ? "bg-black/80" : "bg-black/40"
@@ -59,14 +71,14 @@ const Navbar: React.FC = () => {
             {/* Logo Section */}
             <Link to="/" className="flex items-center space-x-2 group shrink-0">
               <div className="w-8 h-8 bg-[#fff] rounded-lg flex items-center justify-center transition-all duration-500 ">
-                <img src="./1.png" className="w-5 h-5 text-black group-hover:text-white" />
+                <img src="./1.png" alt="Logo" className="w-5 h-5 text-black" />
               </div>
               <span className="hidden sm:block text-sm font-black tracking-tighter text-white uppercase">
                 Fahad Ali
               </span>
             </Link>
 
-            {/* Desktop Navigation Links */}
+            {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-8">
               {mainLinks.map((link) => (
                 <Link
@@ -84,17 +96,16 @@ const Navbar: React.FC = () => {
               <div className="relative" ref={moreRef}>
                 <button
                   onClick={() => setShowMore(!showMore)}
-                  className="flex items-center gap-1.5 text-[13px] font-semibold text-slate-300 hover:text-[#004aad] transition-all"
+                  className={`flex items-center gap-1.5 text-[13px] font-semibold transition-all hover:text-[#004aad] ${
+                    isMoreActive() ? "text-[#004aad]" : "text-slate-300"
+                  }`}
                 >
                   More{" "}
                   <ChevronDown
                     size={14}
-                    className={`transition-transform duration-300 ${
-                      showMore ? "rotate-180" : ""
-                    }`}
+                    className={`transition-transform duration-300 ${showMore ? "rotate-180" : ""}`}
                   />
                 </button>
-
                 {showMore && (
                   <div className="absolute top-full mt-4 left-1/2 -translate-x-1/2 w-48 bg-[#0f0f11] border border-white/10 rounded-2xl shadow-2xl py-2 animate-in fade-in zoom-in-95 duration-200">
                     {moreLinks.map((link) => (
@@ -116,16 +127,15 @@ const Navbar: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Side Tools & CTA */}
+            {/* CTA & Mobile Toggle */}
             <div className="flex items-center space-x-4">
               <Link
-                to="/contact"
+                to="/schedule-call"
                 className="relative overflow-hidden group bg-[#004aad] text-white px-6 py-2.5 rounded-full text-[11px] font-white uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#004aad]/30"
               >
                 <span className="relative z-10">Let's Talk</span>
                 <div className="absolute inset-0 bg-black/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
               </Link>
-              {/* Mobile Menu Toggle */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="lg:hidden p-2 text-slate-300 hover:text-[#004aad] transition-colors"
@@ -136,7 +146,7 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation Menu */}
         {isOpen && (
           <div className="lg:hidden mt-4 px-2 py-6 bg-black/95 backdrop-blur-3xl border border-white/5 rounded-[2.5rem] shadow-2xl animate-in fade-in slide-in-from-top-4 duration-300">
             <div className="flex flex-col space-y-2">
