@@ -205,7 +205,7 @@ const Hero: React.FC = () => {
                 className="
     group relative flex items-center justify-center gap-4
     px-6 py-4 sm:px-8 sm:py-4 md:px-12 md:py-6
-    bg-[#004aad] text-black rounded-full font-black
+    bg-[#004aad] text-white rounded-full font-white
     text-sm sm:text-base uppercase tracking-widest
     transition-all duration-300 ease-out
     hover:scale-[1.03] active:scale-95

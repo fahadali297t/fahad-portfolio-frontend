@@ -91,32 +91,7 @@ const TestimonialCard: React.FC<{
       </div>
 
       {/* Impact Footer */}
-      <div className="relative z-10 mt-12 pt-8 border-t border-white/5 flex items-end justify-between">
-        <div className="space-y-4">
-          <div className="flex items-center gap-2">
-            <Globe size={14} className="text-slate-400" />
-            <span className="text-[10px] font-poppins text-slate-400 uppercase tracking-[0.3em] font-black">
-              {testimonial.industry} Dossier
-            </span>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-xs font-poppins text-slate-400 uppercase tracking-widest mb-1">
-              Impact Metric
-            </span>
-            <div className="flex items-center gap-3">
-              <Activity size={18} className="text-[#004aad]" />
-              <span className="text-2xl font-black text-white group-hover:text-[#004aad] transition-colors">
-                {testimonial.impactMetric}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col items-center group/check">
-          <div className="w-12 h-12 rounded-full border border-white/5 flex items-center justify-center text-slate-400 group-hover:text-green-500 group-hover:border-green-500/20 group-hover:bg-green-500/5 transition-all">
-            <CheckCircle size={24} />
-          </div>
-        </div>
-      </div>
+     
     </div>
   );
 };
@@ -157,18 +132,18 @@ const Testimonials: React.FC = () => {
               <ShieldCheck size={24} />
             </div>
             <div className="space-y-1">
-              <span className="text-[10px] font-poppins uppercase tracking-[0.5em] text-[#004aad] font-black block">
-                Verification Engine
+              <span className="text-[12px] md:text-[14px] font-poppins uppercase  text-[#004aad] font-black block">
+                Trusted by Businesses
               </span>
-              <p className="text-[8px] text-slate-400 font-poppins tracking-widest uppercase">
+              {/* <p className="text-[8px] text-slate-400 font-poppins tracking-widest uppercase">
                 Encryption Status: AES-256
-              </p>
+              </p> */}
             </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
             <div className="lg:col-span-8 space-y-6">
-              <h2 className="trust-header-reveal text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85] text-white">
+              <h2 className="trust-header-reveal text-4xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85] text-white">
                 TRUSTED <br />
                 <span className="text-slate-400 font-serif italic font-light lowercase">
                   Clients
@@ -178,8 +153,8 @@ const Testimonials: React.FC = () => {
             </div>
             <div className="lg:col-span-4 pb-2 trust-header-reveal">
               <p className="text-slate-400 text-lg font-light leading-relaxed border-l border-white/10 pl-8">
-                Validated feedback from industry leaders and technical
-                architects who have integrated my engineered systems.
+                Feedback from business leaders and clients who trusted me to
+                build their digital systems.
               </p>
             </div>
           </div>

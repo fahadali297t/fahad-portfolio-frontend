@@ -117,7 +117,7 @@ const Schedule: React.FC = () => {
         {/* Symmetric Choice Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {/* Card 1: Discovery Session (Calendly) */}
-          <div className="choice-card group relative bg-[#0a0a0a] border border-white/5 rounded-[3.5rem] p-10 sm:p-14 flex flex-col justify-between overflow-hidden transition-all duration-700 hover:border-[#004aad]/30 shadow-2xl">
+          <div className="choice-card group relative bg-[#0a0a0a] border border-white/5 rounded-[1rem] md:rounded-[3.5rem] p-10 sm:p-14 flex flex-col justify-between overflow-hidden transition-all duration-700 hover:border-[#004aad]/30 shadow-2xl">
             {/* Soft Glow */}
             <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#004aad]/5 blur-[80px] rounded-full group-hover:bg-[#004aad]/10 transition-colors"></div>
 
@@ -173,7 +173,7 @@ const Schedule: React.FC = () => {
           </div>
 
           {/* Card 2: Quick Reply (WhatsApp) */}
-          <div className="choice-card group relative bg-[#0a0a0a] border border-white/5 rounded-[3.5rem] p-10 sm:p-14 flex flex-col justify-between overflow-hidden transition-all duration-700 hover:border-green-500/30 shadow-2xl">
+          <div className="choice-card group relative bg-[#0a0a0a] border border-white/5 rounded-[1rem] md:rounded-[3.5rem] p-10 sm:p-14 flex flex-col justify-between overflow-hidden transition-all duration-700 hover:border-green-500/30 shadow-2xl">
             {/* Soft Glow */}
             <div className="absolute -top-24 -right-24 w-64 h-64 bg-green-500/5 blur-[80px] rounded-full group-hover:bg-green-500/10 transition-colors"></div>
 
@@ -225,7 +225,7 @@ const Schedule: React.FC = () => {
               rel="noopener noreferrer"
               className="relative z-10 mt-16 w-full py-6 bg-green-500 text-black rounded-full font-black text-sm uppercase tracking-[0.3em] flex items-center justify-center gap-4 hover:bg-green-400 hover:scale-[1.02] active:scale-95 transition-all shadow-[0_0_40px_rgba(34,197,94,0.2)]"
             >
-              <span>Send Message</span>
+              <span className="">Send Message</span>
               <BsWhatsapp size={18} />
             </a>
           </div>
@@ -244,9 +244,9 @@ const Schedule: React.FC = () => {
                 size={24}
                 className=" transition-transform group-hover:scale-110"
               />
-              <span className="text-[14px] font-poppins uppercase tracking-widest font-black text-slate-400 group-hover:text-white transition-colors">
-                    {social.name}
-                  </span>
+              <span className="text-[14px] hidden md:block font-poppins uppercase tracking-widest font-black text-slate-400 group-hover:text-white transition-colors">
+                {social.name}
+              </span>
             </a>
           ))}
         </div>

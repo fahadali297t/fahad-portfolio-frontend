@@ -30,8 +30,8 @@ const Navbar: React.FC = () => {
 
   const mainLinks = [
     { name: "Home", path: "/" },
-    { name: "Work", path: "/projects" },
     { name: "About", path: "/about" },
+    { name: "Work", path: "/projects" },
     { name: "Services", path: "/services" },
     { name: "Guestbook", path: "/guestbook" },
   ];
@@ -119,7 +119,7 @@ const Navbar: React.FC = () => {
             <div className="flex items-center space-x-4">
               <Link
                 to="/contact"
-                className="relative overflow-hidden group bg-[#004aad] text-black px-6 py-2.5 rounded-full text-[11px] font-black uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#004aad]/30"
+                className="relative overflow-hidden group bg-[#004aad] text-white px-6 py-2.5 rounded-full text-[11px] font-white uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#004aad]/30"
               >
                 <span className="relative z-10">Let's Talk</span>
                 <div className="absolute inset-0 bg-black/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>

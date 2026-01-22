@@ -79,25 +79,25 @@ const Contact: React.FC = () => {
       {
         name: "LinkedIn",
         icon: Linkedin,
-        url: "https://linkedin.com/in/fahadali2951",
+        url: "https://www.linkedin.com/in/fahad-ali-369649355/",
         color: "hover:text-blue-500",
       },
       {
         name: "Telegram",
         icon: Telegram,
-        url: "https://t.me/fahadali2951",
+        url: "#",
         color: "hover:text-cyan-400",
       },
       {
         name: "Instagram",
         icon: Instagram,
-        url: "https://instagram.com/fahadali2951",
+        url: "https://instagram.com",
         color: "hover:text-pink-500",
       },
       {
         name: "Facebook",
         icon: Facebook,
-        url: "https://facebook.com/fahadali2951",
+        url: "https://facebook.com/zfahad4",
         color: "hover:text-blue-600",
       },
     ];
@@ -140,7 +140,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="text-left">
                   <p className="text-[10px] font-poppins text-green-500 uppercase tracking-widest font-black">
-                    Direct Response
+                    Quick Response
                   </p>
                   <p className="text-2xl font-bold text-white uppercase">
                     WhatsApp
@@ -160,7 +160,7 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <p className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest font-black">
-                  Email Registry
+                  Email
                 </p>
                 <p className="text-md font-bold text-white">
                   fahadali2951@gmail.com
@@ -236,7 +236,7 @@ const Contact: React.FC = () => {
                 <input
                   type="text"
                   required
-                  placeholder="John Doe"
+                  placeholder="Enter your name"
                   className="w-full px-6 xl:px-8 rounded-[1.5rem] xl:rounded-full py-5 bg-white/5 border border-white/5  text-white placeholder-slate-400 focus:ring-1 focus:ring-[#004aad]/40 outline-none transition-all"
                   value={formState.name}
                   onChange={(e) =>
@@ -251,7 +251,7 @@ const Contact: React.FC = () => {
                 <input
                   type="email"
                   required
-                  placeholder="john@example.com"
+                  placeholder="Enter your email"
                   className="w-full px-6 xl:px-8 py-5 rounded-[1.5rem] xl:rounded-full bg-white/5 border border-white/5  text-white placeholder-slate-400 focus:ring-1 focus:ring-[#004aad]/40 outline-none transition-all"
                   value={formState.email}
                   onChange={(e) =>

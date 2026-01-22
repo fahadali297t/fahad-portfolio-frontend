@@ -11,6 +11,7 @@ import {
   Server,
   Cloud,
   ArrowRight,
+  Globe2,
 } from "lucide-react";
 import { BsWhatsapp } from "react-icons/bs";
 
@@ -168,14 +169,14 @@ const BentoSection: React.FC = () => {
 
             <div className="relative z-10 flex items-center gap-4">
               <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-[#004aad]">
-                <Cloud size={24} />
+                <Globe2 size={24} />
               </div>
               <div className="space-y-0.5">
                 <h3 className="text-xl font-bold text-white tracking-tight">
-                  Edge Deployment
+                  Global Delivery
                 </h3>
                 <p className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest">
-                  Global CDN Infrastructure
+                  Fast Worldwide Access
                 </p>
               </div>
             </div>
@@ -189,7 +190,8 @@ const BentoSection: React.FC = () => {
             </div>
 
             <p className="relative z-10 text-slate-400 text-sm font-light leading-relaxed">
-              Multi-region architecture on AWS for global low-latency.
+              Your website loads quickly for users everywhere, no matter where
+              they are.
             </p>
           </div>
 
@@ -197,18 +199,18 @@ const BentoSection: React.FC = () => {
           <div className="bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] p-10 flex flex-col justify-between group relative overflow-hidden">
             <div className="space-y-1">
               <span className="text-[10px] font-poppins text-[#004aad] uppercase tracking-widest font-black">
-                Architecture Philosophy
+                How We Build
               </span>
               <h3 className="text-2xl font-bold text-white uppercase tracking-tighter">
-                Robust Pipelines
+                Reliable Launch Process
               </h3>
             </div>
 
             <div className="flex flex-col gap-6 py-6">
               {[
-                { label: "Build", status: "Complete" },
-                { label: "Test", status: "Passed" },
-                { label: "Ship", status: "Deployed" },
+                { label: "Build", status: "Ready" },
+                { label: "Test", status: "Verified" },
+                { label: "Ship", status: "Live" },
               ].map((step, i) => (
                 <div key={i} className="flex items-center gap-4">
                   <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-green-500">
@@ -227,7 +229,7 @@ const BentoSection: React.FC = () => {
             </div>
 
             <p className="text-slate-400 text-sm font-light">
-              Automated testing and zero-downtime deployment.
+              Your website updates smoothly with no downtime or broken features.
             </p>
           </div>
 
@@ -236,10 +238,10 @@ const BentoSection: React.FC = () => {
             <div className="flex justify-between items-start">
               <div className="space-y-1">
                 <h3 className="text-2xl font-bold text-white uppercase tracking-tighter">
-                  Uptime & Speed
+                  Speed & Reliability
                 </h3>
                 <p className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest">
-                  Real-time Metrics
+                  Live Performance Tracking
                 </p>
               </div>
               <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400">
@@ -271,7 +273,7 @@ const BentoSection: React.FC = () => {
                 <span className="text-xl font-black text-white">45ms</span>
               </div>
               <span className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest">
-                Average response
+                Average Load Time
               </span>
             </div>
           </div>

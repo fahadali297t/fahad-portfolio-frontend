@@ -458,29 +458,30 @@ get_header();`,
 export const TESTIMONIALS = [
   {
     id: 1,
-    name: "Sarah Jenkins",
-    role: "CTO at FinStream",
+    name: "Muhammad Sabir",
+    role: "CEO at Turbodash",
     content:
-      "The API architecture delivered was flawless. Our latency dropped by 40% after the migration to the new microservices structure.",
-    avatar: "https://i.pravatar.cc/150?u=sarah",
+      "Working with Fahad was a great experience. Our platform became noticeably faster and more stable, and the whole migration process was smooth and well-managed.",
+    avatar: "./turboicon.png",
   },
   {
     id: 2,
-    name: "Marcello Rossi",
-    role: "Lead Architect",
+    name: "Anne Chaselle",
+    role: "Finance Officer",
     content:
-      "Rare to find a developer who truly understands the internals of the Eloquent ORM. The database optimizations saved us thousands in RDS costs.",
-    avatar: "https://i.pravatar.cc/150?u=marcello",
+      "Fahad quickly understood our system and suggested improvements that saved us time and costs. Communication was clear, and delivery was always on schedule.",
+    avatar: "./turboicon.png",
   },
   {
     id: 3,
-    name: "Elena de Luca",
-    role: "Product Manager",
+    name: "M Waqas",
+    role: "CEO APEXVIM",
     content:
-      "Professional, communicative, and exceptionally skilled in TDD. Every feature was delivered with 100% test coverage.",
-    avatar: "https://i.pravatar.cc/150?u=elena",
+      "Very professional and easy to work with. Every feature was delivered exactly as expected, and the quality of the final product exceeded our expectations.",
+    avatar: "./mwaqas.png",
   },
 ];
+
 
 export const SERVICES: EnhancedService[] = [
   {
@@ -532,7 +533,7 @@ export const SERVICES: EnhancedService[] = [
         desc: "Turning designs into code and deploying a fully functional website.",
       },
     ],
-    relatedTech: ["HTML", "CSS", "JavaScript", "React", "Vue"],
+    relatedTech: ["React JS", "Laravel", "Tailwind", "MYSQL", "AI"],
   },
   {
     id: 2,
@@ -632,7 +633,7 @@ export const SERVICES: EnhancedService[] = [
         desc: "Testing checkout flow, SEO, and analytics setup.",
       },
     ],
-    relatedTech: ["WooCommerce", "Shopify", "Stripe", "PayPal", "JavaScript"],
+    relatedTech: ["WooCommerce", "Shopify", "Stripe", "PayPal", "Wordpress"],
   },
   {
     id: 4,
@@ -683,7 +684,7 @@ export const SERVICES: EnhancedService[] = [
         desc: "Creating interactive designs and iterating based on feedback.",
       },
     ],
-    relatedTech: ["Figma", "Adobe XD", "Sketch", "Tailwind", "Framer Motion"],
+    relatedTech: ["Figma", "Adobe XD", "Sketch", "Webflow", "Framer Motion"],
   },
 ];
 

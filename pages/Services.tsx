@@ -320,7 +320,7 @@ const Services: React.FC = () => {
               className="
       group relative overflow-hidden
       px-8 py-4 sm:px-12 sm:py-6 md:px-16 md:py-8
-      bg-[#004aad] text-black rounded-full font-black
+      bg-[#004aad] text-white rounded-full font-white
       text-base sm:text-xl md:text-2xl
       shadow-[0_0_40px_rgba(0,74,173,0.25)]
 

@@ -310,7 +310,7 @@ const Experience = () => {
               <div className="px-5 sm:px-10 md:px-12 py-2 sm:py-4 md:py-5 bg-[#0a0a0a] border border-white/10 rounded-full flex items-center gap-2 sm:gap-3 md:gap-4 shadow-2xl">
                 <Briefcase className="w-3.5 h-3.5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#004aad]" />
                 <span className="text-[8px] sm:text-xs md:text-sm font-poppins font-black uppercase tracking-[0.25em] sm:tracking-[0.35em] md:tracking-[0.4em]">
-                  Professional Journey
+                  Work Experience
                 </span>
               </div>
             </div>

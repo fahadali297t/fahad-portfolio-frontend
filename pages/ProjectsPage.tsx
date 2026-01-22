@@ -132,8 +132,8 @@ const ProjectsSection: React.FC = () => {
           </div>
           <div className="pb-2">
             <p className="text-slate-400 text-lg md:text-xl font-light leading-relaxed max-w-sm border-l border-white/10 pl-8">
-              High-performance digital systems designed with precision and
-              structural clarity.
+              High-performance digital solutions designed to support and scale
+              your business.
             </p>
           </div>
         </header>
@@ -155,8 +155,8 @@ const ProjectsSection: React.FC = () => {
               More Projects Available
             </h4>
             <p className="text-slate-400 text-sm max-w-md mx-auto">
-              Browse real-world systems built for production, supported by
-              benchmarks and detailed documentation.
+              Check out my work — with proven performance and easy-to-follow
+              details.
             </p>
           </div>
           <Link

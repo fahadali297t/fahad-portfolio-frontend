@@ -299,7 +299,7 @@ const About: React.FC = () => {
           <div className="flex flex-col lg:flex-row justify-between items-end mb-24 gap-8">
             <div className="space-y-4">
               <span className="text-[#004aad] font-poppins text-xs uppercase tracking-[0.5em] block">
-                Skillset Level
+                Skillset
               </span>
               <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-none">
                 TECHNICAL{" "}
@@ -311,8 +311,8 @@ const About: React.FC = () => {
             <div className="flex flex-col items-end gap-2 text-right">
               <div className="h-px w-32 bg-[#004aad] mb-2"></div>
               <p className="text-slate-400 max-w-xs font-light">
-                My expertise spans the entire development lifecycle, with a
-                heavy emphasis on architectural integrity.
+                From planning to launch, I design and build digital systems with
+                long-term stability in mind.
               </p>
             </div>
           </div>
@@ -347,24 +347,26 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      <Experience/>
+      <Experience />
 
       {/* Philosophy Callout */}
       <section className="py-40 px-6 text-center">
         <div className="max-w-4xl mx-auto space-y-16">
-          <div className="inline-block p-6 bg-white/5 rounded-full text-[#004aad]">
-            <Terminal size={48} />
+          <div className="inline-block p-6 bg-white rounded-full text-[#004aad]">
+            <img src="./1.png" width={50} height={50} />
           </div>
           <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9]">
-            I DON'T JUST WRITE CODE. <br />
+            I DON'T JUST BUILD WEBSITES. <br />
             <span className="text-[#004aad] font-serif italic font-light lowercase">
-              I build engineering legacies.
+              I build digital foundations for your business.
             </span>
           </h2>
+
           <p className="text-xl md:text-3xl text-slate-400 font-light leading-relaxed">
-            Every line of code I author is a commitment to scalability,
-            security, and exceptional developer experience.
+            Every project I deliver is designed to help your business grow —
+            faster, more secure, and built to scale with confidence.
           </p>
+
           <div className="pt-12">
             <button
               onClick={() =>
@@ -373,7 +375,7 @@ const About: React.FC = () => {
                   behavior: "smooth",
                 })
               }
-              className="px-12 py-5 bg-[#004aad] text-black rounded-full font-black text-xl hover:scale-105 transition-all shadow-[0_0_40px_rgba(0,74,173,0.2)]"
+              className="px-12 py-5 bg-[#004aad] text-white rounded-full font-white text-xl hover:scale-105 transition-all shadow-[0_0_40px_rgba(0,74,173,0.2)]"
             >
               Get in touch
             </button>
