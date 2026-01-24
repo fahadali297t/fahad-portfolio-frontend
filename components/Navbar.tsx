@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
             {/* Logo Section */}
             <Link to="/" className="flex items-center space-x-2 group shrink-0">
               <div className="w-8 h-8 bg-[#fff] rounded-lg flex items-center justify-center transition-all duration-500 ">
-                <img src="./1.png" alt="Logo" className="w-5 h-5 text-black" />
+                <img src="/1.png" alt="Logo" className="w-5 h-5 text-black" />
               </div>
               <span className="hidden sm:block text-sm font-black tracking-tighter text-white uppercase">
                 Fahad Ali
