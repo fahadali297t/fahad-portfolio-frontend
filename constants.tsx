@@ -59,6 +59,59 @@ export interface EnhancedBlog extends Blog {
 
 export const PROJECTS: EnhancedProject[] = [
   {
+    id: 8,
+    title: "CapitelNet",
+    type: "INTERNET SERVICE PROVIDER PLATFORM",
+    category: "React + Supabase",
+    year: "2025",
+    role: "Full-Stack Developer",
+    description:
+      "A modern ISP management and customer self-service platform built to streamline subscriptions, billing, and network support operations.",
+    fullDescription:
+      "CapitelNet is a full-scale digital platform designed for internet service providers to manage customer onboarding, subscription plans, billing cycles, and service requests through a unified system. The platform delivers a seamless experience for both administrators and customers by centralizing account management, real-time service status, and support workflows into a responsive web interface. With Supabase powering authentication, data storage, and real-time updates, CapitelNet ensures secure access control, high availability, and scalable performance for growing ISP operations.",
+    challenge:
+      "Building a secure, real-time customer portal with role-based access while maintaining performance across billing and support modules.",
+    solution:
+      "Implemented Supabase authentication with row-level security and real-time subscriptions to synchronize account data, service status, and support tickets instantly.",
+    techStackDetailed: [
+      "React.js",
+      "Supabase",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Realtime Subscriptions",
+      "Vercel",
+    ],
+    metrics: [
+      { value: "65%", label: "Reduction in Support Ticket Resolution Time" },
+      { value: "80%", label: "Faster Customer Onboarding" },
+      { value: "99.9%", label: "Authentication Reliability" },
+    ],
+    image: "iscover.png",
+    gallery: [
+      "is.png",
+      "is2.png",
+      "is3.png",
+      "is4.png",
+      "is5.png",
+      "is6.png",
+      "is7.png",
+      "is8.png",
+      "is9.png",
+      "is10.png",
+      "is11.png",
+      "is12.png",
+      "is13.png",
+      "is14.png",
+      "is15.png",
+      "is16.png",
+    ],
+    codeSnippet: `// Realtime subscription\nsupabase.channel('customers').on('postgres_changes', { event: '*', schema: 'public' }, payload => {\n  console.log('Update received', payload)\n}).subscribe();`,
+    tags: ["React", "Supabase", "ISP", "Realtime", "SaaS"],
+    github: "https://capitelnet.com/",
+    demo: "https://capitelnet.com/",
+  },
+
+  {
     id: 7,
     title: "TurboDash Delivery",
     type: "LOGISTICS & DELIVERY PLATFORM",
@@ -86,7 +139,7 @@ export const PROJECTS: EnhancedProject[] = [
       { value: "82%", label: "Increase in Dispatch Efficiency" },
       { value: "99.9%", label: "Platform Uptime" },
     ],
-    image: "image.png",
+    image: "turbocover.png",
     gallery: ["turbo1.png", "turbo2.png"],
     codeSnippet: `// Order Status Broadcast\nevent(new OrderUpdated($order));`,
     tags: ["Laravel", "Logistics", "Realtime"],
@@ -121,7 +174,7 @@ export const PROJECTS: EnhancedProject[] = [
       { value: "0.8s", label: "Average Page Load" },
       { value: "30%", label: "Increase in Product Inquiries" },
     ],
-    image: "em3.png",
+    image: "emcover.png",
     gallery: ["em1.png", "em2.png", "em4.png", "em5.png", "em6.png", "em3.png"],
     codeSnippet: `// Custom Post Type for Elevators
 function register_elevator_cpt() {
@@ -163,7 +216,7 @@ add_action('init', 'register_elevator_cpt');`,
       { value: "0.1s", label: "Page Load Time" },
       { value: "95+", label: "SEO Score" },
     ],
-    image: "binazamex.png",
+    image: "binazamcover.png",
     gallery: ["binazamex.png", "binazam2.png"],
     codeSnippet: `// Cached SEO meta generation
 cache()->remember("seo_{$page->id}", 3600, function () use ($page) {
@@ -195,8 +248,8 @@ cache()->remember("seo_{$page->id}", 3600, function () use ($page) {
       { value: "2x", label: "Inquiry Growth" },
       { value: "200%", label: "Increase in Enrollments" },
     ],
-    image: "arqam1.png",
-    gallery: ["arqam1.png"],
+    image: "arqcover.png",
+    gallery: ["arqcover.png", "arqam1.png"],
     codeSnippet: `// Fetch latest school announcements
 Announcement::where('is_published', true)
     ->latest()
@@ -236,7 +289,7 @@ Announcement::where('is_published', true)
       { value: "15+", label: "Published Case Studies" },
       { value: "50%", label: "Increase in Client Inquiries" },
     ],
-    image: "im1.png",
+    image: "imcover.png",
     gallery: [
       "im1.png",
       "im2.png",
@@ -285,8 +338,9 @@ endwhile;`,
       { value: "4.9/5", label: "Average Client Rating" },
       { value: "80%", label: "Return Visitors" },
     ],
-    image: "paw1.png",
+    image: "dgcover.png",
     gallery: [
+      "paw1.png",
       "paw2.png",
       "paw4.png",
       "paw3.png",
@@ -307,43 +361,6 @@ add_shortcode('booking_form', 'h2p_booking_form');`,
   },
 
   // -----------------------------parctice----------------------------
-  {
-    id: 13,
-    title: "Practice Corporate Layout",
-    type: "PRACTICE WORDPRESS WEBSITE",
-    category: "WordPress",
-    year: "2025",
-    role: "WordPress Developer",
-    description:
-      "A clean corporate-style WordPress website built as a practice project to refine layout structure and responsiveness.",
-    fullDescription:
-      "This practice WordPress website focuses on building a professional corporate layout with structured sections, clean typography, and responsive design. The project was developed to improve theme customization skills, layout hierarchy, and performance optimization within WordPress. Emphasis was placed on reusable components, clear navigation, and maintaining fast load times across devices.",
-    challenge:
-      "Designing a professional corporate layout while keeping the theme lightweight and responsive.",
-    solution:
-      "Created a custom WordPress layout with optimized assets, responsive grid systems, and minimal plugin usage.",
-    techStackDetailed: [
-      "WordPress",
-      "PHP",
-      "Custom Theme",
-      "HTML",
-      "CSS",
-      "Responsive Design",
-    ],
-    metrics: [
-      { value: "100%", label: "Custom Layout" },
-      { value: "0.5s", label: "Average Load Time" },
-      { value: "Mobile-First", label: "Responsive Design" },
-    ],
-    image: "cp1.png",
-    gallery: ["cp2.png", "cp3.png", "cp4.png", "cp5.png", "cp6.png", "cp7.png"],
-    codeSnippet: `// Basic WordPress Theme Setup
-add_theme_support('post-thumbnails');
-add_theme_support('title-tag');`,
-    tags: ["WordPress", "Practice", "Corporate"],
-    github: "",
-    demo: "https://dodgerblue-jackal-438096.hostingersite.com/",
-  },
 
   {
     id: 14,
@@ -372,8 +389,16 @@ add_theme_support('title-tag');`,
       { value: "Fast", label: "Page Performance" },
       { value: "Clear", label: "Content Flow" },
     ],
-    image: "bl1.png",
-    gallery: ["bl2.png", "bl3.png", "bl4.png", "bl5.png", "bl6.png", "bl7.png"],
+    image: "pr1cover.png",
+    gallery: [
+      "bl1.png",
+      "bl2.png",
+      "bl3.png",
+      "bl4.png",
+      "bl5.png",
+      "bl6.png",
+      "bl7.png",
+    ],
     codeSnippet: `// Register Navigation Menu
 register_nav_menus([
   'primary' => 'Primary Menu'
@@ -409,8 +434,8 @@ register_nav_menus([
       { value: "Responsive", label: "All Devices" },
       { value: "Optimized", label: "Assets" },
     ],
-    image: "pl1.png",
-    gallery: ["pl2.png", "pl3.png", "pl1.png", "pl4.png", "pl5.png"],
+    image: "pr3cover.png",
+    gallery: ["pl1.png", "pl2.png", "pl3.png", "pl1.png", "pl4.png", "pl5.png"],
     codeSnippet: `// Enqueue Theme Styles
 function theme_styles() {
   wp_enqueue_style('main-style', get_stylesheet_uri());
@@ -449,8 +474,8 @@ add_action('wp_enqueue_scripts', 'theme_styles');`,
       { value: "Simple", label: "Design Approach" },
       { value: "Responsive", label: "Layout" },
     ],
-    image: "dm1.png",
-    gallery: ["dm2.png", "dm3.png", "dm1.png", "dm4.png",],
+    image: "pr4cover.png",
+    gallery: ["dm1.png", "dm2.png", "dm3.png", "dm1.png", "dm4.png"],
     codeSnippet: `// Custom Page Template
 /*
 Template Name: Services Page
@@ -461,6 +486,7 @@ get_header();`,
     demo: "https://royalblue-wombat-172150.hostingersite.com/",
   },
 ];
+
 
 export const TESTIMONIALS = [
   {
