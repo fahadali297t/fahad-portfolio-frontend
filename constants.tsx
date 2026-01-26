@@ -59,7 +59,7 @@ export interface EnhancedBlog extends Blog {
 
 export const PROJECTS: EnhancedProject[] = [
   {
-    id: 8,
+    id: 1,
     title: "CapitelNet",
     type: "INTERNET SERVICE PROVIDER PLATFORM",
     category: "React + Supabase",
@@ -107,12 +107,12 @@ export const PROJECTS: EnhancedProject[] = [
     ],
     codeSnippet: `// Realtime subscription\nsupabase.channel('customers').on('postgres_changes', { event: '*', schema: 'public' }, payload => {\n  console.log('Update received', payload)\n}).subscribe();`,
     tags: ["React", "Supabase", "ISP", "Realtime", "SaaS"],
-    github: "https://capitelnet.com/",
-    demo: "https://capitelnet.com/",
+    github: "https://internet-provider-portfolio-kn0x6f385.vercel.app/",
+    demo: "https://internet-provider-portfolio-kn0x6f385.vercel.app/",
   },
 
   {
-    id: 7,
+    id: 2,
     title: "TurboDash Delivery",
     type: "LOGISTICS & DELIVERY PLATFORM",
     category: "Laravel",
@@ -147,7 +147,7 @@ export const PROJECTS: EnhancedProject[] = [
     demo: "https://turbodashdelivery.ae/",
   },
   {
-    id: 11,
+    id: 3,
     title: "Emerald Elevator",
     type: "CORPORATE BUSINESS WEBSITE",
     category: "WordPress",
@@ -186,11 +186,11 @@ function register_elevator_cpt() {
 }
 add_action('init', 'register_elevator_cpt');`,
     tags: ["WordPress", "Corporate", "Products"],
-    github: "",
+    github: "http://emeraldelevator.ae/",
     demo: "http://emeraldelevator.ae/",
   },
   {
-    id: 9,
+    id: 4,
     title: "BinAzamex",
     type: "CORPORATE BUSINESS WEBSITE",
     category: "Laravel",
@@ -228,7 +228,7 @@ cache()->remember("seo_{$page->id}", 3600, function () use ($page) {
     demo: "https://binazamex.com",
   },
   {
-    id: 8,
+    id: 5,
     title: "Arqam Grammar School",
     type: "EDUCATION MANAGEMENT SYSTEM",
     category: "Laravel",
@@ -262,7 +262,7 @@ Announcement::where('is_published', true)
   },
 
   {
-    id: 10,
+    id: 6,
     title: "Imperium Global Media",
     type: "CORPORATE MARKETING WEBSITE",
     category: "WordPress",
@@ -306,12 +306,12 @@ while($services->have_posts()): $services->the_post();
     the_title();
 endwhile;`,
     tags: ["WordPress", "Corporate", "Marketing"],
-    github: "",
+    github: "https://imperiumglobalmedia.com/",
     demo: "https://imperiumglobalmedia.com/",
   },
 
   {
-    id: 12,
+    id: 7,
     title: "Head2Paws Pet Grooming",
     type: "SERVICE BUSINESS WEBSITE",
     category: "WordPress",
@@ -356,14 +356,14 @@ function h2p_booking_form() {
 }
 add_shortcode('booking_form', 'h2p_booking_form');`,
     tags: ["WordPress", "Services", "Pet Grooming"],
-    github: "",
+    github: "https://head2pawspetgrooming.com/",
     demo: "https://head2pawspetgrooming.com/",
   },
 
   // -----------------------------parctice----------------------------
 
   {
-    id: 14,
+    id: 8,
     title: "Practice Business Landing Page",
     type: "PRACTICE WORDPRESS WEBSITE",
     category: "WordPress",
@@ -404,12 +404,12 @@ register_nav_menus([
   'primary' => 'Primary Menu'
 ]);`,
     tags: ["WordPress", "Practice", "Landing Page"],
-    github: "",
+    github: "https://lightyellow-herring-994411.hostingersite.com/",
     demo: "https://lightyellow-herring-994411.hostingersite.com/",
   },
 
   {
-    id: 15,
+    id: 9,
     title: "Practice Portfolio Website",
     type: "PRACTICE WORDPRESS WEBSITE",
     category: "WordPress",
@@ -442,12 +442,12 @@ function theme_styles() {
 }
 add_action('wp_enqueue_scripts', 'theme_styles');`,
     tags: ["WordPress", "Practice", "Portfolio"],
-    github: "",
+    github: "https://cornflowerblue-porcupine-990874.hostingersite.com/",
     demo: "https://cornflowerblue-porcupine-990874.hostingersite.com/",
   },
 
   {
-    id: 16,
+    id: 10,
     title: "Practice Service Website",
     type: "PRACTICE WORDPRESS WEBSITE",
     category: "WordPress",
@@ -482,7 +482,7 @@ Template Name: Services Page
 */
 get_header();`,
     tags: ["WordPress", "Practice", "Services"],
-    github: "",
+    github: "https://royalblue-wombat-172150.hostingersite.com/",
     demo: "https://royalblue-wombat-172150.hostingersite.com/",
   },
 ];

@@ -13,7 +13,7 @@ import {
   Send as Telegram,
   Globe,
 } from "lucide-react";
-import { BsWhatsapp } from "react-icons/bs";
+import { BsGithub, BsWhatsapp } from "react-icons/bs";
 
 const Contact: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -83,9 +83,9 @@ const Contact: React.FC = () => {
         color: "hover:text-blue-500",
       },
       {
-        name: "Telegram",
-        icon: Telegram,
-        url: "#",
+        name: "GitHub",
+        icon: BsGithub,
+        url: "https://github.com/fahadali297t",
         color: "hover:text-cyan-400",
       },
       {
