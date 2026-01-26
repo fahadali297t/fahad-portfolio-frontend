@@ -155,6 +155,16 @@ const ProjectDetail: React.FC = () => {
               </span>
             </div>
           </div>
+          <div className="flex justify-center items-center gap-4">
+            <a
+              href={project.github}
+              target="_blank"
+              className="flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-bold hover:scale-105 transition-transform"
+            >
+              <Globe size={20} />
+              <span>Live Preview</span>
+            </a>
+          </div>
         </div>
       </section>
 
