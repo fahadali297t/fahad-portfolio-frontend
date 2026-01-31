@@ -886,7 +886,7 @@ export const PRICING_PLANS: PricingPlan[] = [
   },
   {
     id: 2,
-    name: "Startup Website / MVP",
+    name: "Business Website / Custom Solution",
     price: "$1500", // Adjusted to match the first card in the image
     period: "One-off",
     description:
@@ -906,7 +906,7 @@ export const PRICING_PLANS: PricingPlan[] = [
   },
   {
     id: 3,
-    name: "Full Brand & Web Launch",
+    name: "Full Brand & Website Launch",
     price: "$2500", // Adjusted to match the second card in the image
     period: "One-off",
     description:
