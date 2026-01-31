@@ -161,7 +161,7 @@ const PricingSection: React.FC = () => {
           <p className="text-slate-300 text-sm font-light">
             Need a custom solution?{" "}
             <Link
-              to="/contact"
+              to="/schedule-call"
               className="text-[#004aad] font-bold hover:underline ml-2"
             >
               Request a bespoke quote →
