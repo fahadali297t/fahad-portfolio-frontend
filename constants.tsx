@@ -59,9 +59,96 @@ export interface EnhancedBlog extends Blog {
 
 export const PROJECTS: EnhancedProject[] = [
   {
+    id: 0,
+    title: "ARC360",
+    type: "SaaS Graphics Management Platform",
+    category: "Laravel",
+    year: "2026",
+    role: "Full-Stack Developer",
+    description:
+      "A complete graphics workflow management system built to organize design requests, streamline team collaboration, and ensure on-time delivery through structured task tracking.",
+    fullDescription:
+      "ARC360 is a SaaS-based Graphics Management System designed for businesses that require regular creative work without the chaos of emails, missed deadlines, or unclear responsibilities. The platform structures the entire workflow: users submit design requests, team leads review and assign tasks to designers, deadlines are automatically tracked with built-in timers, and completed work is delivered within the system.The platform features role-based dashboards for Users, Team Leads, and Designers, ensuring clarity in responsibilities and accountability at every stage. With real-time task tracking, subscription-based access, revision management, and centralized file storage, ARC360 transforms creative operations into an organized, transparent, and stress-free workflow system.The goal was simple: make creative work organized, fast, and fully trackable — turning design operations into a scalable SaaS solution.",
+    challenge:
+      "Building a structured creative workflow system that eliminates communication gaps while maintaining accountability, deadline tracking, and real-time task visibility across multiple roles.",
+    solution:
+      "Developed a role-based architecture with Laravel APIs and a dynamic React dashboard. Implemented deadline timers, structured task assignment flows, subscription logic, and real-time tracking to ensure seamless collaboration between users, team leads, and designers.",
+    techStackDetailed: [
+      "Laravel",
+      "MySQL",
+      "REST API",
+      "Tailwind CSS",
+      "Role-Based Authentication",
+      "Subscription Logic",
+      "Stripe",
+      "VPS Deployment",
+    ],
+    metrics: [
+      { value: "60%", label: "Improved Task Delivery Efficiency" },
+      { value: "75%", label: "Reduction in Communication Confusion" },
+      { value: "100%", label: "Structured Role-Based Workflow" },
+    ],
+    image: "arc_cover.png",
+    gallery: [
+      "arc1.png",
+      "arc2.png",
+      "arc3.png",
+      "arc4.png",
+      "arc5.png",
+      "arc6.png",
+    ],
+    codeSnippet: `// Example: Assign task with deadline\npublic function assignTask(Request $request)\n{\n  $task = Task::create([\n    'title' => $request->title,\n    'assigned_to' => $request->designer_id,\n    'deadline' => now()->addHours($request->hours)\n  ]);\n\n  return response()->json($task);\n}`,
+    tags: [
+      "SaaS",
+      "Workflow System",
+      "Dashboard",
+      "Laravel",
+      "React",
+      "Startup Build",
+    ],
+    github: "https://your-github-link.com",
+    demo: "https://your-live-demo-link.com",
+  },
+
+  {
     id: 1,
+    title: "TurboDash Delivery",
+    type: "LOGISTICS & DELIVERY PLATFORM",
+    category: "Laravel",
+    year: "2024",
+    role: "Full-Stack Architect",
+    description:
+      "A high-performance delivery platform designed to streamline last-mile logistics and real-time order tracking.",
+    fullDescription:
+      "TurboDash Delivery is a scalable logistics ecosystem built to power high-volume delivery operations across the UAE. The platform centralizes order management, rider coordination, and real-time tracking into a single operational interface, enabling logistics teams to move faster with greater precision. With automated dispatch workflows and live location intelligence, TurboDash reduces delivery latency while improving transparency across every stage of the delivery lifecycle. The system is designed to handle rapid growth without compromising performance, reliability, or control.",
+    challenge:
+      "Handling real-time order updates and rider location tracking without degrading system performance.",
+    solution:
+      "Implemented event-driven architecture with Redis and WebSockets to synchronize delivery states in real time.",
+    techStackDetailed: [
+      "Laravel",
+      "Redis",
+      "MySQL",
+      "WebSockets",
+      "Docker",
+      "AWS",
+    ],
+    metrics: [
+      { value: "70ms", label: "Realtime Update Latency" },
+      { value: "82%", label: "Increase in Dispatch Efficiency" },
+      { value: "99.9%", label: "Platform Uptime" },
+    ],
+    image: "turbocover.png",
+    gallery: ["turbo1.png", "turbo2.png"],
+    codeSnippet: `// Order Status Broadcast\nevent(new OrderUpdated($order));`,
+    tags: ["Laravel", "Logistics", "Realtime"],
+    github: "https://turbodashdelivery.ae/",
+    demo: "https://turbodashdelivery.ae/",
+  },
+  {
+    id: 2,
     title: "CapitelNet",
-    type: "INTERNET SERVICE PROVIDER PLATFORM",
+    type: "Business Website",
     category: "React + Supabase",
     year: "2025",
     role: "Full-Stack Developer",
@@ -110,46 +197,48 @@ export const PROJECTS: EnhancedProject[] = [
     github: "https://internet-provider-portfolio-kn0x6f385.vercel.app/",
     demo: "https://internet-provider-portfolio-kn0x6f385.vercel.app/",
   },
-
   {
-    id: 2,
-    title: "TurboDash Delivery",
+    id: 3,
+    title: "BinAzamex",
     type: "LOGISTICS & DELIVERY PLATFORM",
     category: "Laravel",
     year: "2024",
-    role: "Full-Stack Architect",
+    role: "Web Engineer",
     description:
-      "A high-performance delivery platform designed to streamline last-mile logistics and real-time order tracking.",
+      "A professional corporate website designed to establish credibility and showcase business services.",
     fullDescription:
-      "TurboDash Delivery is a scalable logistics ecosystem built to power high-volume delivery operations across the UAE. The platform centralizes order management, rider coordination, and real-time tracking into a single operational interface, enabling logistics teams to move faster with greater precision. With automated dispatch workflows and live location intelligence, TurboDash reduces delivery latency while improving transparency across every stage of the delivery lifecycle. The system is designed to handle rapid growth without compromising performance, reliability, or control.",
+      "Bin Azamex sought a clean, authoritative digital presence that could effectively communicate its services, values, and professional standing. The project emphasized structured content, refined typography, and a disciplined layout system to guide users through key information with confidence.Performance optimization and SEO best practices were embedded at the architectural level, ensuring fast load times, improved search visibility, and a future-ready platform aligned with the company’s growth objectives.",
     challenge:
-      "Handling real-time order updates and rider location tracking without degrading system performance.",
+      "Delivering a premium visual experience without compromising page speed or SEO standards.",
     solution:
-      "Implemented event-driven architecture with Redis and WebSockets to synchronize delivery states in real time.",
+      "Applied performance optimization techniques and implemented structured metadata across key pages.",
     techStackDetailed: [
       "Laravel",
-      "Redis",
+      "Tailwind CSS",
       "MySQL",
-      "WebSockets",
-      "Docker",
-      "AWS",
+      "SEO Optimization",
+      "Vite",
     ],
     metrics: [
-      { value: "70ms", label: "Realtime Update Latency" },
-      { value: "82%", label: "Increase in Dispatch Efficiency" },
-      { value: "99.9%", label: "Platform Uptime" },
+      { value: "10x", label: "Organic Traffic" },
+      { value: "0.1s", label: "Page Load Time" },
+      { value: "95+", label: "SEO Score" },
     ],
-    image: "turbocover.png",
-    gallery: ["turbo1.png", "turbo2.png"],
-    codeSnippet: `// Order Status Broadcast\nevent(new OrderUpdated($order));`,
-    tags: ["Laravel", "Logistics", "Realtime"],
-    github: "https://turbodashdelivery.ae/",
-    demo: "https://turbodashdelivery.ae/",
+    image: "binazamcover.png",
+    gallery: ["binazamex.png", "binazam2.png"],
+    codeSnippet: `// Cached SEO meta generation
+cache()->remember("seo_{$page->id}", 3600, function () use ($page) {
+    SEOTools::setTitle($page->title);
+});
+`,
+    tags: ["Corporate", "SEO", "Laravel"],
+    github: "https://binazamex.com",
+    demo: "https://binazamex.com",
   },
   {
-    id: 3,
+    id: 4,
     title: "Emerald Elevator",
-    type: "CORPORATE BUSINESS WEBSITE",
+    type: "BUSINESS WEBSITE",
     category: "WordPress",
     year: "2025",
     role: "WordPress Developer",
@@ -188,44 +277,6 @@ add_action('init', 'register_elevator_cpt');`,
     tags: ["WordPress", "Corporate", "Products"],
     github: "http://emeraldelevator.ae/",
     demo: "http://emeraldelevator.ae/",
-  },
-  {
-    id: 4,
-    title: "BinAzamex",
-    type: "CORPORATE BUSINESS WEBSITE",
-    category: "Laravel",
-    year: "2024",
-    role: "Web Engineer",
-    description:
-      "A professional corporate website designed to establish credibility and showcase business services.",
-    fullDescription:
-      "Bin Azamex sought a clean, authoritative digital presence that could effectively communicate its services, values, and professional standing. The project emphasized structured content, refined typography, and a disciplined layout system to guide users through key information with confidence.Performance optimization and SEO best practices were embedded at the architectural level, ensuring fast load times, improved search visibility, and a future-ready platform aligned with the company’s growth objectives.",
-    challenge:
-      "Delivering a premium visual experience without compromising page speed or SEO standards.",
-    solution:
-      "Applied performance optimization techniques and implemented structured metadata across key pages.",
-    techStackDetailed: [
-      "Laravel",
-      "Tailwind CSS",
-      "MySQL",
-      "SEO Optimization",
-      "Vite",
-    ],
-    metrics: [
-      { value: "10x", label: "Organic Traffic" },
-      { value: "0.1s", label: "Page Load Time" },
-      { value: "95+", label: "SEO Score" },
-    ],
-    image: "binazamcover.png",
-    gallery: ["binazamex.png", "binazam2.png"],
-    codeSnippet: `// Cached SEO meta generation
-cache()->remember("seo_{$page->id}", 3600, function () use ($page) {
-    SEOTools::setTitle($page->title);
-});
-`,
-    tags: ["Corporate", "SEO", "Laravel"],
-    github: "https://binazamex.com",
-    demo: "https://binazamex.com",
   },
   {
     id: 5,
@@ -487,7 +538,6 @@ get_header();`,
   },
 ];
 
-
 export const TESTIMONIALS = [
   {
     id: 1,
@@ -514,7 +564,6 @@ export const TESTIMONIALS = [
     avatar: "./mwaqas.png",
   },
 ];
-
 
 export const SERVICES: EnhancedService[] = [
   {
@@ -862,7 +911,6 @@ export const BLOG_POSTS: EnhancedBlog[] = [
     quote: "Shipping code should be a non-event, not a panic attack.",
   },
 ];
-
 
 export const PRICING_PLANS: PricingPlan[] = [
   {
