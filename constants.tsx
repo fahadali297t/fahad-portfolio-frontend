@@ -59,7 +59,153 @@ export interface EnhancedBlog extends Blog {
 
 export const PROJECTS: EnhancedProject[] = [
   {
+    id: 1,
+    title: "Larosa Medical Center",
+    type: "Clinic Management System",
+    category: "Laravel",
+    year: "2026",
+    role: "Full-Stack Developer",
+
+    description:
+      "A complete clinic management system designed to handle patient records, appointments, billing, and staff workflows in a centralized and efficient way.",
+
+    fullDescription:
+      "Larosa Medical Center is a comprehensive clinic management system built to digitize and streamline daily operations of a medical facility. The platform enables efficient handling of patient records, appointment scheduling, doctor management, and billing — all within a single system.\n\nThe system features role-based dashboards for Admins, Doctors, Receptionists, and Patients, ensuring each user has access to relevant tools and data. From booking appointments to managing prescriptions and maintaining patient history, every process is structured and trackable.\n\nWith real-time updates, secure data handling, and centralized record management, Larosa Medical Center eliminates manual paperwork, reduces errors, and improves overall clinic efficiency while enhancing patient experience.",
+
+    challenge:
+      "Managing patient data, appointments, and billing manually or across disconnected systems leads to inefficiencies, data loss risks, and poor patient experience.",
+
+    solution:
+      "Developed a Laravel-based clinic management system with role-based access, appointment scheduling, patient record management, billing modules, and real-time data updates. The system ensures secure, organized, and efficient clinic operations.",
+
+    techStackDetailed: [
+      "Laravel",
+      "MySQL",
+      "REST API",
+      "Tailwind CSS",
+      "Role-Based Authentication",
+      "Appointment Scheduling System",
+      "Billing & Invoicing",
+      "VPS Deployment",
+    ],
+
+    metrics: [
+      { value: "70%", label: "Reduced Manual Workload" },
+      { value: "60%", label: "Faster Appointment Handling" },
+      { value: "100%", label: "Digitized Patient Records" },
+    ],
+
+    image: "larosa_cover.png",
+
+    gallery: [
+      "larosa1.png",
+      "larosa2.png",
+      "larosa3.png",
+      "larosa4.png",
+      "larosa5.png",
+    ],
+
+    codeSnippet: `// Example: Book Appointment
+public function bookAppointment(Request $request)
+{
+  $appointment = Appointment::create([
+    'patient_id' => $request->patient_id,
+    'doctor_id' => $request->doctor_id,
+    'appointment_date' => $request->date,
+    'status' => 'scheduled'
+  ]);
+
+  return response()->json($appointment);
+}`,
+
+    tags: [
+      "Clinic System",
+      "Healthcare",
+      "Patient Management",
+      "Laravel",
+      "Dashboard",
+      "Medical Software",
+    ],
+
+    github: "https://larosaclinic.ae/",
+    demo: "https://larosaclinic.ae/",
+  },
+  {
     id: 0,
+    title: "Arcvision",
+    type: "Interior & Exterior Design Management Platform",
+    category: "Laravel",
+    year: "2026",
+    role: "Full-Stack Developer",
+    description:
+      "A complete design workflow management system built for an interior and exterior design agency to handle client projects, streamline collaboration, and ensure timely delivery.",
+
+    fullDescription:
+      "Arcvision is a modern design management platform developed for an interior and exterior design agency to efficiently manage client projects from concept to completion. The system replaces scattered communication with a structured workflow where clients can submit design requirements, project managers assign tasks, and designers execute them with clear timelines.\n\nThe platform includes role-based dashboards for Clients, Admins, and Designers, enabling transparency and accountability throughout the project lifecycle. Features like real-time task tracking, project timelines, revision handling, and centralized asset management ensure smooth coordination between all stakeholders.\n\nArcvision simplifies complex design operations by turning them into an organized, trackable, and scalable system tailored specifically for architectural and design workflows.",
+
+    challenge:
+      "Managing multiple interior and exterior design projects while avoiding communication gaps, missed deadlines, and lack of visibility across clients, managers, and designers.",
+
+    solution:
+      "Built a Laravel-based system with role-based access control, structured project workflows, deadline tracking, and centralized communication. Implemented task assignment flows, revision cycles, and real-time status updates to ensure efficient collaboration and project delivery.",
+
+    techStackDetailed: [
+      "Laravel",
+      "MySQL",
+      "REST API",
+      "Tailwind CSS",
+      "Role-Based Authentication",
+      "Project Management System",
+      "File Storage",
+      "VPS Deployment",
+    ],
+
+    metrics: [
+      { value: "65%", label: "Faster Project Completion" },
+      { value: "70%", label: "Improved Client Communication" },
+      { value: "100%", label: "Centralized Project Workflow" },
+    ],
+
+    image: "arcvision_cover.png",
+
+    gallery: [
+      "arcvision1.png",
+      "arcvision2.png",
+      "arcvision3.png",
+      "arcvision4.png",
+      "arcvision5.png",
+      "arcvision6.png",
+      "arcvision7.png",
+      "arcvision8.png",
+      "arcvision9.png",
+    ],
+
+    codeSnippet: `// Example: Assign project task with deadline
+public function assignTask(Request $request)
+{
+  $task = Task::create([
+    'title' => $request->title,
+    'assigned_to' => $request->designer_id,
+    'deadline' => now()->addDays($request->days)
+  ]);
+
+  return response()->json($task);
+}`,
+
+    tags: [
+      "Interior Design",
+      "Exterior Design",
+      "Project Management",
+      "Laravel",
+      "Dashboard",
+      "Agency System",
+    ],
+
+    github: "https://mintcream-rail-238590.hostingersite.com/",
+    demo: "https://mintcream-rail-238590.hostingersite.com/",
+  },
+  {
+    id: 1,
     title: "ARC360",
     type: "SaaS Graphics Management Platform",
     category: "Laravel",
@@ -106,12 +252,12 @@ export const PROJECTS: EnhancedProject[] = [
       "React",
       "Startup Build",
     ],
-    github: "https://your-github-link.com",
-    demo: "https://your-live-demo-link.com",
+    github: "http://arc360.io/",
+    demo: "http://arc360.io/",
   },
 
   {
-    id: 1,
+    id: 2,
     title: "TurboDash Delivery",
     type: "LOGISTICS & DELIVERY PLATFORM",
     category: "Laravel",
@@ -146,7 +292,7 @@ export const PROJECTS: EnhancedProject[] = [
     demo: "https://turbodashdelivery.ae/",
   },
   {
-    id: 2,
+    id: 3,
     title: "CapitelNet",
     type: "Business Website",
     category: "React + Supabase",
@@ -198,7 +344,7 @@ export const PROJECTS: EnhancedProject[] = [
     demo: "https://internet-provider-portfolio-kn0x6f385.vercel.app/",
   },
   {
-    id: 3,
+    id: 4,
     title: "BinAzamex",
     type: "LOGISTICS & DELIVERY PLATFORM",
     category: "Laravel",
@@ -236,7 +382,7 @@ cache()->remember("seo_{$page->id}", 3600, function () use ($page) {
     demo: "https://binazamex.com",
   },
   {
-    id: 4,
+    id: 5,
     title: "Emerald Elevator",
     type: "BUSINESS WEBSITE",
     category: "WordPress",
@@ -279,7 +425,7 @@ add_action('init', 'register_elevator_cpt');`,
     demo: "http://emeraldelevator.ae/",
   },
   {
-    id: 5,
+    id: 6,
     title: "Arqam Grammar School",
     type: "EDUCATION MANAGEMENT SYSTEM",
     category: "Laravel",
@@ -313,7 +459,7 @@ Announcement::where('is_published', true)
   },
 
   {
-    id: 6,
+    id: 7,
     title: "Imperium Global Media",
     type: "CORPORATE MARKETING WEBSITE",
     category: "WordPress",
@@ -362,7 +508,7 @@ endwhile;`,
   },
 
   {
-    id: 7,
+    id: 8,
     title: "Head2Paws Pet Grooming",
     type: "SERVICE BUSINESS WEBSITE",
     category: "WordPress",
@@ -414,7 +560,7 @@ add_shortcode('booking_form', 'h2p_booking_form');`,
   // -----------------------------parctice----------------------------
 
   {
-    id: 8,
+    id: 9,
     title: "Practice Business Landing Page",
     type: "PRACTICE WORDPRESS WEBSITE",
     category: "WordPress",
@@ -460,7 +606,7 @@ register_nav_menus([
   },
 
   {
-    id: 9,
+    id: 10,
     title: "Practice Portfolio Website",
     type: "PRACTICE WORDPRESS WEBSITE",
     category: "WordPress",
@@ -498,7 +644,7 @@ add_action('wp_enqueue_scripts', 'theme_styles');`,
   },
 
   {
-    id: 10,
+    id: 11,
     title: "Practice Service Website",
     type: "PRACTICE WORDPRESS WEBSITE",
     category: "WordPress",
