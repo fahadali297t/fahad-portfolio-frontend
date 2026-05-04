@@ -155,10 +155,10 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({
               <IconComponent size={40} strokeWidth={1.5} />
             </div>
             {/* <div className="text-right">
-              <span className="block text-[10px] font-poppins text-slate-400 font-bold uppercase tracking-[0.3em] group-hover:text-white/40 transition-colors">
+              <span className="block text-[10px] font-poppins text-white font-bold uppercase tracking-[0.3em] group-hover:text-white/40 transition-colors">
                 Module // 0{index + 1}
               </span>
-              <span className="block text-[8px] font-poppins text-slate-400 uppercase tracking-widest mt-1">
+              <span className="block text-[8px] font-poppins text-white uppercase tracking-widest mt-1">
                 Status: Operational
               </span>
             </div> */}
@@ -168,11 +168,11 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({
           <div className="space-y-6">
             <h3 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-[0.85] group-hover:text-[#004aad] transition-colors duration-500">
               {service.title.split(" ")[0]} <br />
-              <span className="text-2xl md:text-3xl font-serif italic font-light text-slate-400 group-hover:text-white transition-colors duration-500 lowercase">
+              <span className="text-2xl md:text-3xl font-serif italic font-light text-white group-hover:text-white transition-colors duration-500 lowercase">
                 {service.title.split(" ").slice(1).join(" ")}
               </span>
             </h3>
-            <p className="text-slate-400 text-base leading-relaxed font-light group-hover:text-slate-300 transition-colors duration-500 max-w-sm">
+            <p className="text-white text-base leading-relaxed font-light group-hover:text-slate-300 transition-colors duration-500 max-w-sm">
               {service.description}
             </p>
           </div>
@@ -197,7 +197,7 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({
                 .map((tech: string, i: number) => (
                   <span
                     key={i}
-                    className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest bg-white/5 px-2 py-1 rounded border border-white/5 group-hover:text-[#004aad] group-hover:border-[#004aad]/10 transition-all"
+                    className="text-[10px] font-poppins text-white uppercase tracking-widest bg-white/5 px-2 py-1 rounded border border-white/5 group-hover:text-[#004aad] group-hover:border-[#004aad]/10 transition-all"
                   >
                     {tech}
                   </span>
@@ -205,7 +205,7 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({
             </div>
             <div className="relative group/btn">
               <div className="absolute inset-0 bg-[#004aad] blur-xl opacity-0 group-hover:opacity-30 transition-opacity"></div>
-              <div className="relative w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 group-hover:bg-[#004aad] group-hover:text-black group-hover:rotate-45 transition-all duration-500">
+              <div className="relative w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-[#004aad] group-hover:text-black group-hover:rotate-45 transition-all duration-500">
                 <ArrowUpRight size={24} strokeWidth={2.5} />
               </div>
             </div>
@@ -267,12 +267,12 @@ const Services: React.FC = () => {
             </div>
             <h1 className="header-reveal text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[8vw] font-black tracking-tighter uppercase leading-[0.85] mix-blend-difference">
               Professional <br />
-              <span className="text-slate-400 font-serif italic font-light lowercase">
+              <span className="text-white font-serif italic font-light lowercase">
                 Services
               </span>
               {/* <span className="ml-1.5 sm:ml-2 md:ml-4">GUIDES</span> */}
             </h1>
-            <p className="header-reveal text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-slate-400 font-light leading-relaxed max-w-3xl">
+            <p className="header-reveal text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white font-light leading-relaxed max-w-3xl">
               From WordPress websites to fully custom web applications, I
               deliver secure, high-quality solutions tailored to real business
               needs.
@@ -307,7 +307,7 @@ const Services: React.FC = () => {
                 Business Growth
               </span>
             </h2>
-            <p className="text-xl md:text-2xl text-slate-400 font-light max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-white font-light max-w-3xl mx-auto leading-relaxed">
               I don’t just build websites — I create digital solutions that help
               businesses scale with confidence.
             </p>
@@ -362,7 +362,7 @@ const Services: React.FC = () => {
             {[...Array(10)].map((_, i) => (
               <div
                 key={i}
-                className="flex items-center gap-8 text-[10px] font-poppins text-slate-400 uppercase tracking-[0.5em] font-bold"
+                className="flex items-center gap-8 text-[10px] font-poppins text-white uppercase tracking-[0.5em] font-bold"
               >
                 <span>Scalable Infrastructure</span>
                 <div className="w-2 h-2 rounded-full bg-[#004aad]"></div>

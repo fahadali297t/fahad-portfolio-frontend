@@ -116,7 +116,7 @@ const Navbar: React.FC = () => {
                         className={`block px-5 py-3 text-xs font-semibold hover:bg-[#004aad]/10 hover:text-[#004aad] transition-all ${
                           isActive(link.path)
                             ? "text-[#004aad] bg-[#004aad]/5"
-                            : "text-slate-400"
+                            : "text-white"
                         }`}
                       >
                         {link.name}
@@ -158,7 +158,7 @@ const Navbar: React.FC = () => {
                   className={`flex items-center justify-between px-8 py-4 rounded-2xl text-[12px] font-bold uppercase tracking-widest transition-all ${
                     isActive(link.path)
                       ? "bg-[#004aad]/10 text-[#004aad]"
-                      : "text-slate-400 hover:bg-white/5"
+                      : "text-white hover:bg-white/5"
                   }`}
                 >
                   {link.name}

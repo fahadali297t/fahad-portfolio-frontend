@@ -99,7 +99,7 @@ const ServiceDetail: React.FC = () => {
           </span>
           <h1 className="hero-title-part text-6xl md:text-[9rem] font-black tracking-tighter uppercase leading-[0.8] mb-12">
             {service.title.split(" ")[0]} <br />
-            <span className="text-slate-400 font-serif italic font-light lowercase">
+            <span className="text-white font-serif italic font-light lowercase">
               {service.title.split(" ").slice(1).join(" ")}
             </span>
           </h1>
@@ -107,7 +107,7 @@ const ServiceDetail: React.FC = () => {
             {service.relatedTech.map((tech, i) => (
               <span
                 key={i}
-                className="px-6 py-2 rounded-full border border-white/10 bg-white/5 text-xs font-poppins uppercase tracking-widest text-slate-400"
+                className="px-6 py-2 rounded-full border border-white/10 bg-white/5 text-xs font-poppins uppercase tracking-widest text-white"
               >
                 {tech}
               </span>
@@ -130,7 +130,7 @@ const ServiceDetail: React.FC = () => {
               </h2>
               <div className="h-px w-24 bg-[#004aad]"></div>
             </div>
-            <p className="text-xl md:text-3xl text-slate-400 font-light leading-relaxed">
+            <p className="text-xl md:text-3xl text-white font-light leading-relaxed">
               {service.fullDescription}
             </p>
           </div>
@@ -175,7 +175,7 @@ const ServiceDetail: React.FC = () => {
                 </span>
               </h2>
             </div>
-            <p className="text-lg text-slate-400 font-light leading-relaxed">
+            <p className="text-lg text-white font-light leading-relaxed">
               Building a website or system isn’t just about writing code — it’s
               about results. I follow a structured process to ensure every
               feature drives real value for your business.
@@ -185,7 +185,7 @@ const ServiceDetail: React.FC = () => {
                 <span className="text-3xl font-black text-[#004aad] block mb-2">
                   100%
                 </span>
-                <p className="text-[10px] font-poppins uppercase tracking-[0.2em] text-slate-400">
+                <p className="text-[10px] font-poppins uppercase tracking-[0.2em] text-white">
                   Full Commitment to Your Project Success
                 </p>
               </div>
@@ -198,14 +198,14 @@ const ServiceDetail: React.FC = () => {
                 key={i}
                 className="reveal-on-scroll group p-10 bg-white/5 rounded-[2.5rem] border border-white/10 hover:border-[#004aad]/40 transition-all flex flex-col md:flex-row gap-8 items-start"
               >
-                <span className="text-4xl font-black text-slate-400 group-hover:text-[#004aad] transition-colors">
+                <span className="text-4xl font-black text-white group-hover:text-[#004aad] transition-colors">
                   {step.step}
                 </span>
                 <div className="space-y-2">
                   <h4 className="text-2xl font-bold uppercase tracking-tight">
                     {step.title}
                   </h4>
-                  <p className="text-slate-400 group-hover:text-slate-400 transition-colors leading-relaxed">
+                  <p className="text-white group-hover:text-white transition-colors leading-relaxed">
                     {step.desc}
                   </p>
                 </div>
@@ -230,7 +230,7 @@ const ServiceDetail: React.FC = () => {
                 {service.title.toLowerCase()}?
               </span>
             </h2>
-            <p className="text-xl md:text-2xl text-slate-400 font-light max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-white font-light max-w-2xl mx-auto leading-relaxed">
               Let’s create a website or digital solution that grows your
               business. I’m currently accepting new projects and would love to
               help bring your vision to life.
@@ -256,7 +256,7 @@ const ServiceDetail: React.FC = () => {
             </button>
           </div>
 
-          <div className="pt-12 flex justify-center items-center gap-8 text-[10px] font-poppins uppercase tracking-[0.4em] text-slate-400">
+          <div className="pt-12 flex justify-center items-center gap-8 text-[10px] font-poppins uppercase tracking-[0.4em] text-white">
             <span className="h-px w-12 bg-white/10"></span>
             <span>Trusted by Businesses Worldwide</span>
             <span className="h-px w-12 bg-white/10"></span>

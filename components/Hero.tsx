@@ -11,6 +11,8 @@ import {
   Cpu,
   Zap,
 } from "lucide-react";
+import { SiLaravel, SiReact, SiPhp, SiDocker } from "react-icons/si";
+
 
 const Hero: React.FC = () => {
   const devImageRef = useRef<HTMLDivElement>(null);
@@ -133,15 +135,15 @@ const Hero: React.FC = () => {
   };
 
   const popperIcons = [
-    { Icon: Layers, color: "text-[#004aad]", label: "Laravel" },
+    { Icon: SiLaravel, color: "text-red-800", label: "Laravel" },
     { Icon: Database, color: "text-blue-500", label: "Postgres" },
-    { Icon: Box, color: "text-red-500", label: "Redis" },
-    { Icon: Cpu, color: "text-emerald-500", label: "Docker" },
-    { Icon: Zap, color: "text-yellow-500", label: "Octane" },
+    { Icon: SiDocker, color: "text-Blue-500", label: "Docker" },
+    { Icon: SiPhp, color: "text-emerald-500", label: "PHP" },
+    { Icon: SiReact, color: "text-blue-500", label: "React" },
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 py-24 lg:py-0 overflow-hidden">
+    <section className="relative min-h-screen  flex items-center justify-center px-6 py-24 lg:py-0 overflow-hidden">
       {/* Floating Background Technical Symbols */}
       <div className="absolute top-[20%] left-[8%] floating-asset opacity-5 dark:opacity-10 pointer-events-none">
         <Terminal size={140} strokeWidth={0.5} />
@@ -154,7 +156,7 @@ const Hero: React.FC = () => {
         {/* Left Content */}
         <div className="lg:col-span-7 space-y-12">
           <div className="hero-fade-in">
-            <span className="flex items-center gap-4 text-slate-400 dark:text-slate-400 font-poppins text-[12px] sm:text-xs uppercase tracking-[0.3em] font-black">
+            <span className="flex items-center gap-4 text-white dark:text-white font-poppins text-[12px] sm:text-xs uppercase tracking-[0.3em] font-black">
               <div className="w-12 h-px bg-[#004aad]"></div>
               Hi there , I am
             </span>
@@ -163,19 +165,19 @@ const Hero: React.FC = () => {
           <div className="space-y-4 perspective-1000">
             <h1
               ref={titleRef}
-              className="text-7xl md:text-9xl  tracking-tighter leading-[0.8] text-slate-400 text-white uppercase overflow-hidden"
+              className="text-7xl md:text-9xl  tracking-tighter leading-[0.8] text-white text-white uppercase overflow-hidden"
             >
               {splitText("Fahad")}
             </h1>
             <h1 className="text-7xl md:text-9xl font-serif italic text-[#004aad] leading-[0.8] tracking-tight hero-fade-in relative">
               Ali
-              <span className="absolute -top-4 -right-8 text-[10px] font-poppins font-bold text-slate-400 uppercase tracking-widest opacity-40">
+              {/* <span className="absolute -top-4 -right-8 text-[10px] font-poppins font-bold text-white uppercase tracking-widest opacity-40">
                 v.23.0.0
-              </span>
+              </span> */}
             </h1>
           </div>
 
-          <p className="hero-fade-in text-slate-400  text-lg md:text-2xl max-w-xl leading-relaxed font-light">
+          <p className="hero-fade-in text-white  text-lg md:text-2xl max-w-xl leading-relaxed font-light">
             I help businesses turn{" "}
             <span className="text-white dark:text-white font-medium italic underline decoration-[#004aad]/40">
               complex ideas
@@ -190,7 +192,7 @@ const Hero: React.FC = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-4 w-4 bg-[#004aad]"></span>
               </div>
-              <span className="text-xs font-poppins font-black tracking-[0.1em] text-slate-400 dark:text-slate-400 uppercase">
+              <span className="text-xs font-poppins font-black tracking-[0.1em] text-white dark:text-white uppercase">
                 Handling High-Traffic Websites with Confidence
               </span>
             </div>
@@ -241,7 +243,6 @@ const Hero: React.FC = () => {
 
         {/* Right Content */}
         <div className="lg:col-span-5 flex justify-center lg:justify-end perspective-2000 relative pt-20 lg:pt-0">
-          {/* Tech Popper Icons - Moved to z-20 to ensure visibility and prevent clipping */}
           <div className="absolute inset-0 z-20 pointer-events-none flex items-center justify-center">
             {popperIcons.map((item, i) => {
               const Icon = item.Icon;
@@ -292,6 +293,13 @@ const Hero: React.FC = () => {
             <div className="absolute -bottom-6 -left-6 w-32 h-32 border-b-2 border-l-2 border-[#004aad]/40 rounded-bl-[4rem] pointer-events-none"></div>
           </div>
         </div>
+        {/* <div className="lg:col-span-5 flex justify-center lg:justify-end perspective-2000 relative pt-20 lg:pt-0">
+          <img
+            src="profile.png"
+            alt="Professional Backend Developer"
+            className="w-full h-full object-cover rounded-[20px] transition-all duration-1000"
+          />
+        </div> */}
       </div>
 
       {/* Scroll Indicator */}

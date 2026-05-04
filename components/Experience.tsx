@@ -169,7 +169,7 @@ const TimelineNode = ({ item, index, isWork }) => {
               </div>
               {/* <div className="flex items-center gap-1 sm:gap-1.5">
                 <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-[#004aad] animate-pulse"></div>
-                <span className="text-[7px] sm:text-[9px] md:text-[10px] font-poppins text-slate-400 uppercase tracking-wider sm:tracking-widest font-bold">
+                <span className="text-[7px] sm:text-[9px] md:text-[10px] font-poppins text-white uppercase tracking-wider sm:tracking-widest font-bold">
                   v2.4
                 </span>
               </div> */}
@@ -179,8 +179,8 @@ const TimelineNode = ({ item, index, isWork }) => {
               <h3 className="text-xl sm:text-2xl md:text-4xl font-black text-white tracking-tighter uppercase leading-tight sm:leading-tight md:leading-[0.95] group-hover:text-[#004aad] transition-colors">
                 {item.title}
               </h3>
-              <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3 text-slate-400 font-serif italic">
-                <Building2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-slate-400 flex-shrink-0" />
+              <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3 text-white font-serif italic">
+                <Building2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white flex-shrink-0" />
                 <span className="group-hover:text-slate-200 transition-colors text-sm sm:text-lg md:text-2xl">
                   {item.company}
                 </span>
@@ -189,7 +189,7 @@ const TimelineNode = ({ item, index, isWork }) => {
 
             <div className="h-px w-full bg-gradient-to-r from-[#004aad]/10 to-transparent"></div>
 
-            <p className="text-slate-400 text-xs sm:text-base md:text-lg leading-relaxed font-light group-hover:text-slate-300 transition-colors">
+            <p className="text-white text-xs sm:text-base md:text-lg leading-relaxed font-light group-hover:text-slate-300 transition-colors">
               {item.description}
             </p>
 
@@ -200,7 +200,7 @@ const TimelineNode = ({ item, index, isWork }) => {
               ).map((tag) => (
                 <span
                   key={tag}
-                  className="text-[6px] sm:text-[8px] md:text-[9px] font-poppins uppercase tracking-wider sm:tracking-widest text-slate-400 border border-white/5 px-1.5 sm:px-2 py-0.5 rounded"
+                  className="text-[6px] sm:text-[8px] md:text-[9px] font-poppins uppercase tracking-wider sm:tracking-widest text-white border border-white/5 px-1.5 sm:px-2 py-0.5 rounded"
                 >
                   {tag}
                 </span>
@@ -285,7 +285,7 @@ const Experience = () => {
             My Professional Journey
           </h2>
 
-          <p className="text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl">
+          <p className="text-base sm:text-lg md:text-xl text-white max-w-2xl">
             A clear overview of my professional growth, key projects, and
             technical milestones over time.
           </p>
@@ -358,7 +358,7 @@ const Experience = () => {
             </h3>
           </div>
           <div className="pt-5 sm:pt-10 md:pt-12">
-            <button className="inline-flex items-center gap-2 sm:gap-3 md:gap-4 px-5 sm:px-10 md:px-12 py-3 sm:py-5 md:py-6 border border-white/10 rounded-full hover:bg-white/5 transition-all text-[9px] sm:text-xs md:text-sm font-bold uppercase tracking-wider sm:tracking-widest text-slate-400 hover:text-white">
+            <button className="inline-flex items-center gap-2 sm:gap-3 md:gap-4 px-5 sm:px-10 md:px-12 py-3 sm:py-5 md:py-6 border border-white/10 rounded-full hover:bg-white/5 transition-all text-[9px] sm:text-xs md:text-sm font-bold uppercase tracking-wider sm:tracking-widest text-white hover:text-white">
               <span>Let’s Turn Ideas into Reality</span>
               <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-[#004aad]" />
             </button>

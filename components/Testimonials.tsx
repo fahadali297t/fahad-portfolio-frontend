@@ -72,7 +72,7 @@ const TestimonialCard: React.FC<{
                 Verified
               </span>
             </div>
-            <span className="text-[8px] font-poppins text-slate-400 uppercase tracking-widest">
+            <span className="text-[8px] font-poppins text-white uppercase tracking-widest">
               {testimonial.verificationCode}
             </span>
           </div>
@@ -84,7 +84,7 @@ const TestimonialCard: React.FC<{
             className="absolute -top-4 -left-6 text-white opacity-5 group-hover:text-[#004aad]/10 transition-colors"
             size={64}
           />
-          <p className="text-xl md:text-2xl text-slate-400 font-light leading-relaxed italic group-hover:text-slate-200 transition-colors relative z-10">
+          <p className="text-xl md:text-2xl text-white font-light leading-relaxed italic group-hover:text-slate-200 transition-colors relative z-10">
             "{testimonial.content}"
           </p>
         </div>
@@ -119,7 +119,7 @@ const Testimonials: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="py-32 px-6 bg-black relative overflow-hidden"
+      className="py-32 px-6 bg-[#0F0E0E] relative overflow-hidden"
     >
       {/* Background Decor */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-white/[0.01] blur-[150px] rounded-full pointer-events-none"></div>
@@ -135,7 +135,7 @@ const Testimonials: React.FC = () => {
               <span className="text-[12px] md:text-[14px] font-poppins uppercase  text-[#004aad] font-black block">
                 Trusted by Businesses
               </span>
-              {/* <p className="text-[8px] text-slate-400 font-poppins tracking-widest uppercase">
+              {/* <p className="text-[8px] text-white font-poppins tracking-widest uppercase">
                 Encryption Status: AES-256
               </p> */}
             </div>
@@ -145,14 +145,14 @@ const Testimonials: React.FC = () => {
             <div className="lg:col-span-8 space-y-6">
               <h2 className="trust-header-reveal text-4xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85] text-white">
                 TRUSTED <br />
-                <span className="text-slate-400 font-serif italic font-light lowercase">
+                <span className="text-white font-serif italic font-light lowercase">
                   Clients
                 </span>
                 <span className="ml-2">Reviews</span>
               </h2>
             </div>
             <div className="lg:col-span-4 pb-2 trust-header-reveal">
-              <p className="text-slate-400 text-lg font-light leading-relaxed border-l border-white/10 pl-8">
+              <p className="text-white text-lg font-light leading-relaxed border-l border-white/10 pl-8">
                 Feedback from business leaders and clients who trusted me to
                 build their digital systems.
               </p>
@@ -183,7 +183,7 @@ const Testimonials: React.FC = () => {
               key={i}
               className="flex flex-col items-center md:items-start space-y-2"
             >
-              <span className="text-[9px] font-poppins uppercase tracking-[0.4em] text-slate-400 font-black">
+              <span className="text-[9px] font-poppins uppercase tracking-[0.4em] text-white font-black">
                 {stat.label}
               </span>
               <div className="text-3xl font-black text-white tracking-tighter uppercase">

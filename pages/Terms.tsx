@@ -37,11 +37,11 @@ const Terms: React.FC = () => {
           </div>
           <h1 className="terms-reveal text-6xl sm:text-8xl font-black tracking-tighter uppercase leading-[0.85]">
             TERMS OF <br />{" "}
-            <span className="text-slate-400 font-serif italic font-light lowercase">
+            <span className="text-white font-serif italic font-light lowercase">
               conditions
             </span>
           </h1>
-          <p className="terms-reveal text-slate-400 text-lg font-light leading-relaxed max-w-2xl">
+          <p className="terms-reveal text-white text-lg font-light leading-relaxed max-w-2xl">
             The governing principles for interacting with the Laravel Artisan
             portfolio and its associated digital artifacts.
           </p>
@@ -56,7 +56,7 @@ const Terms: React.FC = () => {
                 01. Acceptance of Terms
               </h3>
             </div>
-            <p className="text-slate-400 font-light leading-relaxed">
+            <p className="text-white font-light leading-relaxed">
               By accessing this site, you agree to comply with these terms of
               service and all applicable laws and regulations. If you do not
               agree with any of these terms, you are prohibited from using or
@@ -71,7 +71,7 @@ const Terms: React.FC = () => {
                 02. Intellectual Property
               </h3>
             </div>
-            <p className="text-slate-400 font-light leading-relaxed">
+            <p className="text-white font-light leading-relaxed">
               The artifacts, code snippets, and architectural designs presented
               on this site are the intellectual property of Fahad Ali unless
               otherwise stated. They are presented for demonstration purposes.
@@ -86,7 +86,7 @@ const Terms: React.FC = () => {
                 03. Usage License
               </h3>
             </div>
-            <p className="text-slate-400 font-light leading-relaxed">
+            <p className="text-white font-light leading-relaxed">
               Permission is granted to temporarily download one copy of the
               materials (information or software) on this website for personal,
               non-commercial transitory viewing only.
@@ -100,7 +100,7 @@ const Terms: React.FC = () => {
                 04. Disclaimer & Liability
               </h3>
             </div>
-            <p className="text-slate-400 font-light leading-relaxed">
+            <p className="text-white font-light leading-relaxed">
               The materials on this website are provided on an 'as is' basis.
               Fahad Ali makes no warranties, expressed or implied, and hereby
               disclaims all other warranties including, without limitation,
@@ -112,14 +112,14 @@ const Terms: React.FC = () => {
         {/* Footer info */}
         <footer className="terms-reveal pt-20 border-t border-white/5 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-8">
           <div className="space-y-1">
-            <span className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest font-black">
+            <span className="text-[10px] font-poppins text-white uppercase tracking-widest font-black">
               Registry Version
             </span>
-            <p className="text-xs font-bold text-slate-400">
+            <p className="text-xs font-bold text-white">
               Protocol Release // 2.4.0
             </p>
           </div>
-          <div className="flex items-center gap-4 text-slate-400">
+          <div className="flex items-center gap-4 text-white">
             <Scale size={20} />
             <span className="text-[10px] font-poppins uppercase tracking-[0.4em]">
               Legally Valid

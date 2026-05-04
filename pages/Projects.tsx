@@ -82,7 +82,7 @@ const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({
         <div className="p-8 flex flex-col flex-grow space-y-6">
           <div className="space-y-2">
             <div className="flex justify-between items-center">
-              <span className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest">
+              <span className="text-[10px] font-poppins text-white uppercase tracking-widest">
                 Architectural Artifact
               </span>
               <span className="text-[10px] font-poppins text-[#004aad] uppercase tracking-widest font-black">
@@ -91,13 +91,13 @@ const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({
             </div>
             <h3 className="text-3xl md:text-4xl font-black tracking-tighter uppercase leading-none group-hover:text-[#004aad] transition-colors">
               {project.title}
-              <span className="ml-2 text-xl font-serif italic font-light lowercase text-slate-400">
+              <span className="ml-2 text-xl font-serif italic font-light lowercase text-white">
                 {project.type.split(" ")[0]}
               </span>
             </h3>
           </div>
 
-          <p className="text-slate-400 text-sm md:text-base font-light leading-relaxed line-clamp-2">
+          <p className="text-white text-sm md:text-base font-light leading-relaxed line-clamp-2">
             {project.description}
           </p>
 
@@ -105,7 +105,7 @@ const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({
             {project.techStackDetailed.slice(0, 3).map((tech, i) => (
               <span
                 key={i}
-                className="px-3 py-1 bg-white/5 border border-white/5 rounded-lg text-[9px] font-poppins uppercase tracking-widest text-slate-400 group-hover:text-white group-hover:border-[#004aad]/20 transition-all"
+                className="px-3 py-1 bg-white/5 border border-white/5 rounded-lg text-[9px] font-poppins uppercase tracking-widest text-white group-hover:text-white group-hover:border-[#004aad]/20 transition-all"
               >
                 {tech}
               </span>
@@ -168,12 +168,12 @@ const Projects: React.FC = () => {
             </div>
             <h1 className="header-reveal text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[8vw] font-black tracking-tighter uppercase leading-[0.85] mix-blend-difference">
               Projects & <br />
-              <span className="text-slate-400 font-serif italic font-light lowercase">
+              <span className="text-white font-serif italic font-light lowercase">
                 Case Studies
               </span>
               {/* <span className="ml-1.5 sm:ml-2 md:ml-4">GUIDES</span> */}
             </h1>
-            {/* <p className="header-reveal text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-slate-400 font-light leading-relaxed max-w-3xl">
+            {/* <p className="header-reveal text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white font-light leading-relaxed max-w-3xl">
               Deep dives into Laravel internals, distributed systems, and the
               evolving landscape of high-performance backend engineering.
             </p> */}
@@ -202,7 +202,7 @@ const Projects: React.FC = () => {
                   ${
                     filter === cat
                       ? "bg-[#004aad] text-black shadow-lg shadow-blue-500/20"
-                      : "bg-white/5 text-slate-400 hover:text-white border border-white/5"
+                      : "bg-white/5 text-white hover:text-white border border-white/5"
                   }`}
               >
                 {cat}
@@ -237,7 +237,7 @@ const Projects: React.FC = () => {
               <div className="p-10 bg-white/5 border border-white/10 rounded-full group-hover:bg-[#004aad] group-hover:text-black transition-all duration-700">
                 <Zap size={32} />
               </div>
-              <span className="text-sm font-light text-slate-400 uppercase tracking-[0.4em]">
+              <span className="text-sm font-light text-white uppercase tracking-[0.4em]">
                 Load More Data
               </span>
             </button>

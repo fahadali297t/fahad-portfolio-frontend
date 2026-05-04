@@ -109,11 +109,11 @@ const BlogDetail: React.FC = () => {
             <span className="px-5 py-2 bg-[#004aad] text-black rounded-full text-[10px] font-black uppercase tracking-[0.2em]">
               {blog.category}
             </span>
-            <div className="flex items-center gap-2 text-slate-400 font-poppins text-xs uppercase tracking-widest">
+            <div className="flex items-center gap-2 text-white font-poppins text-xs uppercase tracking-widest">
               <Calendar size={14} className="text-[#004aad]" />
               <span>{blog.date}</span>
             </div>
-            <div className="flex items-center gap-2 text-slate-400 font-poppins text-xs uppercase tracking-widest">
+            <div className="flex items-center gap-2 text-white font-poppins text-xs uppercase tracking-widest">
               <Clock size={14} className="text-[#004aad]" />
               <span>{blog.readTime}</span>
             </div>
@@ -143,7 +143,7 @@ const BlogDetail: React.FC = () => {
                 <p className="font-bold text-lg leading-none">
                   {blog.author.name}
                 </p>
-                <p className="text-slate-400 text-[10px] font-poppins uppercase tracking-widest mt-1">
+                <p className="text-white text-[10px] font-poppins uppercase tracking-widest mt-1">
                   {blog.author.role}
                 </p>
               </div>
@@ -158,7 +158,7 @@ const BlogDetail: React.FC = () => {
               {blog.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-[10px] font-bold tracking-widest uppercase px-3 py-1 bg-white/5 rounded-md border border-white/10 text-slate-400 hover:text-white transition-colors"
+                  className="text-[10px] font-bold tracking-widest uppercase px-3 py-1 bg-white/5 rounded-md border border-white/10 text-white hover:text-white transition-colors"
                 >
                   #{tag}
                 </span>
@@ -199,7 +199,7 @@ const BlogDetail: React.FC = () => {
               infrastructure
             </h2>
 
-            <p className="text-lg md:text-xl text-slate-400 font-light leading-relaxed">
+            <p className="text-lg md:text-xl text-white font-light leading-relaxed">
               Backend engineering is often the invisible force that defines a
               project's success. It's not just about writing clean PHP or
               leveraging the latest Laravel features; it's about predicting how
@@ -219,7 +219,7 @@ const BlogDetail: React.FC = () => {
               </p>
               <div className="mt-8 flex items-center gap-4">
                 <div className="h-px w-12 bg-[#004aad]"></div>
-                <span className="text-sm font-poppins uppercase tracking-[0.2em] text-slate-400">
+                <span className="text-sm font-poppins uppercase tracking-[0.2em] text-white">
                   Industry Insights
                 </span>
               </div>
@@ -233,7 +233,7 @@ const BlogDetail: React.FC = () => {
                 implementation
               </span>
             </h3>
-            <p className="text-lg text-slate-400 font-light leading-relaxed">
+            <p className="text-lg text-white font-light leading-relaxed">
               Every line of code should be an intentional choice. Whether you're
               optimizing an Eloquent query or setting up a complex message queue
               with RabbitMQ, the focus should always be on clarity and
@@ -249,7 +249,7 @@ const BlogDetail: React.FC = () => {
               />
             </div>
 
-            <p className="text-lg text-slate-400 font-light leading-relaxed">
+            <p className="text-lg text-white font-light leading-relaxed">
               Designing for the future means understanding that the future is
               uncertain. We build systems that are decoupled, modular, and easy
               to extend. That is the true mark of an artisan.
@@ -271,7 +271,7 @@ const BlogDetail: React.FC = () => {
                 <p className="font-bold text-xl leading-none">
                   {blog.author.name}
                 </p>
-                <p className="text-slate-400 text-xs font-poppins uppercase tracking-widest mt-2">
+                <p className="text-white text-xs font-poppins uppercase tracking-widest mt-2">
                   {blog.author.role}
                 </p>
               </div>
@@ -294,7 +294,7 @@ const BlogDetail: React.FC = () => {
             <br />
             IN YOUR INBOX
           </h2>
-          <p className="text-xl md:text-2xl text-slate-400 font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-white font-light max-w-2xl mx-auto leading-relaxed">
             Join a community of 2.5k+ senior engineers receiving monthly deep
             dives on architecture and Laravel internals.
           </p>

@@ -67,11 +67,11 @@ const WhyChooseMe: React.FC = () => {
             <span className="text-[#004aad] font-poppins text-xs uppercase tracking-[0.5em] block">Beyond Features</span>
             <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-none">
               WHY PARTNER WITH <br/>
-              <span className="text-slate-400">AN ARTISAN?</span>
+              <span className="text-white">AN ARTISAN?</span>
             </h2>
           </div>
           <div className="lg:col-span-4 pb-2">
-            <p className="text-slate-400 font-light leading-relaxed border-l border-white/10 pl-8">
+            <p className="text-white font-light leading-relaxed border-l border-white/10 pl-8">
               In a world of "good enough" code, I strive for technical excellence. I focus on the internal quality that users don't see, but businesses definitely feel.
             </p>
           </div>
@@ -93,12 +93,12 @@ const WhyChooseMe: React.FC = () => {
                   <div className="p-4 bg-white/5 rounded-2xl text-[#004aad] group-hover:bg-[#004aad] group-hover:text-black transition-all duration-500">
                     <adv.icon size={32} strokeWidth={1.5} />
                   </div>
-                  <span className="font-poppins text-[10px] tracking-[0.3em] text-slate-400 group-hover:text-white transition-colors">{adv.tag}</span>
+                  <span className="font-poppins text-[10px] tracking-[0.3em] text-white group-hover:text-white transition-colors">{adv.tag}</span>
                 </div>
 
                 <div className="space-y-4">
                   <h3 className="text-2xl font-bold tracking-tight text-white group-hover:text-[#004aad] transition-colors">{adv.title}</h3>
-                  <p className="text-slate-400 group-hover:text-slate-300 transition-colors leading-relaxed">
+                  <p className="text-white group-hover:text-slate-300 transition-colors leading-relaxed">
                     {adv.description}
                   </p>
                 </div>
@@ -125,7 +125,7 @@ const WhyChooseMe: React.FC = () => {
           ].map((stat, i) => (
             <div key={i} className="space-y-2">
               <div className="text-3xl md:text-4xl font-black text-white tracking-tighter">{stat.value}</div>
-              <div className="text-[10px] uppercase tracking-[0.3em] text-slate-400 font-poppins">{stat.label}</div>
+              <div className="text-[10px] uppercase tracking-[0.3em] text-white font-poppins">{stat.label}</div>
             </div>
           ))}
         </div>

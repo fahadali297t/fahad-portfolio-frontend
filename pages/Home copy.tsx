@@ -90,7 +90,7 @@ const Home: React.FC = () => {
           {/* Left Content */}
           <div className="lg:col-span-7 space-y-10 z-10">
             <div className="hero-text-animate">
-              <span className="text-slate-400 font-light text-lg tracking-tight">Hey there. I'm</span>
+              <span className="text-white font-light text-lg tracking-tight">Hey there. I'm</span>
             </div>
             
             <div className="hero-text-animate space-y-2">
@@ -102,7 +102,7 @@ const Home: React.FC = () => {
               </h1>
             </div>
 
-            <p className="hero-text-animate text-slate-400 text-lg md:text-xl max-w-lg leading-relaxed font-light">
+            <p className="hero-text-animate text-white text-lg md:text-xl max-w-lg leading-relaxed font-light">
               Architecting high-performance systems and scalable logic that drives growth and empowers modern digital experiences.
             </p>
 
@@ -160,7 +160,7 @@ const Home: React.FC = () => {
 
               {/* Card Bottom Text */}
               <div className="h-[15%] flex items-center justify-center">
-                <p className="text-xl md:text-2xl font-serif text-slate-400 tracking-wider flex items-center">
+                <p className="text-xl md:text-2xl font-serif text-white tracking-wider flex items-center">
                   <span className="font-sans text-xs uppercase tracking-[0.4em] font-bold mr-4 opacity-50">Based in</span> 
                   AMSTERDAM
                 </p>

@@ -67,13 +67,13 @@ const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({
 
       <div className="space-y-4 px-2">
         <div className="flex items-center justify-between">
-          <span className="text-[10px] font-poppins text-slate-400 uppercase tracking-[0.3em] font-bold">
+          <span className="text-[10px] font-poppins text-white uppercase tracking-[0.3em] font-bold">
             Registry: 0{project.id}
           </span>
           <div className="flex gap-4">
             <a
               href={project.github}
-              className="text-slate-400 hover:text-[#004aad] transition-colors"
+              className="text-white hover:text-[#004aad] transition-colors"
             >
               <Globe size={18} />
             </a>
@@ -89,7 +89,7 @@ const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({
           </h3>
         </Link>
 
-        <p className="text-slate-400 text-sm leading-relaxed font-light line-clamp-2">
+        <p className="text-white text-sm leading-relaxed font-light line-clamp-2">
           {project.description}
         </p>
 
@@ -99,7 +99,7 @@ const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({
               <span className="text-xl font-black text-white">
                 {metric.value}
               </span>
-              <span className="text-[8px] font-poppins text-slate-400 uppercase tracking-widest">
+              <span className="text-[8px] font-poppins text-white uppercase tracking-widest">
                 {metric.label}
               </span>
             </div>
@@ -124,14 +124,14 @@ const ProjectsSection: React.FC = () => {
             </div>
             <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.8]">
               FEATURED <br />
-              <span className="text-slate-400 font-serif italic font-light lowercase">
+              <span className="text-white font-serif italic font-light lowercase">
                 Projects
               </span>
               {/* <span className="ml-2">ARTIFACTS</span> */}
             </h2>
           </div>
           <div className="pb-2">
-            <p className="text-slate-400 text-lg md:text-xl font-light leading-relaxed max-w-sm border-l border-white/10 pl-8">
+            <p className="text-white text-lg md:text-xl font-light leading-relaxed max-w-sm border-l border-white/10 pl-8">
               High-performance digital solutions designed to support and scale
               your business.
             </p>
@@ -145,7 +145,7 @@ const ProjectsSection: React.FC = () => {
         </div>
 
         <div className="mt-24 pt-20 border-t border-white/5 flex flex-col items-center text-center space-y-10">
-          <div className="flex items-center gap-8 text-slate-400 opacity-90">
+          <div className="flex items-center gap-8 text-white opacity-90">
             <Server size={40} strokeWidth={1} />
             <Database size={40} strokeWidth={1} />
             <Code2 size={40} strokeWidth={1} />
@@ -154,7 +154,7 @@ const ProjectsSection: React.FC = () => {
             <h4 className="text-2xl font-bold uppercase tracking-tight text-white">
               More Projects Available
             </h4>
-            <p className="text-slate-400 text-sm max-w-md mx-auto">
+            <p className="text-white text-sm max-w-md mx-auto">
               Check out my work — with proven performance and easy-to-follow
               details.
             </p>

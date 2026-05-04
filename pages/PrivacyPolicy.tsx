@@ -31,11 +31,11 @@ const PrivacyPolicy: React.FC = () => {
           </div>
           <h1 className="policy-reveal text-6xl sm:text-8xl font-black tracking-tighter uppercase leading-[0.85]">
             PRIVACY <br />{" "}
-            <span className="text-slate-400 font-serif italic font-light lowercase">
+            <span className="text-white font-serif italic font-light lowercase">
               policy
             </span>
           </h1>
-          <p className="policy-reveal text-slate-400 text-lg font-light leading-relaxed max-w-2xl">
+          <p className="policy-reveal text-white text-lg font-light leading-relaxed max-w-2xl">
             Understanding how your data is processed within the Artisan
             ecosystem. I prioritize technical integrity and transparency.
           </p>
@@ -51,7 +51,7 @@ const PrivacyPolicy: React.FC = () => {
                 01. Data Collection
               </h3>
             </div>
-            <p className="text-slate-400 font-light leading-relaxed">
+            <p className="text-white font-light leading-relaxed">
               When you interact with this portfolio—whether via the contact form
               or general navigation—basic telemetry data and provided contact
               information are logged to facilitate communication and performance
@@ -74,7 +74,7 @@ const PrivacyPolicy: React.FC = () => {
               <p className="text-white text-lg font-medium leading-relaxed">
                 USER NOTICE: The Guestbook is a public utility.
               </p>
-              <p className="text-slate-400 font-light leading-relaxed">
+              <p className="text-white font-light leading-relaxed">
                 Any information, names, or messages submitted to the Guestbook
                 are stored on a public-facing registry. By posting, you
                 acknowledge that your contribution is visible to all visitors
@@ -92,7 +92,7 @@ const PrivacyPolicy: React.FC = () => {
                 03. Information Security
               </h3>
             </div>
-            <p className="text-slate-400 font-light leading-relaxed">
+            <p className="text-white font-light leading-relaxed">
               Private communications (via the contact form) are handled with
               industry-standard encryption protocols. I do not sell, trade, or
               distribute your private contact details to third-party marketing
@@ -108,7 +108,7 @@ const PrivacyPolicy: React.FC = () => {
                 04. Session Tracking
               </h3>
             </div>
-            <p className="text-slate-400 font-light leading-relaxed">
+            <p className="text-white font-light leading-relaxed">
               Standard browser cookies and local storage tokens are used to
               maintain session state (such as theme preferences or form
               persistence) and to improve overall architectural efficiency.
@@ -119,12 +119,12 @@ const PrivacyPolicy: React.FC = () => {
         {/* Footer info */}
         <footer className="policy-reveal pt-20 border-t border-white/5 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-8">
           <div className="space-y-1">
-            <span className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest font-black">
+            <span className="text-[10px] font-poppins text-white uppercase tracking-widest font-black">
               Last Audit
             </span>
-            <p className="text-xs font-bold text-slate-400">October 24, 2024</p>
+            <p className="text-xs font-bold text-white">October 24, 2024</p>
           </div>
-          <div className="flex items-center gap-4 text-slate-400">
+          <div className="flex items-center gap-4 text-white">
             <Shield size={20} />
             <span className="text-[10px] font-poppins uppercase tracking-[0.4em]">
               Protocol Secured

@@ -110,7 +110,7 @@ const Contact: React.FC = () => {
           <div className="space-y-6">
             <div className="flex items-center gap-3">
               <Zap size={14} className="text-[#004aad]" />
-              <span className="text-[10px] font-poppins text-slate-400 uppercase tracking-[0.4em] font-black">
+              <span className="text-[10px] font-poppins text-white uppercase tracking-[0.4em] font-black">
                 Direct Access
               </span>
             </div>
@@ -120,7 +120,7 @@ const Contact: React.FC = () => {
                 touch
               </span>
             </h2>
-            <p className="text-slate-400 text-lg font-light leading-relaxed max-w-md">
+            <p className="text-white text-lg font-light leading-relaxed max-w-md">
               Available for architectural consulting, backend development, and
               performance optimization.
             </p>
@@ -159,7 +159,7 @@ const Contact: React.FC = () => {
                 <Mail size={28} strokeWidth={1.5} />
               </div>
               <div>
-                <p className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest font-black">
+                <p className="text-[10px] font-poppins text-white uppercase tracking-widest font-black">
                   Email
                 </p>
                 <p className="text-md font-bold text-white">
@@ -182,7 +182,7 @@ const Contact: React.FC = () => {
                     size={24}
                     className=" transition-transform group-hover:scale-110"
                   />
-                  {/* <span className="text-[10px] font-mono uppercase tracking-widest font-black text-slate-400 group-hover:text-white transition-colors">
+                  {/* <span className="text-[10px] font-mono uppercase tracking-widest font-black text-white group-hover:text-white transition-colors">
                     {social.name}
                   </span> */}
                 </a>
@@ -211,7 +211,7 @@ const Contact: React.FC = () => {
                 <h3 className="text-3xl font-black uppercase tracking-tighter">
                   Message Successfully Transmitted
                 </h3>
-                <p className="text-slate-400 font-light">
+                <p className="text-white font-light">
                   Emails dispatched. Checking registry...
                 </p>
               </div>
@@ -230,7 +230,7 @@ const Contact: React.FC = () => {
           <form onSubmit={handleSubmit} className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest font-black ml-4">
+                <label className="text-[10px] font-poppins text-white uppercase tracking-widest font-black ml-4">
                   Full Name
                 </label>
                 <input
@@ -245,7 +245,7 @@ const Contact: React.FC = () => {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest font-black ml-4">
+                <label className="text-[10px] font-poppins text-white uppercase tracking-widest font-black ml-4">
                   Email Address
                 </label>
                 <input
@@ -261,7 +261,7 @@ const Contact: React.FC = () => {
               </div>
             </div>
             <div className="space-y-2">
-              <label className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest font-black ml-4">
+              <label className="text-[10px] font-poppins text-white uppercase tracking-widest font-black ml-4">
                 Inquiry / Message
               </label>
               <textarea
@@ -290,11 +290,11 @@ const Contact: React.FC = () => {
           </form>
 
           <div className="mt-12 pt-8 border-t border-white/5 flex items-center justify-between">
-            <div className="flex items-center gap-4 text-[10px] font-poppins text-slate-400 uppercase tracking-widest font-black">
+            <div className="flex items-center gap-4 text-[10px] font-poppins text-white uppercase tracking-widest font-black">
               <ShieldCheck size={14} className="text-green-500/50" />
               <span>Encrypted Connection</span>
             </div>
-            <span className="text-[10px] font-poppins text-slate-400">
+            <span className="text-[10px] font-poppins text-white">
               0x2291 // Using secure channel
             </span>
           </div>

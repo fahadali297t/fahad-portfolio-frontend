@@ -129,7 +129,7 @@ const ProjectDetail: React.FC = () => {
           <div className="flex flex-wrap justify-center gap-12 pt-8">
             <div className="flex flex-col items-center gap-2">
               <Calendar size={20} className="text-[#004aad]" />
-              <span className="text-[10px] font-poppins uppercase tracking-widest text-slate-400">
+              <span className="text-[10px] font-poppins uppercase tracking-widest text-white">
                 Year
               </span>
               <span className="font-bold text-lg uppercase tracking-tight">
@@ -138,7 +138,7 @@ const ProjectDetail: React.FC = () => {
             </div>
             <div className="flex flex-col items-center gap-2">
               <User size={20} className="text-[#004aad]" />
-              <span className="text-[10px] font-poppins uppercase tracking-widest text-slate-400">
+              <span className="text-[10px] font-poppins uppercase tracking-widest text-white">
                 Role
               </span>
               <span className="font-bold text-lg uppercase tracking-tight">
@@ -147,7 +147,7 @@ const ProjectDetail: React.FC = () => {
             </div>
             <div className="flex flex-col items-center gap-2">
               <Tag size={20} className="text-[#004aad]" />
-              <span className="text-[10px] font-poppins uppercase tracking-widest text-slate-400">
+              <span className="text-[10px] font-poppins uppercase tracking-widest text-white">
                 Type
               </span>
               <span className="font-bold text-lg uppercase tracking-tight">
@@ -182,7 +182,7 @@ const ProjectDetail: React.FC = () => {
               </h2>
               <div className="h-px w-24 bg-[#004aad]"></div>
             </div>
-            <p className="text-xl md:text-2xl text-slate-400 font-light leading-relaxed">
+            <p className="text-xl md:text-2xl text-white font-light leading-relaxed">
               {project.fullDescription}
             </p>
           </div>
@@ -196,7 +196,7 @@ const ProjectDetail: React.FC = () => {
                 <span className="text-4xl md:text-5xl font-black text-white tracking-tighter block group-hover:text-[#004aad] transition-colors">
                   {metric.value}
                 </span>
-                <span className="text-[10px] font-poppins uppercase tracking-[0.3em] text-slate-400 font-bold">
+                <span className="text-[10px] font-poppins uppercase tracking-[0.3em] text-white font-bold">
                   {metric.label}
                 </span>
               </div>
@@ -208,7 +208,7 @@ const ProjectDetail: React.FC = () => {
       {/* Technical Arsenal Chips */}
       <section className="py-24 bg-white/[0.02] border-y border-white/5 px-6">
         <div className="max-w-7xl mx-auto">
-          <h3 className="text-sm font-poppins text-slate-400 uppercase tracking-[0.4em] mb-12 text-center font-bold">
+          <h3 className="text-sm font-poppins text-white uppercase tracking-[0.4em] mb-12 text-center font-bold">
             Technology Used
           </h3>
           <div className="flex flex-wrap justify-center gap-4 tech-grid">
@@ -238,7 +238,7 @@ const ProjectDetail: React.FC = () => {
               </span>{" "}
               CHALLENGE
             </h3>
-            <p className="text-lg text-slate-400 leading-relaxed font-light">
+            <p className="text-lg text-white leading-relaxed font-light">
               {project.challenge}
             </p>
           </div>
@@ -268,7 +268,7 @@ const ProjectDetail: React.FC = () => {
               </span>{" "}
               SOLUTION
             </h3>
-            <p className="text-lg text-slate-400 leading-relaxed font-light">
+            <p className="text-lg text-white leading-relaxed font-light">
               {project.solution}
             </p>
           </div>
@@ -290,7 +290,7 @@ const ProjectDetail: React.FC = () => {
                 </span>
               </h3>
             </div>
-            <p className="text-slate-400 font-light leading-relaxed">
+            <p className="text-white font-light leading-relaxed">
               Every system is built on solid principles. Here we leveraged
               Laravel's transactional capabilities to ensure financial
               consistency across micro-services.
@@ -326,7 +326,7 @@ const ProjectDetail: React.FC = () => {
                 visuals
               </span>
             </h3>
-            <p className="text-slate-400 font-poppins text-[10px] uppercase tracking-widest">
+            <p className="text-white font-poppins text-[10px] uppercase tracking-widest">
               Selected Screenshots
             </p>
           </div>

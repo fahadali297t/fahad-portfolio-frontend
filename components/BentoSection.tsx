@@ -52,7 +52,7 @@ const BentoSection: React.FC = () => {
   });
 
   return (
-    <section className="py-24 px-6 bg-black relative overflow-hidden">
+    <section className="py-24 px-6 bg-[#0F0E0E] relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] bg-white/[0.01] blur-[150px] rounded-full pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -77,7 +77,7 @@ const BentoSection: React.FC = () => {
                 <h3 className="text-3xl font-serif text-white italic">
                   Pakistan
                 </h3>
-                <p className="text-[11px] font-poppins text-slate-400 uppercase tracking-widest">
+                <p className="text-[11px] font-poppins text-white uppercase tracking-widest">
                   Sargodha • Punjab
                 </p>
               </div>
@@ -89,7 +89,7 @@ const BentoSection: React.FC = () => {
               </div>
             </div>
             <div className="relative z-10 mt-auto">
-              <span className="text-[14px] font-poppins text-slate-400 uppercase tracking-widest block font-black">
+              <span className="text-[14px] font-poppins text-white uppercase tracking-widest block font-black">
                 Open to Work Remotely
               </span>
             </div>
@@ -120,7 +120,7 @@ const BentoSection: React.FC = () => {
               <h3 className="text-3xl font-bold text-white tracking-tighter">
                 Sign the Book →
               </h3>
-              <p className="text-slate-400 text-sm font-light">
+              <p className="text-white text-sm font-light">
                 Leave a review about my website.
               </p>
             </div>
@@ -175,7 +175,7 @@ const BentoSection: React.FC = () => {
                 <h3 className="text-xl font-bold text-white tracking-tight">
                   Global Delivery
                 </h3>
-                <p className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest">
+                <p className="text-[10px] font-poppins text-white uppercase tracking-widest">
                   Fast Worldwide Access
                 </p>
               </div>
@@ -189,7 +189,7 @@ const BentoSection: React.FC = () => {
               </div>
             </div>
 
-            <p className="relative z-10 text-slate-400 text-sm font-light leading-relaxed">
+            <p className="relative z-10 text-white text-sm font-light leading-relaxed">
               Your website loads quickly for users everywhere, no matter where
               they are.
             </p>
@@ -220,7 +220,7 @@ const BentoSection: React.FC = () => {
                     <span className="text-sm font-bold text-slate-300">
                       {step.label}
                     </span>
-                    <span className="text-[9px] font-poppins text-slate-400 uppercase tracking-widest">
+                    <span className="text-[9px] font-poppins text-white uppercase tracking-widest">
                       {step.status}
                     </span>
                   </div>
@@ -228,7 +228,7 @@ const BentoSection: React.FC = () => {
               ))}
             </div>
 
-            <p className="text-slate-400 text-sm font-light">
+            <p className="text-white text-sm font-light">
               Your website updates smoothly with no downtime or broken features.
             </p>
           </div>
@@ -240,7 +240,7 @@ const BentoSection: React.FC = () => {
                 <h3 className="text-2xl font-bold text-white uppercase tracking-tighter">
                   Speed & Reliability
                 </h3>
-                <p className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest">
+                <p className="text-[10px] font-poppins text-white uppercase tracking-widest">
                   Live Performance Tracking
                 </p>
               </div>
@@ -272,7 +272,7 @@ const BentoSection: React.FC = () => {
                 <Zap size={14} className="text-[#004aad]" />
                 <span className="text-xl font-black text-white">45ms</span>
               </div>
-              <span className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest">
+              <span className="text-[10px] font-poppins text-white uppercase tracking-widest">
                 Average Load Time
               </span>
             </div>

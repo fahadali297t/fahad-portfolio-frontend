@@ -59,10 +59,10 @@ const BlogCard: React.FC<{ blog: EnhancedBlog; index: number }> = ({
 
         {/* Meta Row - Matching Reference Design */}
         <div className="flex items-center justify-between mt-4 sm:mt-6 md:mt-8 mb-2 sm:mb-3 md:mb-4">
-          <div className="px-3 sm:px-4 md:px-5 py-1 sm:py-1.5 md:py-2 bg-[#1a1a1a] rounded-full text-[8px] sm:text-[9px] md:text-[10px] font-bold tracking-wider sm:tracking-widest text-slate-400 group-hover:bg-[#004aad] group-hover:text-black transition-all">
+          <div className="px-3 sm:px-4 md:px-5 py-1 sm:py-1.5 md:py-2 bg-[#1a1a1a] rounded-full text-[8px] sm:text-[9px] md:text-[10px] font-bold tracking-wider sm:tracking-widest text-white group-hover:bg-[#004aad] group-hover:text-black transition-all">
             {blog.category}
           </div>
-          <div className="flex items-center gap-1.5 sm:gap-2 text-slate-400 text-[9px] sm:text-[10px] md:text-[11px] font-medium">
+          <div className="flex items-center gap-1.5 sm:gap-2 text-white text-[9px] sm:text-[10px] md:text-[11px] font-medium">
             <span className="w-1 h-1 rounded-full bg-slate-700"></span>
             {blog.readTime}
           </div>
@@ -137,12 +137,12 @@ const BlogList: React.FC = () => {
             </div>
             <h1 className="header-reveal text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[8vw] font-black tracking-tighter uppercase leading-[0.85] mix-blend-difference">
               RESOURCES & <br />
-              <span className="text-slate-400 font-serif italic font-light lowercase">
+              <span className="text-white font-serif italic font-light lowercase">
                 Guides
               </span>
               {/* <span className="ml-1.5 sm:ml-2 md:ml-4">GUIDES</span> */}
             </h1>
-            <p className="header-reveal text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-slate-400 font-light leading-relaxed max-w-3xl">
+            <p className="header-reveal text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white font-light leading-relaxed max-w-3xl">
               Deep dives into Laravel internals, distributed systems, and the
               evolving landscape of high-performance backend engineering.
             </p>
@@ -153,7 +153,7 @@ const BlogList: React.FC = () => {
         <section className="header-reveal z-10 py-4 sm:py-6 md:py-8 border-y border-white/5">
           <div className="max-w-xl mx-auto md:mx-0 relative">
             <Search
-              className="absolute left-4 sm:left-5 md:left-6 top-1/2 -translate-y-1/2 text-slate-400"
+              className="absolute left-4 sm:left-5 md:left-6 top-1/2 -translate-y-1/2 text-white"
               size={16}
             />
             <input
@@ -205,7 +205,7 @@ const BlogList: React.FC = () => {
               </span>{" "}
               <br /> LOOP
             </h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-slate-400 font-light max-w-2xl mx-auto leading-relaxed px-2">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white font-light max-w-2xl mx-auto leading-relaxed px-2">
               Join 2,500+ senior engineers receiving monthly deep dives into the
               internals of the systems that power the web.
             </p>

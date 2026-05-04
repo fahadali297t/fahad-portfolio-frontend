@@ -75,13 +75,13 @@ const Home: React.FC = () => {
 
       {/* Hero Section */}
       <Hero />
-      <section className="who-am-i-section py-32 sm:py-48 px-6 bg-black relative overflow-hidden text-center">
+      <section className="who-am-i-section py-32 sm:py-48 px-6 bg-[#0F0E0E] relative overflow-hidden text-center">
         {/* Subtle background glow to mimic the image atmosphere */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-white/[0.02] blur-[100px] rounded-full pointer-events-none"></div>
 
         <div className="max-w-4xl mx-auto space-y-8 relative z-10">
           <div className="space-y-4">
-            <span className="who-am-i-reveal block text-[10px] sm:text-xs font-poppins text-slate-400 uppercase tracking-[0.4em] font-medium">
+            <span className="who-am-i-reveal block text-[10px] sm:text-xs font-poppins text-white uppercase tracking-[0.4em] font-medium">
               A FEW LINES ABOUT ME
             </span>
             <h2 className="who-am-i-reveal text-6xl md:text-8xl font-serif text-white leading-tight">
@@ -89,7 +89,7 @@ const Home: React.FC = () => {
             </h2>
           </div>
 
-          <p className="who-am-i-reveal text-lg sm:text-2xl text-slate-400 font-light leading-relaxed max-w-3xl mx-auto">
+          <p className="who-am-i-reveal text-lg sm:text-2xl text-white font-light leading-relaxed max-w-3xl mx-auto">
             I help businesses turn ideas into fast, beautiful, and reliable
             websites and applications. I build modern, user-friendly solutions
             that perform well, scale easily, and support real business growth
@@ -103,12 +103,12 @@ const Home: React.FC = () => {
       {/* <div id="experience">
         <Experience />
       </div> */}
-      <TechStack />
-      <div id="services">
-        <Services />
-      </div>
+      {/* <TechStack /> */}
       <div id="projects">
         <Projects isLandingPage={true} />
+      </div>
+      <div id="services">
+        <Services />
       </div>
 
       <BentoSection />

@@ -170,7 +170,7 @@ const Guestbook: React.FC = () => {
                 <h3 className="text-xl font-bold text-white">
                   Join the conversation
                 </h3>
-                <p className="text-slate-400 max-w-md mx-auto">
+                <p className="text-white max-w-md mx-auto">
                   Sign in with Google to leave a permanent mark on my guestbook.
                 </p>
                 <button
@@ -303,7 +303,7 @@ const Guestbook: React.FC = () => {
                               {entry.timestamp}
                             </div>
                           </div>
-                          <p className="text-slate-400 text-sm sm:text-base font-light leading-relaxed">
+                          <p className="text-white text-sm sm:text-base font-light leading-relaxed">
                             {entry.message}
                           </p>
                         </div>

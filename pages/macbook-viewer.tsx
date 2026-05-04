@@ -141,7 +141,7 @@ export const MacBookViewer: React.FC = () => {
             <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-none">MACBOOK</h2>
             <p className="text-[#004aad] font-serif italic text-2xl md:text-4xl font-light">Pro M1 16"</p>
           </div>
-          <p className="text-slate-400 text-sm md:text-base font-light tracking-widest uppercase">
+          <p className="text-white text-sm md:text-base font-light tracking-widest uppercase">
             Drag to rotate • Scroll to zoom
           </p>
         </div>
@@ -157,7 +157,7 @@ export const MacBookViewer: React.FC = () => {
                   Central Processing Unit
                 </p>
                 <h3 className="text-2xl md:text-3xl font-black tracking-tighter uppercase mb-2">Apple Silicon M1</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">
+                <p className="text-white text-sm leading-relaxed">
                   8-core CPU with up to 20-core GPU, 16GB unified memory, ensuring flawless performance for
                   architecture, design, and full-stack development workflows.
                 </p>
@@ -165,7 +165,7 @@ export const MacBookViewer: React.FC = () => {
               <div className="text-right space-y-2 text-slate-300 text-sm md:text-base">
                 <p className="font-poppins">16" Liquid Retina XDR Display</p>
                 <p className="font-poppins">512GB SSD Storage</p>
-                <p className="text-slate-400 text-xs">The epicenter of creation</p>
+                <p className="text-white text-xs">The epicenter of creation</p>
               </div>
             </div>
           </div>

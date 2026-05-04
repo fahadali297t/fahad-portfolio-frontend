@@ -190,13 +190,13 @@ const WorkingProcess: React.FC = () => {
                     <Icon size={28} className="md:w-8 md:h-8" />
                   </div>
                   <div className="space-y-3 md:space-y-4">
-                    <span className="text-[9px] md:text-[10px] font-poppins text-slate-400 uppercase tracking-widest">
+                    <span className="text-[9px] md:text-[10px] font-poppins text-white uppercase tracking-widest">
                       Step 0{i + 1}
                     </span>
                     <h3 className="text-2xl md:text-3xl font-black text-white uppercase leading-none">
                       {step.title}
                     </h3>
-                    <p className="text-slate-400 text-xs md:text-sm leading-relaxed">
+                    <p className="text-white text-xs md:text-sm leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -258,13 +258,13 @@ const WorkingProcess: React.FC = () => {
                     <Icon size={32} />
                   </div>
                   <div className="space-y-4">
-                    <span className="text-[10px] font-poppins text-slate-400 uppercase tracking-widest">
+                    <span className="text-[10px] font-poppins text-white uppercase tracking-widest">
                       Step 0{i + 1}
                     </span>
                     <h3 className="text-3xl font-black text-white uppercase leading-none">
                       {step.title}
                     </h3>
-                    <p className="text-slate-400 text-sm leading-relaxed">
+                    <p className="text-white text-sm leading-relaxed">
                       {step.description}
                     </p>
                   </div>

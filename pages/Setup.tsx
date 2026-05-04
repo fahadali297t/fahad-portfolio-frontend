@@ -75,7 +75,7 @@ const MacbookModel: React.FC<{ mouseX: number; mouseY: number }> = ({ mouseX, mo
                   <div className="w-2 h-2 rounded-full bg-[#ffbd2e]"></div>
                   <div className="w-2 h-2 rounded-full bg-[#27c93f]"></div>
                 </div>
-                <div className="text-[7px] font-poppins text-slate-400 tracking-widest uppercase flex items-center gap-1">
+                <div className="text-[7px] font-poppins text-white tracking-widest uppercase flex items-center gap-1">
                   <Command size={8} /> ARTISAN-OS M4
                 </div>
               </div>
@@ -222,7 +222,7 @@ const Setup: React.FC = () => {
           <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-none">
             ENGINEERED FOR <span className="text-[#004aad] font-serif italic font-light lowercase">precision</span>
           </h2>
-          <p className="text-xl md:text-2xl text-slate-400 leading-relaxed font-light">
+          <p className="text-xl md:text-2xl text-white leading-relaxed font-light">
             My workspace is architected for deep work. Leveraging the efficiency of Apple Silicon M4 with an UltraWide
             ecosystem allows me to maintain complex domain models in mind while executing performance-critical code.
           </p>
@@ -239,7 +239,7 @@ const Setup: React.FC = () => {
             <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase">
               HARDWARE <span className="text-[#004aad] font-serif italic font-light lowercase">& gear</span>
             </h2>
-            <p className="text-slate-400 font-poppins text-xs uppercase tracking-widest">Selected Inventory</p>
+            <p className="text-white font-poppins text-xs uppercase tracking-widest">Selected Inventory</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -252,7 +252,7 @@ const Setup: React.FC = () => {
                   <item.icon size={32} strokeWidth={1.2} />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 tracking-tight">{item.title}</h3>
-                <p className="text-slate-400 text-base leading-relaxed group-hover:text-slate-300 transition-colors">
+                <p className="text-white text-base leading-relaxed group-hover:text-slate-300 transition-colors">
                   {item.desc}
                 </p>
               </div>
@@ -296,7 +296,7 @@ const Setup: React.FC = () => {
                     <h4 className="text-lg font-bold text-white uppercase tracking-tight group-hover:text-[#004aad] transition-colors">
                       {acc.title}
                     </h4>
-                    <p className="text-slate-400 text-base leading-relaxed">{acc.value}</p>
+                    <p className="text-white text-base leading-relaxed">{acc.value}</p>
                   </div>
                 </div>
               ))}

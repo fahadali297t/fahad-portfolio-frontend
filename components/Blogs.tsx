@@ -72,10 +72,10 @@ const Blogs: React.FC = () => {
 
               {/* Meta info */}
               <div className="flex items-center gap-4 mb-4">
-                <span className="px-4 py-1.5 bg-white/10 rounded-full text-[10px] font-bold tracking-widest text-slate-400 group-hover:bg-[#004aad] group-hover:text-black transition-all">
+                <span className="px-4 py-1.5 bg-white/10 rounded-full text-[10px] font-bold tracking-widest text-white group-hover:bg-[#004aad] group-hover:text-black transition-all">
                   {blog.category}
                 </span>
-                <span className="text-slate-400 text-xs">
+                <span className="text-white text-xs">
                   • {blog.readTime}
                 </span>
               </div>

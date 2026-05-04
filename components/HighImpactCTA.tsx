@@ -142,7 +142,7 @@ const HighImpactCTA: React.FC = () => {
                   <span className="block text-sm font-black uppercase tracking-[0.2em] mb-1">
                     Book Your Discovery
                   </span>
-                  <span className="block text-[10px] font-mono uppercase text-slate-400 font-bold group-hover:text-black transition-colors">
+                  <span className="block text-[10px] font-mono uppercase text-white font-bold group-hover:text-black transition-colors">
                     EST. PROJECT VALUE: HIGH
                   </span>
                 </div>
@@ -160,7 +160,7 @@ const HighImpactCTA: React.FC = () => {
                 size={24}
                 className="text-yellow-500 opacity-40 group-hover:opacity-100 transition-opacity"
               />
-              <span className="text-[10px] font-mono text-slate-700 uppercase tracking-widest font-black group-hover:text-slate-400 transition-colors">
+              <span className="text-[10px] font-mono text-slate-700 uppercase tracking-widest font-black group-hover:text-white transition-colors">
                 Sub-100ms Latency
               </span>
               <div className="h-px w-8 bg-yellow-500/20 group-hover:w-full transition-all duration-700"></div>
@@ -170,7 +170,7 @@ const HighImpactCTA: React.FC = () => {
                 size={24}
                 className="text-blue-500 opacity-40 group-hover:opacity-100 transition-opacity"
               />
-              <span className="text-[10px] font-mono text-slate-700 uppercase tracking-widest font-black group-hover:text-slate-400 transition-colors">
+              <span className="text-[10px] font-mono text-slate-700 uppercase tracking-widest font-black group-hover:text-white transition-colors">
                 Zero-Trust Security
               </span>
               <div className="h-px w-8 bg-blue-500/20 group-hover:w-full transition-all duration-700"></div>
@@ -180,7 +180,7 @@ const HighImpactCTA: React.FC = () => {
                 size={24}
                 className="text-emerald-500 opacity-40 group-hover:opacity-100 transition-opacity"
               />
-              <span className="text-[10px] font-mono text-slate-700 uppercase tracking-widest font-black group-hover:text-slate-400 transition-colors">
+              <span className="text-[10px] font-mono text-slate-700 uppercase tracking-widest font-black group-hover:text-white transition-colors">
                 Elastic Scalability
               </span>
               <div className="h-px w-8 bg-emerald-500/20 group-hover:w-full transition-all duration-700"></div>

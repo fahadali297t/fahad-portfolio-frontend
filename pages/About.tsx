@@ -67,9 +67,9 @@ const TimelineNode: React.FC<{
                 {item.year}
               </span>
               {type === "work" ? (
-                <Briefcase size={16} className="text-slate-400" />
+                <Briefcase size={16} className="text-white" />
               ) : (
-                <BookOpen size={16} className="text-slate-400" />
+                <BookOpen size={16} className="text-white" />
               )}
             </div>
 
@@ -81,7 +81,7 @@ const TimelineNode: React.FC<{
               {item.company}
             </p>
 
-            <p className="text-slate-400 text-sm leading-relaxed font-light">
+            <p className="text-white text-sm leading-relaxed font-light">
               {item.description}
             </p>
           </div>
@@ -192,7 +192,7 @@ const About: React.FC = () => {
               </span>
               <h1 className="about-header-text text-6xl md:text-[8rem] font-black tracking-tighter uppercase leading-[0.8]">
                 Developing <br />{" "}
-                <span className="text-slate-400 font-serif italic font-light lowercase">
+                <span className="text-white font-serif italic font-light lowercase">
                   digital
                 </span>{" "}
                 STRENGTH
@@ -200,7 +200,7 @@ const About: React.FC = () => {
             </div>
 
             <div className="about-header-text space-y-8 max-w-2xl">
-              <p className="text-xl md:text-2xl text-slate-400 font-light leading-relaxed">
+              <p className="text-xl md:text-2xl text-white font-light leading-relaxed">
                 With a deep focus on{" "}
                 <span className="text-white font-medium">Web ecosystem</span>{" "}
                 and other technologies like Wordpress, Laravel, PHP, I bridge
@@ -217,7 +217,7 @@ const About: React.FC = () => {
                     <h4 className="font-bold text-white uppercase tracking-tight">
                       Skills
                     </h4>
-                    <p className="text-slate-400 text-xs font-poppins">
+                    <p className="text-white text-xs font-poppins">
                       Laravel Engineer, with additional Wordpress Experties.
                     </p>
                   </div>
@@ -230,7 +230,7 @@ const About: React.FC = () => {
                     <h4 className="font-bold text-white uppercase tracking-tight">
                       Web Dev Expert
                     </h4>
-                    <p className="text-slate-400 text-xs font-poppins">
+                    <p className="text-white text-xs font-poppins">
                       Certified
                     </p>
                   </div>
@@ -273,7 +273,7 @@ const About: React.FC = () => {
 
         <div className="max-w-4xl mx-auto space-y-8 relative z-10">
           <div className="space-y-4">
-            <span className="who-am-i-reveal block text-[10px] sm:text-xs font-poppins text-slate-400 uppercase tracking-[0.4em] font-medium">
+            <span className="who-am-i-reveal block text-[10px] sm:text-xs font-poppins text-white uppercase tracking-[0.4em] font-medium">
               A FEW LINES ABOUT ME
             </span>
             <h2 className="who-am-i-reveal text-6xl md:text-8xl font-serif text-white leading-tight">
@@ -281,7 +281,7 @@ const About: React.FC = () => {
             </h2>
           </div>
 
-          <p className="who-am-i-reveal text-lg sm:text-2xl text-slate-400 font-light leading-relaxed max-w-3xl mx-auto">
+          <p className="who-am-i-reveal text-lg sm:text-2xl text-white font-light leading-relaxed max-w-3xl mx-auto">
             I help businesses turn ideas into fast, beautiful, and easy-to-use
             websites and applications. My goal is to build digital products that
             not only look great, but also perform smoothly, attract users, and
@@ -309,7 +309,7 @@ const About: React.FC = () => {
             </div>
             <div className="flex flex-col items-end gap-2 text-right">
               <div className="h-px w-32 bg-[#004aad] mb-2"></div>
-              <p className="text-slate-400 max-w-xs font-light">
+              <p className="text-white max-w-xs font-light">
                 From planning to launch, I design and build digital systems with
                 long-term stability in mind.
               </p>
@@ -361,7 +361,7 @@ const About: React.FC = () => {
             </span>
           </h2>
 
-          <p className="text-xl md:text-3xl text-slate-400 font-light leading-relaxed">
+          <p className="text-xl md:text-3xl text-white font-light leading-relaxed">
             Every project I deliver is designed to help your business grow —
             faster, more secure, and built to scale with confidence.
           </p>
