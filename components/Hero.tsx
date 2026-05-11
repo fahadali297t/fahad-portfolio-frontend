@@ -271,7 +271,7 @@ const Hero: React.FC = () => {
 
             <div className="relative w-[320px] sm:w-[420px] aspect-[4/5] rounded-[4rem] overflow-hidden border border-black/5 dark:border-white/10 shadow-2xl transition-all duration-700 group-hover:shadow-[#004aad]/20 bg-slate-200 dark:bg-slate-900">
               <img
-                src="profile.png"
+                src="profile.webp"
                 alt="Professional Backend Developer"
                 className="w-full h-full object-cover  transition-all duration-1000"
               />

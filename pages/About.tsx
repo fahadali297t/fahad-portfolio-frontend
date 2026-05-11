@@ -243,7 +243,7 @@ const About: React.FC = () => {
             <div className="relative group max-w-[440px]">
               <div className="aspect-[4/5] rounded-[3.5rem] overflow-hidden border border-white/10 shadow-2xl transition-all duration-1000 group-hover:scale-[1.03]">
                 <img
-                  src="profile.png"
+                  src="profile.webp"
                   alt="Portrait"
                   className="w-full h-full object-cover  transition-all duration-1000"
                 />
