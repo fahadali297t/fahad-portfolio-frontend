@@ -14,6 +14,9 @@ import {
   Globe,
 } from "lucide-react";
 import { BsGithub, BsWhatsapp } from "react-icons/bs";
+import SEO from "@/components/SEO";
+import { SEO_PAGES } from "@/lib/SEOConfig";
+import { ContactPageSchema } from "@/lib/structuredData";
 
 const Contact: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -104,6 +107,7 @@ const Contact: React.FC = () => {
 
   return (
     <section className="bg-black text-white py-32 px-6 md:px-12 min-h-screen flex flex-col justify-center">
+      <SEO {...SEO_PAGES.contact} schema={ContactPageSchema} />
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start w-full">
         {/* Information Column */}
         <div className="lg:col-span-5 space-y-12">

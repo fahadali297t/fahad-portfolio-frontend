@@ -306,7 +306,8 @@ const Setup: React.FC = () => {
           <div className="relative aspect-square md:aspect-[4/5] bg-[#0d0d0d] rounded-[4rem] border border-white/10 overflow-hidden group shadow-2xl">
             <img
               src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&q=80&w=1200"
-              alt="Workspace Closeup"
+              alt="Fahad Ali development workspace setup"
+              loading="lazy"
               className="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>

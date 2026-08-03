@@ -43,6 +43,7 @@ const BlogCard: React.FC<{ blog: EnhancedBlog; index: number }> = ({
           <img
             src={blog.image}
             alt={blog.title}
+            loading="lazy"
             className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

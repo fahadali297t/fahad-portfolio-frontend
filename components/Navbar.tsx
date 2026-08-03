@@ -56,12 +56,12 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <div
+    <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 px-4 pt-6 ${
         isScrolled ? "translate-y-[-10px]" : ""
       }`}
     >
-      <nav className="max-w-7xl mx-auto" ref={mobileMenuRef}>
+      <nav className="max-w-7xl mx-auto" ref={mobileMenuRef} aria-label="Main navigation">
         <div
           className={`relative px-6 py-3 rounded-full border border-white/20 backdrop-blur-2xl transition-all duration-500 shadow-2xl ${
             isScrolled ? "bg-black/80" : "bg-black/40"
@@ -171,7 +171,7 @@ const Navbar: React.FC = () => {
           </div>
         )}
       </nav>
-    </div>
+    </header>
   );
 };
 

@@ -4,6 +4,9 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { PROJECTS, EnhancedProject } from "../constants";
 import { ArrowUpRight, Filter, Layers, Zap } from "lucide-react";
+import SEO from "@/components/SEO";
+import { SEO_PAGES } from "@/lib/SEOConfig";
+import { CollectionPageSchema } from "@/lib/structuredData";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -63,6 +66,7 @@ const ProjectCard: React.FC<{ project: EnhancedProject; index: number }> = ({
             ref={imgRef}
             src={project.image}
             alt={project.title}
+            loading="lazy"
             className="w-full h-full object-cover grayscale-[0.5] transition-all duration-1000 opacity-80"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
@@ -157,6 +161,7 @@ const Projects: React.FC = () => {
       ref={containerRef}
       className="bg-black text-white min-h-screen overflow-x-hidden pt-16"
     >
+      <SEO {...SEO_PAGES.projects} schema={CollectionPageSchema} />
       <div className="bg-circle fixed top-[-10%] right-[-10%] w-[50vw] aspect-square bg-[#004aad]/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
 
       <header className="relative z-10 pt-20 pb-16 px-6 max-w-7xl mx-auto space-y-12">

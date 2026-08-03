@@ -16,6 +16,9 @@ import {
   Shield,
 } from "lucide-react";
 import Experience from "@/components/Experience";
+import SEO from "@/components/SEO";
+import { SEO_PAGES } from "@/lib/SEOConfig";
+import { ProfileSchema } from "@/lib/structuredData";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -177,6 +180,7 @@ const About: React.FC = () => {
 
   return (
     <div ref={containerRef} className="bg-black text-white min-h-screen">
+      <SEO {...SEO_PAGES.about} schema={[ProfileSchema]} />
       {/* Section 1: Hero & Bio */}
       <section className="relative pt-40 pb-32 px-6 overflow-hidden">
         {/* Background Atmosphere */}
@@ -244,7 +248,8 @@ const About: React.FC = () => {
               <div className="aspect-[4/5] rounded-[3.5rem] overflow-hidden border border-white/10 shadow-2xl transition-all duration-1000 group-hover:scale-[1.03]">
                 <img
                   src="profile.webp"
-                  alt="Portrait"
+                  alt="Fahad Ali - Full Stack & Laravel Web Developer from Pakistan"
+                  loading="lazy"
                   className="w-full h-full object-cover  transition-all duration-1000"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
@@ -352,7 +357,7 @@ const About: React.FC = () => {
       <section className="py-40 px-6 text-center">
         <div className="max-w-4xl mx-auto space-y-16">
           <div className="inline-block p-6 bg-white rounded-full text-[#004aad]">
-            <img src="./1.png" width={50} height={50} />
+            <img src="./1.png" width={50} height={50} alt="" />
           </div>
           <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9]">
             I DON'T JUST BUILD WEBSITES. <br />

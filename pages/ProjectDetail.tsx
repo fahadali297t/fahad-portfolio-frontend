@@ -19,6 +19,9 @@ import {
 } from 'lucide-react';
 import Terminal from '../components/Terminal';
 import { CgWebsite } from 'react-icons/cg';
+import SEO from '@/components/SEO';
+import { SITE } from '../lib/SEOConfig';
+import { projectSchema } from '../lib/structuredData';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -94,6 +97,20 @@ const ProjectDetail: React.FC = () => {
 
   return (
     <div ref={containerRef} className="bg-black text-white overflow-x-hidden">
+      <SEO
+        title={`${project.title} | Project by Fahad Ali`}
+        description={project.description}
+        path={`/projects/${project.id}`}
+        keywords={`${project.title}, ${(project.techStackDetailed ?? []).join(", ")}, Laravel Developer, React.js Developer, Full Stack Developer Pakistan`}
+        ogType="article"
+        ogImage={project.image ? `${SITE.url}/${project.image}` : SITE.ogImage}
+        schema={projectSchema({
+          name: project.title,
+          description: project.fullDescription ?? project.description,
+          url: `${SITE.url}/projects/${project.id}`,
+          image: project.image ? `${SITE.url}/${project.image}` : undefined,
+        })}
+      />
       {/* Back Button */}
       <button
         onClick={() => navigate(-1)}

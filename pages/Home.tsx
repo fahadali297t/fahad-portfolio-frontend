@@ -15,6 +15,9 @@ import Projects from "./ProjectsPage";
 import BentoSection from "@/components/BentoSection";
 import ProjectCarousel from "@/components/ProjectCarousel";
 import PricingSection from "@/components/PricingSection";
+import SEO from "@/components/SEO";
+import { SEO_PAGES } from "@/lib/SEOConfig";
+import { PersonSchema, WebsiteSchema } from "@/lib/structuredData";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -67,6 +70,7 @@ const Home: React.FC = () => {
       ref={containerRef}
       className="overflow-x-hidden bg-transparent mt-16 transition-colors duration-500"
     >
+      <SEO {...SEO_PAGES.home} schema={[PersonSchema, WebsiteSchema]} />
       {/* Background Particles Layer */}
       <div
         ref={bgRef}

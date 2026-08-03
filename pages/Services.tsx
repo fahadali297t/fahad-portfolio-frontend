@@ -295,6 +295,8 @@ const Services: React.FC = () => {
               {/* <Terminal size={48} strokeWidth={1} /> */}
               <img
                 src="./1.png"
+                alt="Fahad Ali logo"
+                loading="lazy"
                 className="w-16 h-16 text-black group-hover:text-white"
               />
             </div>

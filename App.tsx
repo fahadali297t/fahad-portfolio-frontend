@@ -1,32 +1,44 @@
-import React, { useEffect } from "react";
+import React, { Suspense, lazy, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   useLocation,
 } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Projects from "./pages/Projects";
-import ProjectDetail from "./pages/ProjectDetail";
-import Services from "./pages/Services";
-import ServiceDetail from "./pages/ServiceDetail";
-import Contact from "./pages/Contact";
-import Setup from "./pages/Setup";
-import BlogList from "./pages/BlogList";
-import BlogDetail from "./pages/BlogDetail";
-// import CaseStudies from "./pages/CaseStudies";
-
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import Terms from "./pages/Terms";
-import Guestbook from "./pages/GuestBook";
+import SEO from "./components/SEO";
 import { Toaster } from "react-hot-toast";
-import Schedule from "./pages/Schedule";
-import Pricing from "./pages/Pricing";
+import {
+  PersonSchema,
+  WebsiteSchema,
+} from "./lib/structuredData";
+import { SITE } from "./lib/SEOConfig";
+
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const Projects = lazy(() => import("./pages/Projects"));
+const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
+const Services = lazy(() => import("./pages/Services"));
+const ServiceDetail = lazy(() => import("./pages/ServiceDetail"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Setup = lazy(() => import("./pages/Setup"));
+const BlogList = lazy(() => import("./pages/BlogList"));
+const BlogDetail = lazy(() => import("./pages/BlogDetail"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const Terms = lazy(() => import("./pages/Terms"));
+const Guestbook = lazy(() => import("./pages/GuestBook"));
+const Schedule = lazy(() => import("./pages/Schedule"));
+const Pricing = lazy(() => import("./pages/Pricing"));
+
+const PageLoader = () => (
+  <div className="flex items-center justify-center py-32">
+    <div className="w-10 h-10 rounded-full border-2 border-[#004aad] border-t-transparent animate-spin" />
+  </div>
+);
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -67,7 +79,14 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <Router>
+    <HelmetProvider>
+      <SEO
+        title={SITE.title}
+        description={SITE.description}
+        path="/"
+        schema={[PersonSchema, WebsiteSchema]}
+      />
+      <Router>
       <ScrollToTop />
       <Toaster
         position="top-right"
@@ -104,6 +123,7 @@ const App: React.FC = () => {
       <div className="min-h-screen flex flex-col bg-black text-white relative">
         <Navbar />
         <main className="flex-grow  relative z-10">
+          <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -122,10 +142,12 @@ const App: React.FC = () => {
             <Route path="/schedule-call" element={<Schedule />} />
             <Route path="/pricing" element={<Pricing />} />
           </Routes>
+          </Suspense>
         </main>
         <Footer />
       </div>
     </Router>
+    </HelmetProvider>
   );
 };
 
