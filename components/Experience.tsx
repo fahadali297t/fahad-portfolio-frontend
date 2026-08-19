@@ -16,36 +16,36 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Mock data for demo
 const TIMELINE = [
-  // {
-  //   id: 1,
-  //   year: "2023-24",
-  //   title: "Senior Engineer",
-  //   company: "Tech Corp",
-  //   description:
-  //     "Led architecture design and implementation of scalable microservices, improving system performance by 40%.",
-  // },
+  {
+    id: 1,
+    year: "Jun 2026 - Present",
+    title: "Backend Developer",
+    company: "APE IT Solutions",
+    description:
+      "Developing scalable backend applications using Laravel, MySQL, REST APIs, authentication, and database optimization for enterprise solutions.",
+  },
   {
     id: 2,
-    year: "April 2025 - Present",
-    title: "Full Stack Web Developer",
+    year: "Feb 2025 - May 2026",
+    title: "Backend Developer",
     company: "Apexvim",
     description:
-      "Built end-to-end solutions using modern frameworks, delivered 15+ production features.",
+      "Built and maintained web applications using Laravel, MySQL, REST APIs, authentication, RBAC, API integration, and performance optimization while collaborating with frontend developers.",
   },
   {
     id: 3,
-    year: "February 2025 - April 2025",
-    title: "Web Developer Internee",
-    company: "Apexvim",
+    year: "Sep 2023 - Jan 2025",
+    title: "Full Stack Web Developer",
+    company: "HatBrain",
     description:
-      "Supported senior engineers in building robust middleware, authentication flows, and unit testing suites for e-commerce clients.",
+      "Developed responsive full-stack web applications using Laravel, PHP, JavaScript, Tailwind CSS, Bootstrap, MySQL, and REST APIs, delivering complete business solutions from frontend to backend.",
   },
 ];
 
 const EDUCATION = [
   {
     id: 1,
-    year: "2022-26",
+    year: "",
     title: "BS Sofware Engineering",
     company: "University of Sargodha",
     description:
