@@ -26,19 +26,11 @@ const TIMELINE = [
   },
   {
     id: 2,
-    year: "Feb 2025 - May 2026",
+    year: "March 2024 - May 2026",
     title: "Backend Developer",
     company: "Apexvim",
     description:
       "Built and maintained web applications using Laravel, MySQL, REST APIs, authentication, RBAC, API integration, and performance optimization while collaborating with frontend developers.",
-  },
-  {
-    id: 3,
-    year: "Sep 2023 - Jan 2025",
-    title: "Full Stack Web Developer",
-    company: "HatBrain",
-    description:
-      "Developed responsive full-stack web applications using Laravel, PHP, JavaScript, Tailwind CSS, Bootstrap, MySQL, and REST APIs, delivering complete business solutions from frontend to backend.",
   },
 ];
 
