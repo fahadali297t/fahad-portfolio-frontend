@@ -59,7 +59,7 @@ export interface EnhancedBlog extends Blog {
 
 export const PROJECTS: EnhancedProject[] = [
   {
-    id: 1,
+    id: -1,
     title: "Larosa Medical Center",
     type: "Clinic Management System",
     category: "Laravel",
