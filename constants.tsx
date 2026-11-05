@@ -201,8 +201,8 @@ public function assignTask(Request $request)
       "Agency System",
     ],
 
-    github: "https://mintcream-rail-238590.hostingersite.com/",
-    demo: "https://mintcream-rail-238590.hostingersite.com/",
+    github: "https://archvisionstudio.ae/",
+    demo: "https://archvisionstudio.ae/",
   },
   {
     id: 1,
