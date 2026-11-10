@@ -22,7 +22,11 @@ export const PersonSchema = {
     "WordPress",
     "REST APIs",
   ],
-  sameAs: [],
+  sameAs: [
+    "https://www.linkedin.com/in/fahad-ali-369649355/",
+    "https://github.com/fahadali297t",
+    "https://facebook.com/zfahad4",
+  ],
 };
 
 export const WebsiteSchema = {

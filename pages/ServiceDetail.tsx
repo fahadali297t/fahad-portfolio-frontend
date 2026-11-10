@@ -3,6 +3,8 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SERVICES } from '../constants';
+import SEO from '@/components/SEO';
+import { SITE } from '@/lib/SEOConfig';
 import { 
   ArrowLeft, 
   ArrowUpRight, 
@@ -70,6 +72,14 @@ const ServiceDetail: React.FC = () => {
 
   return (
     <div ref={containerRef} className="inner-page service-detail-page text-white overflow-x-hidden">
+      <SEO
+        title={`${service.title} | Fahad Ali Web Development Services`}
+        description={`${service.description} Work with Fahad Ali, a Full Stack Web Developer specializing in Laravel, React, PHP and WordPress.`}
+        path={`/services/${service.id}`}
+        keywords={`${service.title}, ${service.relatedTech.join(", ")}, Fahad Ali, Web Developer Pakistan`}
+        ogType="website"
+        ogImage={SITE.ogImage}
+      />
       {/* Dynamic Back Button */}
       <button
         onClick={() => navigate(-1)}

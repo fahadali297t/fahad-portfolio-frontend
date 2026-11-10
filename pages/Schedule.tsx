@@ -17,6 +17,8 @@ import {
   Send as Telegram,
 } from "lucide-react";
 import { BsWhatsapp } from "react-icons/bs";
+import SEO from "@/components/SEO";
+import { SEO_PAGES } from "@/lib/SEOConfig";
 
 const Schedule: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -79,6 +81,7 @@ const Schedule: React.FC = () => {
       ref={containerRef}
       className="inner-page schedule-page text-white min-h-screen pt-32 pb-40 px-6 relative overflow-hidden"
     >
+      <SEO {...SEO_PAGES.schedule} />
       {/* Background Atmosphere */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] bg-gradient-to-b from-[#004aad]/10 to-transparent opacity-20 pointer-events-none"></div>
       <div

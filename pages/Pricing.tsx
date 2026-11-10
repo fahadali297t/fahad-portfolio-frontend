@@ -3,6 +3,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PricingSection from "../components/PricingSection";
 import { ShieldCheck, Zap, Layers, Cpu, Code2, Database, ChevronDown } from "lucide-react";
+import SEO from "@/components/SEO";
+import { SEO_PAGES } from "@/lib/SEOConfig";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,6 +61,7 @@ const features = [
 
   return (
     <div ref={containerRef} className="pricing-page text-white min-h-screen">
+      <SEO {...SEO_PAGES.pricing} />
       {/* Hero Header */}
 
       {/* Main Pricing Cards */}

@@ -3,6 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { BLOG_POSTS, EnhancedBlog } from '../constants';
+import SEO from '@/components/SEO';
+import { SITE } from '@/lib/SEOConfig';
 import { 
   ArrowLeft, 
   Share2, 
@@ -79,6 +81,14 @@ const BlogDetail: React.FC = () => {
       ref={containerRef}
       className="inner-page blog-detail-page text-white min-h-screen overflow-x-hidden"
     >
+      <SEO
+        title={`${blog.title} | Fahad Ali`}
+        description={blog.content.slice(0, 155)}
+        path={`/blog/${blog.id}`}
+        keywords={`${blog.tags.join(", ")}, Fahad Ali, Web Development`}
+        ogType="article"
+        ogImage={blog.image.startsWith("http") ? blog.image : `${SITE.url}/${blog.image.replace(/^\//, "")}`}
+      />
       {/* Fixed Back Button - Reliable Navigation */}
       <div className=" hidden lg:fixed top-24 left-8 z-50">
         <Link

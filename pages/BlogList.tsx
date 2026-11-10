@@ -4,6 +4,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BLOG_POSTS, EnhancedBlog } from "../constants";
 import { Search, ArrowUpRight, Clock, Calendar, BookOpen } from "lucide-react";
+import SEO from "@/components/SEO";
+import { SEO_PAGES } from "@/lib/SEOConfig";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -122,6 +124,7 @@ const BlogList: React.FC = () => {
       ref={containerRef}
       className="inner-page blog-list-page text-white min-h-screen pt-20 sm:pt-24 md:pt-16 pb-20 sm:pb-32 md:pb-40 px-3 sm:px-5 md:px-6 relative overflow-hidden"
     >
+      <SEO {...SEO_PAGES.blog} />
       {/* Decorative Parallax Glows - Pure dark aesthetic as requested */}
       <div className="bg-decoration fixed top-[-10%] left-[-10%] w-[70vw] sm:w-[60vw] aspect-square bg-[#004aad]/5 blur-[120px] sm:blur-[180px] md:blur-[200px] rounded-full pointer-events-none z-0"></div>
       <div className="bg-decoration fixed bottom-[-20%] right-[-10%] w-[50vw] sm:w-[40vw] aspect-square bg-blue-900/10 blur-[120px] sm:blur-[160px] md:blur-[180px] rounded-full pointer-events-none z-0"></div>

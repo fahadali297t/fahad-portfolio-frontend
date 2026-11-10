@@ -126,6 +126,27 @@ export const SEO_PAGES: Record<string, SEOProps> = {
     ].join(", "),
     ogType: "website",
   },
+  blog: {
+    title: "Web Development Guides | Fahad Ali",
+    description: "Practical Laravel, PHP, database, performance and DevOps guides by Fahad Ali, a Full Stack Web Developer in Pakistan.",
+    path: "/blog",
+    keywords: "Laravel Guides, PHP Tutorials, Web Development Blog, Database Performance, DevOps",
+    ogType: "website",
+  },
+  pricing: {
+    title: "Web Development Pricing | Fahad Ali",
+    description: "Transparent pricing for WordPress websites, custom Laravel applications and scalable SaaS development by Fahad Ali.",
+    path: "/pricing",
+    keywords: "Web Development Pricing Pakistan, Laravel Website Cost, WordPress Website Price",
+    ogType: "website",
+  },
+  schedule: {
+    title: "Schedule a Call with Fahad Ali | Web Development Consultation",
+    description: "Book a consultation with Fahad Ali to discuss your Laravel, React, WordPress, e-commerce or custom web development project.",
+    path: "/schedule-call",
+    keywords: "Web Development Consultation, Hire Laravel Developer, Schedule Developer Call",
+    ogType: "website",
+  },
 };
 
 export const getPageUrl = (key: keyof typeof SEO_PAGES) => page(SEO_PAGES[key].path ?? "/");

@@ -10,13 +10,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import SEO from "./components/SEO";
 import { Toaster } from "react-hot-toast";
-import {
-  PersonSchema,
-  WebsiteSchema,
-} from "./lib/structuredData";
-import { SITE } from "./lib/SEOConfig";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -100,12 +94,6 @@ const App: React.FC = () => {
 
   return (
     <HelmetProvider>
-      <SEO
-        title={SITE.title}
-        description={SITE.description}
-        path="/"
-        schema={[PersonSchema, WebsiteSchema]}
-      />
       <Router>
       <ScrollToTop />
       <RouteTransition />
