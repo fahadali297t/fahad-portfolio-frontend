@@ -1,201 +1,45 @@
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { TESTIMONIALS, EnhancedTestimonial } from "../constants";
-import { Quote, ShieldCheck, Activity, Globe, CheckCircle } from "lucide-react";
+import React from "react";
+import { BriefcaseBusiness, Layers3, Quote, ShieldCheck, ShoppingBag } from "lucide-react";
+import { TESTIMONIALS } from "../constants";
 
-gsap.registerPlugin(ScrollTrigger);
+const reviewIcons = [BriefcaseBusiness, Layers3, ShoppingBag];
 
-const TestimonialCard: React.FC<{
-  testimonial: EnhancedTestimonial;
-  index: number;
-}> = ({ testimonial, index }) => {
-  const cardRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = cardRef.current;
-    if (!el) return;
-
-    gsap.fromTo(
-      el,
-      { opacity: 0, y: 50, scale: 0.95 },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 1.2,
-        ease: "power4.out",
-        scrollTrigger: {
-          trigger: el,
-          start: "top 85%",
-        },
-      }
-    );
-  }, []);
-
-  return (
-    <div
-      ref={cardRef}
-      className="group relative bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] p-10 flex flex-col justify-between overflow-hidden hover:border-[#004aad]/30 transition-all duration-700 h-full"
-    >
-      {/* Background HUD Accents */}
-      <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity">
-        <span className="text-8xl font-black italic text-white uppercase leading-none select-none tracking-tighter">
-          0{testimonial.id}
-        </span>
-      </div>
-
-      <div className="relative z-10 space-y-8">
-        {/* Dossier Header */}
-        <div className="flex justify-between items-start">
-          <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-2xl overflow-hidden border border-white/10 group-hover:border-[#004aad]/30 transition-colors">
-              <img
-                src={testimonial.avatar}
-                alt={testimonial.name}
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-              />
-            </div>
-            <div className="space-y-1">
-              <h4 className="text-lg font-bold text-white tracking-tight">
-                {testimonial.name}
-              </h4>
-              <p className="text-[10px] font-poppins text-[#004aad] uppercase tracking-widest font-black">
-                {testimonial.role}
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col items-end gap-1">
-            <div className="flex items-center gap-2 px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-full">
-              <div className="w-1 h-1 rounded-full bg-green-500 animate-pulse"></div>
-              <span className="text-[8px] font-poppins text-green-500 uppercase font-black">
-                Verified
-              </span>
-            </div>
-            <span className="text-[8px] font-poppins text-white uppercase tracking-widest">
-              {testimonial.verificationCode}
-            </span>
-          </div>
+const Testimonials: React.FC = () => (
+  <section className="reviews-section">
+    <div className="reviews-section__orb" aria-hidden="true" />
+    <div className="section-shell reviews-shell">
+      <header className="reviews-header">
+        <div className="reviews-heading-copy">
+          <span className="reviews-kicker"><b><ShieldCheck /></b> Trusted by Businesses</span>
+          <h2>Trusted<br />Clients <em>Reviews</em></h2>
+          <p>Real feedback from businesses I&apos;ve worked with, sharing their experience and results.</p>
         </div>
-
-        {/* The Quote */}
-        <div className="relative">
-          <Quote
-            className="absolute -top-4 -left-6 text-white opacity-5 group-hover:text-[#004aad]/10 transition-colors"
-            size={64}
-          />
-          <p className="text-xl md:text-2xl text-white font-light leading-relaxed italic group-hover:text-slate-200 transition-colors relative z-10">
-            "{testimonial.content}"
-          </p>
+        <div className="reviews-visual" aria-hidden="true">
+          <span className="reviews-lime-shape" />
+          <span className="speech-bubble speech-bubble--quote"><Quote /></span>
+          <span className="speech-bubble speech-bubble--dots"><i /><i /><i /></span>
+          <span className="reviews-rays"><i /><i /><i /></span>
         </div>
-      </div>
+      </header>
 
-      {/* Impact Footer */}
-     
+      <div className="reviews-grid">
+        {TESTIMONIALS.slice(0, 3).map((testimonial, index) => {
+          const Icon = reviewIcons[index] ?? BriefcaseBusiness;
+          return (
+            <article className="review-card" key={testimonial.id}>
+              <Quote className="review-card__quote" aria-hidden="true" />
+              <blockquote>“{testimonial.content}”</blockquote>
+              <footer>
+                <span className="review-card__icon"><Icon /></span>
+                <span className="review-card__divider" />
+                <div><strong>{testimonial.name}</strong><small>{testimonial.role}</small></div>
+              </footer>
+            </article>
+          );
+        })}
+      </div>
     </div>
-  );
-};
-
-const Testimonials: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(".trust-header-reveal", {
-        y: 60,
-        opacity: 0,
-        stagger: 0.15,
-        duration: 1.2,
-        ease: "power4.out",
-        scrollTrigger: {
-          trigger: ".trust-header",
-          start: "top 85%",
-        },
-      });
-    }, containerRef);
-    return () => ctx.revert();
-  }, []);
-
-  return (
-    <section
-      ref={containerRef}
-      className="py-32 px-6 bg-[#0F0E0E] relative overflow-hidden"
-    >
-      {/* Background Decor */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-white/[0.01] blur-[150px] rounded-full pointer-events-none"></div>
-
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Section Header */}
-        <header className="trust-header mb-24 space-y-10">
-          <div className="flex items-center gap-4 trust-header-reveal">
-            <div className="w-12 h-12 bg-[#004aad]/10 rounded-2xl flex items-center justify-center text-[#004aad] border border-[#004aad]/20">
-              <ShieldCheck size={24} />
-            </div>
-            <div className="space-y-1">
-              <span className="text-[12px] md:text-[14px] font-poppins uppercase  text-[#004aad] font-black block">
-                Trusted by Businesses
-              </span>
-              {/* <p className="text-[8px] text-white font-poppins tracking-widest uppercase">
-                Encryption Status: AES-256
-              </p> */}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
-            <div className="lg:col-span-8 space-y-6">
-              <h2 className="trust-header-reveal text-4xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85] text-white">
-                TRUSTED <br />
-                <span className="text-white font-serif italic font-light lowercase">
-                  Clients
-                </span>
-                <span className="ml-2">Reviews</span>
-              </h2>
-            </div>
-            <div className="lg:col-span-4 pb-2 trust-header-reveal">
-              <p className="text-white text-lg font-light leading-relaxed border-l border-white/10 pl-8">
-                Feedback from business leaders and clients who trusted me to
-                build their digital systems.
-              </p>
-            </div>
-          </div>
-        </header>
-
-        {/* Dashboard Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {TESTIMONIALS.map((testimonial, index) => (
-            <TestimonialCard
-              key={testimonial.id}
-              testimonial={testimonial}
-              index={index}
-            />
-          ))}
-        </div>
-
-        {/* Footer Statistics Bar */}
-        {/* <div className="mt-32 pt-16 border-t border-white/5 grid grid-cols-2 md:grid-cols-4 gap-12">
-          {[
-            { label: "System Trust", value: "100%" },
-            { label: "Return Engagement", value: "85%" },
-            { label: "Security Pass", value: "SOC2 Ready" },
-            { label: "Uptime Reliability", value: "99.9%" },
-          ].map((stat, i) => (
-            <div
-              key={i}
-              className="flex flex-col items-center md:items-start space-y-2"
-            >
-              <span className="text-[9px] font-poppins uppercase tracking-[0.4em] text-white font-black">
-                {stat.label}
-              </span>
-              <div className="text-3xl font-black text-white tracking-tighter uppercase">
-                {stat.value}
-              </div>
-              <div className="h-px w-8 bg-[#004aad]/40"></div>
-            </div>
-          ))}
-        </div> */}
-      </div>
-    </section>
-  );
-};
+  </section>
+);
 
 export default Testimonials;

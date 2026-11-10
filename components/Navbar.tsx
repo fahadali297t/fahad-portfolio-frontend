@@ -1,27 +1,36 @@
 import React, { useEffect, useRef, useState } from "react";
-import { ArrowRight, Menu, X } from "lucide-react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
-const navLinks = [
-  { name: "Home", path: "/", section: "home" },
+const mainLinks = [
+  { name: "Home", path: "/" },
   { name: "About", path: "/about" },
-  { name: "Services", path: "/services", section: "services" },
-  { name: "Projects", path: "/projects", section: "projects" },
-  { name: "Testimonials", path: "/#testimonials", section: "testimonials" },
-  { name: "Contact", path: "/contact", section: "contact" },
+  { name: "Services", path: "/services" },
+  { name: "Projects", path: "/projects" },
+  { name: "Contact", path: "/contact" },
+];
+
+const moreLinks = [
+  { name: "Pricing", path: "/pricing" },
+  { name: "Blog", path: "/blog" },
+  { name: "Guestbook", path: "/guestbook" },
+  { name: "Schedule a Call", path: "/schedule-call" },
 ];
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 24);
     const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setIsOpen(false);
+      if (event.key === "Escape") {
+        setIsOpen(false);
+        setMoreOpen(false);
+      }
     };
 
     handleScroll();
@@ -36,12 +45,14 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     setIsOpen(false);
-  }, [location.pathname, location.hash]);
+    setMoreOpen(false);
+  }, [location.pathname]);
 
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         setIsOpen(false);
+        setMoreOpen(false);
       }
     };
 
@@ -49,37 +60,14 @@ const Navbar: React.FC = () => {
     return () => document.removeEventListener("mousedown", handleOutsideClick);
   }, []);
 
-  const openSection = (
-    event: React.MouseEvent<HTMLAnchorElement>,
-    section?: string,
-  ) => {
-    if (!section || location.pathname !== "/") return;
-
-    const target = document.getElementById(section);
-    if (!target) return;
-
-    event.preventDefault();
-    setIsOpen(false);
-    target.scrollIntoView({ behavior: "smooth" });
-    window.history.replaceState(null, "", section === "home" ? "/" : `/#${section}`);
-  };
-
-  const handleCta = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    if (location.pathname !== "/") return;
-    const target = document.getElementById("contact");
-    if (!target) return;
-    event.preventDefault();
-    target.scrollIntoView({ behavior: "smooth" });
-    window.history.replaceState(null, "", "/#contact");
-  };
+  const isActive = (path: string) => location.pathname === path;
+  const isMoreActive = moreLinks.some(({ path }) => isActive(path));
 
   return (
     <header className={`site-header ${isScrolled ? "is-scrolled" : ""}`}>
       <nav ref={menuRef} className="site-nav" aria-label="Main navigation">
         <Link to="/" className="site-brand" aria-label="Fahad Ali home">
-          <span className="site-brand-mark" aria-hidden="true">
-            <i /><i />
-          </span>
+          <span className="site-brand-mark" aria-hidden="true"><i /><i /></span>
           <span className="site-brand-copy">
             <strong>Fahad Ali</strong>
             <small>Web Developer</small>
@@ -87,28 +75,37 @@ const Navbar: React.FC = () => {
         </Link>
 
         <div className="desktop-nav-links">
-          {navLinks.map((link) => {
-            const active =
-              link.path === "/"
-                ? location.pathname === "/" && !location.hash
-                : location.pathname === link.path;
+          {mainLinks.map((link) => (
+            <Link
+              key={link.path}
+              to={link.path}
+              className={isActive(link.path) ? "is-active" : ""}
+              aria-current={isActive(link.path) ? "page" : undefined}
+            >
+              {link.name}
+            </Link>
+          ))}
 
-            return (
-              <Link
-                key={link.name}
-                to={link.path}
-                onClick={(event) => openSection(event, link.section)}
-                className={active ? "is-active" : ""}
-                aria-current={active ? "page" : undefined}
-              >
-                {link.name}
-              </Link>
-            );
-          })}
+          <div className="desktop-more">
+            <button
+              type="button"
+              className={isMoreActive ? "is-active" : ""}
+              aria-expanded={moreOpen}
+              aria-controls="desktop-more-menu"
+              onClick={() => setMoreOpen((open) => !open)}
+            >
+              More <ChevronDown aria-hidden="true" />
+            </button>
+            <div id="desktop-more-menu" className={`desktop-more-menu ${moreOpen ? "is-open" : ""}`}>
+              {moreLinks.map((link) => (
+                <Link key={link.path} to={link.path}>{link.name}<ArrowRight aria-hidden="true" /></Link>
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="site-nav-actions">
-          <Link to="/contact" className="nav-cta" onClick={handleCta}>
+          <Link to="/contact" className="nav-cta">
             Let&apos;s Talk <ArrowRight aria-hidden="true" />
           </Link>
           <button
@@ -123,21 +120,12 @@ const Navbar: React.FC = () => {
           </button>
         </div>
 
-        <div
-          id="mobile-navigation"
-          className={`mobile-navigation ${isOpen ? "is-open" : ""}`}
-        >
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              onClick={(event) => openSection(event, link.section)}
-            >
-              {link.name}
-              <ArrowRight aria-hidden="true" />
+        <div id="mobile-navigation" className={`mobile-navigation ${isOpen ? "is-open" : ""}`}>
+          {[...mainLinks, ...moreLinks].map((link) => (
+            <Link key={link.path} to={link.path}>
+              {link.name}<ArrowRight aria-hidden="true" />
             </Link>
           ))}
-          <button type="button" onClick={() => navigate("/schedule-call")}>Schedule a call</button>
         </div>
       </nav>
     </header>

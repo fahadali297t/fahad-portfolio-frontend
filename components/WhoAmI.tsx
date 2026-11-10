@@ -1,50 +1,37 @@
 import React from "react";
-import { ArrowUpRight, Braces, Gauge, Layers3 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Layers3, Rocket, Target } from "lucide-react";
 
 const principles = [
-  { Icon: Braces, title: "Clean Engineering", text: "Maintainable code built for long-term growth." },
-  { Icon: Gauge, title: "Fast by Default", text: "Performance treated as a core product feature." },
-  { Icon: Layers3, title: "Built to Scale", text: "Flexible systems that grow with your business." },
+  { Icon: Rocket, first: "Build & Deliver", second: "Business Solutions" },
+  { Icon: Layers3, first: "Focus on Performance", second: "& Scalability" },
+  { Icon: Target, first: "Aligned with", second: "Your Business Goals" },
 ];
 
 const WhoAmI: React.FC = () => {
   return (
     <section id="about" className="about-showcase">
+      <div className="about-curve about-curve--left" aria-hidden="true" />
+      <div className="about-curve about-curve--right" aria-hidden="true" />
       <div className="about-showcase__glow" aria-hidden="true" />
-      <div className="section-shell about-showcase__grid">
-        <div className="about-showcase__heading">
-          <div className="section-kicker"><span /> A few lines about me</div>
-          <h2>
-            I build digital products
-            <br />
-            with <em>business impact.</em>
-          </h2>
-        </div>
 
-        <div className="about-showcase__copy">
-          <p>
-            I&apos;m Fahad Ali, a full-stack web developer focused on turning
-            complex ideas into fast, reliable and user-friendly products.
-            Every solution is designed to solve a real problem and support
-            measurable growth.
-          </p>
-          <Link to="/about" className="lime-text-link">
-            More about me <ArrowUpRight aria-hidden="true" />
-          </Link>
-        </div>
-      </div>
+      <div className="section-shell about-showcase__content">
+        <div className="about-kicker"><span /> A few lines about me <span /></div>
+        <h2>Who Am <em>I?</em></h2>
+        <p className="about-showcase__intro">
+          I help businesses turn ideas into fast, beautiful, and reliable websites
+          and applications. I build modern, user-friendly solutions that perform
+          well, scale easily, and support real business growth using Laravel,
+          React, Tailwind, and WordPress.
+        </p>
 
-      <div className="section-shell about-principles">
-        {principles.map(({ Icon, title, text }) => (
-          <article key={title}>
-            <span><Icon aria-hidden="true" /></span>
-            <div>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </div>
-          </article>
-        ))}
+        <div className="about-principles">
+          {principles.map(({ Icon, first, second }) => (
+            <article key={first}>
+              <span><Icon aria-hidden="true" /></span>
+              <p>{first}<strong>{second}</strong></p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

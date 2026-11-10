@@ -1,48 +1,28 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
 
 const Footer: React.FC = () => {
-  const footerLinks = [
-    { name: "Home", path: "/" },
-    // { name: "Work", path: "/projects" },
-    // { name: "About", path: "/about" },
-    // { name: "Services", path: "/services" },
-    { name: "Guestbook", path: "/guestbook" },
-    { name: "Blogs", path: "/blog" },
-    { name: "Terms", path: "/terms" },
-    { name: "Privacy Policy", path: "/privacy" },
-    // { name: '404', path: '#' },
+  const links = [
+    ["Home", "/"], ["About", "/about"], ["Services", "/services"], ["Projects", "/projects"],
+    ["Pricing", "/pricing"], ["Blog", "/blog"], ["Guestbook", "/guestbook"], ["Contact", "/contact"],
   ];
 
   return (
-    <footer className="bg-black text-white pt-20 pb-12 px-6">
-      <div className="max-w-7xl mx-auto space-y-12">
-        {/* Separator Line */}
-        <div className="h-px w-full bg-white/10"></div>
-
-        {/* Navigation Links */}
-        <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-4">
-          {footerLinks.map((link, i) => (
-            <Link 
-              key={i} 
-              to={link.path}
-              className={`text-sm font-medium transition-colors hover:text-[#004aad] ${link.name === 'Home' ? 'text-white' : 'text-white'}`}
-            >
-              {link.name}
-            </Link>
-          ))}
+    <footer className="site-footer">
+      <div className="section-shell site-footer__inner">
+        <div className="site-footer__top">
+          <Link to="/" className="site-footer__brand" aria-label="Fahad Ali home">
+            <span><i /><i /></span><div><strong>Fahad Ali</strong><small>Full-Stack Web Developer</small></div>
+          </Link>
+          <div className="site-footer__cta"><span>Have a project in mind?</span><Link to="/contact">Let&apos;s Talk <ArrowUpRight /></Link></div>
         </div>
-
-        {/* Copyright Notice */}
-        <div className="flex flex-col items-center justify-center space-y-2 text-center">
-          <p className="text-[10px] md:text-xs text-white uppercase tracking-widest font-light flex flex-wrap justify-center items-center gap-2">
-            <span>© Copyright -</span> 
-            <a href="#" className="text-white hover:text-[#004aad] transition-colors underline underline-offset-4 decoration-white/20">Fahad Ali</a>
-            {/* <span className="mx-1 opacity-50">Designed by</span>
-            <a href="#" className="text-white hover:text-[#004aad] transition-colors underline underline-offset-4 decoration-white/20">Anova Flow</a> */}
-            {/* <span className="mx-1 opacity-50">| License Powered by</span>
-            <a href="#" className="text-white hover:text-[#004aad] transition-colors underline underline-offset-4 decoration-white/20">Webflow</a> */}
-          </p>
+        <nav className="site-footer__links" aria-label="Footer navigation">
+          {links.map(([name, path]) => <Link key={name} to={path}>{name}</Link>)}
+        </nav>
+        <div className="site-footer__bottom">
+          <span>© {new Date().getFullYear()} Fahad Ali. All rights reserved.</span>
+          <div><Link to="/terms">Terms</Link><Link to="/privacy">Privacy Policy</Link></div>
         </div>
       </div>
     </footer>

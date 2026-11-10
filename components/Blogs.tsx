@@ -1,105 +1,38 @@
-import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { BLOG_POSTS } from '../constants';
-import { ArrowUpRight } from 'lucide-react';
-
-gsap.registerPlugin(ScrollTrigger);
+import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { BLOG_POSTS } from "../constants";
 
 const Blogs: React.FC = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const cards = gsap.utils.toArray('.blog-card');
-      
-      cards.forEach((card: any, i: number) => {
-        const direction = i % 2 === 0 ? -100 : 100; // Left or Right
-        
-        gsap.from(card, {
-          x: direction,
-          opacity: 0,
-          duration: 1.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: card,
-            start: "top 90%",
-            toggleActions: "play none none reverse"
-          }
-        });
-      });
-    }, sectionRef);
-
-    return () => {
-      ctx.revert();
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
+  const featuredPosts = BLOG_POSTS.slice(0, 4);
 
   return (
-    <section ref={sectionRef} className="bg-black py-32 px-4 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        {/* Header from provided image */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-24 gap-8">
-          <div className="space-y-2">
-            <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9]">
-              RESOURCES
-            </h2>
-            <h2 className="text-4xl md:text-7xl font-serif italic text-[#004aad] leading-[0.9] tracking-tight">
-              & GUIDES
-            </h2>
+    <section className="resources-section">
+      <div className="resources-section__orb" aria-hidden="true" />
+      <div className="section-shell resources-shell">
+        <header className="resources-header">
+          <span className="section-kicker section-kicker--light"><i /> Resources &amp; Guides</span>
+          <div className="resources-title-wrap">
+            <h2>Resources &amp; <em>Guides</em></h2>
+            <span className="resources-burst" aria-hidden="true"><i /><i /><i /></span>
           </div>
-        </div>
+          <p>Practical guides, technical insights, and best practices to help you build better, faster, and more scalable web applications.</p>
+        </header>
 
-        {/* Blog Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
-          {BLOG_POSTS.map((blog) => (
-            <Link
-              to={`/blog/${blog.id}`}
-              key={blog.id}
-              className="blog-card group cursor-pointer block"
-            >
-              {/* Image with rounded corners as in visual */}
-              <div className="relative aspect-[16/10] rounded-[1rem] lg:rounded-[3rem] overflow-hidden mb-8 border border-white/5">
-                <img
-                  src={blog.image}
-                  alt={blog.title}
-                  className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+        <div className="resources-grid">
+          {featuredPosts.map((blog) => (
+            <Link to={`/blog/${blog.id}`} key={blog.id} className="resource-card">
+              <div className="resource-card__image"><img src={blog.image} alt={blog.title} /></div>
+              <div className="resource-card__meta"><span>{blog.category}</span><i /><small>{blog.readTime}</small></div>
+              <div className="resource-card__bottom">
+                <h3>{blog.title}</h3>
+                <span className="resource-card__arrow" aria-hidden="true"><ArrowUpRight /></span>
               </div>
-
-              {/* Meta info */}
-              <div className="flex items-center gap-4 mb-4">
-                <span className="px-4 py-1.5 bg-white/10 rounded-full text-[10px] font-bold tracking-widest text-white group-hover:bg-[#004aad] group-hover:text-black transition-all">
-                  {blog.category}
-                </span>
-                <span className="text-white text-xs">
-                  • {blog.readTime}
-                </span>
-              </div>
-
-              {/* Title */}
-              <h3 className="text-2xl md:text-3xl font-bold text-white group-hover:text-[#004aad] transition-colors leading-tight max-w-lg">
-                {blog.title}
-              </h3>
             </Link>
           ))}
         </div>
 
-        {/* See All Button */}
-        <div className="mt-24 flex justify-center">
-          <button className="group flex items-center gap-4 px-10 py-4 border border-white/20 rounded-full font-bold text-white hover:bg-white/5 transition-all">
-            <span className="text-sm uppercase tracking-widest">
-              See All Blogs
-            </span>
-            <ArrowUpRight
-              size={20}
-              className="group-hover:rotate-45 transition-transform"
-            />
-          </button>
-        </div>
+        <Link to="/blog" className="lime-pill-button resources-more">See All Blogs <ArrowRight aria-hidden="true" /></Link>
       </div>
     </section>
   );

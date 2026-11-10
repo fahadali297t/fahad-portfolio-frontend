@@ -59,7 +59,7 @@ const ServiceCard: React.FC<{ service: EnhancedService }> = ({ service }) => {
 };
 
 const Services: React.FC<ServicesProps> = ({ isLandingPage = false }) => {
-  const services = isLandingPage ? SERVICES.slice(0, 2) : SERVICES;
+  const services = SERVICES;
 
   return (
     <section id="services" className={`services-showcase ${isLandingPage ? "" : "services-showcase--page"}`}>
@@ -92,6 +92,14 @@ const Services: React.FC<ServicesProps> = ({ isLandingPage = false }) => {
         <div className="services-grid">
           {services.map((service) => <ServiceCard key={service.id} service={service} />)}
         </div>
+
+        {isLandingPage && (
+          <div className="services-view-all">
+            <Link to="/services" className="lime-pill-button">
+              View All Services <ArrowUpRight aria-hidden="true" />
+            </Link>
+          </div>
+        )}
 
         {!isLandingPage && (
           <div className="services-cta">

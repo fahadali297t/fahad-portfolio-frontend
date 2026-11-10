@@ -1,307 +1,95 @@
 import React, { useState } from "react";
-import {
-  Send,
-  Mail,
-  MapPin,
-  Check,
-  ArrowUpRight,
-  ShieldCheck,
-  Zap,
-  Linkedin,
-  Instagram,
-  Facebook,
-  Send as Telegram,
-  Globe,
-} from "lucide-react";
+import { useLocation } from "react-router-dom";
+import { ArrowRight, ArrowUpRight, Check, Facebook, Instagram, Linkedin, LockKeyhole, Mail, MessageCircle, Send, ShieldCheck, User } from "lucide-react";
 import { BsGithub, BsWhatsapp } from "react-icons/bs";
 import SEO from "@/components/SEO";
 import { SEO_PAGES } from "@/lib/SEOConfig";
 import { ContactPageSchema } from "@/lib/structuredData";
 
 const Contact: React.FC = () => {
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const location = useLocation();
+  const isContactPage = location.pathname === "/contact";
+  const [formState, setFormState] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
 
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   setStatus("sending");
-
-  //   /**
-  //    * NOTE FOR FAHAD ALI:
-  //    * To use your Google SMTP Credentials securely:
-  //    * 1. DO NOT put them in this React file.
-  //    * 2. If you have a Laravel backend: Create an API endpoint /api/contact.
-  //    *    In your .env, put:
-  //    *    MAIL_HOST=smtp.gmail.com
-  //    *    MAIL_PORT=465
-  //    *    MAIL_USERNAME=fahadali2951@gmail.com
-  //    *    MAIL_PASSWORD=your_app_password
-  //    * 3. Send 2 Mails from the Controller:
-  //    *    - Mail::to($request->email)->send(new AutoReply());
-  //    *    - Mail::to('fahadali2951@gmail.com')->send(new NewInquiry($request->all()));
-  //    *
-  //    * If you want a 100% frontend solution, use EmailJS.com or Web3Forms.com
-  //    */
-
-  //   // Simulating API call to your backend
-  //   await new Promise((resolve) => setTimeout(resolve, 1500));
-
-  //   console.log("Dual Email Protocol Executed");
-  //   console.log("1. Confirmation sent to: " + formState.email);
-  //   console.log("2. Lead data sent to: fahadali2951@gmail.com");
-
-  //   setStatus("sent");
-  //   setFormState({ name: "", email: "", message: "" });
-  //   setTimeout(() => setStatus("idle"), 5000);
-  // };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
     setStatus("sending");
-
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formState),
-    });
-
-    if (response.ok) {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formState),
+      });
+      if (!response.ok) throw new Error("Unable to send message");
       setStatus("sent");
       setFormState({ name: "", email: "", message: "" });
-      setTimeout(() => setStatus("idle"), 5000);
-    } else {
+      window.setTimeout(() => setStatus("idle"), 5000);
+    } catch {
       setStatus("idle");
-      alert("Failed to send message");
+      window.alert("Failed to send message");
     }
   };
-    const socials = [
-      {
-        name: "LinkedIn",
-        icon: Linkedin,
-        url: "https://www.linkedin.com/in/fahad-ali-369649355/",
-        color: "hover:text-blue-500",
-      },
-      {
-        name: "GitHub",
-        icon: BsGithub,
-        url: "https://github.com/fahadali297t",
-        color: "hover:text-cyan-400",
-      },
-      {
-        name: "Instagram",
-        icon: Instagram,
-        url: "https://instagram.com",
-        color: "hover:text-pink-500",
-      },
-      {
-        name: "Facebook",
-        icon: Facebook,
-        url: "https://facebook.com/zfahad4",
-        color: "hover:text-blue-600",
-      },
-    ];
+
+  const socials = [
+    { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/fahad-ali-369649355/" },
+    { name: "GitHub", icon: BsGithub, url: "https://github.com/fahadali297t" },
+    { name: "Instagram", icon: Instagram, url: "https://instagram.com" },
+    { name: "Facebook", icon: Facebook, url: "https://facebook.com/zfahad4" },
+  ];
 
   return (
-    <section className="bg-black text-white py-32 px-6 md:px-12 min-h-screen flex flex-col justify-center">
-      <SEO {...SEO_PAGES.contact} schema={ContactPageSchema} />
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start w-full">
-        {/* Information Column */}
-        <div className="lg:col-span-5 space-y-12">
-          <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <Zap size={14} className="text-[#004aad]" />
-              <span className="text-[10px] font-poppins text-white uppercase tracking-[0.4em] font-black">
-                Direct Access
-              </span>
-            </div>
-            <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85]">
-              GET IN <br />
-              <span className="text-[#004aad] font-serif italic font-light lowercase">
-                touch
-              </span>
-            </h2>
-            <p className="text-white text-lg font-light leading-relaxed max-w-md">
-              Available for architectural consulting, backend development, and
-              performance optimization.
-            </p>
-          </div>
+    <section className={`contact-showcase ${isContactPage ? "contact-showcase--page" : ""}`}>
+      {isContactPage && <SEO {...SEO_PAGES.contact} schema={ContactPageSchema} />}
+      <div className="section-shell contact-layout">
+        <div className="contact-copy">
+          <span className="section-kicker section-kicker--light"><i /> Direct Access</span>
+          <h2>Get in <em>Touch</em></h2>
+          <p>Available for architectural consulting, backend development, and performance optimization.</p>
 
-          <div className="grid grid-cols-1 gap-4">
-            {/* WhatsApp Premium Card */}
-            <a
-              href="https://wa.me/923326067339"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-between p-6 md:p-8 bg-green-500/5 border border-green-500/20 rounded-[2.5rem] group hover:border-green-500/50 transition-all shadow-[0_0_40px_rgba(34,197,94,0.05)]"
-            >
-              <div className="flex items-center gap-6">
-                <div className="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center text-black shadow-[0_0_20px_rgba(34,197,94,0.3)]">
-                  <BsWhatsapp size={32} />
-                </div>
-                <div className="text-left">
-                  <p className="text-[10px] font-poppins text-green-500 uppercase tracking-widest font-black">
-                    Quick Response
-                  </p>
-                  <p className="text-2xl font-bold text-white uppercase">
-                    WhatsApp
-                  </p>
-                </div>
-              </div>
-              <ArrowUpRight
-                className="text-green-500 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
-                size={24}
-              />
+          <div className="contact-methods">
+            <a href="https://wa.me/923326067339" target="_blank" rel="noopener noreferrer" className="contact-whatsapp">
+              <span><BsWhatsapp /></span>
+              <div><small>Quick Response</small><strong>WhatsApp</strong></div>
+              <ArrowUpRight aria-hidden="true" />
             </a>
-
-            {/* Email Card */}
-            <div className="flex items-center gap-6 p-6 md:p-8 bg-white/5 border border-white/5 rounded-[2.5rem]">
-              <div className="w-16 h-16 md:bg-white/5 rounded-2xl flex items-center justify-center text-[#004aad]">
-                <Mail size={28} strokeWidth={1.5} />
-              </div>
-              <div>
-                <p className="text-[10px] font-poppins text-white uppercase tracking-widest font-black">
-                  Email
-                </p>
-                <p className="text-md font-bold text-white">
-                  fahadali2951@gmail.com
-                </p>
-              </div>
-            </div>
-
-            {/* Location Card */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {socials.map((social, idx) => (
-                <a
-                  key={idx}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`flex items-center justify-center gap-4 p-6 bg-white/5 border border-white/5 rounded-[2rem] transition-all hover:bg-white/10 group ${social.color}`}
-                >
-                  <social.icon
-                    size={24}
-                    className=" transition-transform group-hover:scale-110"
-                  />
-                  {/* <span className="text-[10px] font-mono uppercase tracking-widest font-black text-white group-hover:text-white transition-colors">
-                    {social.name}
-                  </span> */}
-                </a>
+            <a href="mailto:fahadali2951@gmail.com" className="contact-email">
+              <span><Mail /></span><div><small>Email</small><strong>fahadali2951@gmail.com</strong></div>
+            </a>
+            <div className="contact-socials">
+              {socials.map((social) => (
+                <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" aria-label={social.name}><social.icon /></a>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Form Column */}
-        <div className="lg:col-span-7 bg-[#0a0a0a] rounded-[2rem] md:rounded-[3.5rem] p-8 md:p-16 border border-white/5 relative overflow-hidden shadow-2xl">
-          {status === "sending" && (
-            <div className="absolute inset-0 bg-black/80 backdrop-blur-sm z-50 flex flex-col items-center justify-center space-y-6">
-              <div className="w-12 h-12 border-2 border-[#004aad] border-t-transparent rounded-full animate-spin"></div>
-              <p className="font-poppins text-xs uppercase tracking-widest text-[#004aad]">
-                Sending Your Message...
-              </p>
+        <div className="contact-form-card">
+          {status !== "idle" && (
+            <div className="contact-form-status">
+              {status === "sending" ? <span className="contact-spinner" /> : <span className="contact-success"><Check /></span>}
+              <strong>{status === "sending" ? "Sending your message…" : "Message successfully sent"}</strong>
             </div>
           )}
 
-          {status === "sent" && (
-            <div className="absolute inset-0 bg-black z-50 flex flex-col items-center justify-center space-y-8 animate-in zoom-in duration-500">
-              <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center text-black">
-                <Check size={40} strokeWidth={3} />
-              </div>
-              <div className="text-center space-y-2">
-                <h3 className="text-3xl font-black uppercase tracking-tighter">
-                  Message Successfully Transmitted
-                </h3>
-                <p className="text-white font-light">
-                  Emails dispatched. Checking registry...
-                </p>
-              </div>
-            </div>
-          )}
-
-          <div className="mb-12">
-            <h3 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase">
-              DROP A{" "}
-              <span className="font-serif italic text-[#004aad] font-light lowercase">
-                line
-              </span>
-            </h3>
+          <div className="contact-form-heading">
+            <h3>Drop a <em>Line</em></h3>
+            <span aria-hidden="true"><i /><i /><i /></span>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-[10px] font-poppins text-white uppercase tracking-widest font-black ml-4">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  required
-                  placeholder="Enter your name"
-                  className="w-full px-6 xl:px-8 rounded-[1.5rem] xl:rounded-full py-5 bg-white/5 border border-white/5  text-white placeholder-slate-400 focus:ring-1 focus:ring-[#004aad]/40 outline-none transition-all"
-                  value={formState.name}
-                  onChange={(e) =>
-                    setFormState({ ...formState, name: e.target.value })
-                  }
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-[10px] font-poppins text-white uppercase tracking-widest font-black ml-4">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  required
-                  placeholder="Enter your email"
-                  className="w-full px-6 xl:px-8 py-5 rounded-[1.5rem] xl:rounded-full bg-white/5 border border-white/5  text-white placeholder-slate-400 focus:ring-1 focus:ring-[#004aad]/40 outline-none transition-all"
-                  value={formState.email}
-                  onChange={(e) =>
-                    setFormState({ ...formState, email: e.target.value })
-                  }
-                />
-              </div>
+          <form onSubmit={handleSubmit}>
+            <div className="contact-fields-row">
+              <label>Full Name<div><User /><input required type="text" placeholder="Enter your name" value={formState.name} onChange={(event) => setFormState({ ...formState, name: event.target.value })} /></div></label>
+              <label>Email Address<div><Mail /><input required type="email" placeholder="Enter your email" value={formState.email} onChange={(event) => setFormState({ ...formState, email: event.target.value })} /></div></label>
             </div>
-            <div className="space-y-2">
-              <label className="text-[10px] font-poppins text-white uppercase tracking-widest font-black ml-4">
-                Inquiry / Message
-              </label>
-              <textarea
-                required
-                rows={5}
-                placeholder="Describe your project requirements..."
-                className="w-full px-6 xl:px-8 py-5 rounded-[1.5rem] xl:rounded-[2.5rem] bg-white/5 border border-white/5  text-white placeholder-slate-400 focus:ring-1 focus:ring-[#004aad]/40 outline-none transition-all resize-none"
-                value={formState.message}
-                onChange={(e) =>
-                  setFormState({ ...formState, message: e.target.value })
-                }
-              />
-            </div>
-
-            <button
-              type="submit"
-              disabled={status !== "idle"}
-              className="group w-full py-6 bg-[#004aad] text-black rounded-full font-black text-sm uppercase tracking-[0.3em] transition-all hover:scale-[1.01] active:scale-95 flex items-center justify-center gap-4"
-            >
-              <span>Send</span>
-              <Send
-                size={18}
-                className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
-              />
-            </button>
+            <label>Inquiry / Message<div className="contact-message-field"><MessageCircle /><textarea required rows={5} placeholder="Describe your project requirements…" value={formState.message} onChange={(event) => setFormState({ ...formState, message: event.target.value })} /></div></label>
+            <button type="submit" disabled={status !== "idle"}>Send Message <ArrowRight /></button>
           </form>
 
-          <div className="mt-12 pt-8 border-t border-white/5 flex items-center justify-between">
-            <div className="flex items-center gap-4 text-[10px] font-poppins text-white uppercase tracking-widest font-black">
-              <ShieldCheck size={14} className="text-green-500/50" />
-              <span>Encrypted Connection</span>
-            </div>
-            <span className="text-[10px] font-poppins text-white">
-              0x2291 // Using secure channel
-            </span>
-          </div>
+          <footer className="contact-form-footer">
+            <span><ShieldCheck /> Encrypted Connection</span>
+            <span><LockKeyhole /> 0x2291 // Using secure channel</span>
+          </footer>
         </div>
       </div>
     </section>
