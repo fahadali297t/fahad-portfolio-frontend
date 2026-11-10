@@ -71,6 +71,20 @@ export const SEO_PAGES: Record<string, SEOProps> = {
     ].join(", "),
     ogType: "website",
   },
+  services: {
+    title: "Services | Fahad Ali - Web Development & WordPress Solutions",
+    description:
+      "Explore custom website development, WordPress, e-commerce, and UI/UX services by Fahad Ali, built for speed, usability, and business growth.",
+    path: "/services",
+    keywords: [
+      "Web Development Services",
+      "WordPress Developer",
+      "Laravel Development",
+      "E-commerce Development",
+      "UI UX Design",
+    ].join(", "),
+    ogType: "website",
+  },
   skills: {
     title: "Skills | Fahad Ali - Laravel, React.js, PHP & Tailwind CSS Developer",
     description:

@@ -63,8 +63,13 @@ const ScrollToTop = () => {
 
     // Allow a tiny delay for DOM to settle before refreshing triggers
     const timer = setTimeout(() => {
+      if (hash) {
+        document
+          .getElementById(hash.slice(1))
+          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
       ScrollTrigger.refresh();
-    }, 50);
+    }, 100);
 
     return () => clearTimeout(timer);
   }, [pathname, hash]);
