@@ -15,7 +15,7 @@ import { PersonSchema, WebsiteSchema } from "@/lib/structuredData";
 
 const Home: React.FC = () => {
   return (
-    <div className="overflow-x-hidden bg-transparent transition-colors duration-500">
+    <div className="home-page-flow overflow-x-hidden transition-colors duration-500">
       <SEO {...SEO_PAGES.home} schema={[PersonSchema, WebsiteSchema]} />
 
       {/* Hero Section */}

@@ -77,7 +77,7 @@ const Schedule: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="bg-black text-white min-h-screen pt-32 pb-40 px-6 relative overflow-hidden"
+      className="inner-page schedule-page text-white min-h-screen pt-32 pb-40 px-6 relative overflow-hidden"
     >
       {/* Background Atmosphere */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] bg-gradient-to-b from-[#004aad]/10 to-transparent opacity-20 pointer-events-none"></div>

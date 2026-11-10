@@ -179,7 +179,7 @@ const About: React.FC = () => {
   ];
 
   return (
-    <div ref={containerRef} className="bg-black text-white min-h-screen">
+    <div ref={containerRef} className="about-page text-white min-h-screen">
       <SEO {...SEO_PAGES.about} schema={[ProfileSchema]} />
       {/* Section 1: Hero & Bio */}
       <section className="relative pt-40 pb-32 px-6 overflow-hidden">
@@ -298,7 +298,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Section 2: Technical Mastery */}
-      <section className="py-32 px-6 bg-white/[0.02] border-y border-white/5 overflow-hidden">
+      <section className="about-skills-section py-32 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row justify-between items-end mb-24 gap-8">
             <div className="space-y-4">
@@ -325,7 +325,7 @@ const About: React.FC = () => {
             {skillCategories.map((cat, i) => (
               <div
                 key={i}
-                className="skill-category space-y-10 p-10 bg-black rounded-[3rem] border border-white/5 hover:border-[#004aad]/20 transition-all group"
+                className="skill-category space-y-10 p-10 rounded-[3rem] transition-all group"
               >
                 <div className="flex items-center gap-6">
                   <div className="p-5 bg-white/5 rounded-2xl text-[#004aad] group-hover:bg-[#004aad] group-hover:text-black transition-all">
@@ -354,15 +354,13 @@ const About: React.FC = () => {
       <Experience />
 
       {/* Philosophy Callout */}
-      <section className="py-40 px-6 text-center">
+      <section className="about-foundation-cta py-40 px-6 text-center">
         <div className="max-w-4xl mx-auto space-y-16">
-          <div className="inline-block p-6 bg-white rounded-full text-[#004aad]">
-            <img src="./1.png" width={50} height={50} alt="" />
-          </div>
+          <span className="growth-logo about-foundation-logo" aria-label="Fahad Ali logo"><i /><i /></span>
           <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9]">
             I DON'T JUST BUILD WEBSITES. <br />
-            <span className="text-[#004aad] font-serif italic font-light lowercase">
-              I build digital foundations for your business.
+            <span className="font-serif italic font-light lowercase">
+              I build digital foundations for <em>your business.</em>
             </span>
           </h2>
 

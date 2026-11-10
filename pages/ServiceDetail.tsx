@@ -69,11 +69,11 @@ const ServiceDetail: React.FC = () => {
   }
 
   return (
-    <div ref={containerRef} className="bg-black text-white overflow-x-hidden">
+    <div ref={containerRef} className="inner-page service-detail-page text-white overflow-x-hidden">
       {/* Dynamic Back Button */}
       <button
         onClick={() => navigate(-1)}
-        className="fixed top-24 left-8 z-50 p-4 bg-white/5 backdrop-blur-md rounded-full border border-white/10 hover:bg-[#004aad] hover:text-black transition-all group hidden md:flex"
+        className="service-back-button fixed top-24 left-8 z-50 p-4 rounded-full transition-all group hidden md:flex"
       >
         <ArrowLeft
           size={24}
@@ -181,7 +181,7 @@ const ServiceDetail: React.FC = () => {
               feature drives real value for your business.
             </p>
             <div className="pt-8">
-              <div className="p-8 bg-[#004aad]/10 rounded-[2rem] border border-[#004aad]/20 text-center">
+              <div className="commitment-card p-8 rounded-[2rem] text-center">
                 <span className="text-3xl font-black text-[#004aad] block mb-2">
                   100%
                 </span>
@@ -218,8 +218,8 @@ const ServiceDetail: React.FC = () => {
       {/* High-Impact CTA Section */}
       <section className="relative py-40 px-6 overflow-hidden">
         {/* Animated Background Atmosphere */}
-        <div className="absolute inset-0 bg-[#080808]">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#004aad]/10 blur-[150px] rounded-full animate-pulse"></div>
+        <div className="service-cta-bg absolute inset-0 bg-[#080808]">
+          <div className="service-cta-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"></div>
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto text-center space-y-16">

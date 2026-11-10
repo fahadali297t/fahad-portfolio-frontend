@@ -111,7 +111,7 @@ const TimelineNode = ({ item, index, isWork }) => {
 
   return (
     <div
-      className={`relative flex flex-col md:flex-row  items-start md:items-center justify-between w-full mb-12 pb-5 sm:mb-20 md:mb-32 ${
+      className={`journey-item relative flex flex-col md:flex-row items-start md:items-center justify-between w-full mb-12 pb-5 sm:mb-20 md:mb-32 ${
         isEven ? "md:flex-row-reverse" : ""
       }`}
     >
@@ -143,7 +143,7 @@ const TimelineNode = ({ item, index, isWork }) => {
         ref={itemRef}
         className="w-full md:w-[45%] pl-10 sm:pl-14 md:pl-0 pr-4 sm:pr-6 md:pr-0"
       >
-        <div className="relative p-5 sm:p-7 md:p-10 bg-[#0a0a0a] border border-white/5 rounded-2xl sm:rounded-3xl md:rounded-[3rem] transition-all duration-700 hover:border-[#004aad]/30 hover:bg-white/[0.02] shadow-2xl overflow-hidden group">
+        <div className="journey-card relative p-5 sm:p-7 md:p-10 rounded-2xl sm:rounded-3xl md:rounded-[3rem] transition-all duration-700 shadow-2xl overflow-hidden group">
           {/* Section Indicator Overlay */}
           <div className="absolute top-2 right-2 sm:top-4 sm:right-4 md:top-6 md:right-6 opacity-[0.03] sm:opacity-[0.04] md:opacity-[0.05] group-hover:opacity-10 transition-opacity duration-700">
             <span className="text-4xl sm:text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none select-none">
@@ -263,7 +263,7 @@ const Experience = () => {
   return (
     <section
       ref={containerRef}
-      className="bg-black text-white py-12 sm:py-24 md:py-40 px-3 sm:px-5 md:px-6 overflow-hidden relative"
+      className="experience-section text-white py-12 sm:py-24 md:py-40 px-3 sm:px-5 md:px-6 overflow-hidden relative"
     >
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[95vw] sm:w-[90vw] h-[95vw] sm:h-[90vw] bg-[#004aad]/5 blur-[80px] sm:blur-[140px] md:blur-[200px] rounded-full pointer-events-none z-0"></div>
 
@@ -274,7 +274,7 @@ const Experience = () => {
           </span>
 
           <h2 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight">
-            My Professional Journey
+            My Professional <em>Journey</em>
           </h2>
 
           <p className="text-base sm:text-lg md:text-xl text-white max-w-2xl">

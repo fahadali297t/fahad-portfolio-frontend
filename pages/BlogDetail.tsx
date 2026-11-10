@@ -77,7 +77,7 @@ const BlogDetail: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="bg-black text-white min-h-screen overflow-x-hidden"
+      className="inner-page blog-detail-page text-white min-h-screen overflow-x-hidden"
     >
       {/* Fixed Back Button - Reliable Navigation */}
       <div className=" hidden lg:fixed top-24 left-8 z-50">
@@ -282,7 +282,7 @@ const BlogDetail: React.FC = () => {
 
       {/* Newsletter Section */}
       <section className="py-40 px-6 text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-black">
+        <div className="blog-cta-bg absolute inset-0 bg-black">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-[#004aad]/5 blur-[180px] rounded-full pointer-events-none"></div>
         </div>
         <div className="relative z-10 max-w-4xl mx-auto space-y-12">

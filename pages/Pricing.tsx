@@ -1,14 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PricingSection from "../components/PricingSection";
-import HighImpactCTA from "../components/HighImpactCTA";
-import { ShieldCheck, Zap, Layers, Cpu, Code2, Database } from "lucide-react";
+import { ShieldCheck, Zap, Layers, Cpu, Code2, Database, ChevronDown } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Pricing: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -58,14 +58,14 @@ const features = [
 ];
 
   return (
-    <div ref={containerRef} className="bg-black text-white min-h-screen">
+    <div ref={containerRef} className="pricing-page text-white min-h-screen">
       {/* Hero Header */}
 
       {/* Main Pricing Cards */}
       <PricingSection />
 
       {/* Trust & Features Section */}
-      <section className="py-24 sm:py-40 px-6 bg-white/[0.01]">
+      <section className="pricing-delivery-section py-24 sm:py-40 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-8 mb-32">
             <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter">
@@ -84,7 +84,7 @@ const features = [
             {features.map((feature, i) => (
               <div
                 key={i}
-                className="group p-10 bg-[#080808] border border-white/5 rounded-[2.5rem] hover:border-[#004aad]/20 transition-all flex flex-col gap-6"
+                className="delivery-feature-card group p-10 rounded-[2.5rem] transition-all flex flex-col gap-6"
               >
                 <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-[#004aad] group-hover:bg-[#004aad] group-hover:text-black transition-all">
                   <feature.icon size={28} strokeWidth={1.5} />
@@ -107,7 +107,7 @@ const features = [
       {/* <HighImpactCTA /> */}
 
       {/* FAQ Placeholder */}
-      <section className="py-32 px-6 border-t border-white/5">
+      <section className="pricing-faq-section py-32 px-6">
         <div className="max-w-4xl mx-auto">
           <h3 className="text-3xl font-black uppercase tracking-tighter mb-16 text-center">
             Frequently Asked{" "}
@@ -130,15 +130,15 @@ const features = [
                 a: "Most projects take 4-8 weeks from start to launch, depending on complexity. Initial audits or consultations are usually completed within 7 business days.",
               },
             ].map((faq, i) => (
-              <div
+              <article
                 key={i}
-                className="p-8 bg-white/5 rounded-[2rem] border border-white/5 space-y-3"
+                className={`pricing-faq-item ${openFaq === i ? "is-open" : ""}`}
               >
-                <h4 className="font-bold text-white text-lg">Q: {faq.q}</h4>
-                <p className="text-slate-500 font-light leading-relaxed">
-                  {faq.a}
-                </p>
-              </div>
+                <button type="button" onClick={() => setOpenFaq(openFaq === i ? null : i)} aria-expanded={openFaq === i}>
+                  <span>{faq.q}</span><ChevronDown aria-hidden="true" />
+                </button>
+                <div className="pricing-faq-answer"><p>{faq.a}</p></div>
+              </article>
             ))}
           </div>
         </div>

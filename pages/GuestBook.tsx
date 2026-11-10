@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ArrowRight, Clock, User, Zap, LogIn } from "lucide-react";
-import { supabase } from "../lib/supabase";
+import { isSupabaseConfigured, supabase } from "../lib/supabase";
 import { User as SupabaseUser } from "@supabase/supabase-js";
 import toast from "react-hot-toast";
 
@@ -24,6 +24,8 @@ const Guestbook: React.FC = () => {
 
   // Check auth state on mount
   useEffect(() => {
+    if (!isSupabaseConfigured) return;
+
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUser(session?.user ?? null);
     });
@@ -62,6 +64,10 @@ const Guestbook: React.FC = () => {
   };
 
   const handleLogin = async () => {
+    if (!isSupabaseConfigured) {
+      toast.error("Guestbook sign-in is not configured yet.");
+      return;
+    }
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
@@ -144,7 +150,7 @@ const Guestbook: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="bg-black text-white min-h-screen pt-32 sm:pt-32 pb-40 px-4 sm:px-6 flex flex-col items-center relative overflow-hidden"
+      className="inner-page guestbook-page text-white min-h-screen pt-32 sm:pt-32 pb-40 px-4 sm:px-6 flex flex-col items-center relative overflow-hidden"
     >
       {/* Background Ambience */}
       <div className="bg-circle fixed top-[-10%] right-[-10%] w-[50vw] aspect-square bg-[#004aad]/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
@@ -171,14 +177,17 @@ const Guestbook: React.FC = () => {
                   Join the conversation
                 </h3>
                 <p className="text-white max-w-md mx-auto">
-                  Sign in with Google to leave a permanent mark on my guestbook.
+                  {isSupabaseConfigured
+                    ? "Sign in with Google to leave a permanent mark on my guestbook."
+                    : "The guestbook is ready, but sign-in needs Supabase credentials before messages can be posted."}
                 </p>
                 <button
                   onClick={handleLogin}
-                  className="inline-flex items-center gap-3 px-8 py-3 bg-white text-black rounded-full font-bold text-sm tracking-tight hover:scale-105 transition-transform"
+                  disabled={!isSupabaseConfigured}
+                  className="inline-flex items-center gap-3 px-8 py-3 bg-white text-black rounded-full font-bold text-sm tracking-tight hover:scale-105 transition-transform disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   <LogIn size={18} />
-                  Sign in with Google
+                  {isSupabaseConfigured ? "Sign in with Google" : "Sign-in unavailable"}
                 </button>
               </div>
             ) : (

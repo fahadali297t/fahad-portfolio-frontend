@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useEffect } from "react";
+import React, { Suspense, lazy, useEffect, useLayoutEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -34,13 +34,6 @@ const Guestbook = lazy(() => import("./pages/GuestBook"));
 const Schedule = lazy(() => import("./pages/Schedule"));
 const Pricing = lazy(() => import("./pages/Pricing"));
 
-const PageLoader = () => (
-  <div className="flex items-center justify-center py-32">
-    <div className="w-10 h-10 rounded-full border-2 border-[#004aad] border-t-transparent animate-spin" />
-  </div>
-);
-
-
 gsap.registerPlugin(ScrollTrigger);
 
 // Scroll to top and refresh ScrollTrigger on route change
@@ -53,12 +46,14 @@ const ScrollToTop = () => {
     }
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // Clear any stuck pins or spacers from previous routes
     ScrollTrigger.getAll().forEach((t) => t.kill());
 
     if (!hash) {
-      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
     }
 
     // Allow a tiny delay for DOM to settle before refreshing triggers
@@ -77,6 +72,26 @@ const ScrollToTop = () => {
   return null;
 };
 
+const RouteTransition = () => {
+  const { pathname } = useLocation();
+  const [visible, setVisible] = useState(false);
+
+  useLayoutEffect(() => {
+    setVisible(true);
+    const timer = window.setTimeout(() => setVisible(false), 900);
+    return () => window.clearTimeout(timer);
+  }, [pathname]);
+
+  return (
+    <div className={`route-transition ${visible ? "is-active" : ""}`} aria-hidden="true">
+      <div className="route-transition__panel route-transition__panel--top" />
+      <div className="route-transition__panel route-transition__panel--bottom" />
+      <div className="route-transition__mark"><i /><i /></div>
+      <span>Fahad Ali</span>
+    </div>
+  );
+};
+
 const App: React.FC = () => {
   useEffect(() => {
     // Force dark mode class on html element
@@ -93,6 +108,7 @@ const App: React.FC = () => {
       />
       <Router>
       <ScrollToTop />
+      <RouteTransition />
       <Toaster
         position="top-right"
         toastOptions={{
@@ -125,10 +141,10 @@ const App: React.FC = () => {
         }}
       />
 
-      <div className="min-h-screen flex flex-col bg-black text-white relative">
+      <div className="site-app-shell min-h-screen flex flex-col text-white relative">
         <Navbar />
-        <main className="flex-grow  relative z-10">
-          <Suspense fallback={<PageLoader />}>
+        <main className="site-route-main flex-grow relative z-10">
+          <Suspense fallback={null}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

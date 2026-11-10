@@ -96,7 +96,7 @@ const ProjectDetail: React.FC = () => {
   const nextProject = PROJECTS[(PROJECTS.indexOf(project) + 1) % PROJECTS.length];
 
   return (
-    <div ref={containerRef} className="bg-black text-white overflow-x-hidden">
+    <div ref={containerRef} className="inner-page project-detail-page text-white overflow-x-hidden">
       <SEO
         title={`${project.title} | Project by Fahad Ali`}
         description={project.description}

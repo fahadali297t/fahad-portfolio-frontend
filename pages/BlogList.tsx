@@ -37,9 +37,9 @@ const BlogCard: React.FC<{ blog: EnhancedBlog; index: number }> = ({
 
   return (
     <Link to={`/blog/${blog.id}`} className="group block relative">
-      <div ref={cardRef} className="relative flex flex-col h-full">
+      <div ref={cardRef} className="inner-blog-card relative flex flex-col h-full">
         {/* Image Container - Matching Reference Rounded Corners */}
-        <div className="relative aspect-[1.5/1] overflow-hidden rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] bg-[#111] border border-white/5">
+        <div className="inner-blog-card__media relative aspect-[1.5/1] overflow-hidden rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] bg-[#111] border border-white/5">
           <img
             src={blog.image}
             alt={blog.title}
@@ -120,7 +120,7 @@ const BlogList: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="bg-black text-white min-h-screen pt-20 sm:pt-24 md:pt-16 pb-20 sm:pb-32 md:pb-40 px-3 sm:px-5 md:px-6 relative overflow-hidden"
+      className="inner-page blog-list-page text-white min-h-screen pt-20 sm:pt-24 md:pt-16 pb-20 sm:pb-32 md:pb-40 px-3 sm:px-5 md:px-6 relative overflow-hidden"
     >
       {/* Decorative Parallax Glows - Pure dark aesthetic as requested */}
       <div className="bg-decoration fixed top-[-10%] left-[-10%] w-[70vw] sm:w-[60vw] aspect-square bg-[#004aad]/5 blur-[120px] sm:blur-[180px] md:blur-[200px] rounded-full pointer-events-none z-0"></div>
