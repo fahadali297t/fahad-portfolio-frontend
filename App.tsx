@@ -86,6 +86,14 @@ const RouteTransition = () => {
   );
 };
 
+const InitialShellCleanup = () => {
+  useLayoutEffect(() => {
+    document.getElementById("initial-app-shell")?.remove();
+  }, []);
+
+  return null;
+};
+
 const App: React.FC = () => {
   useEffect(() => {
     // Force dark mode class on html element
@@ -133,6 +141,7 @@ const App: React.FC = () => {
         <Navbar />
         <main className="site-route-main flex-grow relative z-10">
           <Suspense fallback={null}>
+          <InitialShellCleanup />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
